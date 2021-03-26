@@ -4,16 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="第零章：经典动态规划：子集背包问题, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第一章：一道数组去重的算法题把我整不会了, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="labuladong经典动态规划：子集背包问题
+    <meta name="description" content="labuladong  一道数组去重的算法题把我整不会了
+316. 去除重复字母（与1081. 不同字符的最小子序列  题目相同）即：去除重复字母，并返回字典序最小的子序列
+“尽量”维护一个单调递增的栈，但是：
 
-动态规划之背包汇总
-第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
-
-该背包问题相当于0-1背包问题的">
+当加入当前字符时，如果栈顶">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>第零章：经典动态规划：子集背包问题 | M&#39;s Blog</title>
+    <title>第一章：一道数组去重的算法题把我整不会了 | M&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -321,13 +320,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        第零章：经典动态规划：子集背包问题
+                        第一章：一道数组去重的算法题把我整不会了
                     </div>
                 </div>
             </div>
@@ -462,7 +461,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-27
+                    2021-03-23
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -476,14 +475,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    607
+                    402
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -499,46 +498,36 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>labuladong<a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/bei-bao-zi-ji" target="_blank" rel="noopener">经典动态规划：子集背包问题</a></p>
-<hr>
-<p>动态规划之背包汇总</p>
-<p><a href="https://ismxue.github.io/2020/07/24/labuladong/di-ling-zhang-dong-tai-gui-hua-jie-ti-tao-lu-kuang-jia/">第零章：动态规划解题套路框架</a><br><a href="https://ismxue.github.io/2020/07/27/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-0-1-bei-bao-wen-ti/">第一章：经典动态规划：0-1 背包问题</a><br><a href="https://ismxue.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/">第零章：经典动态规划：子集背包问题</a><br><a href="https://ismxue.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-wan-quan-bei-bao-wen-ti/">第零章：经典动态规划：完全背包问题</a></p>
-<hr>
-<p>该背包问题相当于<strong>0-1背包问题</strong>的变体  </p>
-<h1 id="416-分割等和子集"><a href="#416-分割等和子集" class="headerlink" title="416. 分割等和子集"></a><a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/solution/dong-tai-gui-hua-kong-jian-you-hua-zhu-xing-jie--2/" target="_blank" rel="noopener">416. 分割等和子集</a></h1><p>给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。</p>
-<table>
-<thead>
-<tr>
-<th>0-1背包问题：背包容量为m，物品有大小和价值两种属性，求背包最大能装多少价值的物品？</th>
-<th>0-1背包问题变体（分割等和子集）：<strong>背包容量为total/2, 每个物品的大小为 nums[i] 。对于前i个物品，是否有一种装法，能恰好装满背包？</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>dp[i][j] 表示对前i个物品，背包容量为j时，可以装的最大价值</td>
-<td>dp[i][j] 表示对前i个物品，背包容量为j时，值为True/ False (能否装满)</td>
-</tr>
-</tbody></table>
+                <p>labuladong  <a href="https://mp.weixin.qq.com/s/Yq49ZBEW3DJx6nXk1fMusw" target="_blank" rel="noopener">一道数组去重的算法题把我整不会了</a></p>
+<h1 id="316-去除重复字母"><a href="#316-去除重复字母" class="headerlink" title="316. 去除重复字母"></a><a href="https://leetcode-cn.com/problems/remove-duplicate-letters/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-4/" target="_blank" rel="noopener">316. 去除重复字母</a></h1><p>（与1081. 不同字符的最小子序列  题目相同）<br>即：去除重复字母，并返回字典序最小的子序列</p>
+<p>“尽量”维护一个单调递增的栈，但是：</p>
 <ul>
-<li>dp数组行和列都分别增加1，第0列表示背包容量为0，第0行表示（虚拟）物品重量为0（这样做，方便初始化dp数组以及后续dp状态转移）</li>
-<li>由于加了虚拟的0行和0列， 物品i从 1 开始，而数组索引是从 0 开始的，所以第 i 个物品的重量应该是 nums[i-1]</li>
+<li>当加入当前字符时，如果栈顶处要pop的字符会在当前元素后面出现，则pop掉该字符</li>
+<li>如果栈顶pop的这个字符在当前字符后面没有了，则不能pop掉，否则永远失去了该字符</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">canPartition</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        total<span class="token operator">=</span>sum<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># total为列表之和</span>
-        <span class="token keyword">if</span> total<span class="token operator">%</span><span class="token number">2</span><span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token boolean">False</span> <span class="token comment" spellcheck="true"># 若无法被2整除，说明无法等和，直接返回False</span>
-
-        <span class="token comment" spellcheck="true"># 行和列都分别增加1，第0列表示背包容量为0，第0行表示（虚拟）物品重量为0</span>
-        <span class="token comment" spellcheck="true"># 这样做，方便初始化dp数组以及后续dp状态转移</span>
-        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token boolean">False</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>total<span class="token operator">/</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true"># 和为0时，第一列为True</span>
-            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">True</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>total<span class="token operator">/</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> j<span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 若背包容量超过物品大小，装不下</span>
-                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 继承之前的结果</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 继承之前装下/装不下的结果（只要之前有True，dp[i][j]就为True）</span>
-                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span> dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">|</span> dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>为此，当字典序较小的字符试图挤掉栈顶元素时，需要count进行计数来实时监测状态，看栈顶元素是否唯一。</p>
+<ul>
+<li>只有当后面还存在栈顶元素的时候才能挤掉，否则不能挤掉</li>
+<li>并且每遍历过一个字符，都将对应的计数减一</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> collections
+<span class="token keyword">def</span> <span class="token function">removeDuplicateLetters</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># freq[c] 表示之后时间里c会出现的次数 初始化为每个字母的频数 遍历过程中减小</span>
+    freq<span class="token operator">=</span>collections<span class="token punctuation">.</span>Counter<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># c不在res中时再考虑是否添加</span>
+        <span class="token keyword">if</span> c <span class="token operator">not</span> <span class="token keyword">in</span> res<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 添加前查看是否pop 注意这里是while </span>
+            <span class="token comment" spellcheck="true"># 长度大于0才能pop ， len(res)>0</span>
+            <span class="token comment" spellcheck="true"># 当前字符的字典序比栈顶小，c&lt;res[-1]</span>
+            <span class="token comment" spellcheck="true"># 后面还存在着栈顶字符，freq[res[-1]]>0</span>
+            <span class="token keyword">while</span> len<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> c<span class="token operator">&lt;</span>res<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">and</span> freq<span class="token punctuation">[</span>res<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 无论是否添加c 它之后出现的频数都-1，用于监测后面是否有该字符</span>
+        freq<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+    <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -697,9 +686,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《第零章：经典动态规划：子集背包问题》
+                    《第一章：一道数组去重的算法题把我整不会了》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/03/23/labuladong/di-yi-zhang-yi-dao-shu-zu-qu-chong-de-suan-fa-ti-ba-wo-zheng-bu-hui-liao/" property="cc:attributionName"
                rel="cc:attributionURL">
                 M
             </a> 采用
@@ -739,41 +728,34 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-wan-quan-bei-bao-wen-ti/">
+                <a href="/2021/03/23/labuladong/di-yi-zhang-yi-dao-shu-zu-qu-chong-de-suan-fa-ti-ba-wo-zheng-bu-hui-liao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第零章：经典动态规划：完全背包问题">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第一章：一道数组去重的算法题把我整不会了">
                         
-                        <span class="card-title">第零章：经典动态规划：完全背包问题</span>
+                        <span class="card-title">第一章：一道数组去重的算法题把我整不会了</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong经典动态规划：完全背包问题
+                            labuladong  一道数组去重的算法题把我整不会了
+316. 去除重复字母（与1081. 不同字符的最小子序列  题目相同）即：去除重复字母，并返回字典序最小的子序列
+“尽量”维护一个单调递增的栈，但是：
 
-动态规划之背包汇总
-第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
-
-
-
-
-0-1背包
-完全背包
-
-
-
+当加入当前字符时，如果栈顶
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -786,6 +768,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -804,31 +787,26 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/27/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-0-1-bei-bao-wen-ti/">
+                <a href="/2021/03/18/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-shu-di-er-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="第一章：经典动态规划：0-1 背包问题">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第一章：手把手带你刷二叉树-第二期">
                         
-                        <span class="card-title">第一章：经典动态规划：0-1 背包问题</span>
+                        <span class="card-title">第一章：手把手带你刷二叉树-第二期</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong 经典动态规划：0-1 背包问题
-
-动态规划之背包汇总
-第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
-
-题目地址
-
-有 n 个物品
+                            labuladong 手把手带你刷二叉树（第二期）
+654. 最大二叉树递归结束条件：nums中没有元素明确函数的定义（但不跳进递归去）：找到最大值及最大值的索引，并根据索引将其分成左右两个子nums集合左右子树递归调用该函数
+# Defi
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-18
                             </span>
                         <span class="publish-author">
                             
