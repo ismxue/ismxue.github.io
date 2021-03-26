@@ -318,7 +318,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -473,14 +473,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    487
+                    692
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -500,7 +500,7 @@
 <p>有关动态规划的问题，大多是让你求最值的，比如<strong>最长子序列，最小编辑距离，最长公共子串等等等</strong>。</p>
 <p>那么贪心算法作为特殊的动态规划也是一样，也一定是让你求个最值。这道题就是让求：请问通过题目中的跳跃规则，<strong>最多能跳多远</strong>？如果能够越过最后一格，返回 true，否则返回 false。</p>
 <p>两道题都注意，在 <code>for i in range (len(nums)-1)</code>    处就停止，不考虑最后一个元素的下标及元素的大小。因为nums[-1] 不会再用到，若加入，反而会干扰部分结果，产生错误 （如<code>[2,0,0]</code>）。</p>
-<h1 id="55-跳跃游戏1"><a href="#55-跳跃游戏1" class="headerlink" title="55. 跳跃游戏1"></a><a href="https://leetcode-cn.com/problems/jump-game/" target="_blank" rel="noopener">55. 跳跃游戏1</a></h1><p><code>farthest</code>表示到达最远距离的下标</p>
+<h1 id="55-跳跃游戏1"><a href="#55-跳跃游戏1" class="headerlink" title="55. 跳跃游戏1"></a><a href="https://leetcode-cn.com/problems/jump-game/" target="_blank" rel="noopener">55. 跳跃游戏1</a></h1><p>在for循环中，<code>farthest</code>表示（从当前第<code>i</code>个位置）能到达最远距离的下标</p>
 <ul>
 <li>每一步都计算一下从当前位置最远能够跳到哪里，然后和一个全局最优的最远位置 farthest 做对比，通过每一步的最优解，更新全局最优解，这就是贪心。</li>
 </ul>
@@ -519,10 +519,11 @@
             <span class="token keyword">if</span> farthest<span class="token operator">&lt;=</span>i<span class="token punctuation">:</span>
                 <span class="token keyword">return</span> <span class="token boolean">False</span>
         <span class="token keyword">return</span> farthest<span class="token operator">>=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="45-跳跃游戏2"><a href="#45-跳跃游戏2" class="headerlink" title="45. 跳跃游戏2"></a><a href="https://leetcode-cn.com/problems/jump-game-ii/" target="_blank" rel="noopener">45. 跳跃游戏2</a></h1><ul>
+<h1 id="45-跳跃游戏2"><a href="#45-跳跃游戏2" class="headerlink" title="45. 跳跃游戏2"></a><a href="https://leetcode-cn.com/problems/jump-game-ii/" target="_blank" rel="noopener">45. 跳跃游戏2</a></h1><h2 id="方法1：贪心算法"><a href="#方法1：贪心算法" class="headerlink" title="方法1：贪心算法"></a>方法1：贪心算法</h2><p>在for循环中，<code>farthest</code>表示（从当前第<code>i</code>个位置）能到达最远距离的下标</p>
+<ul>
 <li>我们不需要【递归地】计算出所有选择的具体结果然后比较求最值，而只需要做出那个最有【潜力】，看起来最优的选择即可。</li>
 <li>i 和 end 标记了可以选择的跳跃步数，farthest 标记了所有选择 [i..end] 中能够跳到的最远距离，step记录了跳跃次数。</li>
-<li>当i遍历到end处时，把end更新为更远的farthest，步数+1</li>
+<li>当i到达end处时，把end更新为更远的farthest，步数+1</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">jump</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -538,6 +539,21 @@
                 end<span class="token operator">=</span>farthest
                 step<span class="token operator">+=</span><span class="token number">1</span>
         <span class="token keyword">return</span> step<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="方法2：动态规划"><a href="#方法2：动态规划" class="headerlink" title="方法2：动态规划"></a>方法2：动态规划</h2><p>因为该题属于求极值问题，所以也可以用动态规划的方法解决</p>
+<ul>
+<li>dp[i]数组的含义：到达位置i时，跳跃的最小次数</li>
+<li>base case：先将dp数组设为最大值<code>float(&quot;inf&quot;)</code>,dp[0]=0（第0个位置不用跳）</li>
+<li>状态转移方程：从i前面的位置开始顺序遍历，遍历过程中，始终使dp[i]保持最小值</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">jump</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        dp <span class="token operator">=</span> <span class="token punctuation">[</span>float<span class="token punctuation">(</span><span class="token string">"inf"</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">>=</span> i <span class="token operator">-</span> k<span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>min<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -746,7 +762,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="第四章：如何k个一组反转链表">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第四章：如何k个一组反转链表">
                         
                         <span class="card-title">第四章：如何k个一组反转链表</span>
                     </div>
@@ -804,7 +820,7 @@ stack中存放的是ListNode
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第四章：如何运用贪心思想玩跳跃游戏">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="第四章：如何运用贪心思想玩跳跃游戏">
                         
                         <span class="card-title">第四章：如何运用贪心思想玩跳跃游戏</span>
                     </div>
@@ -1012,7 +1028,7 @@ stack中存放的是ListNode
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">64.3k</span>
+            <span class="white-color">64.5k</span>
             
 
             <br>

@@ -11,7 +11,8 @@
     <meta name="description" content="labuladong 团灭 LeetCode 打家劫舍问题
 图解动态规划的解题四步骤
 动态规划：在确定动态转移方程后，可以用（自顶向下的使用备忘录递归的方法） 自底向上使用 dp 数组的方法
-198. 打家劫舍因为状态转移方程中，dp[i]">
+198. 打家劫舍
+dp数组表示第i个位置处能取">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -319,7 +320,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,7 +475,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    697
+                    736
                 </div>
                 
 
@@ -500,9 +501,11 @@
                 <p>labuladong <a href="https://github.com/labuladong/fucking-algorithm/blob/master/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%B3%BB%E5%88%97/%E6%8A%A2%E6%88%BF%E5%AD%90.md" target="_blank" rel="noopener">团灭 LeetCode 打家劫舍问题</a></p>
 <p><a href="https://leetcode-cn.com/problems/house-robber/solution/dong-tai-gui-hua-jie-ti-si-bu-zou-xiang-jie-cjavap/" target="_blank" rel="noopener">图解动态规划的解题四步骤</a></p>
 <p>动态规划：在确定动态转移方程后，可以用<del>（自顶向下的使用备忘录递归的方法）</del> <strong>自底向上使用 dp 数组</strong>的方法</p>
-<h1 id="198-打家劫舍"><a href="#198-打家劫舍" class="headerlink" title="198. 打家劫舍"></a><a href="https://leetcode-cn.com/problems/house-robber/" target="_blank" rel="noopener">198. 打家劫舍</a></h1><p>因为状态转移方程中，dp[i]涉及到dp[i-2], 在base case 中，在最前面加一个虚拟的空房子，状态更容易转换。而dp[1] 就初始化为nums[0]。</p>
-<pre class="line-numbers language-python"><code class="language-python">
-<span class="token keyword">def</span> <span class="token function">rob</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+<h1 id="198-打家劫舍"><a href="#198-打家劫舍" class="headerlink" title="198. 打家劫舍"></a><a href="https://leetcode-cn.com/problems/house-robber/" target="_blank" rel="noopener">198. 打家劫舍</a></h1><ul>
+<li>dp数组表示第i个位置处能取得的最大金额（取该位置偷<code>nums[k-1] + dp[k-2]</code>和不偷<code>dp[k-1]</code>的最大值）</li>
+<li>因为状态转移方程中，dp[i]涉及到dp[i-2], 在base case 中，在最前面加一个虚拟的空房子，状态更容易转换。而dp[1] 就初始化为nums[0]</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">rob</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
     <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token number">0</span>
 
@@ -519,7 +522,7 @@
     dp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
     <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         dp<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>k<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>k<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span>k<span class="token number">-2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> dp<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> dp<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="213-打家劫舍-II"><a href="#213-打家劫舍-II" class="headerlink" title="213. 打家劫舍 II"></a><a href="https://leetcode-cn.com/problems/house-robber-ii/" target="_blank" rel="noopener">213. 打家劫舍 II</a></h1><ul>
 <li><p>现在房子环成了一个圈，也就是说第一间和最后一间不能同时抢。那么有：</p>
 <ol>
@@ -528,7 +531,7 @@
 <li><p>不抢第一间， 抢最后一间</p>
 </li>
 <li><p>不抢第一间， 不抢最后一间</p>
-<p>实际上，情况3的结果是小于情况2的(或者可以说是包含关系), 所以我们只需要考虑情况1,2。</p>
+<p>实际上，情况3的结果是小于情况2的（或者可以说是包含关系）, 所以我们只需要考虑情况1,2。</p>
 </li>
 </ol>
 </li>
@@ -782,7 +785,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="第一章：经典动态规划：0-1 背包问题">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="第一章：经典动态规划：0-1 背包问题">
                         
                         <span class="card-title">第一章：经典动态规划：0-1 背包问题</span>
                     </div>
@@ -838,7 +841,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第零章：我写了首诗，把滑动窗口算法变成了默写题">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第零章：我写了首诗，把滑动窗口算法变成了默写题">
                         
                         <span class="card-title">第零章：我写了首诗，把滑动窗口算法变成了默写题</span>
                     </div>
@@ -1051,7 +1054,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">64.3k</span>
+            <span class="white-color">64.5k</span>
             
 
             <br>
