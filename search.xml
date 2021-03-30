@@ -229,31 +229,6 @@
     
     
     <entry>
-      <title>Git使用说明</title>
-      <link href="/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/"/>
-      <url>/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</url>
-      
-        <content type="html"><![CDATA[<p>Github提供基于Git的版本托管服务。</p><p>Git是一款免费、开源的分布式版本控制系统，是Github上用来管理项目的工具。</p><hr><p>简单版</p><ul><li><a href="https://www.bootcss.com/p/git-guide/" target="_blank" rel="noopener">Git - 简易指南</a></li><li><a href="https://labuladong.gitbook.io/algo/di-wu-zhang-ji-shu-wen-zhang-xi-lie/git-chang-yong-ming-ling" target="_blank" rel="noopener">(快速上手)我用四个命令概括了 Git 的所有套路</a></li></ul><hr><p>详细版</p><ul><li><a href="https://backlog.com/git-tutorial/cn/contents/" target="_blank" rel="noopener">猴子都能懂的Git入门</a></li><li><a href="http://gitref.justjavac.com/index.html" target="_blank" rel="noopener">Git参考手册</a></li></ul><hr><p>Github系列</p><ul><li><a href="https://segmentfault.com/a/1190000005611460" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「加入 GitHub」</a></li><li><a href="https://segmentfault.com/a/1190000005713232" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「Git 速成」</a></li><li><a href="https://segmentfault.com/a/1190000005869506" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「Git 进阶」</a></li><li><a href="https://segmentfault.com/a/1190000005713288" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「向GitHub 提交代码」</a></li><li><a href="https://segmentfault.com/a/1190000009997044" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「团队合作利器 Branch」</a></li></ul><hr>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机基础 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Study </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>狂神说MySQL</title>
       <link href="/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/"/>
       <url>/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</url>
@@ -271,6 +246,31 @@
         <tags>
             
             <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git使用说明</title>
+      <link href="/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/"/>
+      <url>/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</url>
+      
+        <content type="html"><![CDATA[<p>Github提供基于Git的版本托管服务。</p><p>Git是一款免费、开源的分布式版本控制系统，是Github上用来管理项目的工具。</p><hr><p>简单版</p><ul><li><a href="https://www.bootcss.com/p/git-guide/" target="_blank" rel="noopener">Git - 简易指南</a></li><li><a href="https://labuladong.gitbook.io/algo/di-wu-zhang-ji-shu-wen-zhang-xi-lie/git-chang-yong-ming-ling" target="_blank" rel="noopener">(快速上手)我用四个命令概括了 Git 的所有套路</a></li></ul><hr><p>详细版</p><ul><li><a href="https://backlog.com/git-tutorial/cn/contents/" target="_blank" rel="noopener">猴子都能懂的Git入门</a></li><li><a href="http://gitref.justjavac.com/index.html" target="_blank" rel="noopener">Git参考手册</a></li></ul><hr><p>Github系列</p><ul><li><a href="https://segmentfault.com/a/1190000005611460" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「加入 GitHub」</a></li><li><a href="https://segmentfault.com/a/1190000005713232" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「Git 速成」</a></li><li><a href="https://segmentfault.com/a/1190000005869506" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「Git 进阶」</a></li><li><a href="https://segmentfault.com/a/1190000005713288" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「向GitHub 提交代码」</a></li><li><a href="https://segmentfault.com/a/1190000009997044" target="_blank" rel="noopener">从0开始学习 GitHub 系列之「团队合作利器 Branch」</a></li></ul><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Study </tag>
             
         </tags>
       
