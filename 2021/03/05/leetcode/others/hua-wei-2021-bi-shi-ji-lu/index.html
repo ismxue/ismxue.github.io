@@ -321,7 +321,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    521
+                    928
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
                 
@@ -578,6 +578,54 @@ flag<span class="token operator">=</span><span class="token operator">-</span><s
         flag<span class="token operator">=</span><span class="token number">0</span><span class="token comment" spellcheck="true"># 若b中的key在a中找不到，则改变flag的值</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>min<span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token keyword">if</span> flag<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">else</span> <span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h1 id="输出相同或连续子串的个数"><a href="#输出相同或连续子串的个数" class="headerlink" title="输出相同或连续子串的个数"></a>输出相同或连续子串的个数</h1><blockquote>
+<p>如子串 “11121”中，”111” 1个， “11” 2个，”1” 4个, “2” 1个，总共8个</p>
+</blockquote>
+<p>AC 100%</p>
+<ul>
+<li>i从第0个位置遍历到倒数第二个位置，j从i+1处开始遍历<ul>
+<li>若i和j对应的元素相同，则计数+1。否则跳出j的循环，开始下一次i的循环</li>
+</ul>
+</li>
+<li>遍历结束后加上最后一个元素</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python">s<span class="token operator">=</span>str<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+nums<span class="token operator">=</span><span class="token number">0</span>
+l<span class="token operator">=</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># i遍历到倒数第二个位置，j从i+1处开始遍历</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    nums<span class="token operator">+=</span><span class="token number">1</span> <span class="token comment" spellcheck="true">#每经过一个元素，+1 </span>
+    x<span class="token operator">=</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span>x<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 后面每连续一次，+1</span>
+            nums<span class="token operator">+=</span><span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 若不连续，则跳出</span>
+            <span class="token keyword">break</span>
+nums<span class="token operator">+=</span><span class="token number">1</span> <span class="token comment" spellcheck="true"># 加上最后一个元素</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="天平平衡"><a href="#天平平衡" class="headerlink" title="天平平衡"></a>天平平衡</h1><p>有一堆砝码，天平平衡时，砝码一侧的最大值是多少？</p>
+<blockquote>
+<p>有数组[1,2,3,6]。平衡时，一侧放[1,2,3],另一侧放[6]。结果输出6</p>
+</blockquote>
+<p>背包问题的变体，有点像 LeetCode 416. 分割等和子集。</p>
+<p>目前只AC 80% （如[1,2,3,7]这种数组，结果就不对），应该是状态转移方程这里有问题。</p>
+<pre class="line-numbers language-python"><code class="language-python">nums<span class="token operator">=</span>list<span class="token punctuation">(</span>map<span class="token punctuation">(</span>int<span class="token punctuation">,</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span> math
+total<span class="token operator">=</span>math<span class="token punctuation">.</span>floor<span class="token punctuation">(</span>sum<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+    dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>total<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>total<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> j<span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># 物品太大，超过容量了，装不下</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 装或不装的最大值</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -786,7 +834,7 @@ flag<span class="token operator">=</span><span class="token operator">-</span><s
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第一章：手把手带你刷二叉树-第二期">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第一章：手把手带你刷二叉树-第二期">
                         
                         <span class="card-title">第一章：手把手带你刷二叉树-第二期</span>
                     </div>
@@ -837,7 +885,7 @@ flag<span class="token operator">=</span><span class="token operator">-</span><s
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="第零章：手把手带你刷二叉树(第一期)">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第零章：手把手带你刷二叉树(第一期)">
                         
                         <span class="card-title">第零章：手把手带你刷二叉树(第一期)</span>
                     </div>
@@ -1044,7 +1092,7 @@ flag<span class="token operator">=</span><span class="token operator">-</span><s
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">64.5k</span>
+            <span class="white-color">64.9k</span>
             
 
             <br>
