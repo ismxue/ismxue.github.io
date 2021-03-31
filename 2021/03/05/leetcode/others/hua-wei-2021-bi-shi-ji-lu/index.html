@@ -321,7 +321,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    928
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
                 
@@ -626,6 +626,39 @@ total<span class="token operator">=</span>math<span class="token punctuation">.<
                 dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 装或不装的最大值</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h1 id="小测试"><a href="#小测试" class="headerlink" title="小测试"></a>小测试</h1><p>n的阶乘末尾含0的个数</p>
+<ul>
+<li>能生成0，肯定是2*5的组合，其中，2（以及2的倍数）比5的多，所以只要看有几个5</li>
+<li>25（<code>5*5</code>），125（<code>5*5*5</code>）这种组合，有多个5。所以要不断更新n</li>
+</ul>
+<p><a href="https://leetcode-cn.com/problems/factorial-trailing-zeroes/solution/chan-sheng-ling-de-tiao-jian-by-icemelon/" target="_blank" rel="noopener">产生零的条件</a></p>
+<blockquote>
+<p>要在末尾产生0，则必然是5×2，即使是原数中包含的0也可以分解，因此将题目简化为寻找阶乘中5的个数，即n//5，但是要考虑到这只找到了n中是5倍数的所有数，例如25，即在25!中找到了5个是5的倍数的数分别为5,10,15,20,25，要注意这之中的25依然可以分解为5的倍数，因此n//5其实是少计入了一部分情况的。</p>
+<p>要对接下来的这部分情况进行统计，我们可以对n取25的商，即n//25，这样就找到了包含有2个5的数（且因为是对5×5取商，没有重复计入），依此类推，可以循环对n取5, 25, 125…的商，将所有的情况都包括，最终将所有的商汇总即0的个数。</p>
+<p>n // 25 == n // 5 // 5，因此可以对n循环取5的商，其效果是一样的。</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">trailingZeroes</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        num <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+            num <span class="token operator">+=</span> n <span class="token operator">//</span> <span class="token number">5</span> <span class="token comment" spellcheck="true"># 找到5的倍数</span>
+            n <span class="token operator">=</span> n <span class="token operator">//</span> <span class="token number">5</span> <span class="token comment" spellcheck="true"># 重新更新n，继续找，直到没有5的倍数</span>
+        <span class="token keyword">return</span> num<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><del>不要算出阶乘的结果后才统计（以下方法不推荐）</del></p>
+<pre class="line-numbers language-python"><code class="language-python">n<span class="token operator">=</span>int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span>
+dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">*</span>i
+res<span class="token operator">=</span>dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+res<span class="token operator">=</span>str<span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+count<span class="token operator">=</span><span class="token number">0</span>
+<span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> res<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'0'</span><span class="token punctuation">:</span>
+        count<span class="token operator">+=</span><span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -834,7 +867,7 @@ total<span class="token operator">=</span>math<span class="token punctuation">.<
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第一章：手把手带你刷二叉树-第二期">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第一章：手把手带你刷二叉树-第二期">
                         
                         <span class="card-title">第一章：手把手带你刷二叉树-第二期</span>
                     </div>
@@ -885,7 +918,7 @@ total<span class="token operator">=</span>math<span class="token punctuation">.<
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第零章：手把手带你刷二叉树(第一期)">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第零章：手把手带你刷二叉树(第一期)">
                         
                         <span class="card-title">第零章：手把手带你刷二叉树(第一期)</span>
                     </div>
@@ -1092,7 +1125,7 @@ total<span class="token operator">=</span>math<span class="token punctuation">.<
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">64.9k</span>
+            <span class="white-color">65.4k</span>
             
 
             <br>
