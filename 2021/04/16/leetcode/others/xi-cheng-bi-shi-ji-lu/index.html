@@ -505,20 +505,20 @@
 </ul>
 </li>
 <li>注意递归终止的条件（否则会陷入死循环）<ul>
-<li>当n为1时，说明需要跳出来，返回“头结点”</li>
+<li>当n为1时，说明需要跳出来，返回”头结点”</li>
 </ul>
 </li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python">n<span class="token operator">=</span>int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">house</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 用helper函数记录额外的“头结点”信息</span>
+    <span class="token comment" spellcheck="true"># 用helper函数记录额外的"头结点"信息</span>
     <span class="token comment" spellcheck="true"># 相信这个函数可以返回我需要的信息</span>
     <span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>color<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 递归结束时，返回“头结点”</span>
+        <span class="token keyword">if</span> n<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 递归结束时，返回"头结点"</span>
             <span class="token keyword">return</span> color
         <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true"># 返回左子树的结果+“头结点”+右子树的结果</span>
+            <span class="token comment" spellcheck="true"># 返回左子树的结果+"头结点"+右子树的结果</span>
             <span class="token keyword">return</span> helper<span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">,</span><span class="token string">'G'</span><span class="token punctuation">)</span><span class="token operator">+</span>color<span class="token operator">+</span>helper<span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">,</span><span class="token string">'R'</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> helper<span class="token punctuation">(</span>n<span class="token punctuation">,</span><span class="token string">'R'</span><span class="token punctuation">)</span> 
 res<span class="token operator">=</span>house<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
