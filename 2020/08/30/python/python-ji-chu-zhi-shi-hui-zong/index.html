@@ -480,14 +480,14 @@ Ses">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
                 
@@ -686,6 +686,17 @@ d <span class="token operator">=</span> collections<span class="token punctuatio
 <span class="token comment" spellcheck="true"># 把值以列表的形式输出</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>list<span class="token punctuation">(</span>d<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [[6, 3], [2, 4], [1]]</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="列表按字典序输出结果"><a href="#列表按字典序输出结果" class="headerlink" title="列表按字典序输出结果"></a>列表按字典序输出结果</h2><pre class="line-numbers language-python"><code class="language-python">a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'11'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">,</span> <span class="token string">'12'</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 按字符串排序，并输出</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sorted<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['1', '11', '12', '2', '3']</span>
+
+<span class="token comment" spellcheck="true"># 将 ['1', '11', '12', '2', '3'] 转化成 [1, 11, 12, 2, 3]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'['</span><span class="token operator">+</span><span class="token string">', '</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>sorted<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">']'</span><span class="token punctuation">)</span>
+
+b<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 按数字大小排序，并输出</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sorted<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [1, 2, 3, 11, 12]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1152,7 +1163,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">65.6k</span>
+            <span class="white-color">65.7k</span>
             
 
             <br>
