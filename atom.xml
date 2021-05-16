@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-04-15T08:18:18.401Z</updated>
+  <updated>2021-05-16T09:41:45.776Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Kindle使用笔记</title>
+    <link href="https://ismxue.github.io/2021/05/16/growth/kindle-shi-yong-bi-ji/"/>
+    <id>https://ismxue.github.io/2021/05/16/growth/kindle-shi-yong-bi-ji/</id>
+    <published>2021-05-16T09:17:43.000Z</published>
+    <updated>2021-05-16T09:41:45.776Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Kindle-电子书资源&quot;&gt;&lt;a href=&quot;#Kindle-电子书资源&quot; class=&quot;headerlink&quot; title=&quot;Kindle 电子书资源&quot;&gt;&lt;/a&gt;Kindle
+        
+      
+    
+    </summary>
+    
+      <category term="Growth" scheme="https://ismxue.github.io/categories/Growth/"/>
+    
+    
+      <category term="Growth" scheme="https://ismxue.github.io/tags/Growth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows和Ubuntu之间复制粘贴解决方案</title>
+    <link href="https://ismxue.github.io/2021/05/15/study/windows-he-ubuntu-zhi-jian-fu-zhi-nian-tie-jie-jue-fang-an/"/>
+    <id>https://ismxue.github.io/2021/05/15/study/windows-he-ubuntu-zhi-jian-fu-zhi-nian-tie-jie-jue-fang-an/</id>
+    <published>2021-05-15T02:34:36.000Z</published>
+    <updated>2021-05-15T02:36:53.081Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;安装软件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get autoremove open-vm-tools
+sudo apt-get install open-vm-tools
+sudo apt-get install
+        
+      
+    
+    </summary>
+    
+      <category term="Study" scheme="https://ismxue.github.io/categories/Study/"/>
+    
+    
+      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
+    
+  </entry>
   
   <entry>
     <title>1029-两地调度</title>
@@ -204,7 +261,7 @@
     <link href="https://ismxue.github.io/2020/11/26/growth/du-fei-bao-li-gou-tong/"/>
     <id>https://ismxue.github.io/2020/11/26/growth/du-fei-bao-li-gou-tong/</id>
     <published>2020-11-26T12:24:08.000Z</published>
-    <updated>2021-02-26T12:42:53.519Z</updated>
+    <updated>2021-05-16T09:59:11.036Z</updated>
     
     <summary type="html">
     
@@ -489,59 +546,6 @@
     </summary>
     
       <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>腾讯2020笔试记录</title>
-    <link href="https://ismxue.github.io/2020/08/24/leetcode/others/teng-xun-2020-bi-shi-ji-lu/"/>
-    <id>https://ismxue.github.io/2020/08/24/leetcode/others/teng-xun-2020-bi-shi-ji-lu/</id>
-    <published>2020-08-24T08:57:43.000Z</published>
-    <updated>2020-08-26T11:08:20.806Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/discuss/486638&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;技术研究 数据分析笔试题&amp;amp;题解&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（P.S. &lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>921. 使括号有效的最少添加</title>
-    <link href="https://ismxue.github.io/2020/08/24/leetcode/921-shi-gua-hao-you-xiao-de-zui-shao-tian-jia/"/>
-    <id>https://ismxue.github.io/2020/08/24/leetcode/921-shi-gua-hao-you-xiao-de-zui-shao-tian-jia/</id>
-    <published>2020-08-24T08:16:47.000Z</published>
-    <updated>2020-08-25T06:18:48.293Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/minimum-add-to-make-parentheses-valid/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;921.
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
     
     
       <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
