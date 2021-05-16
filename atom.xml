@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-05-15T02:36:53.081Z</updated>
+  <updated>2021-05-16T09:41:45.776Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Kindle使用笔记</title>
+    <link href="https://ismxue.github.io/2021/05/16/growth/kindle-shi-yong-bi-ji/"/>
+    <id>https://ismxue.github.io/2021/05/16/growth/kindle-shi-yong-bi-ji/</id>
+    <published>2021-05-16T09:17:43.000Z</published>
+    <updated>2021-05-16T09:41:45.776Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Kindle-电子书资源&quot;&gt;&lt;a href=&quot;#Kindle-电子书资源&quot; class=&quot;headerlink&quot; title=&quot;Kindle 电子书资源&quot;&gt;&lt;/a&gt;Kindle
+        
+      
+    
+    </summary>
+    
+      <category term="Growth" scheme="https://ismxue.github.io/categories/Growth/"/>
+    
+    
+      <category term="Growth" scheme="https://ismxue.github.io/tags/Growth/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows和Ubuntu之间复制粘贴解决方案</title>
@@ -523,33 +549,6 @@ sudo apt-get install
     
     
       <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>腾讯2020笔试记录</title>
-    <link href="https://ismxue.github.io/2020/08/24/leetcode/others/teng-xun-2020-bi-shi-ji-lu/"/>
-    <id>https://ismxue.github.io/2020/08/24/leetcode/others/teng-xun-2020-bi-shi-ji-lu/</id>
-    <published>2020-08-24T08:57:43.000Z</published>
-    <updated>2020-08-26T11:08:20.806Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/discuss/486638&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;技术研究 数据分析笔试题&amp;amp;题解&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;（P.S. &lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
     
   </entry>
   
