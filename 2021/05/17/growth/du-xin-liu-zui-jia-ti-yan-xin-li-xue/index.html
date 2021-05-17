@@ -4,14 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="搜索旋转排序数组系列, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="读”心流：最佳体验心理学“, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="153. 寻找旋转排序数组中的最小值
-二分查找过程中，比较mid与right（而非left）的原因：以 [1,2,3,4,5,6,7] 为例，分以下情况
+    <meta name="description" content="怎样能活出成就？幸福与快乐秘诀是什么？带你了解美国心理学博士25年的研究结果 心流体验
+幸福是人生目标的副产品。真正的幸福是，是你全身心地投入一桩事物，达到忘我的状态（心流），并因此得到内心秩序和安宁的时刻。
 
-若[1,2,3,4,5,6,7] 左&amp;lt;中，中&amp;lt;右。最小值在最左边， 所以">
+你喜欢你做的事情，并且对你很">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>搜索旋转排序数组系列 | M&#39;s Blog</title>
+    <title>读”心流：最佳体验心理学“ | M&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -319,13 +319,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        搜索旋转排序数组系列
+                        读”心流：最佳体验心理学“
                     </div>
                 </div>
             </div>
@@ -436,8 +436,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/LeetCode/" target="_blank">
-                            <span class="chip bg-color">LeetCode</span>
+                        <a href="/tags/Reading-List/" target="_blank">
+                            <span class="chip bg-color">Reading List</span>
                         </a>
                         
                     </div>
@@ -448,8 +448,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                            LeetCode
+                        <a href="/categories/Growth/" class="post-category" target="_blank">
+                            Growth
                         </a>
                         
                     </div>
@@ -460,7 +460,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-17
+                    2021-05-17
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    5.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    17 分
                 </div>
                 
                 
@@ -497,212 +497,77 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="153-寻找旋转排序数组中的最小值"><a href="#153-寻找旋转排序数组中的最小值" class="headerlink" title="153. 寻找旋转排序数组中的最小值"></a><a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/er-fen-cha-zhao-wei-shi-yao-zuo-you-bu-dui-cheng-z/" target="_blank" rel="noopener">153. 寻找旋转排序数组中的最小值</a></h1><ul>
-<li><p>二分查找过程中，比较mid与right（而非left）的原因：<br><strong>以 [1,2,3,4,5,6,7] 为例</strong>，分以下<strong>情况</strong></p>
-<ol>
-<li>若[1,2,3,<strong>4</strong>,5,6,7] 左&lt;中，<strong>中&lt;右</strong>。最小值在最左边， 所以更新 <strong>右指针</strong></li>
-<li>若[6,7,1,<strong>2</strong>,3,4,5] 左&gt;中，<strong>中&lt;右</strong>。最小值在mid左边，所以更新 <strong>右指针</strong></li>
-<li>若[4,5,6,<strong>7</strong>,1,2,3] 左&lt;中，<em>中&gt;右</em>。最小值在mid右边，所以更新 <em>左指针</em></li>
-</ol>
-</li>
-<li><p>可见，当中&lt;右时（情况1,2），都是更新右指针，中&gt;右时 （情况3），都是更新左指针（<strong>因为是找最小值，最小值偏左，所以mid和右指针进行比较，更有区分度</strong>）。 但是左&lt;中时 （情况1,3）,指针更新不统一，讨论起来较麻烦。</p>
-</li>
-</ul>
-<blockquote>
-<p>循环条件<strong>l&lt;r</strong>:</p>
+                <p><a href="https://www.youtube.com/watch?v=C3AJrmCBexA" target="_blank" rel="noopener">怎样能活出成就？幸福与快乐秘诀是什么？带你了解美国心理学博士25年的研究结果 心流体验</a></p>
+<p>幸福是人生目标的副产品。真正的幸福是，是你全身心地投入一桩事物，达到忘我的状态（心流），并因此得到内心秩序和安宁的时刻。</p>
 <ul>
-<li>若<code>nums[mid]&gt;nums[r]</code>,说明mid在第一个递增序列，最小值在mid右边，所以l=mid+1 （情况3）</li>
-<li>若<code>nums[mid]&lt;=nums[r]</code>,说明mid在第二个递增序列，最小值在mid处或mid左边，所以r=mid （情况2, 或者如[3,4,0,1,2]）</li>
+<li>你喜欢你做的事情，并且对你很有意义</li>
+<li>你能高度集中注意力，你做着这个事情的时候，好像时间都不存在了，你自己好像也不存在了</li>
+<li>你做的这个事情要有一点点的难度，太简单的话就无聊了，太难的话，就不知道怎么做下去了</li>
 </ul>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python">  <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">findMin</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        left<span class="token operator">=</span><span class="token number">0</span>
-        right<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">while</span> left<span class="token operator">&lt;</span>right<span class="token punctuation">:</span>
-            mid<span class="token operator">=</span>left<span class="token operator">+</span><span class="token punctuation">(</span>right<span class="token operator">-</span>left<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                left<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                right<span class="token operator">=</span>mid
-        <span class="token keyword">return</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="154-寻找旋转排序数组中的最小值-II"><a href="#154-寻找旋转排序数组中的最小值-II" class="headerlink" title="154. 寻找旋转排序数组中的最小值 II"></a><a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/solution/er-fen-fa-python3-by-zhu_shi_fu/" target="_blank" rel="noopener">154. 寻找旋转排序数组中的最小值 II</a></h1><p>此题与上一题的区别是，增加了重复元素,所以循环条件略有区别，增加了<code>nums[mid]==nums[r]</code>等于时的特判，用right-=1跳过重复元素，使得right慢慢向左跳</p>
-<blockquote>
-<p>循环条件<strong>l&lt;r</strong>:</p>
-<ul>
-<li>若<code>nums[mid]&gt;nums[r]</code>,说明mid在第一个递增序列，最小值在mid右边，所以l=mid+1 （情况3）</li>
-<li>若<code>nums[mid]&lt;nums[r]</code>,说明mid在第二个递增序列，最小值在mid处或mid左边，所以r=mid （情况2, 或者如[3,4,0,1,2]）</li>
-<li>若<code>nums[mid]=nums[r]</code>,r 向左慢慢跳，所以r-=1 （如[1,0,1,1,1]）</li>
+<hr>
+<h1 id="书摘"><a href="#书摘" class="headerlink" title="书摘"></a>书摘</h1><ul>
+<li>如果一个人不能在独处时控制注意力，就不可避免地要求助于比较简单的外在手段：诸如药物、娱乐、刺激等任何能麻痹心灵或转移注意力的东西……</li>
+<li>一个人若能从独处中找到乐趣，必须有一套自己的心灵程序，不需要靠文明生活的支持——亦即不需要借助他人、工作、电视、剧场规划他的注意力，就能达到心流状态。</li>
+<li>体育具备造就心流的最佳条件：明确的目标，即时的回馈，易学难精带来的上不封顶的挑战性。</li>
+<li>当代人遇到闲暇无聊，便饥不择食地打开电视，奔向商厦或网上购物。这种应对无聊的策略一旦建立，就很难改变。</li>
+<li>心流就是大脑的生命。当心熵比较高的时候，在一片混乱的情况下，大脑的做功能力很低，很多心理能量都浪费在内耗上了。但一旦进入心流状态，心理能量就围绕着同一个主题组织起来，向同一个方向高效率地输出。这也就是契克森米哈赖反复强调的，人在心流状态下的表现最好。而且，如果一个人经常经历心流，他的心理就会被训练得越来越有秩序，以后进入心流就越来越容易，即使平时不在心流状态下，也不像一般人那样心猿意马。</li>
+<li>“痛下决心追求一个重要的目标，各式各样的活动都能汇集成统一的心流体验时，意识就呈现出一片祥和。知道自己要什么，并朝这个方向努力的人，感觉、思想、行动都能配合无间，内心的和谐自然涌现。生活在和谐之中的人，不论做什么、遭遇什么，都不会把精神能量浪费在怀疑、后悔、罪恶感及恐惧之上，精力永远用在有益的方面。对生命胸有成竹的人，内心的力量与宁静，就是内在一致的最高境界。方向、决心加上和谐，就能把生命转变成天衣无缝的心流体验，并赋予人生意义。达到这种境界的人再也不觉得匮乏。意识井然有序的人不需要害怕出乎意料的事，甚至也不惧怕死亡，活着的每一刻都饶富意义，大多数时候也都乐趣无穷。”</li>
+<li>心流是意识和谐有序的一种状态，当事人心甘情愿、纯粹无私地去做一件事，不掺杂任何其他企求。</li>
+<li>如果我们学会在不断向前推进的体验中找到快乐与意义，社会制约的重担就会从肩上自动滑落。当奖赏不再受外在力量管制时，权力就回到了个人手中。</li>
+<li>外界事物令你痛苦并不是因为它们打扰你，而是肇因于你对它们的判断，而你有能力立刻消弭那种判断。</li>
+<li>一个人可以不管外界发生什么事，只靠改变意识的内涵，使自己快乐或悲伤；意识的力量也可以把无助的境况，转变为反败为胜的挑战。</li>
+<li>注意力再怎么强大，也无法超越前面谈到的限制。它在一定时间内只能处理一定数量的资讯。从记忆库中取出资讯，理解、比较、评估，然后做决定——无一不用到心灵有限的资讯处理能力。</li>
+<li>有些人学会了有效运用注意力这笔无价的资源，也有人弃置不用。控制意识最明显的指标就是能随心所欲地集中注意力，不因任何事情而分心。若能做到这一点，就能在日常生活中找到乐趣。</li>
+<li>由于注意力除了决定某些事物能否进入意识外，还要带动其他心灵活动——回忆、思考、感觉、做决定，所以应该把注意力视为一种“精神能量”。它是完成工作不可或缺的能量，在工作中会耗损。我们通过这种能量的应用，创造自我；也通过应用的方式，塑造记忆、思想和感觉。注意力是一种受我们控制、随我们使用的能量变化而改变，也是改善体验品质的最重要的工具。</li>
+<li>精神熵的反面就是最优体验。当发觉收到的资讯与目标亲和，精神能量就会源源不断，没有担心的必要，也无须猜疑自己的能力。我们不再怀疑自己，只因为我们得到了明确的鼓励：“你做得很好！”积极的反馈强化了自我，使我们能投入更多的注意力，照顾内心与外在环境的平衡。</li>
+<li>最优体验出现时，一个人可以投入全部的注意力，以求实现目标；没有失序现象需要整顿，自我也没有受到任何威胁，因此不需要分心防卫。我们把它称为“心流体验”，因为接受我们访谈的人，大多采用这类字眼描述他们处于最优状态时的感觉：“好像漂浮起来”，“一股洪流带领着我”。它正好是精神熵的反面——实际上，有时我们称它为“精神负熵”。拥有它的人就能培养一个更坚强、更自信的自我，能够用更多的精神能量，专注于自己选择的目标。</li>
+<li>越来越完美的自我控制，产生一种痛快的感觉。你不断逼身体发挥所有的极限，直到全身隐隐作痛；然后你会满怀敬畏地回顾自我，回顾你所做的一切，那种佩服的感觉简直无法形容。它带给你一种狂喜，一种自我满足。只要在这种战役中战胜过自己，人生其他战场的挑战，也就变得容易多了。</li>
+<li>其实战斗中对抗的不是自己，而是使意识失序的精神熵。我们是为保卫自我而战，这同时也是一场控制注意力的斗争，虽然它不一定像攀岩那样牵涉到体能的挑战。体验过心流的人都知道，那份深沉的快乐是严格的自律、集中注意力换来的。</li>
+<li>在心流状态下，意识全神贯注、秩序井然，有助于自我的整合。思想、企图、感觉和所有感官都集中于同一个目标上，自我体验也臻于和谐。当心流结束时，一个人会觉得，内心和人际关系都比以前更“完整”。</li>
+<li>享乐无须耗费精神能量，但乐趣必须运用高度的注意力。换言之，享乐可以不花力气，只要大脑特定中枢受到电击或药物的刺激，就能产生享受的快感；但是打网球、看书、谈话，若不全神贯注，就会觉得索然无味，毫无乐趣可言。 也正因为如此，享乐的片刻转瞬即逝，不能带动自我成长。复杂性却要求把精神能量投入到具有挑战性的新目标。</li>
+<li>乐趣的出现主要有八项元素。一般人回想最积极的体验时，至少都会提及这些元素中的一项，或是全部。首先，这种体验出现在我们面临一份可完成的工作时。其次，我们必须能够全神贯注于这件事情。第三和第四，这项任务有明确的目标和即时的反馈。第五，我们能深入而毫不牵强地投入到行动之中，日常生活的忧虑和沮丧都因此一扫而空。第六，充满乐趣的体验使人觉得能自由控制自己的行动。第七，进入“忘我”状态，但心流体验告一段落后，自我感觉又会变得强烈。第八，时间感会改变——几小时犹如几分钟，几分钟也可能变得像几小时那么漫长。这些元素结合成一种深刻的愉悦感，带来无比的报偿，并扩展成极大的能量，仅是感觉它的存在就已值回“票价”了。</li>
+<li>在健全的文化中，生产性的工作与日常生活必需的例行公事同样能令人满足。</li>
+<li>当情况要求一个人运用相关技巧来应付挑战时，这个人的注意力就会完全投入，不剩一丝精神能量处理任何与挑战无关的资讯，而完全集中于相关的刺激上。 最优体验最普遍、最清晰的特质就会在此时显现：当事人全神贯注，一切动作都不假思索，几乎完全自动自发；他们的知觉甚至泯灭，人与行动完全合一。</li>
+<li>在心流之中，意识运作顺畅，每个动作都衔接得天衣无缝。在日常生活中，我们经常被怀疑或疑问打断：“我为什么这么做？我是否该做这件事？”我们一再追问行动的必要性，并批判它们背后的理由。然而在心流中没有反省的空间，所有行动宛如一股魔力，带着我们勇往直前。</li>
+<li>除非一个人学着去确立目标，辨认与评估回馈，否则无法从任何活动中发掘乐趣。</li>
+<li>真正给人带来乐趣的并不是控制本身，而是在艰难状况下行使控制权的感觉。</li>
+<li>精神熵暂时消失的感觉，是产生心流的活动会令人上瘾的一大原因。</li>
+<li>在心流中，一个人面临做出最佳表现、须不断改善技巧的挑战，在这期间，他没有机会反省这么做对自我有什么意义——如果自我意识能随时恢复，这次体验就不可能太深刻。要等事后，一切活动都告一段落时，自我意识逐渐复苏，而这时的自我已经和经历心流前的自我不一样了：新技巧和新成就使它变得更丰富。</li>
+<li>很多活动的乐趣都不是自然天成的，它需要我们在开始时做一些并非心甘情愿的努力。一旦个人技巧得到回馈，互动开始，自然就会产生值得的感觉。</li>
+<li>过分的自我意识是一种不太严重的心流障碍。一个人若时时都在担心别人对自己的看法，害怕给人留下不好的印象，或做出不妥当的事情，就注定与乐趣绝缘。过于以自我为中心的人也一样，这种人通常并不是自觉，而是对所有资讯的判断只以它是否有助于实现自己的愿望为标准。对于这种人，任何事情本身都毫无价值可言。一朵花除非能够利用，否则就不值得去看第二眼；一个人除非能带来什么好处，否则也不必在意。因而，意识完全围绕着自己的目标打转，与目标不符的一切都不容许存在。</li>
+<li>在各种情况下都能找到乐趣的人，有能力对外来刺激进行筛选，只注意与这一刻有关的事物。虽然一般认为，注意力集中时会增加处理资讯的负担，但对于懂得如何控制意识的人而言，集中注意力反而更轻松，因为他们可以把其他不相关的资讯都抛在一旁。他们的注意力同时极具弹性</li>
+<li>大多数的工作与休闲活动——尤其是消极接受大众传媒的方式，都不是为使人变得更快乐、更强有力而设计的，它们只是某些人赚钱的工具。一方面，如果我们听任它们得逞，它们就会吸干我们的生命精髓，只剩下一副空壳。另一方面，工作与闲暇正如同人生，可以应我们的需求发挥作用。学会从工作中发掘乐趣，不浪费闲暇的人，会觉得人生越发有价值。布莱特比尔写道：“未来不仅属于受过教育的人，更属于那些懂得善用闲暇的人。”</li>
+<li>无所事事的时候，心灵就无法遏制消极念头的来袭。除非学会控制意识，否则成年人也会被类似的情况困扰。有关感情、健康、投资、家人及工作的烦恼，总在注意力周遭徘徊，一有机会就乘虚而入。心灵一准备要放松，虎视眈眈的难题就“咻”的一声扑上前来。</li>
+<li>如果一个人不能在独处时控制注意力，就不可避免地要求助于比较简单的外在手段：诸如药物、娱乐、刺激等任何能麻痹心灵或转移注意力的东西。 这是一种退化的反应，并不能带你前进。在成长的同时享受人生，就是从人生必然会出现的精神熵现象中，创造更高的秩序形式。</li>
+<li>不要把新挑战看成需要压抑或逃避的东西，而是一个学习和改善技巧的机会。</li>
+<li>熬过孤独唯一的方法就是设法整顿注意力，不让精神熵损害心灵。</li>
+<li>借着没有必要却又十分耗力费神的事情排遣寂寞，跟经常喝药或看电视又有什么不同呢？</li>
+<li>家庭要能提供心流，必须先有存在的目标。</li>
+<li>所谓独特化，就是鼓励家庭中每个人发展自己的特质，发挥最高的技巧，并建立个人的目标。整合则正好相反，它确保一个人身上发生的变化也能影响到其他人。如果孩子以自己在学校的表现为自豪，家中其他人也会表示关切，并以他为荣；如果母亲觉得疲倦沮丧，家人会试着鼓舞她。在一个整合良好的家庭里，每个人都把彼此的目标放在心上。</li>
+<li>家庭活动正如其他心流活动一样，也要提供清楚的回馈。在此指的是保持沟通渠道畅通，就这么简单。</li>
+<li>人生的现实就是，早晚孩子会有自己的意见，认为全家一起从事的某些活动“很傻”，这时硬逼着他们一块儿做某事，反而会适得其反。很多父母干脆就放弃，让孩子去追逐他自己的同侪文化。但找一种仍能使全家人共同参与的新活动，虽不容易，收获却更多。</li>
+<li>如果家庭能给青少年接纳感、控制感和自信心，青春期的压力就会稍微缓和些。在具备这些要素的家庭中，成员相互信赖、相互接纳，他们不需要时时担心是否讨人喜欢，人缘好不好，有没有满足别人的期望。</li>
+<li>家庭跟“合资企业”一样，必须不断投注精神能量，才能保障它的生存。</li>
+<li>不集中注意力，复杂的活动就会陷入混沌。家庭又怎么可能幸免？家庭成员之间的完全信赖、无条件接纳，只有在毫不吝惜投入注意力时才有意义，否则它不过是空洞的姿态与做作罢了。</li>
+<li>如果年轻人在家里觉得被接纳、被照顾，对团体的依赖程度就会减轻，青少年也能学习控制与同伴相处的关系。</li>
+<li>不为自己的目标而患得患失。他不在期待中迷失自己，并选择自己能应付的实际挑战。</li>
+<li>我们选择的朋友都是拥有相同终极目标的人，可以一块儿唱歌、跳舞、说笑话、打保龄球。面对这样的朋友，我们可以清楚地体会到自由的感觉，了解真正的自我。现代婚姻的理想是把配偶当作朋友</li>
+<li>重要的是确立一个目标，集中精神能量，注意回馈，确定挑战与自己的技巧水准相称。早晚这样的互动会发生作用，心流体验就随之出现。</li>
+<li>企图改善所有人的生活，却不先学习控制自己生活的人，到头来往往把世界搞得更糟。</li>
+<li>懂得如何把无助的状况转变为新的心流活动，并加以控制的人，会为自己找到乐趣，在考验中锻炼得更坚强。</li>
+<li>第一，不自觉的自我肯定。</li>
+<li>一个人首先要对自我、自己的处境、自己在环境中的地位，都有相当的信心。</li>
+<li>第二，注意力集中于外界。注意力向内集中时，精神能量都被自我的关注与欲望吸收，很难再去观察周遭环境。懂得如何把压力转换成充满乐趣的挑战的人，很少花时间想到自己，他们不会把所有的能量都用在满足自己的需求上，或为受社会制约的欲望烦恼。相反，他们的注意力随时保持警觉，不断处理来自周遭环境的资讯。</li>
+<li>把注意力从自我转移出去，欲望受挫就较不可能干扰意识。精神熵是因为注意力集中于内在的无秩序而产生的，这时若把注意力转而投注在周遭的事物上，压力造成的破坏就会减轻。</li>
+<li>第三，找寻新出路。应付造成精神熵的状况，有两种基本的方法：一种是把注意力集中在阻挠我们实现目标的障碍上，消除它，并重建意识的和谐，这种方法比较直接；另一种是把注意力集中于整个状况，包括自己在内，探讨有没有其他更合适的目标，寻求不同的解决之道。</li>
+<li>集中注意的能力越强，投入就越容易。注意力失序、精神容易涣散的人，总觉得被排除在心流之外。任何转瞬即逝的外来刺激，都有可能使他们分心。如果分心不是出于自愿，就可见对自我缺乏控制。令人意外的是，大多数人都不曾在加强控制注意力上下过什么工夫。如果没法子专心阅读一本书，我们非但不设法提升注意力，反而丢下书，打开电视，让剪接粗糙、不时被广告打断、情节低俗的电视节目进一步割裂我们的注意力。</li>
+<li>仅仅学会控制一时一刻的意识状态，还不足以把所有的存在都化为心流体验——我们还必须有个整体目标，使日常生活中每件事都具有意义。</li>
+<li>目标与努力之间有对应关系。开始时靠目标证明努力的必要，到后来却变成靠努力证明目标的重要性。</li>
+<li>方向不定，决心当然会受到影响；决心不足，选择也就随之贬值了。</li>
+<li>性跟人生的其他层面一样，只要我们愿意下功夫去控制它，增强它的复杂性，它就会变得更有乐趣。</li>
+<li>如果一个人连自己要什么都懒得去研究，注意力都放在外在目标上，连自己的感觉都无暇顾及，那么他就不可能形成对行动有意义的企图。</li>
+<li>如何维持爱情的新鲜感？答案跟其他活动一样。双方关系要乐趣盎然，复杂性一定得提高；而要增加复杂性，双方就得不断在自己和对方身上寻求新的潜能。</li>
 </ul>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">findMin</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :rtype: int
-        """</span>
-        left<span class="token operator">=</span><span class="token number">0</span>
-        right<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">while</span> left<span class="token operator">&lt;</span>right<span class="token punctuation">:</span>
-            mid<span class="token operator">=</span>left<span class="token operator">+</span><span class="token punctuation">(</span>right<span class="token operator">-</span>left<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                left<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                right<span class="token operator">=</span>mid
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                right<span class="token operator">-=</span><span class="token number">1</span>
-        <span class="token keyword">return</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="33-搜索旋转排序数组"><a href="#33-搜索旋转排序数组" class="headerlink" title="33. 搜索旋转排序数组"></a><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/solution/duo-tu-yan-shi-33-sou-suo-xuan-zhuan-pai-xu-shu-zu/" target="_blank" rel="noopener">33. 搜索旋转排序数组</a></h1><p>方法1：找到数组中的最小值后，在第一或第二递增区域内找目标值</p>
-<p>根据上题”153. 寻找旋转排序数组中的最小值” 可以得到最小值，若将最小值<code>minIdx</code>作为旋转点，则有</p>
-<blockquote>
-<ul>
-<li>若最小值下标为0，说明序列是单调递增的，所以在<code>0 - n-1</code> 范围内进行二分查找</li>
-<li>若<code>target&gt;=nums[0]</code>,说明target在第一段递增序列内，所以在<code>nums[0:minIdx]</code> 范围内进行二分查找</li>
-<li>若<code>target&lt;nums[0]</code>,说明target需要在第二段递增序列内找，所以在<code>nums[minIdx:]</code> 范围内进行二分查找<ul>
-<li>如果目标值不在第二递增序列中，则返回-1（如<code>[4,5,6,7,0,1,2]</code>中找target 3），否则返回 <code>minIdx+binarySearch(nums[minIdx:],target)</code>的结果</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """</span>
-        <span class="token comment" spellcheck="true"># 找到最小值的下标</span>
-        <span class="token keyword">def</span> <span class="token function">findMin</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            l<span class="token operator">=</span><span class="token number">0</span>
-            r<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-            <span class="token keyword">while</span> l<span class="token operator">&lt;</span>r<span class="token punctuation">:</span>
-                mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    r<span class="token operator">=</span>mid
-            <span class="token keyword">return</span> l
-
-        <span class="token comment" spellcheck="true"># 普通的二分查找，用于确定目标值下标</span>
-        <span class="token keyword">def</span>  <span class="token function">binarySearch</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            l<span class="token operator">=</span><span class="token number">0</span>
-            r<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
-            <span class="token keyword">while</span> l<span class="token operator">&lt;=</span>r<span class="token punctuation">:</span>
-                mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> mid
-                <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">></span>target<span class="token punctuation">:</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
-
-        minIdx<span class="token operator">=</span>findMin<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> minIdx<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#单调递增，在整个范围内寻找</span>
-            <span class="token keyword">return</span> binarySearch<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span>
-        <span class="token keyword">elif</span> target<span class="token operator">>=</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 在第一个递增序列内找</span>
-            <span class="token keyword">return</span> binarySearch<span class="token punctuation">(</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>minIdx<span class="token punctuation">]</span><span class="token punctuation">,</span>target<span class="token punctuation">)</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># target&lt;nums[0]: # 在第二个递增序列内找</span>
-            <span class="token comment" spellcheck="true"># 如果目标值不在第二递增序列中，则返回-1，否则返回 minIdx+tmp</span>
-            tmp<span class="token operator">=</span>binarySearch<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>minIdx<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>target<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">if</span> tmp<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">else</span> minIdx<span class="token operator">+</span>tmp
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>方法2：直接二分查找,在<strong>严格的递增序列内</strong>找target，其余情况取反</p>
-<ul>
-<li>设置左右指针</li>
-<li><code>nums[mid]==target</code>时，说明已找到目标值，返回 mid （也是while的结束条件）</li>
-<li><code>当nums[mid]&gt;=nums[l]</code> 时（注意这里要取等号，使得满足递增序列只有一个元素的情况也符合(如<code>[3,1]</code>)），说明左边是递增序列，<ul>
-<li>若<strong>target在递增序列内</strong>，则更新右指针</li>
-<li>其他情况更新左指针 （target 在mid的右边，所以更新左指针）</li>
-</ul>
-</li>
-<li>否则当<code>nums[mid]&lt;nums[l]</code>时，说明右边是递增序列<ul>
-<li>若<strong>target在递增序列内</strong>，则更新左指针</li>
-<li>其他情况更新右指针 （target 在mid的左边，所以更新右指针）</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """</span>
-        n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        l<span class="token operator">=</span><span class="token number">0</span>
-        r<span class="token operator">=</span>n<span class="token number">-1</span>
-        <span class="token keyword">while</span> l<span class="token operator">&lt;=</span>r<span class="token punctuation">:</span>
-            mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-            <span class="token comment" spellcheck="true"># 找到后，结束循环，跳出</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> mid
-            <span class="token comment" spellcheck="true"># 左边是递增序列</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">>=</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># target 若在递增序列内，则更新右指针</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">&lt;=</span>target<span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 剩余情况更新左指针</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token comment" spellcheck="true"># 右边是递增序列</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># target 若在递增序列内，则更新左指针</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>target<span class="token operator">&lt;=</span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 剩余情况更新右指针</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment" spellcheck="true"># 不满足条件时，返回-1</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="81-搜索旋转排序数组-II"><a href="#81-搜索旋转排序数组-II" class="headerlink" title="81. 搜索旋转排序数组 II"></a><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/solution/er-fen-by-powcai/" target="_blank" rel="noopener">81. 搜索旋转排序数组 II</a></h1><p>与上题相比，本题增加了重复元素。因此，若检测到重复元素，则左（右）指针要跳，直到不重复：</p>
-<blockquote>
-<p>如[1,1,1,1,2,1], 可保证跳过相邻的相同元素<br>与上题相比，增加如下判断：</p>
-<pre><code>        if nums[mid]==nums[l]==nums[r]:
-            l+=1
-            r-=1</code></pre></blockquote>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """</span>
-        n<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        l<span class="token operator">=</span><span class="token number">0</span>
-        r<span class="token operator">=</span>n<span class="token number">-1</span>
-        <span class="token keyword">while</span> l<span class="token operator">&lt;=</span>r<span class="token punctuation">:</span>
-            mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
-            <span class="token comment" spellcheck="true"># 找到后，结束循环，跳出</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>target<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">True</span>
-
-
-            <span class="token comment" spellcheck="true"># ******与上题相比，增加的部分****** #</span>
-            <span class="token triple-quoted-string string">"""
-            如[1,1,1,1,2,1], 可保证跳过相邻的相同元素
-            """</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">==</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">==</span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                l<span class="token operator">+=</span><span class="token number">1</span>
-                r<span class="token operator">-=</span><span class="token number">1</span>
-            <span class="token comment" spellcheck="true"># ******与上题相比，增加的部分****** #</span>
-
-
-            <span class="token comment" spellcheck="true"># 左边是递增序列</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">>=</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># target 若在递增序列内，则更新右指针</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">&lt;=</span>target<span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 剩余情况更新左指针</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token comment" spellcheck="true"># 右边是递增序列</span>
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># target 若在递增序列内，则更新左指针</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token operator">&lt;</span>target<span class="token operator">&lt;=</span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 剩余情况更新右指针</span>
-                    r<span class="token operator">=</span>mid<span class="token number">-1</span>
-        <span class="token keyword">return</span> <span class="token boolean">False</span> <span class="token comment" spellcheck="true"># 不满足条件时，返回-1</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -861,9 +726,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《搜索旋转排序数组系列》
+                    《读”心流：最佳体验心理学“》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/17/leetcode/sou-suo-xuan-zhuan-pai-xu-shu-zu-xi-lie/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/05/17/growth/du-xin-liu-zui-jia-ti-yan-xin-li-xue/" property="cc:attributionName"
                rel="cc:attributionURL">
                 M
             </a> 采用
@@ -903,55 +768,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/22/leetcode/python-jing-dian-pai-xu-suan-fa/">
+                <a href="/2021/05/17/growth/du-xin-liu-zui-jia-ti-yan-xin-li-xue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Python经典排序算法">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="读”心流：最佳体验心理学“">
                         
-                        <span class="card-title">Python经典排序算法</span>
+                        <span class="card-title">读”心流：最佳体验心理学“</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python经典排序算法
+                            怎样能活出成就？幸福与快乐秘诀是什么？带你了解美国心理学博士25年的研究结果 心流体验
+幸福是人生目标的副产品。真正的幸福是，是你全身心地投入一桩事物，达到忘我的状态（心流），并因此得到内心秩序和安宁的时刻。
 
-选择排序
-对每一个nums[i], 寻找 $range(i,n)$ 范围内比nums[i]大的数，并与之交换
-以此类推，位置 i 处就是 第i 小的数
-
-
-两次for循环，时间复杂度为 $O(n^2)$
-
-def
+你喜欢你做的事情，并且对你很
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/Growth/" class="post-category" target="_blank">
+                                    Growth
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/Reading-List/" target="_blank">
+                        <span class="chip bg-color">Reading List</span>
                     </a>
                     
                 </div>
@@ -965,36 +826,33 @@ def
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/16/labuladong/di-ling-zhang-yi-ge-fang-fa-tuan-mie-nsum-wen-ti/">
+                <a href="/2021/05/17/growth/du-xing-fu-de-hun-yin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="第零章：一个方法团灭 nSum 问题">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="读”幸福的婚姻“">
                         
-                        <span class="card-title">第零章：一个方法团灭 nSum 问题</span>
+                        <span class="card-title">读”幸福的婚姻“</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            labuladong一个方法团灭 nSum 问题
-方法1：利用字典去重的2Sum和3Sum2Sum 问题
-利用字典保存遍历过程变量，若满足条件，则返回结果
-
-class Solution(object):
-    def twoSum(se
+                            樊登解读《幸福的婚姻》完整版
+第一招是完善爱情地图，加强你和配偶之间相互的了解，知道Ta每天在干些什么，知道Ta在哪儿，知道Ta的苦恼和想法，知道Ta想要什么礼物，这都是完善爱情地图。
+第二招叫培养喜爱和赞美，多去表扬Ta，写出三个优点以及
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
-                                    LeetCode
+                            <a href="/categories/Growth/" class="post-category" target="_blank">
+                                    Growth
                                 </a>
                             
                             
@@ -1004,8 +862,8 @@ class Solution(object):
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/labuladong/" target="_blank">
-                        <span class="chip bg-color">labuladong</span>
+                    <a href="/tags/Reading-List/" target="_blank">
+                        <span class="chip bg-color">Reading List</span>
                     </a>
                     
                 </div>
