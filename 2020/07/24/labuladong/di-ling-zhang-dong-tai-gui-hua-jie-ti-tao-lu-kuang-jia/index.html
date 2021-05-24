@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    446
+                    339
                 </div>
                 
 
@@ -533,8 +533,28 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
         dp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
         <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>i<span class="token number">-2</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">//#include <iostream>
+//#include <vector>
+//using namespace std;
+class Solution{
+public:
+    int fib(int N){
+        if (N==0)
+            return 0;
+        vector<int> dp(N+1);
+        dp[1]=1;
+        for (int i = 2; i <N+1; i++) {
+            dp[i]=dp[i-1]+dp[i-2];
+        }
+        return dp[N];
+    }
+};
+//int main(){
+//    int s=Solution().fib(5);
+//    cout<<s<<endl;
+//}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="322-零钱兑换"><a href="#322-零钱兑换" class="headerlink" title="322. 零钱兑换"></a><a href="https://leetcode-cn.com/problems/coin-change/" target="_blank" rel="noopener">322. 零钱兑换</a></h1><ul>
 <li>明确 base case：dp[0]=0。 初始化时dp[i] 设为<code>float(&quot;inf&quot;)</code> 最大值</li>
 <li>明确状态：零钱大小</li>
@@ -550,6 +570,28 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
       <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">if</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">!=</span>float<span class="token punctuation">(</span><span class="token string">"inf"</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token operator">-</span><span class="token number">1</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
+<pre class="line-numbers language-c++"><code class="language-c++">//#include <vector>
+//#include <iostream>
+//using namespace std;
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        vector<int> dp(amount+1,amount+1);
+        dp[0]=0;
+        for (int i = 0; i < dp.size(); i++) {
+            for (int coin:coins) {
+                if(i-coin<0) continue;
+                dp[i]=min(dp[i],dp[i-coin]+1);
+            }
+        }
+        return (dp[amount]==amount+1)? -1:dp[amount];
+    }
+};
+//int main(){
+//    vector<int> coins={1, 2, 5};
+//    int s=Solution().coinChange(coins,11);
+//    cout<<s<<endl;
+//}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1023,7 +1065,7 @@ dfs()函数返回的是包含root在内的单边最大路径和。这样做的�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">79.1k</span>
+            <span class="white-color">84.4k</span>
             
 
             <br>
