@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-05-25T09:21:26.171Z</updated>
+  <updated>2021-05-25T09:41:59.368Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://ismxue.github.io/2021/05/25/leetcode/781-sen-lin-zhong-de-tu-zi/"/>
     <id>https://ismxue.github.io/2021/05/25/leetcode/781-sen-lin-zhong-de-tu-zi/</id>
     <published>2021-05-25T07:37:29.000Z</published>
-    <updated>2021-05-25T09:21:26.171Z</updated>
+    <updated>2021-05-25T09:41:59.368Z</updated>
     
     <summary type="html">
     
@@ -41,28 +41,6 @@
     
     
       <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++ Programming All-in-One Tutorial Series (10 HOUS)</title>
-    <link href="https://ismxue.github.io/2021/05/24/ji-suan-ji-ji-chu/cpp-programming-all-in-one-tutorial-series-10-hous/"/>
-    <id>https://ismxue.github.io/2021/05/24/ji-suan-ji-ji-chu/cpp-programming-all-in-one-tutorial-series-10-hous/</id>
-    <published>2021-05-24T14:31:24.000Z</published>
-    <updated>2021-05-24T14:47:25.058Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;C-Programming-All-in-One-Tutorial-Series-10-HOURS&quot;&gt;&lt;a href=&quot;#C-Programming-All-in-One-Tutorial-Series-10-HOURS&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
@@ -547,6 +525,32 @@ sudo apt-get install
     
     
       <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python基础知识汇总</title>
+    <link href="https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/"/>
+    <id>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</id>
+    <published>2020-08-30T05:51:49.000Z</published>
+    <updated>2021-04-21T09:39:31.116Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;h2 id=&quot;封装、继承和多态&quot;&gt;&lt;a href=&quot;#封装、继承和多态&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://ismxue.github.io/categories/Python/"/>
+    
+    
+      <category term="Python基础" scheme="https://ismxue.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

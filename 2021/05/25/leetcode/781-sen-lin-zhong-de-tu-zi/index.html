@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    525
+                    539
                 </div>
                 
 
@@ -502,7 +502,7 @@
 <li>报相同数字的兔子中 （如n个兔子报的数字都是m，即[m, m,  … m]）<ul>
 <li>如果<code>n+1&lt;=m</code> (如 [6,6]) ,则可以认为这些兔子都是同一种颜色,可以抱成一团,兔子个数为  <code>（m+1）*（n//(m+1)）</code></li>
 <li>如果<code>n+1&gt;m</code><ul>
-<li>如果正好能抱成完整的团（即 6%(2+1)==0） （如[2,2,2,2,2,2]，n=6，m=2,能抱2个团）,则兔子个数为 <code>（2+1）*(6//(2+1))=6</code></li>
+<li>如果正好能抱成完整的团（即 <code>6%(2+1)==0</code>） （如[2,2,2,2,2,2]，n=6，m=2,能抱2个团）,则兔子个数为 <code>（2+1）*(6//(2+1))=6</code></li>
 <li>如果抱团后仍然后剩下的（即<code>7%（2+1）！=0</code>）（如[2,2,2,2,2,2,2]，n=7,m=2,需要抱3团），则兔子个数为<code>（2+1）*（6//(2+1)+1）</code></li>
 <li>这两种情况可以归纳为向上取整</li>
 </ul>
@@ -542,43 +542,43 @@
             res <span class="token operator">+=</span> tmp<span class="token operator">*</span><span class="token punctuation">(</span>key<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>C++代码</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    static constexpr int N = 1009;
-    int numRabbits(vector<int>& answers) {
-        vector<int> counts(N,0);
-        for(auto i : answers)
-            counts[i]++;
-        int ans = counts[0];
-        for(int i = 1; i < N; i++) {
-            int per = i + 1;
-            int cnt = counts[i];
-            int k = counts[i]/ (i + 1); //抱团, 地板除
-            if (k * per < cnt) k++;//抱团后仍有剩余，则k+1
-            ans += k * per; // 当前结果为当前抱团数*（报数数字+1）
-        }
-        return ans;
-    }
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">static</span> <span class="token keyword">constexpr</span> <span class="token keyword">int</span> N <span class="token operator">=</span> <span class="token number">1009</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token function">numRabbits</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> answers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">counts</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">:</span> answers<span class="token punctuation">)</span>
+            counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> ans <span class="token operator">=</span> counts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> per <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> cnt <span class="token operator">=</span> counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> k <span class="token operator">=</span> counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">/</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//抱团, 地板除</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">*</span> per <span class="token operator">&lt;</span> cnt<span class="token punctuation">)</span> k<span class="token operator">++</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//抱团后仍有剩余，则k+1</span>
+            ans <span class="token operator">+</span><span class="token operator">=</span> k <span class="token operator">*</span> per<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 当前结果为当前抱团数*（报数数字+1）</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>或者可以把 地板除<code>int k = counts[i]/ (i + 1);</code>和 k的更新<code>if (k * per &lt; cnt) k++;</code> 合并为向上取整<code>int k = ceil(counts[i]/ float(i + 1)); //抱团</code>. 即：</p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    static constexpr int N = 1009;
-    int numRabbits(vector<int>& answers) {
-        vector<int> counts(N,0);
-        for(auto i : answers)
-            counts[i]++;
-        int ans = counts[0];
-        for(int i = 1; i < N; i++) {
-            int per = i + 1;
-            int cnt = counts[i];
-            int k = ceil(counts[i]/ float(i + 1)); //抱团
-            // if (k * per < cnt) k++;//抱团后仍有剩余，则k+1
-            ans += k * per; // 当前结果为当前抱团数*（报数数字+1）
-        }
-        return ans;
-    }
-};
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">static</span> <span class="token keyword">constexpr</span> <span class="token keyword">int</span> N <span class="token operator">=</span> <span class="token number">1009</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token function">numRabbits</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> answers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">counts</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">:</span> answers<span class="token punctuation">)</span>
+            counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> ans <span class="token operator">=</span> counts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> per <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> cnt <span class="token operator">=</span> counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token function">ceil</span><span class="token punctuation">(</span>counts<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">/</span> <span class="token keyword">float</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//抱团</span>
+            <span class="token comment" spellcheck="true">// if (k * per &lt; cnt) k++;//抱团后仍有剩余，则k+1</span>
+            ans <span class="token operator">+</span><span class="token operator">=</span> k <span class="token operator">*</span> per<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 当前结果为当前抱团数*（报数数字+1）</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
@@ -838,29 +838,47 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/24/ji-suan-ji-ji-chu/cpp-programming-all-in-one-tutorial-series-10-hous/">
+                <a href="/2021/05/17/growth/du-xin-liu-zui-jia-ti-yan-xin-li-xue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="C++ Programming All-in-One Tutorial Series (10 HOUS)">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="读”心流：最佳体验心理学“">
                         
-                        <span class="card-title">C++ Programming All-in-One Tutorial Series (10 HOUS)</span>
+                        <span class="card-title">读”心流：最佳体验心理学“</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++ Programming All-in-One Tutorial Series (10 HOURS!)Column: https://www.youtube.com/watch?v=_bYFu9mBnr4&amp;t=14573sCo
+                            怎样能活出成就？幸福与快乐秘诀是什么？带你了解美国心理学博士25年的研究结果 心流体验
+幸福是人生目标的副产品。真正的幸福是，是你全身心地投入一桩事物，达到忘我的状态（心流），并因此得到内心秩序和安宁的时刻。
+
+你喜欢你做的事情，并且对你很
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-17
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Growth/" class="post-category" target="_blank">
+                                    Growth
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Reading-List/" target="_blank">
+                        <span class="chip bg-color">Reading List</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1032,7 +1050,7 @@ public:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">84.9k</span>
+            <span class="white-color">79.5k</span>
             
 
             <br>
