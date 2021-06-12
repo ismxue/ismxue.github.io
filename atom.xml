@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-05-25T09:41:59.368Z</updated>
+  <updated>2021-06-12T07:29:26.041Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>视觉SLAM14讲</title>
+    <link href="https://ismxue.github.io/2021/06/12/ji-suan-ji-ji-chu/shi-jue-slam14-jiang/"/>
+    <id>https://ismxue.github.io/2021/06/12/ji-suan-ji-ji-chu/shi-jue-slam14-jiang/</id>
+    <published>2021-06-12T06:54:33.000Z</published>
+    <updated>2021-06-12T07:29:26.041Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV16t411g7FR?p=2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;视频讲解&lt;/a&gt;&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="SLAM" scheme="https://ismxue.github.io/tags/SLAM/"/>
+    
+  </entry>
   
   <entry>
     <title>781-森林中的兔子</title>
@@ -101,7 +127,7 @@
     <link href="https://ismxue.github.io/2021/05/16/growth/kindle-shi-yong-bi-ji/"/>
     <id>https://ismxue.github.io/2021/05/16/growth/kindle-shi-yong-bi-ji/</id>
     <published>2021-05-16T09:17:43.000Z</published>
-    <updated>2021-05-17T06:38:11.466Z</updated>
+    <updated>2021-06-05T09:11:04.013Z</updated>
     
     <summary type="html">
     
@@ -368,7 +394,7 @@ sudo apt-get install
     <link href="https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/"/>
     <id>https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/</id>
     <published>2020-11-21T13:43:29.000Z</published>
-    <updated>2021-02-19T09:04:21.340Z</updated>
+    <updated>2021-06-09T08:07:39.556Z</updated>
     
     <summary type="html">
     
@@ -525,32 +551,6 @@ sudo apt-get install
     
     
       <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python基础知识汇总</title>
-    <link href="https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/"/>
-    <id>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</id>
-    <published>2020-08-30T05:51:49.000Z</published>
-    <updated>2021-04-21T09:39:31.116Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;h2 id=&quot;封装、继承和多态&quot;&gt;&lt;a href=&quot;#封装、继承和多态&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://ismxue.github.io/categories/Python/"/>
-    
-    
-      <category term="Python基础" scheme="https://ismxue.github.io/tags/Python%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

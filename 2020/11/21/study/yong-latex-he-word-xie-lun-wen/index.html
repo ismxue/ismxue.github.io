@@ -320,7 +320,7 @@ pandoc Manuscript.tex -o Manuscript.docx
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,14 +475,14 @@ pandoc Manuscript.tex -o Manuscript.docx
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
                 
@@ -695,6 +695,23 @@ $\mathbb{R}$</code></pre><h3 id="公式中一部分斜体变为直体"><a href="
 <h2 id="在Word中用Endnote插入参考文献"><a href="#在Word中用Endnote插入参考文献" class="headerlink" title="在Word中用Endnote插入参考文献"></a>在Word中用Endnote插入参考文献</h2><ul>
 <li><a href="https://www.howsci.com/endnote-word-optimize.html" target="_blank" rel="noopener">EndNote在Word中插入文献时电脑变卡的解决方法(使用第二种：Endnote 优化)</a></li>
 </ul>
+<h2 id="批量删除word中的OLE-LINK书签"><a href="#批量删除word中的OLE-LINK书签" class="headerlink" title="批量删除word中的OLE_LINK书签"></a>批量删除word中的<code>OLE_LINK</code>书签</h2><ul>
+<li>在“视图”宏菜单中新建宏，输入以下命令:</li>
+</ul>
+<pre><code>Sub 删除OLE书签()
+    Dim MyBk As Bookmark
+    For Each MyBk In ActiveDocument.Bookmarks
+        If UCase(Left(MyBk.Name, 8)) = &quot;OLE_LINK&quot; Then
+            MyBk.Delete
+        End If
+    Next
+End Sub</code></pre><ul>
+<li>运行该宏</li>
+</ul>
+<h2 id="修改生成的目录格式"><a href="#修改生成的目录格式" class="headerlink" title="修改生成的目录格式"></a>修改生成的目录格式</h2><ul>
+<li>依次选择引用—&gt;目录—&gt;自定义目录，打开目录选项卡，点击修改</li>
+<li>点击修改出现样式选项卡，出现的目录1,2,3….就是前面设置的大纲级别，可以分别选中进行修改</li>
+</ul>
 
             </div>
             <hr />
@@ -903,7 +920,7 @@ $\mathbb{R}$</code></pre><h3 id="公式中一部分斜体变为直体"><a href="
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="读“非暴力沟通”">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="读“非暴力沟通”">
                         
                         <span class="card-title">读“非暴力沟通”</span>
                     </div>
@@ -964,7 +981,7 @@ $\mathbb{R}$</code></pre><h3 id="公式中一部分斜体变为直体"><a href="
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Neural Network Programming - Deep Learning with PyTorch">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Neural Network Programming - Deep Learning with PyTorch">
                         
                         <span class="card-title">Neural Network Programming - Deep Learning with PyTorch</span>
                     </div>
@@ -1174,7 +1191,7 @@ Blog Post
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">79.5k</span>
+            <span class="white-color">80.1k</span>
             
 
             <br>
