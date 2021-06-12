@@ -149,11 +149,11 @@
   </entry>
   
   <entry>
-    <title>Windows和Ubuntu之间复制粘贴解决方案</title>
-    <link href="https://ismxue.github.io/2021/05/15/study/windows-he-ubuntu-zhi-jian-fu-zhi-nian-tie-jie-jue-fang-an/"/>
-    <id>https://ismxue.github.io/2021/05/15/study/windows-he-ubuntu-zhi-jian-fu-zhi-nian-tie-jie-jue-fang-an/</id>
+    <title>Ubuntu使用记录</title>
+    <link href="https://ismxue.github.io/2021/05/15/study/ubuntu-shi-yong-ji-lu/"/>
+    <id>https://ismxue.github.io/2021/05/15/study/ubuntu-shi-yong-ji-lu/</id>
     <published>2021-05-15T02:34:36.000Z</published>
-    <updated>2021-05-15T02:36:53.081Z</updated>
+    <updated>2021-06-12T07:59:55.316Z</updated>
     
     <summary type="html">
     
@@ -161,11 +161,11 @@
       
         
         
-          &lt;ol&gt;
-&lt;li&gt;安装软件&lt;/li&gt;
-&lt;/ol&gt;
+          &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Windows和Ubuntu之间复制粘贴解决方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装软件&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt-get autoremove open-vm-tools
-sudo apt-get install open-vm-tools
 sudo apt-get install
         
       

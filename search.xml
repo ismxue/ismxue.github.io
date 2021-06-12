@@ -129,11 +129,11 @@
     
     
     <entry>
-      <title>Windows和Ubuntu之间复制粘贴解决方案</title>
-      <link href="/2021/05/15/study/windows-he-ubuntu-zhi-jian-fu-zhi-nian-tie-jie-jue-fang-an/"/>
-      <url>/2021/05/15/study/windows-he-ubuntu-zhi-jian-fu-zhi-nian-tie-jie-jue-fang-an/</url>
+      <title>Ubuntu使用记录</title>
+      <link href="/2021/05/15/study/ubuntu-shi-yong-ji-lu/"/>
+      <url>/2021/05/15/study/ubuntu-shi-yong-ji-lu/</url>
       
-        <content type="html"><![CDATA[<ol><li>安装软件</li></ol><pre><code>sudo apt-get autoremove open-vm-toolssudo apt-get install open-vm-toolssudo apt-get install open-vm-tools-desktop</code></pre><ol start="2"><li>重启Ubuntu</li></ol>]]></content>
+        <content type="html"><![CDATA[<ul><li><p>Windows和Ubuntu之间复制粘贴解决方案</p><ol><li><p>安装软件</p><pre><code>sudo apt-get autoremove open-vm-toolssudo apt-get install open-vm-toolssudo apt-get install open-vm-tools-desktop</code></pre></li><li><p>重启Ubuntu</p></li></ol></li><li><p>第一次在Linux中clone仓库时，<a href="https://stackoverflow.com/questions/52529639/gnutls-recv-error-110-the-tls-connection-was-non-properly-terminated" target="_blank" rel="noopener">安装必要的git依赖库</a></p></li></ul>]]></content>
       
       
       <categories>
