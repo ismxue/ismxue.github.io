@@ -322,7 +322,7 @@ sudo apt-get in">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -477,7 +477,7 @@ sudo apt-get in">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    59
+                    157
                 </div>
                 
 
@@ -511,7 +511,23 @@ sudo apt-get install open-vm-tools-desktop</code></pre></li>
 </li>
 </ol>
 </li>
-<li><p>第一次在Linux中clone仓库时，<a href="https://stackoverflow.com/questions/52529639/gnutls-recv-error-110-the-tls-connection-was-non-properly-terminated" target="_blank" rel="noopener">安装必要的git依赖库</a></p>
+<li><p>在Linux中clone仓库时，出现<code>GnuTLS recv error (-110): The TLS connection was non-properly terminated</code></p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/52529639/gnutls-recv-error-110-the-tls-connection-was-non-properly-terminated" target="_blank" rel="noopener">安装必要的git依赖库</a><pre><code>sudo apt-get install build-essential fakeroot dpkg-dev -y
+sudo apt-get build-dep git -y
+sudo apt-get install libcurl4-openssl-dev -y
+cd ~
+mkdir source-git
+cd source-git/
+apt-get source git
+cd git-2.*.*/
+sed -i -- &#39;s/libcurl4-gnutls-dev/libcurl4-openssl-dev/&#39; ./debian/control
+sed -i -- &#39;/TEST\s*=\s*test/d&#39; ./debian/rules
+dpkg-buildpackage -rfakeroot -b -uc -us
+sudo dpkg -i ../git_*ubuntu*.deb</code></pre></li>
+</ul>
+</li>
+<li><p><a href="https://blog.csdn.net/stickmangod/article/details/85316142" target="_blank" rel="noopener">Sub-process /usr/bin/dpkg returned an error code (1)解决办法</a></p>
 </li>
 </ul>
 
@@ -722,7 +738,7 @@ sudo apt-get install open-vm-tools-desktop</code></pre></li>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Kindle使用笔记">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Kindle使用笔记">
                         
                         <span class="card-title">Kindle使用笔记</span>
                     </div>
@@ -745,12 +761,10 @@ Gutenberg
 沉金书屋
 鸠摩搜书
 书单网
-kindle8 
+kindle8
+千秋书庄 
 电子书下载
-52doc(仅部分书籍)
-
-
-
+52doc(仅部分书
                         
                     </div>
                     <div class="publish-info">
@@ -791,7 +805,7 @@ kindle8
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="1029-两地调度">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="1029-两地调度">
                         
                         <span class="card-title">1029-两地调度</span>
                     </div>
@@ -999,7 +1013,7 @@ kindle8
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">80.2k</span>
+            <span class="white-color">82.1k</span>
             
 
             <br>
