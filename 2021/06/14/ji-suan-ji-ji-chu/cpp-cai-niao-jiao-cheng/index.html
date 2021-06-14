@@ -8,9 +8,10 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="基础教程函数参数默认值
+    <meta name="description" content="教程链接
+基础教程函数参数默认值
 默认情况下，C++ 使用传值调用来传递参数。一般来说，这意味着函数内的代码不能改变用于调用函数的参数。
-当定义一个函数，可以为参数列表中后边的每一个参数指定默认值。当调用函数时，如果实际参数的值留空，则使用这个默认值">
+当定义一个函数，可以为参数列表中后边的每一个参数指定默认值。当调用函数时，如果实际参数的值留空，则使用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -473,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    206
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    14 分
                 </div>
                 
                 
@@ -496,14 +497,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基础教程"><a href="#基础教程" class="headerlink" title="基础教程"></a>基础教程</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="参数默认值"><a href="#参数默认值" class="headerlink" title="参数默认值"></a>参数默认值</h3><ul>
+                <p><a href="https://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="noopener">教程链接</a></p>
+<h1 id="基础教程"><a href="#基础教程" class="headerlink" title="基础教程"></a>基础教程</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="参数默认值"><a href="#参数默认值" class="headerlink" title="参数默认值"></a>参数默认值</h3><ul>
 <li>默认情况下，C++ 使用<em>传值调用</em>来传递参数。一般来说，这意味着<em>函数内的代码不能改变用于调用函数的参数</em>。</li>
 <li>当定义一个函数，可以为参数列表中后边的每一个参数指定默认值。当调用函数时，如果实际参数的值留空，则使用这个默认值。</li>
 </ul>
 <h3 id="指针调用"><a href="#指针调用" class="headerlink" title="指针调用"></a>指针调用</h3><ul>
 <li>向函数传递参数的指针调用方法，把参数的地址复制给形式参数。在函数内，该地址用于访问调用中要用到的实际参数。这意味着，修改形式参数会影响实际参数</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+<pre><code>#include &lt;iostream&gt;
 using namespace std;
 void change(int *x,int *y){
 int tmp=*x;
@@ -514,15 +516,14 @@ int tmp=*x;
 int main(){
 int a=1;
     int b=2;
-    change(&a,&b);
-    cout<<a<<"\t"<<b<<endl; // 2 1
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="引用调用"><a href="#引用调用" class="headerlink" title="引用调用"></a>引用调用</h3><ul>
+    change(&amp;a,&amp;b);
+    cout&lt;&lt;a&lt;&lt;&quot;\t&quot;&lt;&lt;b&lt;&lt;endl; // 2 1
+}</code></pre><h3 id="引用调用"><a href="#引用调用" class="headerlink" title="引用调用"></a>引用调用</h3><ul>
 <li>该方法把参数的引用赋值给形式参数。在函数内，该引用用于访问调用中要用到的实际参数。这意味着，修改形式参数会影响实际参数</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+<pre><code>#include &lt;iostream&gt;
 using namespace std;
-void change(int &x,int &y){
+void change(int &amp;x,int &amp;y){
 int tmp=x;
     x=y;
     y=tmp;
@@ -531,9 +532,8 @@ int main(){
 int a=1;
     int b=2;
     change(a,b);
-    cout<<a<<"\t"<<b<<endl; // 2 1
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="Lambda-函数与表达式"><a href="#Lambda-函数与表达式" class="headerlink" title="Lambda 函数与表达式"></a>Lambda 函数与表达式</h3><ul>
+    cout&lt;&lt;a&lt;&lt;&quot;\t&quot;&lt;&lt;b&lt;&lt;endl; // 2 1
+}</code></pre><h3 id="Lambda-函数与表达式"><a href="#Lambda-函数与表达式" class="headerlink" title="Lambda 函数与表达式"></a>Lambda 函数与表达式</h3><ul>
 <li><a href="https://zhuanlan.zhihu.com/p/45430715" target="_blank" rel="noopener">参考1</a>，<a href="https://blog.csdn.net/gongjianbo1992/article/details/105128849" target="_blank" rel="noopener">参考2</a></li>
 <li><a href="https://docs.microsoft.com/en-us/cpp/cpp/examples-of-lambda-expressions?view=msvc-160&viewFallbackFrom=vs-2019" target="_blank" rel="noopener">实例</a></li>
 </ul>
@@ -550,15 +550,14 @@ int a=1;
 <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="指向数组的指针"><a href="#指向数组的指针" class="headerlink" title="指向数组的指针"></a>指向数组的指针</h3><ul>
 <li>数组名对应的是数组中<strong>第一个元素的地址</strong></li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">int main() {
+<pre><code>int main() {
     int arr[] = {1, 2, 3};
-    cout << arr << endl; // 0x61fe14
+    cout &lt;&lt; arr &lt;&lt; endl; // 0x61fe14
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
+</code></pre><ul>
 <li>若把第一个元素的地址存储在 指针p 中，则可以使用 <code>*p、*(p+1)、*(p+2)</code> 等来访问数组元素</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+<pre><code>#include &lt;iostream&gt;
 
 using namespace std;
 
@@ -569,54 +568,52 @@ int main() {
 //    int *p;
 //    p=arr;
 
-    for (int i = 0; i < 5; ++i) {
-        cout<<*(p+i)<<endl;// 利用指针，依次输出arr中的值
+    for (int i = 0; i &lt; 5; ++i) {
+        cout&lt;&lt;*(p+i)&lt;&lt;endl;// 利用指针，依次输出arr中的值
     }
-    cout<<endl;
-    for (int i = 0; i < 5; ++i) {
-        cout<<*(arr+i)<<endl; //利用指针，依次输出arr中的值
-        cout<<arr[i]<<endl; //利用索引，依次输出arr中的值
+    cout&lt;&lt;endl;
+    for (int i = 0; i &lt; 5; ++i) {
+        cout&lt;&lt;*(arr+i)&lt;&lt;endl; //利用指针，依次输出arr中的值
+        cout&lt;&lt;arr[i]&lt;&lt;endl; //利用索引，依次输出arr中的值
     }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
+}</code></pre><ul>
 <li>C++ 对 char 型数组做了特殊规定，<strong>直接输出首地址时，会输出数组内容</strong>。如果想得到地址，可采用 &amp;</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+<pre><code>#include &lt;iostream&gt;
 using namespace std;
 
 int main(){
-    char name[] = {"hello world"};
-    cout << name << endl; // 输出 hello world
-    cout << name[0] << endl; // 输出 h
-    cout << &name << endl; // 输出 0x61fe14
+    char name[] = {&quot;hello world&quot;};
+    cout &lt;&lt; name &lt;&lt; endl; // 输出 hello world
+    cout &lt;&lt; name[0] &lt;&lt; endl; // 输出 h
+    cout &lt;&lt; &amp;name &lt;&lt; endl; // 输出 0x61fe14
     return 0;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
+}</code></pre><ul>
 <li>C++ 中，将 char * 或 char[] 传递给 cout 进行输出，结果会是整个字符串，如果想要获得字符串的地址（第一个字符的内存地址），可使用以下方法：<ul>
 <li><strong>强制转化为其他指针</strong>（非 char<em>）。可以是 `void </em>，int <em>，float </em>， double <em> `等。</em> 使用 &amp;s[0] 不能输出 s[0]（首字符）的地址。因为 &amp;s[0] 将返回 char<em>，对于 char</em>（char 指针），cout 会将其作为字符串来处理，向下查找字符并输出直到字符结束 *</li>
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+<pre><code>#include &lt;iostream&gt;
 using namespace std;
 const int MAX = 3;
 
 int main ()
 {
-    char  var[MAX] = {'a', 'b', 'c'};
+    char  var[MAX] = {&#39;a&#39;, &#39;b&#39;, &#39;c&#39;};
     char  *ptr;
 
     // 指针中的数组地址
     ptr = var;
 
-    for (int i = 0; i < MAX; i++)
+    for (int i = 0; i &lt; MAX; i++)
     {
 
-        cout << "Address of var[" << i << "] = ";
-        cout << (int *)ptr << endl; // 强制转化成其他类型的指针
+        cout &lt;&lt; &quot;Address of var[&quot; &lt;&lt; i &lt;&lt; &quot;] = &quot;;
+        cout &lt;&lt; (int *)ptr &lt;&lt; endl; // 强制转化成其他类型的指针
 
-        cout << "Value of var[" << i << "] = ";
-        cout << *(ptr+i) << endl;
+        cout &lt;&lt; &quot;Value of var[&quot; &lt;&lt; i &lt;&lt; &quot;] = &quot;;
+        cout &lt;&lt; *(ptr+i) &lt;&lt; endl;
 
     }
     return 0;
@@ -626,8 +623,7 @@ int main ()
 //        Address of var[1] = 0x61fe0d
 //Value of var[1] = b
 //        Address of var[2] = 0x61fe0d
-//Value of var[2] = c<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="传递数组给函数"><a href="#传递数组给函数" class="headerlink" title="传递数组给函数"></a>传递数组给函数</h3><ul>
+//Value of var[2] = c</code></pre><h3 id="传递数组给函数"><a href="#传递数组给函数" class="headerlink" title="传递数组给函数"></a>传递数组给函数</h3><ul>
 <li>如果想要在函数中传递一个一维数组作为参数，必须以下面三种方式来声明函数形式参数，这三种声明方式的结果是一样的，因为每种方式都会告诉编译器将要接收一个整型指针。（_实参可以是数组名_）<ul>
 <li>形参是一个指针 <code>void myFunction(int *param)</code></li>
 <li>形参是一个已定义大小的数组 <code>void myFunction(int param[10])</code></li>
@@ -635,7 +631,7 @@ int main ()
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++"># include <iostream>
+<pre><code># include &lt;iostream&gt;
 using namespace std;
 
 //这三种形参都可以
@@ -643,7 +639,7 @@ using namespace std;
 //double avgFunc(int arr[],int size)
 double avgFunc(int *arr,int size){
     int res=0;
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i &lt; size; ++i) {
         res+=*(arr+i); //等价于res+=arr[i];
     }
 //    这里要强制转化一下res，否则除法返回的类型为舍去小数的整数 如 5/2=2
@@ -652,14 +648,13 @@ double avgFunc(int *arr,int size){
 int main(){
     int arr[]={1,1,2,3,4};
     double avg=avgFunc(arr,5);
-    cout<<avg<<endl;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="从函数返回数组"><a href="#从函数返回数组" class="headerlink" title="从函数返回数组"></a>从函数返回数组</h3><ul>
+    cout&lt;&lt;avg&lt;&lt;endl;
+}</code></pre><h3 id="从函数返回数组"><a href="#从函数返回数组" class="headerlink" title="从函数返回数组"></a>从函数返回数组</h3><ul>
 <li>C++ _不允许_返回一个完整的数组作为函数的参数。但是<strong>可以通过指定不带索引的数组名来返回一个指向数组的指针</strong>（也就是说，C++中函数是不能直接返回一个数组的，但是数组其实就是指针，所以<strong>可以让函数返回指针来实现</strong>）。如果想要从函数返回一个一维数组，<strong>必须声明一个返回指针的函数</strong>。另外，C++ 不支持在函数外返回局部变量的地址，除非<strong>定义局部变量为 static 变量</strong></li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-#include <cstdlib>
-#include <ctime>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;ctime&gt;
 
 using namespace std;
 
@@ -668,9 +663,9 @@ using namespace std;
 int *getArray() {
     static int r[2] = {1, 2};
 
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i &lt; 2; ++i) {
 
-        cout << r[i] << endl;
+        cout &lt;&lt; r[i] &lt;&lt; endl;
     }
 
     return r;
@@ -682,9 +677,9 @@ int main() {
     int *p;
 
     p = getArray();
-    for (int i = 0; i < 2; i++) {
-        cout << "*(p + " << i << ") : ";
-        cout << *(p + i) << endl;
+    for (int i = 0; i &lt; 2; i++) {
+        cout &lt;&lt; &quot;*(p + &quot; &lt;&lt; i &lt;&lt; &quot;) : &quot;;
+        cout &lt;&lt; *(p + i) &lt;&lt; endl;
     }
 
     return 0;
@@ -693,27 +688,25 @@ int main() {
 //1
 //2
 //*(p + 0) : 1
-//*(p + 1) : 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="C风格字符串"><a href="#C风格字符串" class="headerlink" title="C风格字符串"></a>C风格字符串</h3><ul>
+//*(p + 1) : 2</code></pre><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="C风格字符串"><a href="#C风格字符串" class="headerlink" title="C风格字符串"></a>C风格字符串</h3><ul>
 <li>C 风格的字符串起源于 C 语言，并在 C++ 中继续得到支持。字符串实际上是使用 null 字符 \0 终止的一维字符数组。下面的声明和初始化创建了一个 RUNOOB 字符串。由于在数组的末尾存储了空字符，所以字符数组的大小比单词 RUNOOB 的字符数多一个</li>
 <li><code>char site[7] = {&#39;R&#39;, &#39;U&#39;, &#39;N&#39;, &#39;O&#39;, &#39;O&#39;, &#39;B&#39;, &#39;\0&#39;}</code>; 可以写成<code>char site[] = &quot;RUNOOB&quot;;</code> site[7]的结果为0</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-#include <cstring>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cstring&gt;
 using namespace std;
 
 int main()
 {
-    char site[7] = {'R', 'U', 'N', 'O', 'O', 'B', '\0'};
-    char site1[] = "RUNOOB";
+    char site[7] = {&#39;R&#39;, &#39;U&#39;, &#39;N&#39;, &#39;O&#39;, &#39;O&#39;, &#39;B&#39;, &#39;\0&#39;};
+    char site1[] = &quot;RUNOOB&quot;;
 //    输出均为空白
-    cout<<site[6]<<endl;
-    cout<<site1[6]<<endl;
+    cout&lt;&lt;site[6]&lt;&lt;endl;
+    cout&lt;&lt;site1[6]&lt;&lt;endl;
 //  长度均为6
-    cout<<strlen(site)<<endl;
-    cout<<strlen(site1)<<endl;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="C-String类"><a href="#C-String类" class="headerlink" title="C++ String类"></a>C++ String类</h3><ul>
+    cout&lt;&lt;strlen(site)&lt;&lt;endl;
+    cout&lt;&lt;strlen(site1)&lt;&lt;endl;
+}</code></pre><h3 id="C-String类"><a href="#C-String类" class="headerlink" title="C++ String类"></a>C++ String类</h3><ul>
 <li>该类提供了更丰富的功能以及<a href="http://c.biancheng.net/view/400.html" target="_blank" rel="noopener">常用的操作</a></li>
 </ul>
 <h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><h3 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h3><p>(务必看该部分的<a href="https://www.runoob.com/cplusplus/cpp-array-of-pointers.html" target="_blank" rel="noopener">菜鸟网站笔记</a>)</p>
@@ -721,7 +714,7 @@ int main()
 <li>数组中存放的是（指向char，int等类型的 ）的指针</li>
 <li>可以用一个<strong>指向字符</strong>的<strong>指针数组</strong>来存储一个字符串列表</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+<pre><code>#include &lt;iostream&gt;
 
 using namespace std;
 const int MAX = 4;
@@ -729,16 +722,16 @@ const int MAX = 4;
 int main(int argc, const char *argv[]) {
 
     const char *names[MAX] = {
-            "Zara Ali",
-            "Hina Ali",
-            "Nuha Ali",
-            "Sara Ali",
+            &quot;Zara Ali&quot;,
+            &quot;Hina Ali&quot;,
+            &quot;Nuha Ali&quot;,
+            &quot;Sara Ali&quot;,
     };
 
-    for (int i = 0; i < MAX; i++) {
-        cout << " --- names[i]              = " << names[i] << endl;
-        cout << " --- *names[i]             = " << *names[i] << endl;
-        cout<<"----------------"<<endl;
+    for (int i = 0; i &lt; MAX; i++) {
+        cout &lt;&lt; &quot; --- names[i]              = &quot; &lt;&lt; names[i] &lt;&lt; endl;
+        cout &lt;&lt; &quot; --- *names[i]             = &quot; &lt;&lt; *names[i] &lt;&lt; endl;
+        cout&lt;&lt;&quot;----------------&quot;&lt;&lt;endl;
     }
     return 0;
 }
@@ -753,11 +746,10 @@ int main(int argc, const char *argv[]) {
 //----------------
 //--- names[i]              = Sara Ali
 //--- *names[i]             = S
-//----------------<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="传递指针给函数"><a href="#传递指针给函数" class="headerlink" title="传递指针给函数"></a>传递指针给函数</h3><ul>
+//----------------</code></pre><h3 id="传递指针给函数"><a href="#传递指针给函数" class="headerlink" title="传递指针给函数"></a>传递指针给函数</h3><ul>
 <li>定义函数时，声明函数<strong>形参为指针类型,实参是一个地址</strong></li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+<pre><code>#include &lt;iostream&gt;
 
 using namespace std;
 
@@ -768,38 +760,36 @@ void changeNum(int *p) {
 
 int main(int argc, const char *argv[]) {
     int a = 1;
-    changeNum(&a);
-    cout << a; //结果为2
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+    changeNum(&amp;a);
+    cout &lt;&lt; a; //结果为2
+}</code></pre><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
 <li>把引用作为返回值：通过使用引用来替代指针，会使 C++ 程序更容易阅读和维护。C++ 函数可以返回一个引用，方式与返回一个指针类似</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+<pre><code>#include &lt;iostream&gt;
 using namespace std;
 
 int arr[]={0,1,2,3,4};
 
 //改变特定位置的数字，函数返回一个引用
-int & changeNum(int i){
-    int &r=arr[i];// 给全局变量中的一个元素起个别名 r，返回r
+int &amp; changeNum(int i){
+    int &amp;r=arr[i];// 给全局变量中的一个元素起个别名 r，返回r
     return r;
 }
 int main(){
     int size=sizeof (arr)/sizeof (arr[0]); //5
 //    结果为01234
-    for (int i = 0; i < size; ++i) {
-        cout<<arr[i];
+    for (int i = 0; i &lt; size; ++i) {
+        cout&lt;&lt;arr[i];
     }
-    cout<<endl;
+    cout&lt;&lt;endl;
 
 //  改变第0个位置的值，结果为  11234
     changeNum(0)=1;
-    for (int i = 0; i < size; ++i) {
-        cout<<arr[i];
+    for (int i = 0; i &lt; size; ++i) {
+        cout&lt;&lt;arr[i];
     }
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><ul>
+</code></pre><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><ul>
 <li>数据结构是 C++ 中另一种用户自定义的可用的数据类型，它允许存储不同类型的数据项</li>
 </ul>
 <blockquote>
@@ -813,7 +803,7 @@ int main(){
 <li>主函数中，定义结构体的变量s1，并传到函数中</li>
 <li>在形参中，声明变量的类型 （如<code>void printStudent( Student stu)</code>）</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++"># include <iostream>
+<pre><code># include &lt;iostream&gt;
 using namespace std;
 struct Student{
     string name;
@@ -822,24 +812,23 @@ struct Student{
 //形参中，stu的数据类型为 Student
 // 写成 void printStudent(struct Student stu) 也可以
 void printStudent( Student stu){
-    cout<<stu.name<<endl;
-    cout<<stu.age<<endl;
+    cout&lt;&lt;stu.name&lt;&lt;endl;
+    cout&lt;&lt;stu.age&lt;&lt;endl;
 }
 int main(){
 //    定义结构体类型为Student的变量 s1
     Student s1;
-    s1.name="Amy";
+    s1.name=&quot;Amy&quot;;
     s1.age=10;
 //    把s1变量传到函数中
     printStudent(s1);
 }
 //Amy
-//10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="指向结构的指针"><a href="#指向结构的指针" class="headerlink" title="指向结构的指针"></a>指向结构的指针</h3><ul>
+//10</code></pre><h3 id="指向结构的指针"><a href="#指向结构的指针" class="headerlink" title="指向结构的指针"></a>指向结构的指针</h3><ul>
 <li>主函数中，定义结构体的变量s1，并把<strong>s1的地址</strong>传到函数中</li>
 <li>在形参中，声明变量的类型 （如<code>void printStudent( Student *stu)</code> ，是student类型的stu）</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++"># include <iostream>
+<pre><code># include &lt;iostream&gt;
 using namespace std;
 struct Student{
     string name;
@@ -847,22 +836,21 @@ struct Student{
 };
 //这里的形参为指向结构的指针
 void printStudent( Student *stu){
-    cout<<stu->name<<endl;
-    cout<<stu->age<<endl;
+    cout&lt;&lt;stu-&gt;name&lt;&lt;endl;
+    cout&lt;&lt;stu-&gt;age&lt;&lt;endl;
 }
 int main(){
     Student s1;
-    s1.name="Amy";
+    s1.name=&quot;Amy&quot;;
     s1.age=10;
-    printStudent(&s1); //把数据结构的s1变量的地址传递给函数
+    printStudent(&amp;s1); //把数据结构的s1变量的地址传递给函数
 }
 //output:
 //Amy
-//10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="类-amp-对象"><a href="#类-amp-对象" class="headerlink" title="类&amp;对象"></a>类&amp;对象</h2><h3 id="头文件、源文件、主文件书写"><a href="#头文件、源文件、主文件书写" class="headerlink" title="头文件、源文件、主文件书写"></a>头文件、源文件、主文件书写</h3><ul>
+//10</code></pre><h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="类-amp-对象"><a href="#类-amp-对象" class="headerlink" title="类&amp;对象"></a>类&amp;对象</h2><h3 id="头文件、源文件、主文件书写"><a href="#头文件、源文件、主文件书写" class="headerlink" title="头文件、源文件、主文件书写"></a>头文件、源文件、主文件书写</h3><ul>
 <li>头文件定义类和函数申明</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+<pre><code>#include &lt;iostream&gt;
 
 class Box{
 public:
@@ -871,11 +859,10 @@ public:
     int z;
     int get();
     void set(int a, int b,int c);
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
+};</code></pre><ul>
 <li>源文件实现函数</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include "Box.h"
+<pre><code>#include &quot;Box.h&quot;
 
 int Box::get() {
 return x*y*z;
@@ -885,12 +872,11 @@ void Box::set(int a, int b,int c) {
     y=b;
     z=c;
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
+</code></pre><ul>
 <li>主文件调用函数</li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
-#include "Box.h"
+<pre><code>#include &lt;iostream&gt;
+#include &quot;Box.h&quot;
 using namespace  std;
 
 int main(){
@@ -900,11 +886,10 @@ Box b1;
     b1.y=2;
     b1.z=3;
     b2.set(1,2,3);
-    cout<<b1.get()<<endl;
-    cout<<b2.get()<<endl;
+    cout&lt;&lt;b1.get()&lt;&lt;endl;
+    cout&lt;&lt;b2.get()&lt;&lt;endl;
 }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="作用域符解析"><a href="#作用域符解析" class="headerlink" title="作用域符解析"></a><a href="https://zhuanlan.zhihu.com/p/137383328" target="_blank" rel="noopener">作用域符解析</a></h3><p>作用域运算符为<code>::</code>，它用于以下目的：</p>
+</code></pre><h3 id="作用域符解析"><a href="#作用域符解析" class="headerlink" title="作用域符解析"></a><a href="https://zhuanlan.zhihu.com/p/137383328" target="_blank" rel="noopener">作用域符解析</a></h3><p>作用域运算符为<code>::</code>，它用于以下目的：</p>
 <ul>
 <li>当存在具有相同名称的局部变量时，要访问全局变量</li>
 <li>在类之外定义函数</li>
@@ -1130,9 +1115,10 @@ Box b1;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基础教程函数参数默认值
+                            教程链接
+基础教程函数参数默认值
 默认情况下，C++ 使用传值调用来传递参数。一般来说，这意味着函数内的代码不能改变用于调用函数的参数。
-当定义一个函数，可以为参数列表中后边的每一个参数指定默认值。当调用函数时，如果实际参数的值留空，则使用这个默认值
+当定义一个函数，可以为参数列表中后边的每一个参数指定默认值。当调用函数时，如果实际参数的值留空，则使用
                         
                     </div>
                     <div class="publish-info">
@@ -1383,7 +1369,7 @@ Box b1;
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">82.1k</span>
+            <span class="white-color">85.3k</span>
             
 
             <br>

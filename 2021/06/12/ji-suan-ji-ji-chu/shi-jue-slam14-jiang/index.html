@@ -475,7 +475,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.3k
                 </div>
                 
 
@@ -502,7 +502,7 @@
 <h1 id="第二讲"><a href="#第二讲" class="headerlink" title="第二讲"></a>第二讲</h1><p><img src="https://i.loli.net/2021/06/12/hZgJuHXpct9QoDi.png" alt="20210612150849"><br>我们把整个视觉 SLAM 流程分为以下几步：</p>
 <ol>
 <li>传感器信息读取。在视觉 SLAM 中主要为相机图像信息的读取和预处理。如果在机<br>器人中，还可能有码盘、惯性传感器等信息的读取和同步。</li>
-<li><strong>视觉里程计</strong> (Visual Odometry, VO)。视觉里程计任务是估算相邻图像间相机的运动，<br>以及局部地图的样子。 VO 又称为前端（Front End）。<ul>
+<li><strong>视觉里程计</strong> (Visual Odometry, VO)。视觉里程计任务是估算相邻图像间相机的运动，<br>以及局部地图的样子。<em><em> VO 又称为前端（Front End）</em></em>。<ul>
 <li>视觉里程计关心相邻图像之间的相机运动，最简单的情况当然是两张图像之间的运动<br>关系</li>
 </ul>
 </li>
@@ -521,10 +521,10 @@
 <li>任意旋转都可以用一个<strong>旋转轴</strong>和一个<strong>旋转角</strong>来刻画。于是，我们可以使用一个<br>向量，其方向与旋转轴一致，而长度等于旋转角。这种向量，称为旋转向量（或轴角， AxisAngle）。这种表示法只需一个三维向量即可描述旋转。同样，对于变换矩阵，我们使用一<br>个旋转向量和一个平移向量即可表达一次变换。这时的维数正好是六维（事实上，<strong>旋转向量就是我们下章准备介绍的李代数</strong>）</li>
 </ul>
 <h1 id="第四讲"><a href="#第四讲" class="headerlink" title="第四讲"></a>第四讲</h1><ul>
-<li>三维旋转矩阵构成了特殊正交群 SO(3)，而变换矩阵构成了特殊欧氏群 SE(3)：<br><img src="https://i.loli.net/2021/06/12/Ouhmi6lVYXty1AZ.png" alt="20210612195745"></li>
+<li>三维旋转矩阵构成了特殊正交群 <code>SO(3)</code>，而变换矩阵构成了特殊欧氏群 <code>SE(3)</code>：<br><img src="https://i.loli.net/2021/06/12/Ouhmi6lVYXty1AZ.png" alt="20210612195745"></li>
 <li>群（Group）是一种集合加上一种运算的代数结构。我们把集合记作 <code>A</code>，运算记作 <code>·</code>，<br>那么群可以记作<code>G = (A; ·)</code>。<ul>
-<li>李群是指具有连续（光滑）性质的群。像整数群 Z 那样离散的群没有连续性质，所以<br>不是李群。而 SO(n) 和 SE(n)，它们在实数空间上是连续的。我们能够直观地想象一个刚<br>体能够连续地在空间中运动，所以它们都是李群</li>
-<li>每个李群都有与之对应的李代数。李代数描述了李群的局部性质</li>
+<li><strong>李群是指具有连续（光滑）性质的群</strong>。像整数群 Z 那样离散的群没有连续性质，所以<br>不是李群。而 <code>SO(n)</code> 和<code>SE(n)</code>，它们在实数空间上是连续的。我们能够直观地想象一个刚<br>体能够连续地在空间中运动，所以它们都是李群</li>
+<li><strong>每个李群都有与之对应的李代数。李代数描述了李群的局部性质</strong></li>
 </ul>
 </li>
 </ul>
@@ -536,9 +536,11 @@
 <h1 id="第六讲"><a href="#第六讲" class="headerlink" title="第六讲"></a>第六讲</h1><ul>
 <li>大多现代视觉 SLAM 算法都不需要那么高成本的传感器，甚至也不需要那么昂贵的处理器来计算这些数据，这全是算法的功劳。由于在 SLAM 问题中，同一个点往往会被一个相机在不同的时间内多次观测，同一个相机在每个时刻观测到的点也不止一个。<strong>这些因素交织在一起，使我们拥有了更多的约束，最终能够较好地从噪声数据中恢复出我们需要的东西</strong></li>
 <li>SLAM中经常会碰到一些非线性优化问题：由许多个误差项平方和组成的最小二乘问题。在优化该问题时，有两种主要的梯度下降方式：Gauss-Newton 和 Levenberg-Marquardt<ul>
-<li>有两个常用的优化库：google的Ceres库和基于图优化的g2o（General Graphic Optimization， G2O）库</li>
+<li>有两个常用的优化库：google的Ceres库和基于图优化的g2o（General Graphic Optimization， G2O）库<ul>
 <li><strong>Ceres 库面向通用的最小二乘问题的求解</strong>，作为用户，我们需要做的就是定义优化问题，然后设置一些选项，输入进 Ceres 求解即可</li>
 <li>另一个（主要在 SLAM 领域）广为使用的优化库 <strong>g2o是一个基于图优化的库</strong>。为了使用 g2o，首先要做的是将问题抽象成图优化。这个过程中，只要记住<strong>节点为优化变量，边为误差项</strong>即可</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -547,7 +549,7 @@
 <ul>
 <li><p>特征点由<strong>关键点</strong>（Key-point）和<strong>描述子</strong>（Descriptor）两部分组成。（比方说，当我们<br>谈论 SIFT 特征时，是指“提取 SIFT 关键点，并计算 SIFT 描述子”两件事情）。<strong>关键点是指该特征点在图像里的位置</strong>，有些特征点还具有朝向、大小等信息。<strong>描述子通常是一个向量，按照某种人为设计的方式，描述了该关键点周围像素的信息</strong>。描述子是按照“外观<br>相似的特征应该有相似的描述子”的原则设计的</p>
 <ul>
-<li><p>SIFT<strong>特征点</strong>：SIFT(尺度不变特征变换， Scale-Invariant Feature Transform) 当属最为经典的一种。它充分考虑了在图像变换过程中出现的光照，尺度，旋转等变化，但随之而来的是极大的计算量。由于整个 SLAM 过程中，图像特征的提取与匹配仅仅是诸多环节中的一个，所以在 SLAM 中我们_甚少使用_这种“奢侈”的图像特征</p>
+<li><p>SIFT<strong>特征点</strong>：SIFT（尺度不变特征变换， Scale-Invariant Feature Transform） 当属最为经典的一种。它充分考虑了在图像变换过程中出现的光照，尺度，旋转等变化，但随之而来的是极大的计算量。由于整个 SLAM 过程中，图像特征的提取与匹配仅仅是诸多环节中的一个，所以在 SLAM 中我们_甚少使用_这种“奢侈”的图像特征</p>
 </li>
 <li><p>FAST<strong>关键点</strong>： FAST 关键点属于计算特别快的一种特征点（注意这里“关键点”的用词，说明它_没有描述子_）</p>
 </li>
@@ -557,10 +559,11 @@
 <ul>
 <li>针对 FAST 角点不具有方向性和尺度的弱点， <strong>ORB 添加了尺度和旋转的描述。尺度不变性由构建图像金字塔，并在金字塔的每一层上检测角点来实现。而特征的旋转是由灰度质心法（Intensity Centroid）实现的</strong></li>
 </ul>
+<p><img src="https://i.loli.net/2021/06/14/xfR2rFsCSZlWgzY.png" alt="20210614202902"></p>
 </li>
 <li><p>BRIEF 描述子：对前一步提取出特征点的周围图像区域进行描述</p>
 <ul>
-<li>BRIEF 是一种二进制描述子，它的描述向量由许多个 0 和 1 组成，这里的 0 和 1 编码了关键点附近两个像素（比如说 p 和 q）的大小关系：如果 p 比 q 大，则取 1，反之就取 0</li>
+<li>BRIEF 是一种二进制描述子，它的描述向量由许多个 0 和 1 组成，这里的 0 和 1 编码了关键点附近两个像素（比如说 p 和 q）的大小关系：如果 p 比 q 大，则取 1，反之就取 0 （如果我们取了 128 个这样的 p; q，最后就得到 128 维由 0， 1 组成的向量。那么， p和 q 如何选取呢？在作者原始的论文中给出了若干种挑选方法，大体上都是按照某种概率分布，随机地挑选 p 和 q 的位置。 BRIEF 使用了随机选点的比较，速度非常快，而且由于使用了二进制表达，存储起来也十分方便，适用于实时的图像匹配。）</li>
 <li>原始的 BRIEF 描述子不具有旋转不变性的，因此在图像发生旋转时容易丢失。而 ORB 在 FAST 特征点提取阶段计算了关键点的方向，所以可以利用方向信息，计算了旋转之后的“Steer BRIEF”特征，使 ORB 的描述子具有较好的旋转不变性</li>
 </ul>
 <blockquote>
@@ -790,9 +793,10 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基础教程函数参数默认值
+                            教程链接
+基础教程函数参数默认值
 默认情况下，C++ 使用传值调用来传递参数。一般来说，这意味着函数内的代码不能改变用于调用函数的参数。
-当定义一个函数，可以为参数列表中后边的每一个参数指定默认值。当调用函数时，如果实际参数的值留空，则使用这个默认值
+当定义一个函数，可以为参数列表中后边的每一个参数指定默认值。当调用函数时，如果实际参数的值留空，则使用
                         
                     </div>
                     <div class="publish-info">
@@ -1041,7 +1045,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">82.1k</span>
+            <span class="white-color">85.3k</span>
             
 
             <br>
