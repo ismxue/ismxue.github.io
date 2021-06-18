@@ -319,7 +319,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.8k
+                    8.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    28 分
+                    35 分
                 </div>
                 
                 
@@ -636,25 +636,26 @@
 </ul>
 </li>
 </ul>
-<pre><code># include &lt;iostream&gt;
-using namespace std;
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property"># <span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-//这三种形参都可以
-//double avgFunc(int arr[5],int size)
-//double avgFunc(int arr[],int size)
-double avgFunc(int *arr,int size){
-    int res=0;
-    for (int i = 0; i &lt; size; ++i) {
-        res+=*(arr+i); //等价于res+=arr[i];
-    }
-//    这里要强制转化一下res，否则除法返回的类型为舍去小数的整数 如 5/2=2
-    return double(res)/size;
-}
-int main(){
-    int arr[]={1,1,2,3,4};
-    double avg=avgFunc(arr,5);
-    cout&lt;&lt;avg&lt;&lt;endl;
-}</code></pre><h3 id="从函数返回数组"><a href="#从函数返回数组" class="headerlink" title="从函数返回数组"></a>从函数返回数组</h3><ul>
+<span class="token comment" spellcheck="true">//这三种形参都可以</span>
+<span class="token comment" spellcheck="true">//double avgFunc(int arr[5],int size)</span>
+<span class="token comment" spellcheck="true">//double avgFunc(int arr[],int size)</span>
+<span class="token keyword">double</span> <span class="token function">avgFunc</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>arr<span class="token punctuation">,</span><span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> res<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token operator">+</span><span class="token operator">=</span><span class="token operator">*</span><span class="token punctuation">(</span>arr<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//等价于res+=arr[i];</span>
+    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//    这里要强制转化一下res，否则除法返回的类型为舍去小数的整数 如 5/2=2</span>
+    <span class="token keyword">return</span> <span class="token keyword">double</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">/</span>size<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> avg<span class="token operator">=</span><span class="token function">avgFunc</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>avg<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="从函数返回数组"><a href="#从函数返回数组" class="headerlink" title="从函数返回数组"></a>从函数返回数组</h3><ul>
 <li>C++ _不允许_返回一个完整的数组作为函数的参数。但是<strong>可以通过指定不带索引的数组名来返回一个指向数组的指针</strong>（也就是说，C++中函数是不能直接返回一个数组的，但是数组其实就是指针，所以<strong>可以让函数返回指针来实现</strong>）。如果想要从函数返回一个一维数组，<strong>必须声明一个返回指针的函数</strong>。另外，C++ 不支持在函数外返回局部变量的地址，除非<strong>定义局部变量为 static 变量</strong></li>
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
@@ -813,51 +814,53 @@ int main(){
 <li>主函数中，定义结构体的变量s1，并传到函数中</li>
 <li>在形参中，声明变量的类型 （如<code>void printStudent( Student stu)</code>）</li>
 </ul>
-<pre><code># include &lt;iostream&gt;
-using namespace std;
-struct Student{
-    string name;
-    int age;
-};
-//形参中，stu的数据类型为 Student
-// 写成 void printStudent(struct Student stu) 也可以
-void printStudent( Student stu){
-    cout&lt;&lt;stu.name&lt;&lt;endl;
-    cout&lt;&lt;stu.age&lt;&lt;endl;
-}
-int main(){
-//    定义结构体类型为Student的变量 s1
-    Student s1;
-    s1.name=&quot;Amy&quot;;
-    s1.age=10;
-//    把s1变量传到函数中
-    printStudent(s1);
-}
-//Amy
-//10</code></pre><h3 id="指向结构的指针"><a href="#指向结构的指针" class="headerlink" title="指向结构的指针"></a>指向结构的指针</h3><ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property"># <span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> Student<span class="token punctuation">{</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//形参中，stu的数据类型为 Student</span>
+<span class="token comment" spellcheck="true">// 写成 void printStudent(struct Student stu) 也可以</span>
+<span class="token keyword">void</span> <span class="token function">printStudent</span><span class="token punctuation">(</span> Student stu<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout<span class="token operator">&lt;&lt;</span>stu<span class="token punctuation">.</span>name<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>stu<span class="token punctuation">.</span>age<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//    定义结构体类型为Student的变量 s1</span>
+    Student s1<span class="token punctuation">;</span>
+    s1<span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">"Amy"</span><span class="token punctuation">;</span>
+    s1<span class="token punctuation">.</span>age<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//    把s1变量传到函数中</span>
+    <span class="token function">printStudent</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//Amy</span>
+<span class="token comment" spellcheck="true">//10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="指向结构的指针"><a href="#指向结构的指针" class="headerlink" title="指向结构的指针"></a>指向结构的指针</h3><ul>
 <li>主函数中，定义结构体的变量s1，并把<strong>s1的地址</strong>传到函数中</li>
 <li>在形参中，声明变量的类型 （如<code>void printStudent( Student *stu)</code> ，是student类型的stu）</li>
 </ul>
-<pre><code># include &lt;iostream&gt;
-using namespace std;
-struct Student{
-    string name;
-    int age;
-};
-//这里的形参为指向结构的指针
-void printStudent( Student *stu){
-    cout&lt;&lt;stu-&gt;name&lt;&lt;endl;
-    cout&lt;&lt;stu-&gt;age&lt;&lt;endl;
-}
-int main(){
-    Student s1;
-    s1.name=&quot;Amy&quot;;
-    s1.age=10;
-    printStudent(&amp;s1); //把数据结构的s1变量的地址传递给函数
-}
-//output:
-//Amy
-//10</code></pre><h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="类-amp-对象"><a href="#类-amp-对象" class="headerlink" title="类&amp;对象"></a>类&amp;对象</h2><h3 id="头文件、源文件、主文件书写"><a href="#头文件、源文件、主文件书写" class="headerlink" title="头文件、源文件、主文件书写"></a>头文件、源文件、主文件书写</h3><ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property"># <span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> Student<span class="token punctuation">{</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//这里的形参为指向结构的指针</span>
+<span class="token keyword">void</span> <span class="token function">printStudent</span><span class="token punctuation">(</span> Student <span class="token operator">*</span>stu<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cout<span class="token operator">&lt;&lt;</span>stu<span class="token operator">-</span><span class="token operator">></span>name<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>stu<span class="token operator">-</span><span class="token operator">></span>age<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Student s1<span class="token punctuation">;</span>
+    s1<span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token string">"Amy"</span><span class="token punctuation">;</span>
+    s1<span class="token punctuation">.</span>age<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token function">printStudent</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//把数据结构的s1变量的地址传递给函数</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//output:</span>
+<span class="token comment" spellcheck="true">//Amy</span>
+<span class="token comment" spellcheck="true">//10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="类-amp-对象"><a href="#类-amp-对象" class="headerlink" title="类&amp;对象"></a>类&amp;对象</h2><h3 id="头文件、源文件、主文件书写"><a href="#头文件、源文件、主文件书写" class="headerlink" title="头文件、源文件、主文件书写"></a>头文件、源文件、主文件书写</h3><ul>
 <li>头文件定义类和函数申明</li>
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
@@ -1305,8 +1308,183 @@ Student<span class="token operator">::</span><span class="token operator">~</spa
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li><a href="https://www.runoob.com/w3cnote/cpp-static-usage.html" target="_blank" rel="noopener">static关键字解析</a></li>
+<li>静态成员函数<ul>
+<li>静态成员函数<strong>即使在类对象不存在的情况下也能被调用</strong>，<strong>静态函数</strong>只要使用类名加范围解析运算符 <strong>`::</strong>` 就可以访问</li>
+<li>静态成员函数只能访问静态成员数据、其他静态成员函数和类外部的其他函数</li>
+<li>静态成员函数有一个类范围，他们不能访问类的 this 指针。可以使用静态成员函数来判断类的某些对象是否已被创建。</li>
+<li><strong><em>静态成员函数与普通成员函数的区别：</em></strong><ul>
+<li>静态成员函数没有 this 指针，只能访问静态成员（包括静态成员变量和静态成员函数）</li>
+<li>普通成员函数有 this 指针，可以访问类中的任意成员</li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p> <a href="https://www.runoob.com/w3cnote/cpp-static-usage.html" target="_blank" rel="noopener">static关键字解析</a></p>
+</blockquote>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li>一个派生类继承了所有的基类方法（我们几乎不使用 protected 或 private 继承，通常使用 public 继承），但下列情况除外：<br>  基类的构造函数、析构函数和拷贝构造函数<br>  基类的重载运算符<br>  基类的友元函数</li>
+<li>多继承 (环状继承),A-&gt;D, B-&gt;D, C-&gt;(A，B)，例如：<br> D<br>/ \<br>B   A<br>\ /<br>C</li>
+</ul>
+<pre><code>        class D{......};
+        class B: public D{......};
+        class A: public D{......};
+        class C: public B, public A{.....};
+</code></pre><p>这个继承会使D创建两个对象,要解决上面问题就要用虚拟继承格式：class 类名: virtual 继承方式 父类名</p>
+<pre><code>        class D{......};
+        class B: virtual public D{......};
+        class A: virtual public D{......};
+        class C: public B, public A{.....};</code></pre><h2 id="重载运算符"><a href="#重载运算符" class="headerlink" title="重载运算符"></a>重载运算符</h2><ul>
+<li>可以重新定义或重载大部分 C++ 内置的运算符</li>
+<li>重载的运算符是带有特殊名称的函数，函数名是由关键字 operator 和其后要重载的运算符符号构成的。与其他函数一样，重载运算符有一个<strong>返回类型</strong>和一个<strong>参数列表</strong>，如<pre><code>Box operator+(const Box&amp;);</code></pre></li>
+<li>大多数的重载运算符可被定义为普通的非成员函数或者被定义为类成员函数</li>
+</ul>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>形成多态必须具备三个条件：<br>    * 必须存在继承关系</p>
+<pre><code>* 继承关系必须有同名虚函数（其中虚函数是在基类中使用关键字Virtual声明的函数，在派生类中重新定义基类中定义的虚函数时，会告诉编译器不要静态链接到该函数）
+
+* **存在基类类型的指针或者引用，通过该指针或引用调用虚函数**</code></pre><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span>
+<span class="token keyword">protected</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> width<span class="token punctuation">,</span> height<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Shape</span><span class="token punctuation">(</span><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        width <span class="token operator">=</span> a<span class="token punctuation">;</span>
+        height <span class="token operator">=</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Parent class area :"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token operator">:</span> <span class="token keyword">public</span> Shape <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Rectangle</span><span class="token punctuation">(</span><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">Shape</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Rectangle class area :"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>width <span class="token operator">*</span> height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Triangle</span> <span class="token operator">:</span> <span class="token keyword">public</span> Shape <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Triangle</span><span class="token punctuation">(</span><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">Shape</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> <span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Triangle class area :"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>width <span class="token operator">*</span> height <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 程序的主函数</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Shape <span class="token operator">*</span>shape<span class="token punctuation">;</span>
+    Rectangle <span class="token function">rec</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Triangle <span class="token function">tri</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 存储矩形的地址</span>
+    shape <span class="token operator">=</span> <span class="token operator">&amp;</span>rec<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 调用矩形的求面积函数 area</span>
+    shape<span class="token operator">-</span><span class="token operator">></span><span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 存储三角形的地址</span>
+    shape <span class="token operator">=</span> <span class="token operator">&amp;</span>tri<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 调用三角形的求面积函数 area</span>
+    shape<span class="token operator">-</span><span class="token operator">></span><span class="token function">area</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//Parent class area</span>
+<span class="token comment" spellcheck="true">//Parent class area</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这个例子不能实现不同类型的面积求解。导致错误输出的原因是，调用函数 area() 被编译器设置为基类中的版本，这就是所谓的<strong>静态多态，或静态链接 - 函数调用在程序执行前就准备好了。有时候这也被称为早绑定</strong>，因为 area() 函数在程序编译期间就已经设置好了。</li>
+<li>让我们对程序稍作修改，在 Shape 类中，area() 的声明前放置<strong>关键字 virtual</strong>就可以了。此时，编译器看的是指针的内容，而不是它的类型。因此，由于 tri 和 rec 类的对象的地址存储在 *shape 中，所以会调用各自的 area() 函数。每个子类都有一个函数 area() 的独立实现。这就是多态的一般使用方式。有了多态，可以有多个不同的类，都带有同一个名称但具有不同实现的函数，函数的参数甚至可以是相同的。这就引申出：虚函数<ul>
+<li>虚函数 是在<strong>基类中使用关键字 virtual 声明的函数</strong>。在派生类中重新定义基类中定义的虚函数时，会告诉编译器<strong>不要</strong>静态链接到该函数。我们想要的是在程序中任意点可以根据所调用的对象类型来选择调用的函数，这种操作被称为<strong>动态链接，或后期绑定</strong><ul>
+<li>虚函数必须实现，如果不实现，编译器将报错</li>
+</ul>
+</li>
+<li>纯虚函数：想要在基类中定义虚函数，以便在派生类中重新定义该函数更好地适用于对象，但是在基类中又不能对虚函数给出有意义的实现，这个时候就会用到纯虚函数<code>virtual int area() = 0;</code>,<code>= 0</code> 告诉编译器，函数没有主体<ul>
+<li>纯虚函数一定没有定义，纯虚函数用来规范派生类的行为，即接口。包含纯虚函数的类是抽象类，抽象类不能定义实例，但可以声明指向实现该抽象类的具体类的指针或引用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="接口（抽象类）"><a href="#接口（抽象类）" class="headerlink" title="接口（抽象类）"></a>接口（抽象类）</h2><ul>
+<li>接口描述了类的行为和功能，而不需要完成类的特定实现</li>
+<li>C++ 接口是<strong>使用抽象类</strong>来实现的，抽象类与数据抽象互不混淆，数据抽象是一个把实现细节与相关的数据分离开的概念。如果类中<strong>至少有一个函数被声明为纯虚函数，则这个类就是抽象类</strong>。纯虚函数是通过在声明中使用 “= 0” 来指定的，如<code>virtual double getVolume() = 0;</code>。设计抽象类的目的是为了给其他类提供一个可以继承的适当的基类</li>
+</ul>
+<h1 id="高级教程"><a href="#高级教程" class="headerlink" title="高级教程"></a>高级教程</h1><h2 id="动态内存"><a href="#动态内存" class="headerlink" title="动态内存"></a>动态内存</h2><ul>
+<li><p>C++ 程序中的内存分为两个部分：</p>
+<ul>
+<li>栈：在函数内部声明的所有变量都将占用栈内存</li>
+<li>堆：这是程序中未使用的内存，在程序运行时可用于动态分配内存</li>
+</ul>
+</li>
+<li><p>delete 与 delete[] 区别</p>
+<ul>
+<li>如果ptr代表一个用new申请的内存返回的内存空间地址，即所谓的<strong>指针</strong>，那么：<ul>
+<li>delete ptr – 代表用来释放内存，且只用来释放ptr指向的内存</li>
+<li>delete[] rg – 用来释放rg指向的内存，！！还逐一调用数组中每个对象的 destructor<blockquote>
+<p>对于像 int/char/long/int*/struct 等等简单数据类型，由于对象没有 destructor，所以用 delete 和 delete [] 是一样的！但是如果是C++ 对象数组就不同了！</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><p>命名空间可作为附加信息来区分不同库中相同名称的函数、类、变量等。使用了命名空间即定义了上下文。本质上，命名空间就是定义了一个范围。</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><ul>
+<li>template中，引入 typename 和 class 关键字，它表明后面的符号为一个类型</li>
+<li>如果需要代码分离，即 template class 的声明、定义，以及 main 函数分属不同文件。例如：</li>
+</ul>
+<pre><code>src_dir
+|____MyStack.h
+|____MyStack.cpp
+|____main.cpp
+</code></pre><p>则 main.cpp 文件中需要同时包含 .h 文件和 .cpp 文件，不然会出现链接错误。</p>
+<pre><code>// main.cpp
+#include &quot;MyStack.h&quot;
+#include &quot;MyStack.cpp&quot;
+
+// 其他include
+// main函数主体 
+</code></pre><h3 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h3><p>定义形式：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> type<span class="token operator">></span> ret<span class="token operator">-</span>type func<span class="token operator">-</span><span class="token function">name</span><span class="token punctuation">(</span>parameter list<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">// 函数的主体</span>
+   ret<span class="token operator">-</span>type ：返回类型
+   func<span class="token operator">-</span>name：函数名称
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span>
+T <span class="token keyword">const</span> <span class="token operator">&amp;</span><span class="token function">Max</span><span class="token punctuation">(</span>T <span class="token operator">&amp;</span>x<span class="token punctuation">,</span> T <span class="token operator">&amp;</span>y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x <span class="token operator">></span> y <span class="token operator">?</span> x <span class="token operator">:</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> c <span class="token operator">=</span> <span class="token number">20.1</span><span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token number">10.0</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token function">Max</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token function">Max</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//2</span>
+<span class="token comment" spellcheck="true">//20.1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h3><p>定义形式</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">type</span><span class="token operator">></span> <span class="token keyword">class</span> <span class="token class-name">class</span><span class="token operator">-</span>name <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">// 类主体</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1516,7 +1694,7 @@ Student<span class="token operator">::</span><span class="token operator">~</spa
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="CPP菜鸟教程">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="CPP菜鸟教程">
                         
                         <span class="card-title">CPP菜鸟教程</span>
                     </div>
@@ -1569,7 +1747,7 @@ Student<span class="token operator">::</span><span class="token operator">~</spa
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="视觉SLAM14讲">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="视觉SLAM14讲">
                         
                         <span class="card-title">视觉SLAM14讲</span>
                     </div>
@@ -1778,7 +1956,7 @@ Student<span class="token operator">::</span><span class="token operator">~</spa
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">88.9k</span>
+            <span class="white-color">92.8k</span>
             
 
             <br>
