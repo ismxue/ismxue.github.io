@@ -470,33 +470,6 @@ sudo apt-get install
   </entry>
   
   <entry>
-    <title>狂神说MySQL</title>
-    <link href="https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/"/>
-    <id>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</id>
-    <published>2020-09-26T13:30:36.000Z</published>
-    <updated>2020-09-29T13:33:45.591Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mihuxiong.com/article/15&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Navicat 15.x for
-        
-      
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="MySQL" scheme="https://ismxue.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Git使用说明</title>
     <link href="https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/"/>
     <id>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</id>
@@ -524,6 +497,33 @@ sudo apt-get install
     
     
       <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>狂神说MySQL</title>
+    <link href="https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/"/>
+    <id>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</id>
+    <published>2020-09-26T13:30:36.000Z</published>
+    <updated>2020-09-29T13:33:45.591Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mihuxiong.com/article/15&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Navicat 15.x for
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="MySQL" scheme="https://ismxue.github.io/tags/MySQL/"/>
     
   </entry>
   
