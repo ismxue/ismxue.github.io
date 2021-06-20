@@ -13,7 +13,7 @@
 动态规划之背包汇总
 第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
 
-求解动态规划的核心问题是穷举,但是穷举">
+动态规划一般采用自底向上的方式求最值。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -321,7 +321,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    339
+                    616
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -504,7 +504,7 @@
 <p>动态规划之背包汇总</p>
 <p><a href="https://ismxue.github.io/2020/07/24/labuladong/di-ling-zhang-dong-tai-gui-hua-jie-ti-tao-lu-kuang-jia/">第零章：动态规划解题套路框架</a><br><a href="https://ismxue.github.io/2020/07/27/labuladong/di-yi-zhang-jing-dian-dong-tai-gui-hua-0-1-bei-bao-wen-ti/">第一章：经典动态规划：0-1 背包问题</a><br><a href="https://ismxue.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-zi-ji-bei-bao-wen-ti/">第零章：经典动态规划：子集背包问题</a><br><a href="https://ismxue.github.io/2020/07/27/labuladong/di-ling-zhang-jing-dian-dong-tai-gui-hua-wan-quan-bei-bao-wen-ti/">第零章：经典动态规划：完全背包问题</a></p>
 <hr>
-<p>求解动态规划的核心问题是穷举,但是穷举过程中会存在<strong>重叠子问题</strong>，所以加上<strong>备忘录</strong>来优化过程<br>dp 三要素：</p>
+<p>动态规划一般采用<strong>自底向上</strong>的方式<strong>求最值</strong>。<br>求解动态规划的核心问题是穷举,但是穷举过程中会存在<strong>重叠子问题</strong>，所以加上<strong>备忘录</strong>来优化过程<br>dp 三要素：</p>
 <ol>
 <li>明确 <strong>base case</strong></li>
 <li>明确「状态」-&gt; 明确「选择」, 即<strong>状态转移方程</strong><ul>
@@ -534,26 +534,26 @@ dp<span class="token punctuation">[</span><span class="token number">0</span><sp
         <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>i<span class="token number">-2</span><span class="token punctuation">]</span>
         <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-c++"><code class="language-c++">//#include <iostream>
-//#include <vector>
-//using namespace std;
-class Solution{
-public:
-    int fib(int N){
-        if (N==0)
-            return 0;
-        vector<int> dp(N+1);
-        dp[1]=1;
-        for (int i = 2; i <N+1; i++) {
-            dp[i]=dp[i-1]+dp[i-2];
-        }
-        return dp[N];
-    }
-};
-//int main(){
-//    int s=Solution().fib(5);
-//    cout<<s<<endl;
-//}
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//#include &lt;iostream></span>
+<span class="token comment" spellcheck="true">//#include &lt;vector></span>
+<span class="token comment" spellcheck="true">//using namespace std;</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> N<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>N<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">dp</span><span class="token punctuation">(</span>N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>i<span class="token number">-2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//int main(){</span>
+<span class="token comment" spellcheck="true">//    int s=Solution().fib(5);</span>
+<span class="token comment" spellcheck="true">//    cout&lt;&lt;s&lt;&lt;endl;</span>
+<span class="token comment" spellcheck="true">//}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="322-零钱兑换"><a href="#322-零钱兑换" class="headerlink" title="322. 零钱兑换"></a><a href="https://leetcode-cn.com/problems/coin-change/" target="_blank" rel="noopener">322. 零钱兑换</a></h1><ul>
 <li>明确 base case：dp[0]=0。 初始化时dp[i] 设为<code>float(&quot;inf&quot;)</code> 最大值</li>
@@ -570,28 +570,30 @@ public:
       <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">if</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">!=</span>float<span class="token punctuation">(</span><span class="token string">"inf"</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token operator">-</span><span class="token number">1</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<pre class="line-numbers language-c++"><code class="language-c++">//#include <vector>
-//#include <iostream>
-//using namespace std;
-class Solution {
-public:
-    int coinChange(vector<int>& coins, int amount) {
-        vector<int> dp(amount+1,amount+1);
-        dp[0]=0;
-        for (int i = 0; i < dp.size(); i++) {
-            for (int coin:coins) {
-                if(i-coin<0) continue;
-                dp[i]=min(dp[i],dp[i-coin]+1);
-            }
-        }
-        return (dp[amount]==amount+1)? -1:dp[amount];
-    }
-};
-//int main(){
-//    vector<int> coins={1, 2, 5};
-//    int s=Solution().coinChange(coins,11);
-//    cout<<s<<endl;
-//}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//#include &lt;vector></span>
+<span class="token comment" spellcheck="true">//#include &lt;iostream></span>
+<span class="token comment" spellcheck="true">//using namespace std;</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">coinChange</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> coins<span class="token punctuation">,</span> <span class="token keyword">int</span> amount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">dp</span><span class="token punctuation">(</span>amount<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>amount<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> amount<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> coin<span class="token operator">:</span>coins<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>coin<span class="token operator">&lt;=</span>i<span class="token punctuation">)</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">min</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>dp<span class="token punctuation">[</span>i<span class="token operator">-</span>coin<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>dp<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span>amount<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">:</span>dp<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//int main(){</span>
+<span class="token comment" spellcheck="true">//    vector&lt;int> coins={1, 2, 5};</span>
+<span class="token comment" spellcheck="true">//    int s=Solution().coinChange(coins,11);</span>
+<span class="token comment" spellcheck="true">//    cout&lt;&lt;s&lt;&lt;endl;</span>
+<span class="token comment" spellcheck="true">//}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -800,7 +802,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第零章：回溯算法解题套路框架">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第零章：回溯算法解题套路框架">
                         
                         <span class="card-title">第零章：回溯算法解题套路框架</span>
                     </div>
@@ -857,7 +859,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="第零章：学习算法和刷题的框架思维">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="第零章：学习算法和刷题的框架思维">
                         
                         <span class="card-title">第零章：学习算法和刷题的框架思维</span>
                     </div>
@@ -1065,7 +1067,7 @@ maxVal 记录的是全局最大路径和（可以不返回，因
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">92.8k</span>
+            <span class="white-color">93.5k</span>
             
 
             <br>

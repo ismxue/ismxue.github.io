@@ -324,7 +324,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -479,14 +479,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    7 分
                 </div>
                 
                 
@@ -561,6 +561,60 @@
                     visited<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
         backtrack<span class="token punctuation">(</span>nums<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//#include &lt;vector></span>
+<span class="token comment" spellcheck="true">//#include &lt;iostream></span>
+<span class="token comment" spellcheck="true">//#include &lt;algorithm></span>
+<span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">//using namespace std;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> res<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> visited<span class="token punctuation">;</span>
+
+    <span class="token keyword">void</span> <span class="token function">backtrack</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nums<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> visited<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>visited<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>visited<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//            检查当前num是否在路径中，count返回0（不在）或1（在）</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">count</span><span class="token punctuation">(</span>visited<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> visited<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            visited<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">backtrack</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> visited<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            visited<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">permute</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">backtrack</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> visited<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//int main() {</span>
+<span class="token comment" spellcheck="true">//    vector&lt;int> nums = {1, 2, 3};</span>
+<span class="token comment" spellcheck="true">//    Solution so;</span>
+<span class="token comment" spellcheck="true">//    vector&lt;vector&lt;int>> output = so.permute(nums);</span>
+<span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">////    结果的两种输出方式：1</span>
+<span class="token comment" spellcheck="true">//    for (auto out:output) {</span>
+<span class="token comment" spellcheck="true">//        for (auto each: out) {</span>
+<span class="token comment" spellcheck="true">//            cout &lt;&lt; each;</span>
+<span class="token comment" spellcheck="true">//        }</span>
+<span class="token comment" spellcheck="true">//        cout &lt;&lt; endl;</span>
+<span class="token comment" spellcheck="true">//    }</span>
+<span class="token comment" spellcheck="true">////    结果的两种输出方式：2</span>
+<span class="token comment" spellcheck="true">//    for (auto it = output.begin(); it &lt;output.end(); ++it) {</span>
+<span class="token comment" spellcheck="true">//        for (auto j = (*it).begin(); j &lt; (*it).end(); ++j) {</span>
+<span class="token comment" spellcheck="true">//                cout&lt;&lt;(*j);</span>
+<span class="token comment" spellcheck="true">//        }</span>
+<span class="token comment" spellcheck="true">//        cout&lt;&lt;endl;</span>
+<span class="token comment" spellcheck="true">//    }</span>
+<span class="token comment" spellcheck="true">//}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="78-子集"><a href="#78-子集" class="headerlink" title="78. 子集"></a><a href="https://leetcode-cn.com/problems/subsets/solution/hui-su-si-xiang-tuan-mie-pai-lie-zu-he-zi-ji-wen-t/" target="_blank" rel="noopener">78. 子集</a></h1><p><img src="https://i.loli.net/2021/04/21/7iOUEZmCdYhNHvx.png" alt="图片来自labuladong"></p>
 <h2 id="方法1（更容易理解）"><a href="#方法1（更容易理解）" class="headerlink" title="方法1（更容易理解）"></a>方法1（更容易理解）</h2><ul>
 <li>要有回溯结束的条件</li>
@@ -593,7 +647,35 @@
 <span class="token comment" spellcheck="true"># s=Solution()</span>
 <span class="token comment" spellcheck="true"># print(s.subsets(nums))</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="方法2-（供参考）"><a href="#方法2-（供参考）" class="headerlink" title="方法2 （供参考）"></a>方法2 （供参考）</h2><ul>
+<p>c++中，用一个start记录nums开始的地方</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//#include &lt;vector></span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token function">dfs</span> <span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>visited<span class="token punctuation">,</span><span class="token keyword">int</span> start<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> start<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            visited<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>visited<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//后面的dfs过程，只能选择nums[i+1:]范围的元素</span>
+            <span class="token function">dfs</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>visited<span class="token punctuation">,</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            visited<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//    全局变量保存结果</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> res<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">subsets</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> visited<span class="token punctuation">;</span>
+        res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>visited<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> start<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>visited<span class="token punctuation">,</span>start<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="方法2-（供参考）"><a href="#方法2-（供参考）" class="headerlink" title="方法2 （供参考）"></a>方法2 （供参考）</h2><p>（其实是方法1的另一种写法）</p>
+<ul>
 <li><p>在深度遍历决策树时，由于每个visited处对应的后续选择不一样，所以在回溯函数中加入idx参数用于记录选择的范围</p>
 </li>
 <li><p><a href="https://leetcode-cn.com/problems/subsets/solution/shou-hua-tu-jie-zi-ji-hui-su-fa-xiang-jie-wei-yun-/" target="_blank" rel="noopener">详细解释：</a></p>
@@ -892,7 +974,7 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第零章：BFS 算法解题套路框架（暂）">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第零章：BFS 算法解题套路框架（暂）">
                         
                         <span class="card-title">第零章：BFS 算法解题套路框架（暂）</span>
                     </div>
@@ -947,7 +1029,7 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="第零章：动态规划解题套路框架">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="第零章：动态规划解题套路框架">
                         
                         <span class="card-title">第零章：动态规划解题套路框架</span>
                     </div>
@@ -960,7 +1042,7 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
 动态规划之背包汇总
 第零章：动态规划解题套路框架第一章：经典动态规划：0-1 背包问题第零章：经典动态规划：子集背包问题第零章：经典动态规划：完全背包问题
 
-求解动态规划的核心问题是穷举,但是穷举
+动态规划一般采用自底向上的方式求最值。
                         
                     </div>
                     <div class="publish-info">
@@ -1157,7 +1239,7 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">92.8k</span>
+            <span class="white-color">93.5k</span>
             
 
             <br>
