@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-06-17T14:26:08.285Z</updated>
+  <updated>2021-06-20T09:58:56.953Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>读“把时间当做朋友”</title>
+    <link href="https://ismxue.github.io/2021/06/20/growth/du-ba-shi-jian-dang-zuo-peng-you/"/>
+    <id>https://ismxue.github.io/2021/06/20/growth/du-ba-shi-jian-dang-zuo-peng-you/</id>
+    <published>2021-06-20T09:15:05.000Z</published>
+    <updated>2021-06-20T09:58:56.953Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;因为不知道某个东西有什么用，所以有些人选择去学习，并在后续中根据学到的东西（如英语、表达能力、运动等）产生了更多的价值，并将这些内化为自己心智的一部分；而有些人选择放弃，不学的人永远都不知道这样东西带来的益处。&lt;strong&gt;同样的原因-&amp;gt;
+        
+      
+    
+    </summary>
+    
+      <category term="Growth" scheme="https://ismxue.github.io/categories/Growth/"/>
+    
+    
+      <category term="Reading List" scheme="https://ismxue.github.io/tags/Reading-List/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读“自卑与超越”</title>
+    <link href="https://ismxue.github.io/2021/06/20/growth/du-zi-bei-yu-chao-yue/"/>
+    <id>https://ismxue.github.io/2021/06/20/growth/du-zi-bei-yu-chao-yue/</id>
+    <published>2021-06-20T09:14:31.000Z</published>
+    <updated>2021-06-20T09:18:58.145Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;书摘&quot;&gt;&lt;a href=&quot;#书摘&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Growth" scheme="https://ismxue.github.io/categories/Growth/"/>
+    
+    
+      <category term="Reading List" scheme="https://ismxue.github.io/tags/Reading-List/"/>
+    
+  </entry>
   
   <entry>
     <title>CPP菜鸟教程</title>
@@ -470,37 +523,6 @@ sudo apt-get install
   </entry>
   
   <entry>
-    <title>Git使用说明</title>
-    <link href="https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/"/>
-    <id>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</id>
-    <published>2020-09-26T13:30:36.000Z</published>
-    <updated>2021-06-13T04:07:50.274Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Github提供基于Git的版本托管服务。&lt;/p&gt;
-&lt;p&gt;Git是一款免费、开源的分布式版本控制系统，是Github上用来管理项目的工具。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;简洁版&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
-    
-  </entry>
-  
-  <entry>
     <title>狂神说MySQL</title>
     <link href="https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/"/>
     <id>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</id>
@@ -524,34 +546,6 @@ sudo apt-get install
     
     
       <category term="MySQL" scheme="https://ismxue.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动手学深度学学习_pytorch版</title>
-    <link href="https://ismxue.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/"/>
-    <id>https://ismxue.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</id>
-    <published>2020-09-12T14:19:46.000Z</published>
-    <updated>2020-11-11T15:19:17.413Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://tangshusen.me/Dive-into-DL-PyTorch/#/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《动手学深度学习》(Pytorch版)&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://ismxue.github.io/categories/Python/"/>
-    
-    
-      <category term="深度学习" scheme="https://ismxue.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
