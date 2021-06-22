@@ -322,7 +322,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    231
+                    382
                 </div>
                 
 
@@ -501,43 +501,68 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>labuladong<a href="https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie/bfs-kuang-jia" target="_blank" rel="noopener">BFS 算法解题套路框架</a></p>
-<h1 id="111-二叉树的最小深度"><a href="#111-二叉树的最小深度" class="headerlink" title="111. 二叉树的最小深度"></a><a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/solution/li-jie-zhe-dao-ti-de-jie-shu-tiao-jian-by-user7208/" target="_blank" rel="noopener">111. 二叉树的最小深度</a></h1><p>这里先用递归解决</p>
+<h1 id="111-二叉树的最小深度"><a href="#111-二叉树的最小深度" class="headerlink" title="111. 二叉树的最小深度"></a><a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/solution/111-er-cha-shu-de-zui-xiao-shen-du-di-gu-ztum/" target="_blank" rel="noopener">111. 二叉树的最小深度</a></h1><p>这里先用递归解决</p>
 <ul>
 <li>递归结束的条件或者特判：若是空节点，则返回0</li>
 <li>若左右孩子都为空：返回1</li>
 <li>若左右孩子有一个为空：返回非空孩子的递归结果+1</li>
 <li>否则都不为空，返回左右孩子递归结果的最小值+1</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<p>与求最大深度不同的一点是：如果有一个孩子，要返回 （1+这个孩子）的深度</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">minDepth</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 递归结束的条件:没有左右孩子</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :rtype: int
+        """</span>
+        <span class="token comment" spellcheck="true"># 递归结束的条件</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        l <span class="token operator">=</span> minDepth<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+        r <span class="token operator">=</span> minDepth<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 如果左子树为空，右子树不为空，说明最小深度是1 + 右子树的深度</span>
+        <span class="token keyword">if</span> l<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">and</span> r<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token operator">+</span>r
+        <span class="token comment" spellcheck="true"># 如果右子树为空，左子树不为空，说明最小深度是1 + 左子树的深度</span>
+        <span class="token keyword">if</span> r<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">and</span> l<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token operator">+</span>l
+        <span class="token comment" spellcheck="true"># 如果左右子树都不为空，则返回1+min(l, r)</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> min<span class="token punctuation">(</span>l<span class="token punctuation">,</span> r<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">minDepth</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">not</span> root<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token function">minDepth</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> r <span class="token operator">=</span> <span class="token function">minDepth</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        leftMin <span class="token operator">=</span> self<span class="token punctuation">.</span>minDepth<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
-        rightMin <span class="token operator">=</span> self<span class="token punctuation">.</span>minDepth<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
-
-        <span class="token keyword">if</span> leftMin <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">and</span> rightMin <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token number">1</span>
-        <span class="token keyword">elif</span> leftMin <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">or</span> rightMin <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> leftMin <span class="token operator">+</span> <span class="token number">1</span> <span class="token keyword">if</span> leftMin<span class="token operator">!=</span><span class="token number">0</span> <span class="token keyword">else</span> rightMin <span class="token operator">+</span> <span class="token number">1</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> min<span class="token punctuation">(</span>leftMin<span class="token punctuation">,</span> rightMin<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">minDepth</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 递归结束的条件:没有左右孩子</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>
-
-        leftMin <span class="token operator">=</span> self<span class="token punctuation">.</span>minDepth<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
-        rightMin <span class="token operator">=</span> self<span class="token punctuation">.</span>minDepth<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
-
-        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">.</span>left <span class="token operator">and</span> <span class="token operator">not</span> root<span class="token punctuation">.</span>right<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token number">1</span>
-        <span class="token keyword">elif</span> <span class="token operator">not</span> root<span class="token punctuation">.</span>left <span class="token operator">or</span> <span class="token operator">not</span> root<span class="token punctuation">.</span>right<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> leftMin <span class="token operator">+</span> <span class="token number">1</span> <span class="token keyword">if</span> root<span class="token punctuation">.</span>left <span class="token keyword">else</span> rightMin <span class="token operator">+</span> <span class="token number">1</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> min<span class="token punctuation">(</span>leftMin<span class="token punctuation">,</span> rightMin<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> r <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">// if (root->left ==NULL &amp;&amp; root->right!= NULL)</span>
+            <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> r<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> l <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> l<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token function">min</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -746,7 +771,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第零章：我写了首诗，让你闭着眼睛也能写对二分搜索">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第零章：我写了首诗，让你闭着眼睛也能写对二分搜索">
                         
                         <span class="card-title">第零章：我写了首诗，让你闭着眼睛也能写对二分搜索</span>
                     </div>
@@ -802,7 +827,7 @@ mid=left + (right - left) // 2 可防止
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第零章：回溯算法解题套路框架">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="第零章：回溯算法解题套路框架">
                         
                         <span class="card-title">第零章：回溯算法解题套路框架</span>
                     </div>
@@ -1015,7 +1040,7 @@ mid=left + (right - left) // 2 可防止
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">99.9k</span>
+            <span class="white-color">100.4k</span>
             
 
             <br>
