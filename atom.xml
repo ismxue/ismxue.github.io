@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-06-20T10:02:54.260Z</updated>
+  <updated>2021-07-09T09:58:20.590Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基类派生类及虚析构函数</title>
+    <link href="https://ismxue.github.io/2021/07/09/cpp/ji-lei-pai-sheng-lei-ji-xu-xi-gou-han-shu/"/>
+    <id>https://ismxue.github.io/2021/07/09/cpp/ji-lei-pai-sheng-lei-ji-xu-xi-gou-han-shu/</id>
+    <published>2021-07-09T09:56:19.000Z</published>
+    <updated>2021-07-09T09:58:20.590Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;使用&lt;strong&gt;基类&lt;/strong&gt;的&lt;strong&gt;引用&lt;/strong&gt;或者&lt;strong&gt;指针&lt;/strong&gt;调用一个&lt;strong&gt;虚成员函数&lt;/strong&gt;时才会执行&lt;strong&gt;动态绑定&lt;/strong&gt;&lt;/p&gt;
+&lt;/blo
+        
+      
+    
+    </summary>
+    
+      <category term="CPP" scheme="https://ismxue.github.io/categories/CPP/"/>
+    
+    
+      <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>读“把时间当做朋友”</title>
@@ -71,10 +99,10 @@
   
   <entry>
     <title>CPP菜鸟教程</title>
-    <link href="https://ismxue.github.io/2021/06/14/ji-suan-ji-ji-chu/cpp-cai-niao-jiao-cheng/"/>
-    <id>https://ismxue.github.io/2021/06/14/ji-suan-ji-ji-chu/cpp-cai-niao-jiao-cheng/</id>
+    <link href="https://ismxue.github.io/2021/06/14/cpp/cpp-cai-niao-jiao-cheng/"/>
+    <id>https://ismxue.github.io/2021/06/14/cpp/cpp-cai-niao-jiao-cheng/</id>
     <published>2021-06-14T07:49:58.000Z</published>
-    <updated>2021-06-17T14:26:08.285Z</updated>
+    <updated>2021-07-09T09:58:15.947Z</updated>
     
     <summary type="html">
     
@@ -89,7 +117,7 @@
     
     </summary>
     
-      <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+      <category term="CPP" scheme="https://ismxue.github.io/categories/CPP/"/>
     
     
       <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
@@ -98,10 +126,10 @@
   
   <entry>
     <title>视觉SLAM14讲</title>
-    <link href="https://ismxue.github.io/2021/06/12/ji-suan-ji-ji-chu/shi-jue-slam14-jiang/"/>
-    <id>https://ismxue.github.io/2021/06/12/ji-suan-ji-ji-chu/shi-jue-slam14-jiang/</id>
+    <link href="https://ismxue.github.io/2021/06/12/cpp/shi-jue-slam14-jiang/"/>
+    <id>https://ismxue.github.io/2021/06/12/cpp/shi-jue-slam14-jiang/</id>
     <published>2021-06-12T06:54:33.000Z</published>
-    <updated>2021-06-16T14:24:40.168Z</updated>
+    <updated>2021-07-03T14:29:55.114Z</updated>
     
     <summary type="html">
     
@@ -181,7 +209,7 @@
     <link href="https://ismxue.github.io/2021/05/17/growth/du-xing-fu-de-hun-yin/"/>
     <id>https://ismxue.github.io/2021/05/17/growth/du-xing-fu-de-hun-yin/</id>
     <published>2021-05-17T02:36:31.000Z</published>
-    <updated>2021-05-23T07:21:38.940Z</updated>
+    <updated>2021-06-30T13:53:11.899Z</updated>
     
     <summary type="html">
     
@@ -230,10 +258,10 @@
   
   <entry>
     <title>Ubuntu使用记录</title>
-    <link href="https://ismxue.github.io/2021/05/15/study/ubuntu-shi-yong-ji-lu/"/>
-    <id>https://ismxue.github.io/2021/05/15/study/ubuntu-shi-yong-ji-lu/</id>
+    <link href="https://ismxue.github.io/2021/05/15/study/linux-shi-yong-ji-lu/"/>
+    <id>https://ismxue.github.io/2021/05/15/study/linux-shi-yong-ji-lu/</id>
     <published>2021-05-15T02:34:36.000Z</published>
-    <updated>2021-06-21T08:24:58.674Z</updated>
+    <updated>2021-07-03T14:29:43.685Z</updated>
     
     <summary type="html">
     
@@ -241,12 +269,8 @@
       
         
         
-          &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Windows和Ubuntu服务器之间复制粘贴解决方案&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ctrl+alt+del 打开任务管理器，ctrl+F 查看进程中是否有rdp进程，若有，则结束该进程&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;windows+r，
+          &lt;h1 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/41859976&quot; target=&quot;_blank&quot;
         
       
     
@@ -474,7 +498,7 @@
     <link href="https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/"/>
     <id>https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/</id>
     <published>2020-11-21T13:43:29.000Z</published>
-    <updated>2021-06-09T08:07:39.556Z</updated>
+    <updated>2021-07-03T14:29:50.514Z</updated>
     
     <summary type="html">
     
@@ -519,37 +543,6 @@
     
     
       <category term="深度学习" scheme="https://ismxue.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git使用说明</title>
-    <link href="https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/"/>
-    <id>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</id>
-    <published>2020-09-26T13:30:36.000Z</published>
-    <updated>2021-06-13T04:07:50.274Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Github提供基于Git的版本托管服务。&lt;/p&gt;
-&lt;p&gt;Git是一款免费、开源的分布式版本控制系统，是Github上用来管理项目的工具。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;简洁版&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://ismxue.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
     
   </entry>
   
