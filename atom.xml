@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-07-09T09:58:20.590Z</updated>
+  <updated>2021-07-15T01:45:49.537Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>基类派生类及虚析构函数</title>
-    <link href="https://ismxue.github.io/2021/07/09/cpp/ji-lei-pai-sheng-lei-ji-xu-xi-gou-han-shu/"/>
-    <id>https://ismxue.github.io/2021/07/09/cpp/ji-lei-pai-sheng-lei-ji-xu-xi-gou-han-shu/</id>
+    <title>Effective CPP</title>
+    <link href="https://ismxue.github.io/2021/07/14/c/effective-cpp/"/>
+    <id>https://ismxue.github.io/2021/07/14/c/effective-cpp/</id>
+    <published>2021-07-14T08:34:44.000Z</published>
+    <updated>2021-07-15T01:45:49.537Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-让自己习惯C&quot;&gt;&lt;a href=&quot;#1-让自己习惯C&quot; class=&quot;headerlink&quot; title=&quot;1. 让自己习惯C++&quot;&gt;&lt;/a&gt;1. 让自己习惯C++&lt;/h1&gt;&lt;h2 id=&quot;1-视C-为一个语言联邦&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
+    
+    
+      <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基类派生类及动态绑定</title>
+    <link href="https://ismxue.github.io/2021/07/09/c/ji-lei-pai-sheng-lei-ji-dong-tai-bang-ding/"/>
+    <id>https://ismxue.github.io/2021/07/09/c/ji-lei-pai-sheng-lei-ji-dong-tai-bang-ding/</id>
     <published>2021-07-09T09:56:19.000Z</published>
-    <updated>2021-07-09T09:58:20.590Z</updated>
+    <updated>2021-07-15T01:32:57.072Z</updated>
     
     <summary type="html">
     
@@ -37,7 +63,7 @@
     
     </summary>
     
-      <category term="CPP" scheme="https://ismxue.github.io/categories/CPP/"/>
+      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
     
     
       <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
@@ -98,11 +124,11 @@
   </entry>
   
   <entry>
-    <title>CPP菜鸟教程</title>
-    <link href="https://ismxue.github.io/2021/06/14/cpp/cpp-cai-niao-jiao-cheng/"/>
-    <id>https://ismxue.github.io/2021/06/14/cpp/cpp-cai-niao-jiao-cheng/</id>
+    <title>CPP教程笔记</title>
+    <link href="https://ismxue.github.io/2021/06/14/c/cpp-jiao-cheng-bi-ji/"/>
+    <id>https://ismxue.github.io/2021/06/14/c/cpp-jiao-cheng-bi-ji/</id>
     <published>2021-06-14T07:49:58.000Z</published>
-    <updated>2021-07-09T09:58:15.947Z</updated>
+    <updated>2021-07-10T04:01:26.058Z</updated>
     
     <summary type="html">
     
@@ -110,14 +136,15 @@
       
         
         
-          &lt;p&gt;&lt;a href=&quot;https://www.runoob.com/cplusplus/cpp-tutorial.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;教程链接&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;基础教程&quot;&gt;&lt;a href=&quot;#基础教程&quot;
+          &lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.runoob.com/cplusplus/cpp-tutorial.html&quot; target=&quot;_blank&quot;
         
       
     
     </summary>
     
-      <category term="CPP" scheme="https://ismxue.github.io/categories/CPP/"/>
+      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
     
     
       <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
@@ -126,8 +153,8 @@
   
   <entry>
     <title>视觉SLAM14讲</title>
-    <link href="https://ismxue.github.io/2021/06/12/cpp/shi-jue-slam14-jiang/"/>
-    <id>https://ismxue.github.io/2021/06/12/cpp/shi-jue-slam14-jiang/</id>
+    <link href="https://ismxue.github.io/2021/06/12/c/shi-jue-slam14-jiang/"/>
+    <id>https://ismxue.github.io/2021/06/12/c/shi-jue-slam14-jiang/</id>
     <published>2021-06-12T06:54:33.000Z</published>
     <updated>2021-07-03T14:29:55.114Z</updated>
     
@@ -516,33 +543,6 @@
     
     
       <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Neural Network Programming - Deep Learning with PyTorch</title>
-    <link href="https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/"/>
-    <id>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</id>
-    <published>2020-11-01T04:51:49.000Z</published>
-    <updated>2020-12-03T14:38:50.244Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=v5cngxo4mIg&amp;list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG&amp;index=1&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://ismxue.github.io/categories/Python/"/>
-    
-    
-      <category term="深度学习" scheme="https://ismxue.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

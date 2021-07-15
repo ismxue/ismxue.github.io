@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ismxue.github.io/2021/07/09/cpp/ji-lei-pai-sheng-lei-ji-xu-xi-gou-han-shu/</loc>
+    <loc>https://ismxue.github.io/2021/07/14/c/effective-cpp/</loc>
     
-    <lastmod>2021-07-09T09:58:20.590Z</lastmod>
+    <lastmod>2021-07-15T01:45:49.537Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ismxue.github.io/2021/06/14/cpp/cpp-cai-niao-jiao-cheng/</loc>
+    <loc>https://ismxue.github.io/2021/07/09/c/ji-lei-pai-sheng-lei-ji-dong-tai-bang-ding/</loc>
     
-    <lastmod>2021-07-09T09:58:15.947Z</lastmod>
+    <lastmod>2021-07-15T01:32:57.072Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ismxue.github.io/2021/06/14/c/cpp-jiao-cheng-bi-ji/</loc>
+    
+    <lastmod>2021-07-10T04:01:26.058Z</lastmod>
     
   </url>
   
@@ -37,7 +44,7 @@
   </url>
   
   <url>
-    <loc>https://ismxue.github.io/2021/06/12/cpp/shi-jue-slam14-jiang/</loc>
+    <loc>https://ismxue.github.io/2021/06/12/c/shi-jue-slam14-jiang/</loc>
     
     <lastmod>2021-07-03T14:29:55.114Z</lastmod>
     
