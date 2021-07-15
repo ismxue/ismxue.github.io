@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-07-15T08:45:57.742Z</updated>
+  <updated>2021-07-15T13:14:23.337Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第二章：高楼扔鸡蛋_进阶</title>
+    <link href="https://ismxue.github.io/2021/07/15/di-er-zhang-gao-lou-reng-ji-dan-jin-jie/"/>
+    <id>https://ismxue.github.io/2021/07/15/di-er-zhang-gao-lou-reng-ji-dan-jin-jie/</id>
+    <published>2021-07-15T13:14:23.000Z</published>
+    <updated>2021-07-15T13:14:23.337Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>第二章：高楼扔鸡蛋_进阶</title>
+    <link href="https://ismxue.github.io/2021/07/15/labuladong/di-er-zhang-gao-lou-reng-ji-dan-jin-jie/"/>
+    <id>https://ismxue.github.io/2021/07/15/labuladong/di-er-zhang-gao-lou-reng-ji-dan-jin-jie/</id>
+    <published>2021-07-15T13:14:23.000Z</published>
+    <updated>2021-07-15T14:16:43.485Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://labuladong.gitbook.io/algo/mu-lu-ye-2/mu-lu-ye-4/gao-lou-reng-ji-dan-jin-jie&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第二章：以最小插入次数构造回文串</title>
+    <link href="https://ismxue.github.io/2021/07/15/labuladong/di-er-zhang-yi-zui-xiao-cha-ru-ci-shu-gou-zao-hui-wen-chuan/"/>
+    <id>https://ismxue.github.io/2021/07/15/labuladong/di-er-zhang-yi-zui-xiao-cha-ru-ci-shu-gou-zao-hui-wen-chuan/</id>
+    <published>2021-07-15T09:34:03.000Z</published>
+    <updated>2021-07-15T13:14:30.311Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1312.
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
   
   <entry>
     <title>Effective CPP</title>
@@ -464,85 +530,6 @@
     
     
       <category term="Reading List" scheme="https://ismxue.github.io/tags/Reading-List/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pytorch学习资料</title>
-    <link href="https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao/"/>
-    <id>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao/</id>
-    <published>2021-01-08T13:02:13.000Z</published>
-    <updated>2021-01-09T02:39:23.157Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://space.bilibili.com/88461692/channel/detail?cid=26587&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://ismxue.github.io/categories/Python/"/>
-    
-    
-      <category term="深度学习" scheme="https://ismxue.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读“非暴力沟通”</title>
-    <link href="https://ismxue.github.io/2020/11/26/growth/du-fei-bao-li-gou-tong/"/>
-    <id>https://ismxue.github.io/2020/11/26/growth/du-fei-bao-li-gou-tong/</id>
-    <published>2020-11-26T12:24:08.000Z</published>
-    <updated>2021-05-16T09:59:11.036Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=8OkBpX1Tfgo&amp;t=80s&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;视频解读1：读《非暴力沟通》&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Growth" scheme="https://ismxue.github.io/categories/Growth/"/>
-    
-    
-      <category term="Reading List" scheme="https://ismxue.github.io/tags/Reading-List/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用Latex和Word写论文</title>
-    <link href="https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/"/>
-    <id>https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/</id>
-    <published>2020-11-21T13:43:29.000Z</published>
-    <updated>2021-07-03T14:29:50.514Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Latex转Word&quot;&gt;&lt;a href=&quot;#Latex转Word&quot; class=&quot;headerlink&quot; title=&quot;Latex转Word&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Study" scheme="https://ismxue.github.io/categories/Study/"/>
-    
-    
-      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
     
   </entry>
   
