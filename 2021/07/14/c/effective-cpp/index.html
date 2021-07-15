@@ -478,14 +478,14 @@ STL。template程序库，各部件紧密配合
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    10 分
                 </div>
                 
                 
@@ -510,7 +510,7 @@ STL。template程序库，各部件紧密配合
 <p><img src="https://i.loli.net/2021/07/14/sDjNbFq96kEJWMl.png" alt="20210714171217"><br><img src="https://i.loli.net/2021/07/14/MfO5CQqi3J78wpy.png" alt="20210714171301"></p>
 <h2 id="2：尽量以const，enum，inline替换-define"><a href="#2：尽量以const，enum，inline替换-define" class="headerlink" title="2：尽量以const，enum，inline替换#define"></a>2：尽量以const，enum，inline替换#define</h2><ul>
 <li>写#define宏时，为所有实参加上小括号，避免歧义</li>
-<li>有了 cansts 、 enums 和 inlines ，我们对预处理器(特别是 #define) 的需求降低了，但并非完全消除。 #include 仍然是必需品，而 #ifdef/#ifndef 也继续扮演控制编译的重要角色（如头文件的防卫式声明）。目前还不到预处理器全面引迫的时候，但你应该明确地给予它更长更频繁的假期</li>
+<li>有了 consts 、 enums 和 inlines ，我们对预处理器(特别是 #define) 的需求降低了，但并非完全消除。 #include 仍然是必需品，而 #ifdef/#ifndef 也继续扮演控制编译的重要角色（如头文件的防卫式声明）。目前还不到预处理器全面引退的时候，但你应该明确地给予它更长更频繁的假期</li>
 </ul>
 <h2 id="3：尽可能使用const"><a href="#3：尽可能使用const" class="headerlink" title="3：尽可能使用const"></a>3：尽可能使用const</h2><ul>
 <li>只要“某值保持不变” 是事实，就应该用const说出来<br><img src="https://i.loli.net/2021/07/14/CMaAf1zkvHIpRt5.png" alt="20210714172009"></li>
@@ -537,7 +537,7 @@ STL。template程序库，各部件紧密配合
 </ul>
 <h2 id="6：若不想使用编译器自动生成的函数，就该明确拒绝"><a href="#6：若不想使用编译器自动生成的函数，就该明确拒绝" class="headerlink" title="6：若不想使用编译器自动生成的函数，就该明确拒绝"></a>6：若不想使用编译器自动生成的函数，就该明确拒绝</h2><p>有些东西是独一无二的，如房子HomeForSale，这时并不希望它可以被copy</p>
 <ul>
-<li><p>如果你不声明 copy构造函数或 copy assignment 操作符，编译器可能为你产出一份，于是你的 class 支持 copying。如果你声明它们，你的 class还是支持 copyingo 但这里的目标却是要<strong>阻止</strong> copying!</p>
+<li><p>如果你不声明 copy构造函数或 copy assignment 操作符，编译器可能为你产出一份，于是你的 class 支持 copying。如果你声明它们，你的 class还是支持 copying。 但这里的目标却是要<strong>阻止</strong> copying!</p>
 </li>
 <li><p>解决方法1:将成员函数声明为 private 而且故意不实现它们<br><img src="https://i.loli.net/2021/07/14/v3AVtxNhHurqLX4.png" alt="20210714182121"></p>
 </li>
@@ -548,7 +548,7 @@ STL。template程序库，各部件紧密配合
 <h2 id="7：为多态基类声明virtual析构函数"><a href="#7：为多态基类声明virtual析构函数" class="headerlink" title="7：为多态基类声明virtual析构函数"></a>7：为多态基类声明virtual析构函数</h2><ul>
 <li>任何class 只要带有 virtual 函数（多态基类表现：它希望子类根据各自情况去实现该函数）都几乎确定应该也有一个<strong>virtual析构</strong>函数</li>
 <li>如果 class 不含 virtual 函数，通常表示它并不意图被用做一个base class。当 class不企图被当作base class，就不要把析构函数设为virtual</li>
-<li>欲实现出 virtual 函数，对象必须携带某些信息，主要用来在运行期决定哪一个<br>virtual 函数该被调用。这份信息通常是由一个所谓 vptr (virtual table pointer) 指针指<br>出。 vptr 指向一个由函数指针构成的数组，称为 vtbl ( virtual table) ;每一个带有 virtual<br>函数的 class 都有一个相应的 vtbl。当对象调用某一virtual 函数，实际被调用的函数<br>取决于该对象的 vptr 所指的那个 vtbl一一编译器在其中寻找适当的函数指针</li>
+<li>欲实现出 virtual 函数，对象必须携带某些信息，主要用来在运行期决定哪一个virtual 函数该被调用。这份信息通常是由一个所谓 vptr (virtual table pointer) 指针指出。 vptr 指向一个由函数指针构成的数组，称为 vtbl ( virtual table) ;每一个带有virtual函数的 class 都有一个相应的 vtbl。当对象调用某一virtual 函数，实际被调用的函数取决于该对象的 vptr 所指的那个vtbl一一编译器在其中寻找适当的函数指针</li>
 </ul>
 <p><img src="https://i.loli.net/2021/07/15/qZU7CYNsJy5Dw9t.png" alt="图片来自侯捷老师讲义_高级编程下_P51"></p>
 <ul>
@@ -596,17 +596,115 @@ STL。template程序库，各部件紧密配合
 <span class="token comment" spellcheck="true">//delete a</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <ul>
-<li>polymorphic (带多态性质的) base classes 应该声明一个 virtual 析构函数。如果&gt; class 带有任何 virtual 函数，它就应该拥有一个 virtual 析构函数</li>
-<li>Classes 的设计目的如果不是作为 base classes 使用，或不是为了具备多态性&gt; (polymorphically) ，就不该声明 virtual 析构函数</li>
+<li>polymorphic （带多态性质的） base classes 应该声明一个 virtual 析构函数。如果&gt; class 带有任何 virtual 函数，它就应该拥有一个 virtual 析构函数</li>
+<li>Classes 的设计目的如果不是作为 base classes 使用，或不是为了具备多态性&gt; （polymorphically） ，就不该声明 virtual 析构函数</li>
 </ul>
 </blockquote>
 <h2 id="8：别让异常逃离析构函数（待）"><a href="#8：别让异常逃离析构函数（待）" class="headerlink" title="8：别让异常逃离析构函数（待）"></a>8：别让异常逃离析构函数（待）</h2><blockquote>
 <ul>
-<li>构函数绝对不要吐出异常。如果一个被析构函数调用的函数可能抛出异常，析构函数应该捕捉任何异常，然后吞下它们(不传播)或结束程序</li>
-<li>如果客户需要对某个操作函数运行期间抛出的异常做出反应，那么 class 应该提供一个普通函数(而非在析构函数中)执行该操作</li>
+<li>构函数绝对不要吐出异常。如果一个被析构函数调用的函数可能抛出异常，析构函数应该捕捉任何异常，然后吞下它们（不传播）或结束程序</li>
+<li>如果客户需要对某个操作函数运行期间抛出的异常做出反应，那么 class 应该提供一个普通函数（而非在析构函数中）执行该操作</li>
 </ul>
 </blockquote>
-<h2 id="9：绝不在构造和析构过程中调用virtual函数"><a href="#9：绝不在构造和析构过程中调用virtual函数" class="headerlink" title="9：绝不在构造和析构过程中调用virtual函数"></a>9：绝不在构造和析构过程中调用virtual函数</h2><h1 id="6-继承与面向对象设计"><a href="#6-继承与面向对象设计" class="headerlink" title="6. 继承与面向对象设计"></a>6. 继承与面向对象设计</h1><h2 id="36-绝不重新定义继承而来的non-virtual函数"><a href="#36-绝不重新定义继承而来的non-virtual函数" class="headerlink" title="36:绝不重新定义继承而来的non-virtual函数"></a>36:绝不重新定义继承而来的non-virtual函数</h2><p>如果继承类重新定义了基类的non-virtual函数，则设计便出现了矛盾</p>
+<h2 id="9：绝不在构造和析构过程中调用virtual函数"><a href="#9：绝不在构造和析构过程中调用virtual函数" class="headerlink" title="9：绝不在构造和析构过程中调用virtual函数"></a>9：绝不在构造和析构过程中调用virtual函数</h2><ul>
+<li>由于base class 构造函数的执行更早于derived class 构造函数，当 base class 构造函数执行时 derived class 的成员变量<strong>尚未初始化</strong>。这会导致不明确行为。”要求使用对象内部尚未初始化的成分”非常危险，所以 C++ 不让你走这条路</li>
+<li>唯一能够避免此问题的做法就是：<strong>确定你的构造函数和析构函数都没有(在对象被创建和被销毁期间)调用virtual 函数</strong>，而它们调用的所有函数也都服从同一约束</li>
+<li>如果想在每次子类继承基类时，都能有适合于该子类的打印函数被调用，则将该函数设为non-virtual，然后要求 derived class 构造函数传递必要信息给 Base类的构造函数，而后那个构造函数便可安全地调用 non-virual 信息。<ul>
+<li>换句话说，由于你无法使用 virtual 函数从 base classes 向下调用，在构造期间，你可以藉由”令 derived classes 将必要的构造信息向上传递至 base class 构造函数”替换之而加以弥补</li>
+</ul>
+</li>
+</ul>
+<p>示例1：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Base</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Base</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>logInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">void</span> <span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>logInfo<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Base<span class="token operator">::</span><span class="token function">Base</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>logInfo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">printInfo</span><span class="token punctuation">(</span>logInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> Base<span class="token operator">::</span><span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>logInfo<span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> logInfo <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Derived1</span> <span class="token operator">:</span> Base <span class="token punctuation">{</span> <span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Derived1</span><span class="token punctuation">(</span><span class="token keyword">int</span> a_1<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">a1</span><span class="token punctuation">(</span>a_1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Base</span><span class="token punctuation">(</span><span class="token string">"This is int information"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> a1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Derived2</span> <span class="token operator">:</span> Base <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Derived2</span><span class="token punctuation">(</span><span class="token keyword">double</span> b_1<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">b1</span><span class="token punctuation">(</span>b_1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Base</span><span class="token punctuation">(</span><span class="token string">"This is double information"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">double</span> b1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Derived1 <span class="token function">derived1</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// This is int information</span>
+    Derived2 <span class="token function">derived2</span><span class="token punctuation">(</span><span class="token number">1.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// This is double information</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>示例2（与本条款对应的代码）：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Transaction</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">explicit</span> <span class="token function">Transaction</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>logInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">void</span> <span class="token function">logTransaction</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>logInfo<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//基类的构造函数内调用了logTransaction()函数，用来记录log信息</span>
+Transaction<span class="token operator">::</span><span class="token function">Transaction</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>logInfo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">logTransaction</span><span class="token punctuation">(</span>logInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//打印出log信息</span>
+<span class="token keyword">void</span> Transaction<span class="token operator">::</span><span class="token function">logTransaction</span><span class="token punctuation">(</span><span class="token keyword">const</span> string <span class="token operator">&amp;</span>logInfo<span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> logInfo <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">BuyTransaction</span> <span class="token operator">:</span> <span class="token keyword">public</span> Transaction <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+<span class="token comment" spellcheck="true">//    基类的构造函数</span>
+<span class="token comment" spellcheck="true">//    基类继承了父类，在构造函数中，也要完整地初始化子类的基类part</span>
+<span class="token comment" spellcheck="true">//    利用辅助函数将子类的信息传递到父类的构造函数中</span>
+    <span class="token function">BuyTransaction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">Transaction</span><span class="token punctuation">(</span><span class="token function">createLogString</span><span class="token punctuation">(</span>parameters<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">static</span> string parameters<span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> string <span class="token function">createLogString</span><span class="token punctuation">(</span>string parameters<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> parameters<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//在类外和函数外初始化static类型的的private变量</span>
+string BuyTransaction<span class="token operator">::</span>parameters <span class="token operator">=</span> <span class="token string">"logInformation"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    BuyTransaction b<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//logInformation</span>
+<span class="token comment" spellcheck="true">//    子类对象调用了父类的non-virtual函数</span>
+    b<span class="token punctuation">.</span><span class="token function">logTransaction</span><span class="token punctuation">(</span><span class="token string">"Derived object call Base non-virtual function"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//Derived object call Base non-virtual function</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/07/15/K9JopHPO2nwW4fe.png" alt="20210715164415"></p>
+<h2 id="10-令operator-返回一个reference-to-this"><a href="#10-令operator-返回一个reference-to-this" class="headerlink" title="10:令operator=返回一个reference to *this"></a>10:令operator=返回一个reference to *this</h2><h1 id="6-继承与面向对象设计"><a href="#6-继承与面向对象设计" class="headerlink" title="6. 继承与面向对象设计"></a>6. 继承与面向对象设计</h1><h2 id="36-绝不重新定义继承而来的non-virtual函数"><a href="#36-绝不重新定义继承而来的non-virtual函数" class="headerlink" title="36:绝不重新定义继承而来的non-virtual函数"></a>36:绝不重新定义继承而来的non-virtual函数</h2><p>如果继承类重新定义了基类的non-virtual函数，则设计便出现了矛盾</p>
 <ul>
 <li>virtual函数（唯一应该覆写的东西）可以实现动态绑定（<code>p3-&gt;virtualFunc();</code>）</li>
 <li>non-virtual函数是<strong>静态绑定</strong>。即便基类指针指向派生类的对象，通过该指针调用的non-virtial函数永远是基类的版本（<code>p3-&gt;nonVirtualFunc();</code>）</li>
@@ -1141,7 +1239,7 @@ publ
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">112k</span>
+            <span class="white-color">112.6k</span>
             
 
             <br>
