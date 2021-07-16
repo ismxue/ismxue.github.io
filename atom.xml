@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-07-15T13:14:23.337Z</updated>
+  <updated>2021-07-15T14:16:43.485Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>第二章：高楼扔鸡蛋_进阶</title>
-    <link href="https://ismxue.github.io/2021/07/15/di-er-zhang-gao-lou-reng-ji-dan-jin-jie/"/>
-    <id>https://ismxue.github.io/2021/07/15/di-er-zhang-gao-lou-reng-ji-dan-jin-jie/</id>
-    <published>2021-07-15T13:14:23.000Z</published>
-    <updated>2021-07-15T13:14:23.337Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>第二章：高楼扔鸡蛋_进阶</title>
@@ -87,7 +73,7 @@
     <link href="https://ismxue.github.io/2021/07/14/c/effective-cpp/"/>
     <id>https://ismxue.github.io/2021/07/14/c/effective-cpp/</id>
     <published>2021-07-14T08:34:44.000Z</published>
-    <updated>2021-07-15T08:45:57.742Z</updated>
+    <updated>2021-07-16T12:40:37.383Z</updated>
     
     <summary type="html">
     
@@ -530,6 +516,32 @@
     
     
       <category term="Reading List" scheme="https://ismxue.github.io/tags/Reading-List/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pytorch学习资料</title>
+    <link href="https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao/"/>
+    <id>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao/</id>
+    <published>2021-01-08T13:02:13.000Z</published>
+    <updated>2021-01-09T02:39:23.157Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://space.bilibili.com/88461692/channel/detail?cid=26587&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://ismxue.github.io/categories/Python/"/>
+    
+    
+      <category term="深度学习" scheme="https://ismxue.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

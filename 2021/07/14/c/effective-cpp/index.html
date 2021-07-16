@@ -323,7 +323,7 @@ STL。template程序库，各部件紧密配合
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -478,14 +478,14 @@ STL。template程序库，各部件紧密配合
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    13 分
                 </div>
                 
                 
@@ -704,7 +704,125 @@ string BuyTransaction<span class="token operator">::</span>parameters <span clas
 
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://i.loli.net/2021/07/15/K9JopHPO2nwW4fe.png" alt="20210715164415"></p>
-<h2 id="10-令operator-返回一个reference-to-this"><a href="#10-令operator-返回一个reference-to-this" class="headerlink" title="10:令operator=返回一个reference to *this"></a>10:令operator=返回一个reference to *this</h2><h1 id="6-继承与面向对象设计"><a href="#6-继承与面向对象设计" class="headerlink" title="6. 继承与面向对象设计"></a>6. 继承与面向对象设计</h1><h2 id="36-绝不重新定义继承而来的non-virtual函数"><a href="#36-绝不重新定义继承而来的non-virtual函数" class="headerlink" title="36:绝不重新定义继承而来的non-virtual函数"></a>36:绝不重新定义继承而来的non-virtual函数</h2><p>如果继承类重新定义了基类的non-virtual函数，则设计便出现了矛盾</p>
+<h2 id="10-令operator-返回一个reference-to-this"><a href="#10-令operator-返回一个reference-to-this" class="headerlink" title="10:令operator=返回一个reference to *this"></a>10:令operator=返回一个reference to *this</h2><ul>
+<li>为了实现”连锁赋值”，赋值操作符必须返回一个reference 指向操作符的左侧实参</li>
+<li>适用于所有赋值相关运算，如+=等</li>
+</ul>
+<p>以Base类为例，_返回类型是个reference_，指向当前对象</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// </span>
+Base<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Base<span class="token operator">&amp;</span> rhs<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 返回左侧对象</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="11-在operator-中处理“自我赋值”"><a href="#11-在operator-中处理“自我赋值”" class="headerlink" title="11:在operator=中处理“自我赋值”"></a>11:在operator=中处理“自我赋值”</h2><ul>
+<li>如果某段代码操作 pointers 或 references 而它们被用来”指向多个相同类型的对象”，就需考虑这些对象是否为同一个<br><img src="https://i.loli.net/2021/07/16/Uny8peRGL7NoTXv.png" alt="20210716190934"></li>
+</ul>
+<h2 id="12：复制对象时勿忘其每一个成分"><a href="#12：复制对象时勿忘其每一个成分" class="headerlink" title="12：复制对象时勿忘其每一个成分"></a>12：复制对象时勿忘其每一个成分</h2><p>当编写一个copy（包括拷贝构造和拷贝赋值）函数时，一定要</p>
+<ul>
+<li>复制所有local成员变量</li>
+<li>调用所有base class内的适当的copy函数</li>
+</ul>
+<p><img src="https://i.loli.net/2021/07/16/oUacMRkbDrJTzsL.png" alt="20210716193521"></p>
+<p>写派生类的构造函数/拷贝构造函数/拷贝赋值操作时，一定要<strong>完善基类部分</strong></p>
+<p>示例：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+<span class="token comment" spellcheck="true">//    构造函数</span>
+    <span class="token function">Person</span><span class="token punctuation">(</span>string _name<span class="token punctuation">,</span> <span class="token keyword">int</span> _age<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">name</span><span class="token punctuation">(</span>_name<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">age</span><span class="token punctuation">(</span>_age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Person construction function"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//    拷贝构造</span>
+    <span class="token function">Person</span><span class="token punctuation">(</span><span class="token keyword">const</span> Person <span class="token operator">&amp;</span>p1<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">name</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">age</span><span class="token punctuation">(</span>p1<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Person copy constructor"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//    拷贝赋值</span>
+    Person <span class="token operator">&amp;</span><span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Person <span class="token operator">&amp;</span>p1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Person copy assignment operator"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        name <span class="token operator">=</span> p1<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+        age <span class="token operator">=</span> p1<span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> string <span class="token operator">&amp;</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    string name<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token operator">:</span> <span class="token keyword">public</span> Person <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+<span class="token comment" spellcheck="true">//    构造函数</span>
+    <span class="token function">Student</span><span class="token punctuation">(</span>string _name<span class="token punctuation">,</span> <span class="token keyword">int</span> _age<span class="token punctuation">,</span> string _ID<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">Person</span><span class="token punctuation">(</span>_name<span class="token punctuation">,</span> _age<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">ID</span><span class="token punctuation">(</span>_ID<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Student construction function"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//    拷贝赋值</span>
+    <span class="token function">Student</span><span class="token punctuation">(</span><span class="token keyword">const</span> Student <span class="token operator">&amp;</span>s1<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">Person</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">ID</span><span class="token punctuation">(</span>s1<span class="token punctuation">.</span>ID<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Student copy constructor"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    Student <span class="token operator">&amp;</span><span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Student <span class="token operator">&amp;</span>s1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Student copy assignment operator"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        Person<span class="token operator">::</span><span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ID <span class="token operator">=</span> s1<span class="token punctuation">.</span>ID<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> string <span class="token operator">&amp;</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> ID<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    string ID<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Student <span class="token function">s1</span><span class="token punctuation">(</span><span class="token string">"Amy"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token string">"aaa123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"s1 information: "</span> <span class="token operator">&lt;&lt;</span> s1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> s1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> s1<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"=========="</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//    使用拷贝构造函数</span>
+    Student <span class="token function">s2</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"s2 information: "</span> <span class="token operator">&lt;&lt;</span> s2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> s2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> s2<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"=========="</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//    使用拷贝赋值操作</span>
+    Student <span class="token function">s3</span><span class="token punctuation">(</span><span class="token string">"Tom"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">"aaa456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s3 <span class="token operator">=</span> s1<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"s3 information: "</span> <span class="token operator">&lt;&lt;</span> s3<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> s3<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> s3<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 结果为：</span>
+<span class="token comment" spellcheck="true">// Person construction function</span>
+<span class="token comment" spellcheck="true">// Student construction function</span>
+<span class="token comment" spellcheck="true">// s1 information: Amy    18    aaa123</span>
+<span class="token comment" spellcheck="true">// ==========</span>
+<span class="token comment" spellcheck="true">// Person copy constructor</span>
+<span class="token comment" spellcheck="true">// Student copy constructor</span>
+<span class="token comment" spellcheck="true">// s2 information: Amy    18    aaa123</span>
+<span class="token comment" spellcheck="true">// ==========</span>
+<span class="token comment" spellcheck="true">// Person construction function</span>
+<span class="token comment" spellcheck="true">// Student construction function</span>
+<span class="token comment" spellcheck="true">// Student copy assignment operator</span>
+<span class="token comment" spellcheck="true">// Person copy assignment operator</span>
+<span class="token comment" spellcheck="true">// s3 information: Amy    18    aaa123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="6-继承与面向对象设计"><a href="#6-继承与面向对象设计" class="headerlink" title="6. 继承与面向对象设计"></a>6. 继承与面向对象设计</h1><h2 id="36-绝不重新定义继承而来的non-virtual函数"><a href="#36-绝不重新定义继承而来的non-virtual函数" class="headerlink" title="36:绝不重新定义继承而来的non-virtual函数"></a>36:绝不重新定义继承而来的non-virtual函数</h2><p>如果继承类重新定义了基类的non-virtual函数，则设计便出现了矛盾</p>
 <ul>
 <li>virtual函数（唯一应该覆写的东西）可以实现动态绑定（<code>p3-&gt;virtualFunc();</code>）</li>
 <li>non-virtual函数是<strong>静态绑定</strong>。即便基类指针指向派生类的对象，通过该指针调用的non-virtial函数永远是基类的版本（<code>p3-&gt;nonVirtualFunc();</code>）</li>
@@ -968,7 +1086,7 @@ string BuyTransaction<span class="token operator">::</span>parameters <span clas
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第二章：以最小插入次数构造回文串">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第二章：以最小插入次数构造回文串">
                         
                         <span class="card-title">第二章：以最小插入次数构造回文串</span>
                     </div>
@@ -1020,7 +1138,7 @@ base case：左下角三角形为0，对角线处为0（因为自己本身就是
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="基类派生类及动态绑定">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="基类派生类及动态绑定">
                         
                         <span class="card-title">基类派生类及动态绑定</span>
                     </div>
@@ -1233,7 +1351,7 @@ publ
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">113.2k</span>
+            <span class="white-color">113.8k</span>
             
 
             <br>
