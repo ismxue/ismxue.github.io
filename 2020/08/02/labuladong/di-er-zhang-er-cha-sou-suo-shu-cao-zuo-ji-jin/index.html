@@ -322,7 +322,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -477,7 +477,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.3k
                 </div>
                 
 
@@ -523,11 +523,11 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
 <li>定义：任意<strong>节点的值要大于等于左子树所有节点</strong>的值，且要<strong>小于等于右子树的所有节点</strong>的值。</li>
 <li>因此，<strong>中序遍历</strong>二叉搜索树后，可以得到<strong>递增</strong>数组。<pre class="line-numbers language-python"><code class="language-python">void BST<span class="token punctuation">(</span>TreeNode root<span class="token punctuation">,</span> int target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">==</span> target<span class="token punctuation">)</span>
-  <span class="token operator">//</span> 找到目标，做点什么
+    <span class="token operator">//</span> 找到目标，做点什么
 <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> target<span class="token punctuation">)</span> 
-  BST<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    BST<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">></span> target<span class="token punctuation">)</span>
-  BST<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    BST<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
@@ -559,7 +559,8 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
 </li>
 <li><p>使用辅助函数，增加函数参数列表，在<strong>参数中携带额外信息</strong>（当前节点需要比较的最小值和最大值）</p>
 <ul>
-<li>直接赋予最小值<code>-float(&quot;inf&quot;)</code>、最大值<code>float(&quot;inf&quot;)</code>，在递归的过程中修改最值（<strong>自顶向下</strong>的过程中，<strong>右子树的最小值从<code>-float(&quot;inf&quot;)</code> 逐渐增大，左子树的最大值从<code>float(&quot;inf&quot;)</code> 逐渐减小</strong>）</li>
+<li>直接赋予最小值<code>-float(&quot;inf&quot;)</code>、最大值<code>float(&quot;inf&quot;)</code>。对于根节点，它和无穷小无穷大进行比较，显然是合法的，然后再考虑子树</li>
+<li>在递归的过程中修改最值（<strong>自顶向下</strong>的过程中，<strong>右子树的最小值从<code>-float(&quot;inf&quot;)</code> 逐渐增大，左子树的最大值从<code>float(&quot;inf&quot;)</code> 逐渐减小</strong>）</li>
 </ul>
 </li>
 </ul>
@@ -589,6 +590,36 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
             <span class="token keyword">if</span> root<span class="token punctuation">.</span>val<span class="token operator">>=</span>ma<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token boolean">False</span>
             <span class="token keyword">return</span> valid<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> mi <span class="token punctuation">,</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token operator">and</span> valid<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> root<span class="token punctuation">.</span>val<span class="token punctuation">,</span> ma<span class="token punctuation">)</span>
         <span class="token keyword">return</span> valid<span class="token punctuation">(</span>root<span class="token punctuation">,</span> <span class="token operator">-</span>float<span class="token punctuation">(</span><span class="token string">"inf"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> float<span class="token punctuation">(</span><span class="token string">"inf"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">valid</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span>root<span class="token punctuation">,</span> <span class="token keyword">long</span> mi<span class="token punctuation">,</span> <span class="token keyword">long</span> ma<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>val <span class="token operator">>=</span> ma<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>val <span class="token operator">&lt;=</span> mi<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">valid</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">,</span> mi<span class="token punctuation">,</span> root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">valid</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">,</span> root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">,</span> ma<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">bool</span> <span class="token function">isValidBST</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">valid</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> LONG_MIN<span class="token punctuation">,</span> LONG_MAX<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="方法2：中序遍历二叉搜索树后，判断其是否为没有重复元素的递增数组"><a href="#方法2：中序遍历二叉搜索树后，判断其是否为没有重复元素的递增数组" class="headerlink" title="方法2：中序遍历二叉搜索树后，判断其是否为没有重复元素的递增数组"></a>方法2：中序遍历二叉搜索树后，判断其是否为没有重复元素的递增数组</h2><ul>
 <li>最后的<code>return nodes == sorted(set(nodes))</code>, 要<strong>先set，再 sorted</strong>，这样返回的是列表形式，即判断列表是否等于列表（<del>若先sorted，再set，返回的是一个集合，即判断列表是否等于集合，出现错误）</del> 。</li>
 </ul>
@@ -1067,7 +1098,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第二章：如何计算完全二叉树的节点数">
                         
                         <span class="card-title">第二章：如何计算完全二叉树的节点数</span>
                     </div>
@@ -1123,7 +1154,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第二章：LRU算法详解">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第二章：LRU算法详解">
                         
                         <span class="card-title">第二章：LRU算法详解</span>
                     </div>
@@ -1333,7 +1364,7 @@ traverse<span class="token punctuation">(</span>root<span class="token punctuati
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">113.8k</span>
+            <span class="white-color">120.4k</span>
             
 
             <br>

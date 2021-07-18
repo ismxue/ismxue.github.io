@@ -323,7 +323,7 @@ STL。template程序库，各部件紧密配合
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -478,7 +478,7 @@ STL。template程序库，各部件紧密配合
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.3k
                 </div>
                 
 
@@ -539,11 +539,45 @@ STL。template程序库，各部件紧密配合
 <ul>
 <li><p>如果你不声明 copy构造函数或 copy assignment 操作符，编译器可能为你产出一份，于是你的 class 支持 copying。如果你声明它们，你的 class还是支持 copying。 但这里的目标却是要<strong>阻止</strong> copying!</p>
 </li>
-<li><p>解决方法1:将成员函数声明为 private 而且故意不实现它们<br><img src="https://i.loli.net/2021/07/14/v3AVtxNhHurqLX4.png" alt="20210714182121"></p>
+<li><p>解决方法1:将成员函数声明为 private 而且故意不实现它们（只声明了但没有实现，当然不可以copy啦）<br><img src="https://i.loli.net/2021/07/14/v3AVtxNhHurqLX4.png" alt="20210714182121"></p>
 </li>
 <li><p>解决方法2：只要将 <strong>copy构造</strong>函数和 <strong>copyassignment操作符</strong>声明为 <strong>private</strong> 就可以办到，但不是在 HomeForSale 自身，而是在一个<strong>专门为了阻止 copying 动作而设计的 base class 内</strong></p>
+<ul>
+<li>子类如果写自己的拷贝函数，则需要完整地把父类部分也实现（见条款12）。由于父类部分包含在子类中，而父类的copy函数是私有的，因此子类无法实现父类部分的copy，所以编译器也不会允许子类的拷贝</li>
+</ul>
 </li>
 </ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//如果把Uncopyable类的private注释取消，则编译器允许HomeForSale h3(h1)、h2=h1等操作</span>
+
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Uncopyable</span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//    允许子类对象构造和析构</span>
+<span class="token keyword">protected</span><span class="token operator">:</span>
+    <span class="token function">Uncopyable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token operator">~</span><span class="token function">Uncopyable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//    但阻止子类对象copy</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token function">Uncopyable</span><span class="token punctuation">(</span><span class="token keyword">const</span> Uncopyable <span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Uncopyable <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Uncopyable <span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">HomeForSale</span> <span class="token operator">:</span> <span class="token keyword">private</span> Uncopyable <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    HomeForSale h1<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//   不允许拷贝和赋值</span>
+<span class="token comment" spellcheck="true">//    HomeForSale h2=h1;</span>
+<span class="token comment" spellcheck="true">//    HomeForSale h3(h1);</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://i.loli.net/2021/07/14/JN3kEm5XwVlpnqg.png" alt="20210714182653"></p>
 <h2 id="7：为多态基类声明virtual析构函数"><a href="#7：为多态基类声明virtual析构函数" class="headerlink" title="7：为多态基类声明virtual析构函数"></a>7：为多态基类声明virtual析构函数</h2><ul>
 <li>任何class 只要带有 virtual 函数（多态基类表现：它希望子类根据各自情况去实现该函数）都几乎确定应该也有一个<strong>virtual析构</strong>函数</li>
@@ -777,6 +811,7 @@ Base<span class="token operator">&amp;</span> <span class="token keyword">operat
         cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Student copy constructor"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
+<span class="token comment" spellcheck="true">//    拷贝赋值</span>
     Student <span class="token operator">&amp;</span><span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Student <span class="token operator">&amp;</span>s1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Student copy assignment operator"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
         Person<span class="token operator">::</span><span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -800,7 +835,6 @@ Base<span class="token operator">&amp;</span> <span class="token keyword">operat
     <span class="token comment" spellcheck="true">//    使用拷贝构造函数</span>
     Student <span class="token function">s2</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
     cout <span class="token operator">&lt;&lt;</span> <span class="token string">"s2 information: "</span> <span class="token operator">&lt;&lt;</span> s2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> s2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\t"</span> <span class="token operator">&lt;&lt;</span> s2<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-
     cout <span class="token operator">&lt;&lt;</span> <span class="token string">"=========="</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//    使用拷贝赋值操作</span>
     Student <span class="token function">s3</span><span class="token punctuation">(</span><span class="token string">"Tom"</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">"aaa456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1086,7 +1120,7 @@ Base<span class="token operator">&amp;</span> <span class="token keyword">operat
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第二章：以最小插入次数构造回文串">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第二章：以最小插入次数构造回文串">
                         
                         <span class="card-title">第二章：以最小插入次数构造回文串</span>
                     </div>
@@ -1138,7 +1172,7 @@ base case：左下角三角形为0，对角线处为0（因为自己本身就是
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="基类派生类及动态绑定">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="基类派生类及动态绑定">
                         
                         <span class="card-title">基类派生类及动态绑定</span>
                     </div>
@@ -1351,7 +1385,7 @@ publ
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">113.8k</span>
+            <span class="white-color">120.4k</span>
             
 
             <br>
