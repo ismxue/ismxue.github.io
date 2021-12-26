@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>M&#39;s Blog</title>
+  
+  <subtitle>ALL TIME IS NO TIME WHEN IT IS PAST</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://ismxue.github.io/"/>
+  <updated>2021-10-19T13:29:29.000Z</updated>
+  <id>https://ismxue.github.io/</id>
+  
+  <author>
+    <name>M</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://ismxue.github.io/2021/10/19/labuladong/dfs-suan-fa-miao-sha-wu-dao-dao-yu-wen-ti/"/>
+    <id>https://ismxue.github.io/2021/10/19/labuladong/dfs-suan-fa-miao-sha-wu-dao-dao-yu-wen-ti/</id>
+    <published>2021-10-19T13:29:29.000Z</published>
+    <updated>2021-10-19T13:29:29.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;title: DFS算法秒杀五道岛屿问题&lt;br&gt;top: false&lt;br&gt;cover: false&lt;br&gt;toc: true&lt;br&gt;mathjax: true&lt;br&gt;date: 2021-10-18
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Quotes I Have Enjoyed</title>
+    <link href="https://ismxue.github.io/2021/10/16/growth/quotes-i-have-enjoyed/"/>
+    <id>https://ismxue.github.io/2021/10/16/growth/quotes-i-have-enjoyed/</id>
+    <published>2021-10-16T07:54:09.000Z</published>
+    <updated>2021-10-25T14:06:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;What you do matters, but why you do it matters more.&lt;/p&gt;
+&lt;p&gt;懦夫从不启程，弱者死于路中，只剩我们前行，一步都不能停。 -
+        
+      
+    
+    </summary>
+    
+      <category term="Growth" scheme="https://ismxue.github.io/categories/Growth/"/>
+    
+    
+      <category term="Growth" scheme="https://ismxue.github.io/tags/Growth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CPP新式转型</title>
+    <link href="https://ismxue.github.io/2021/10/16/c/cpp-xin-shi-zhuan-xing/"/>
+    <id>https://ismxue.github.io/2021/10/16/c/cpp-xin-shi-zhuan-xing/</id>
+    <published>2021-10-16T05:13:00.000Z</published>
+    <updated>2021-10-24T10:01:15.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cplusplus.com/doc/oldtutorial/typecasting/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Type
+        
+      
+    
+    </summary>
+    
+      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
+    
+    
+      <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚函数，虚表，虚表指针</title>
+    <link href="https://ismxue.github.io/2021/10/16/c/xu-han-shu-xu-biao-xu-biao-zhi-zhen/"/>
+    <id>https://ismxue.github.io/2021/10/16/c/xu-han-shu-xu-biao-xu-biao-zhi-zhen/</id>
+    <published>2021-10-16T04:22:19.000Z</published>
+    <updated>2021-10-18T04:05:06.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;虚函数，虚表，虚表指针-（great-explanation-）&quot;&gt;&lt;a href=&quot;#虚函数，虚表，虚表指针-（great-explanation-）&quot; class=&quot;headerlink&quot; title=&quot;虚函数，虚表，虚表指针 （great
+        
+      
+    
+    </summary>
+    
+      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
+    
+    
+      <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Ubuntu中使用gtest</title>
+    <link href="https://ismxue.github.io/2021/10/12/c/zai-ubuntu-zhong-shi-yong-gtest/"/>
+    <id>https://ismxue.github.io/2021/10/12/c/zai-ubuntu-zhong-shi-yong-gtest/</id>
+    <published>2021-10-12T08:26:55.000Z</published>
+    <updated>2021-10-12T08:36:19.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://google.github.io/googletest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GoogleTest User’s Guide官方教程&lt;/a&gt;&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
+    
+    
+      <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式</title>
+    <link href="https://ismxue.github.io/2021/10/06/c/she-ji-mo-shi/"/>
+    <id>https://ismxue.github.io/2021/10/06/c/she-ji-mo-shi/</id>
+    <published>2021-10-06T05:25:15.000Z</published>
+    <updated>2021-10-18T09:40:22.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://refactoringguru.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Refactoring.Guru&lt;/a&gt;&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
+    
+    
+      <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>71-简化路径</title>
+    <link href="https://ismxue.github.io/2021/10/03/leetcode/71-jian-hua-lu-jing/"/>
+    <id>https://ismxue.github.io/2021/10/03/leetcode/71-jian-hua-lu-jing/</id>
+    <published>2021-10-03T14:12:04.000Z</published>
+    <updated>2021-10-03T14:41:59.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>N叉树操作</title>
+    <link href="https://ismxue.github.io/2021/10/03/leetcode/n-cha-shu-cao-zuo/"/>
+    <id>https://ismxue.github.io/2021/10/03/leetcode/n-cha-shu-cao-zuo/</id>
+    <published>2021-10-03T11:05:18.000Z</published>
+    <updated>2021-10-03T14:31:52.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;589-N-叉树的前序遍历&quot;&gt;&lt;a href=&quot;#589-N-叉树的前序遍历&quot; class=&quot;headerlink&quot; title=&quot;589. N 叉树的前序遍历&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉树的遍历</title>
+    <link href="https://ismxue.github.io/2021/09/28/leetcode/er-cha-shu-de-bian-li/"/>
+    <id>https://ismxue.github.io/2021/09/28/leetcode/er-cha-shu-de-bian-li/</id>
+    <published>2021-09-28T02:00:00.000Z</published>
+    <updated>2021-10-03T14:31:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/binary-tree-postorder-traversal/solution/liang-chong-die-dai-by-powcai/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一章：手把手带你刷二叉搜索树-第三期</title>
+    <link href="https://ismxue.github.io/2021/09/27/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-sou-suo-shu-di-san-qi/"/>
+    <id>https://ismxue.github.io/2021/09/27/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-sou-suo-shu-di-san-qi/</id>
+    <published>2021-09-27T02:44:30.000Z</published>
+    <updated>2021-10-03T13:26:25.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/mu-lu-ye-1/mu-lu-ye-1/bst3&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一章：手把手带你刷二叉搜索树-第二期</title>
+    <link href="https://ismxue.github.io/2021/09/27/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-sou-suo-shu-di-er-qi/"/>
+    <id>https://ismxue.github.io/2021/09/27/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-sou-suo-shu-di-er-qi/</id>
+    <published>2021-09-27T02:44:22.000Z</published>
+    <updated>2021-10-01T09:29:13.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitee.io/algo/2/20/27/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;手把手带你刷二叉搜索树-第二期&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;实现 Binary Search
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一章：手把手带你刷二叉搜索树-第一期</title>
+    <link href="https://ismxue.github.io/2021/09/27/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-sou-suo-shu-di-yi-qi/"/>
+    <id>https://ismxue.github.io/2021/09/27/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-sou-suo-shu-di-yi-qi/</id>
+    <published>2021-09-27T02:44:13.000Z</published>
+    <updated>2021-09-27T10:00:18.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://mp.weixin.qq.com/s/ioyqagZLYrvdlZyOMDjrPw&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>上岸记</title>
+    <link href="https://ismxue.github.io/2021/09/25/growth/shang-an-ji/"/>
+    <id>https://ismxue.github.io/2021/09/25/growth/shang-an-ji/</id>
+    <published>2021-09-25T08:27:42.000Z</published>
+    <updated>2021-10-13T02:44:21.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;2021年2月15号,我在重庆的酒店里隔离.一天,接到公司的电话,问有没有意向投递他们部门,我说行呀.然后进行了半小时的电话面试.&lt;/li&gt;
+&lt;li&gt;2021年3月初,我居家隔离,并做了测评.测评前一天,HR小姐姐特意打电话过来叮嘱我注意事项,并告诉我最好在安静
+        
+      
+    
+    </summary>
+    
+      <category term="Growth" scheme="https://ismxue.github.io/categories/Growth/"/>
+    
+    
+      <category term="Growth" scheme="https://ismxue.github.io/tags/Growth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一章：手把手带你刷二叉树-第三期</title>
+    <link href="https://ismxue.github.io/2021/09/23/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-shu-di-san-qi/"/>
+    <id>https://ismxue.github.io/2021/09/23/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-shu-di-san-qi/</id>
+    <published>2021-09-23T11:42:06.000Z</published>
+    <updated>2021-09-23T12:55:24.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://mp.weixin.qq.com/s/LJbpo49qppIeRs-FbgjsSQ&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第零章：一个方法团灭LEETCODE股票买卖问题</title>
+    <link href="https://ismxue.github.io/2021/09/11/labuladong/di-ling-zhang-yi-ge-fang-fa-tuan-mie-leetcode-gu-piao-mai-mai-wen-ti/"/>
+    <id>https://ismxue.github.io/2021/09/11/labuladong/di-ling-zhang-yi-ge-fang-fa-tuan-mie-leetcode-gu-piao-mai-mai-wen-ti/</id>
+    <published>2021-09-11T07:07:48.000Z</published>
+    <updated>2021-10-01T07:57:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitee.io/algo/1/9/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第零章：单链表的六大解题套路，你都见过么？</title>
+    <link href="https://ismxue.github.io/2021/09/09/labuladong/di-ling-zhang-dan-lian-biao-de-liu-da-jie-ti-tao-lu-ni-du-jian-guo-me/"/>
+    <id>https://ismxue.github.io/2021/09/09/labuladong/di-ling-zhang-dan-lian-biao-de-liu-da-jie-ti-tao-lu-ni-du-jian-guo-me/</id>
+    <published>2021-09-09T07:56:57.000Z</published>
+    <updated>2021-09-10T14:05:52.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/mu-lu-ye/lian-biao-ji-qiao&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>根据字符出现频率排序</title>
+    <link href="https://ismxue.github.io/2021/09/08/leetcode/gen-ju-zi-fu-chu-xian-pin-lu-pai-xu/"/>
+    <id>https://ismxue.github.io/2021/09/08/leetcode/gen-ju-zi-fu-chu-xian-pin-lu-pai-xu/</id>
+    <published>2021-09-08T03:39:38.000Z</published>
+    <updated>2021-09-08T06:36:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这类问题主要用到lambda排序&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用栈实现队列</title>
+    <link href="https://ismxue.github.io/2021/09/04/leetcode/yong-zhan-shi-xian-dui-lie/"/>
+    <id>https://ismxue.github.io/2021/09/04/leetcode/yong-zhan-shi-xian-dui-lie/</id>
+    <published>2021-09-04T08:50:31.000Z</published>
+    <updated>2021-09-04T09:57:37.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;面试题09-用两个栈实现队列&quot;&gt;&lt;a href=&quot;#面试题09-用两个栈实现队列&quot; class=&quot;headerlink&quot; title=&quot;面试题09. 用两个栈实现队列&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>697-数组的度</title>
+    <link href="https://ismxue.github.io/2021/09/03/leetcode/697-shu-zu-de-du/"/>
+    <id>https://ismxue.github.io/2021/09/03/leetcode/697-shu-zu-de-du/</id>
+    <published>2021-09-03T08:07:01.000Z</published>
+    <updated>2021-09-16T02:09:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;697-数组的度&quot;&gt;&lt;a href=&quot;#697-数组的度&quot; class=&quot;headerlink&quot; title=&quot;697. 数组的度&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11-盛最多水的容器</title>
+    <link href="https://ismxue.github.io/2021/09/02/leetcode/11-sheng-zui-duo-shui-de-rong-qi/"/>
+    <id>https://ismxue.github.io/2021/09/02/leetcode/11-sheng-zui-duo-shui-de-rong-qi/</id>
+    <published>2021-09-02T11:22:41.000Z</published>
+    <updated>2021-09-16T02:09:30.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/container-with-most-water/solution/container-with-most-water-shuang-zhi-zhen-fa-yi-do/&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+</feed>
