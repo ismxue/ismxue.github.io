@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>TOF</title>
+      <link href="/2021/12/26/c/tof/"/>
+      <url>/2021/12/26/c/tof/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Fixed-Point"><a href="#Fixed-Point" class="headerlink" title="Fixed Point"></a>Fixed Point</h1><p><a href="https://www.youtube.com/watch?v=YXKDjVcCWyE" target="_blank" rel="noopener">Fixed Point Numbers</a><br><img src="https://s2.loli.net/2021/12/26/KbPmHQviIzh7SyD.png" alt="20211226215546"><br><img src="https://s2.loli.net/2021/12/26/O9PSoGFY3Ua8RBE.png" alt="20211226215602"><br><img src="https://s2.loli.net/2021/12/26/JXZI8rcLDdzf3PQ.png" alt="20211226215613"><br><img src="https://s2.loli.net/2021/12/26/udSeaQk6xEKnOmG.png" alt="20211226215624"><br><img src="https://s2.loli.net/2021/12/26/Qkt1T45nIHgpbrZ.png" alt="20211226215635"><br><img src="https://s2.loli.net/2021/12/26/ZP5YCxKJdomHO8w.png" alt="20211226215705"></p><p><a href="https://www.youtube.com/watch?v=f9dCo6SlCFU" target="_blank" rel="noopener">Time-of-Flight (ToF) Tips: Tips to Boost 3D Performance and Cut Integration Time &amp; Cost</a><br><img src="https://s2.loli.net/2021/12/26/LD7gCrGVKqOJXcE.png" alt="20211226215816"><br><img src="https://s2.loli.net/2021/12/26/jukJHSzALnmsDME.png" alt="20211226215829"></p><p><a href="https://www.youtube.com/watch?v=gc1Nl3mmCuY" target="_blank" rel="noopener">Floating Point Numbers</a><br><img src="https://s2.loli.net/2021/12/26/u13qTJspWx8Uwl4.png" alt="20211226215909"><br><img src="https://s2.loli.net/2021/12/26/yYXOtxuJg2zrlp7.png" alt="20211226215920"><br><img src="https://s2.loli.net/2021/12/26/o1jY3xPchZtlLCi.png" alt="20211226220043"><br><img src="https://s2.loli.net/2021/12/26/6E7mzgqjMo4WJVy.png" alt="20211226220102"></p><p><a href="https://www.youtube.com/watch?v=QFlbvSeBkwY" target="_blank" rel="noopener">Fixed Point Binary Fractions</a></p><p><img src="https://s2.loli.net/2021/12/26/w8RL2SXIkeZDNOB.png" alt="20211226220142"><br><img src="https://s2.loli.net/2021/12/26/lGdbzXqTYpvDkNi.png" alt="20211226220157"><br><img src="https://s2.loli.net/2021/12/26/eIwxifZXjRS74OF.png" alt="20211226220211"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CPP代码结构</title>
+      <link href="/2021/12/26/c/cpp-dai-ma-jie-gou/"/>
+      <url>/2021/12/26/c/cpp-dai-ma-jie-gou/</url>
+      
+        <content type="html"><![CDATA[<h1 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h1><h2 id="head-file"><a href="#head-file" class="headerlink" title="head file"></a>head file</h2><p><a href="https://www.youtube.com/watch?v=5UMHbzZGQuE" target="_blank" rel="noopener">Header files and libraries (Kevin Lynch)</a><br><a href="https://www.youtube.com/watch?v=qaGzc56Rekg" target="_blank" rel="noopener">What are header files in C++ ( PROGRAMMING TUTORIAL for beginners)</a><br><img src="https://s2.loli.net/2021/12/26/AEbDW5o3TPG2ujr.png" alt="20211226210828"><br><img src="https://s2.loli.net/2021/12/26/APwdGKp4RFY5uJc.png" alt="20211226210857"><br><img src="https://s2.loli.net/2021/12/26/HathKkSPmg36JjT.png" alt="20211226210915"></p><ul><li>各组配套的函数都是相互独立的，只有在link后，才生成可执行文件</li><li>头文件用于声明，源文件用于实现该声明 （两者的文件名甚至可以不对应，为编程规范，文件名应该互相对应）</li><li>源文件在调用其他文件的函数时，只需要包含相应的头文件即可（在编译时，只需找全它所需要的内容）。编译好后，在运行时，才和.cpp（实现）进行配套</li></ul><p>示例：<br>头文件 Pizza.h：</p><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">ifndef</span> CPP_PIZZA_H</span><span class="token macro property">#<span class="token directive keyword">define</span> CPP_PIZZA_H</span><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span><span class="token keyword">void</span> <span class="token function">menu</span><span class="token punctuation">(</span>std<span class="token operator">::</span>string myMenu<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token macro property">#<span class="token directive keyword">endif</span> </span><span class="token comment" spellcheck="true">//CPP_PIZZA_H</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>对应的源文件 MyPizza.cpp:</p><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Pizza.h"</span></span><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span><span class="token keyword">void</span> <span class="token function">menu</span><span class="token punctuation">(</span>std<span class="token operator">::</span>string myMenu<span class="token punctuation">)</span><span class="token punctuation">{</span>    std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"this is my menu: "</span><span class="token operator">&lt;&lt;</span>myMenu<span class="token operator">&lt;&lt;</span>std<span class="token operator">::</span>endl<span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>文件demo1.cpp对其进行调用:</p><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Pizza.h"</span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"Hello World"</span><span class="token operator">&lt;&lt;</span>std<span class="token operator">::</span>endl<span class="token punctuation">;</span>    <span class="token function">menu</span><span class="token punctuation">(</span><span class="token string">"fruit pizza!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//Hello World</span><span class="token comment" spellcheck="true">//this is my menu: fruit pizza!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>对应的CMakeLists.txt:</p><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token function">cmake_minimum_required</span><span class="token punctuation">(</span>VERSION <span class="token number">3.20</span><span class="token punctuation">)</span><span class="token function">project</span><span class="token punctuation">(</span>CPP<span class="token punctuation">)</span><span class="token function">set</span><span class="token punctuation">(</span>CMAKE_CXX_STANDARD <span class="token number">14</span><span class="token punctuation">)</span><span class="token function">add_executable</span><span class="token punctuation">(</span>demo1 demo1<span class="token punctuation">.</span>cpp MyPizza<span class="token punctuation">.</span>cpp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>注意：虽然可以把<code>#include &lt;iostream&gt;</code>写到Pizza.h中，这样源文件MyPizza.cpp和demo1.cpp都可省略<code>#include &lt;iostream&gt;</code> （因为通过<code>#include &quot;Pizza.h&quot;</code> 也加载了<code>#include &lt;iostream&gt;</code>），但本着互相独立的原则，尽量不要这样写</p></blockquote><h2 id="Compiling-assembling-and-linking"><a href="#Compiling-assembling-and-linking" class="headerlink" title="Compiling, assembling, and linking"></a><a href="https://www.youtube.com/watch?v=N2y6csonII4" target="_blank" rel="noopener">Compiling, assembling, and linking</a></h2><p><img src="https://s2.loli.net/2021/12/26/ZCFU3PmkMI2V96r.png" alt="20211226215003"><br><img src="https://s2.loli.net/2021/12/26/4NwbpfOi7REDdJI.png" alt="20211226215028"></p><h2 id="libraries"><a href="#libraries" class="headerlink" title="libraries"></a>libraries</h2><p><a href="https://www.youtube.com/watch?v=a5kUr-u2UNo" target="_blank" rel="noopener">C++ Libraries For Beginners</a><br><img src="https://s2.loli.net/2021/12/26/rHLvCbidSTQa2MJ.png" alt="20211226215145"><br><img src="https://s2.loli.net/2021/12/26/cWAfTQsMjdw4uhl.png" alt="20211226215157"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2021/10/19/labuladong/dfs-suan-fa-miao-sha-wu-dao-dao-yu-wen-ti/"/>
       <url>/2021/10/19/labuladong/dfs-suan-fa-miao-sha-wu-dao-dao-yu-wen-ti/</url>
