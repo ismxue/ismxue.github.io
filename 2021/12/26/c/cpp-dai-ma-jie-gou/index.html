@@ -317,7 +317,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -472,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    411
+                    916
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
                 
@@ -534,7 +534,14 @@
 <span class="token function">set</span><span class="token punctuation">(</span>CMAKE_CXX_STANDARD <span class="token number">14</span><span class="token punctuation">)</span>
 <span class="token function">add_executable</span><span class="token punctuation">(</span>demo1 demo1<span class="token punctuation">.</span>cpp MyPizza<span class="token punctuation">.</span>cpp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>注意：虽然可以把<code>#include &lt;iostream&gt;</code>写到Pizza.h中，这样源文件MyPizza.cpp和demo1.cpp都可省略<code>#include &lt;iostream&gt;</code> （因为通过<code>#include &quot;Pizza.h&quot;</code> 也加载了<code>#include &lt;iostream&gt;</code>），但本着互相独立的原则，尽量不要这样写</p>
+<p>注意：虽然可以把<code>#include &lt;iostream&gt;</code>写到Pizza.h中，这样源文件MyPizza.cpp和demo1.cpp都可省略<code>#include &lt;iostream&gt;</code> （因为通过<code>#include &quot;Pizza.h&quot;</code> 也加载了<code>#include &lt;iostream&gt;</code>），但本着互相独立的原则，尽量不要这样写<br><a href="https://www.runoob.com/w3cnote/cpp-header.html" target="_blank" rel="noopener">理解 C++ 中的头文件和源文件的作用</a><br><a href="https://blog.csdn.net/qq_30815237/article/details/88948632" target="_blank" rel="noopener">C++头文件和源文件，编译过程</a><br><a href="https://blog.csdn.net/K346K346/article/details/48877773" target="_blank" rel="noopener">C/C++ 头文件的作用和用法</a></p>
+<ul>
+<li><a href="https://blog.csdn.net/qq_33530388/article/details/60138971" target="_blank" rel="noopener">头文件与库文件的区别</a><ul>
+<li>在编程过程中，程序代码往往被拆成很多部分，每部分放在一个独立的源文件中，而不是将所有的代码放在一个源文件中。考虑一个简单的小例子：程序中有两个函数main()和abc()。main()函数位于main.cpp，abc()函数位于abc.cpp，main()函数中调用abc()函数。在编译阶段，由于编译是对单个文件进行编译，所以编译main.cpp时，编译器不知道是否存在abc()函数以及abc()调用是否正确，因此需要头文件辅助。运行时，编译器不知道abc的用法是否正确（因为abc在另一个文件abc.cpp中），只有借助头文件中的函数声明来判断。对main.cpp进行编译时，不会涉及abc.cpp文件，只会涉及main.cpp 和abc.h（因为abc.h被include）文件。</li>
+<li>库文件中包含一系列的子程序。例如abc.cpp 源文件中实现了abc()函数，我们假设abc()函数是包含重要算法的函数，我们需要将abc()函数提供给客户使用，但是不希望客户看到算法源代码。为了达到这一目的，我们可以将abc.cpp编译程库文件，库文件是二进制的，在库文件中是看不到原始的源代码的。库和可执行文件的区别是，库不是独立程序，他们是向其他程序提供服务的代码。 当然使用库文件的好处不仅仅是对源代码进行保密，使用库文件还可以减少重复编译的时间，增强程序的模块化。将库文件连接到程序中，有两种方式，一种是静态连接库，另一种是动态连接库。</li>
+</ul>
+</li>
+</ul>
 </blockquote>
 <h2 id="Compiling-assembling-and-linking"><a href="#Compiling-assembling-and-linking" class="headerlink" title="Compiling, assembling, and linking"></a><a href="https://www.youtube.com/watch?v=N2y6csonII4" target="_blank" rel="noopener">Compiling, assembling, and linking</a></h2><p><img src="https://s2.loli.net/2021/12/26/ZCFU3PmkMI2V96r.png" alt="20211226215003"><br><img src="https://s2.loli.net/2021/12/26/4NwbpfOi7REDdJI.png" alt="20211226215028"></p>
 <h2 id="libraries"><a href="#libraries" class="headerlink" title="libraries"></a>libraries</h2><p><a href="https://www.youtube.com/watch?v=a5kUr-u2UNo" target="_blank" rel="noopener">C++ Libraries For Beginners</a></p>
@@ -747,7 +754,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="TOF">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="TOF">
                         
                         <span class="card-title">TOF</span>
                     </div>
@@ -797,7 +804,7 @@ Time-of-Flight (ToF) Tips: Tips to Boost 3D Performance and Cut Integration Time
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
                         <span class="card-title"></span>
                     </div>
@@ -988,7 +995,7 @@ title: DFS算法秒杀五道岛屿问题top: falsecover: falsetoc: truemathjax: 
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">200.9k</span>
+            <span class="white-color">202k</span>
             
 
             <br>
