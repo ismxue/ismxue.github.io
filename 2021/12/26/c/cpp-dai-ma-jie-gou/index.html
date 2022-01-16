@@ -472,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    916
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
                 
@@ -528,7 +528,7 @@
 <span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">//Hello World</span>
 <span class="token comment" spellcheck="true">//this is my menu: fruit pizza!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>对应的CMakeLists.txt:</p>
+<p>对应的CMakeLists.txt (cpp文件在同一目录下):</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token function">cmake_minimum_required</span><span class="token punctuation">(</span>VERSION <span class="token number">3.20</span><span class="token punctuation">)</span>
 <span class="token function">project</span><span class="token punctuation">(</span>CPP<span class="token punctuation">)</span>
 <span class="token function">set</span><span class="token punctuation">(</span>CMAKE_CXX_STANDARD <span class="token number">14</span><span class="token punctuation">)</span>
@@ -546,6 +546,107 @@
 <h2 id="Compiling-assembling-and-linking"><a href="#Compiling-assembling-and-linking" class="headerlink" title="Compiling, assembling, and linking"></a><a href="https://www.youtube.com/watch?v=N2y6csonII4" target="_blank" rel="noopener">Compiling, assembling, and linking</a></h2><p><img src="https://s2.loli.net/2021/12/26/ZCFU3PmkMI2V96r.png" alt="20211226215003"><br><img src="https://s2.loli.net/2021/12/26/4NwbpfOi7REDdJI.png" alt="20211226215028"></p>
 <h2 id="libraries"><a href="#libraries" class="headerlink" title="libraries"></a>libraries</h2><p><a href="https://www.youtube.com/watch?v=a5kUr-u2UNo" target="_blank" rel="noopener">C++ Libraries For Beginners</a></p>
 <p><img src="https://s2.loli.net/2021/12/27/gAokXtbCKdWMqcT.png" alt="20211227001032"><br>但是这样调用Graphics会很花时间，而且别人的Graphics部分可能会有隐私保护（别人不想把实现过程暴露给你），于是生成库文件.dll（常放于bin文件夹）/.lib（常放于lib文件夹）供你调用：<br><img src="https://s2.loli.net/2021/12/26/oFvugUiSW7alkV6.png" alt="20211226235659"><br><img src="https://s2.loli.net/2021/12/26/8rSscYkGwR4iEWp.png" alt="20211226235901"><br><img src="https://s2.loli.net/2021/12/27/XYA82Oxi5lRQmdo.png" alt="20211226235959"><br><img src="https://s2.loli.net/2021/12/27/Eyjo48afivzXpl6.png" alt="20211227000643"><br><img src="https://s2.loli.net/2021/12/27/wHKkgcJL8mpq53W.png" alt="20211227000557"><br><img src="https://s2.loli.net/2021/12/27/xAm2iJ8nfX1vkHe.png" alt="20211227000518"><br><img src="https://s2.loli.net/2021/12/27/MHIsS72GB6zku8d.png" alt="20211227000533"><br><img src="https://s2.loli.net/2021/12/26/rHLvCbidSTQa2MJ.png" alt="20211226215145"><br><img src="https://s2.loli.net/2021/12/26/cWAfTQsMjdw4uhl.png" alt="20211226215157"><br><img src="https://s2.loli.net/2021/12/27/ciUyR9zZvNTVru2.png" alt="20211227000844"></p>
+<h2 id="CMakeList-txt"><a href="#CMakeList-txt" class="headerlink" title="CMakeList.txt"></a>CMakeList.txt</h2><h3 id="Modern-Simple-CMake-Tutorial"><a href="#Modern-Simple-CMake-Tutorial" class="headerlink" title="Modern Simple CMake Tutorial"></a><a href="https://www.youtube.com/watch?v=mKZ-i-UfGgQ" target="_blank" rel="noopener">Modern Simple CMake Tutorial</a></h3><blockquote>
+<p><a href="https://codevion.github.io/#!cpp/cmake.md" target="_blank" rel="noopener">对应文档：Modern Simple CMake Tutorial</a></p>
+</blockquote>
+<ul>
+<li><p>cmake 和 make<br>文件一开始只有main.cpp和CMakeList.txt；用<code>cmake .</code>可以根据CMakeList.txt生成中间文件<br>然后用<code>make</code>可以根据中间文件生成可执行文件<br><img src="https://s2.loli.net/2022/01/15/nCjUy2iPeuKxtSG.png" alt="20220115135712"><br>但是这样有些混乱，所以新建一个build文件夹，在里面进行这些操作：mkdir build -&gt; cmake .. -&gt; make</p>
+</li>
+<li><p>构建自定义库并链接到可执行文件中（方式1）<br>可以构建自己定义的库文件，然后在源文件中调用。目录结构如下：</p>
+</li>
+</ul>
+<pre><code>include/
+└── demo1.h
+src/
+└── demo1.cpp
+main.cpp 
+CMakeLists.txt</code></pre><p><img src="https://s2.loli.net/2022/01/15/o5NYSBWxQLaMVZX.png" alt="20220115153756"><br><img src="https://s2.loli.net/2022/01/15/Qm4aws67z1uS3KR.png" alt="20220115153821"><br><img src="https://s2.loli.net/2022/01/15/LRYyE2dzNeWgqAw.png" alt="20220115153845"><br>对应的CMakeList.txt文件为：</p>
+<pre><code>cmake_minimum_required(VERSION 3.20)
+project(project1)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+#通过demo1.cpp构建mylib库
+add_library(mylib STATIC src/demo1.cpp)
+#这个库文件要包含include文件夹目录中的头文件
+target_include_directories(mylib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# 构建可执行文件
+add_executable(hello main.cpp)
+#该可执行文件要链接到上面的库文件
+target_link_libraries(hello PUBLIC mylib)</code></pre><ul>
+<li>构建自定义库并链接到可执行文件中（方式2）<br>可以把自己构建的库文件进一步整合，让外面的CMakeList.txt文件用add_subdirectory(文件夹名)的方式添加库。这时需要在这个子文件夹中添加一个CMakeList.txt文件</li>
+</ul>
+<pre><code>MyLibDir
+├── CMakeLists.txt
+├── include
+│   └── demo1.h
+└── src
+    └── demo1.cpp
+main.cpp 
+CMakeLists.txt </code></pre><p>MyLibDir文件夹中的CMakeList.txt写为</p>
+<pre><code>#通过demo1.cpp构建mylib库
+add_library(mylib STATIC src/demo1.cpp)
+#这个库文件要包含include文件夹目录中的头文件
+target_include_directories(mylib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)</code></pre><p>外面的CMakeList.txt写为</p>
+<pre><code>cmake_minimum_required(VERSION 3.20)
+project(project1)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_subdirectory(MyLibDir) # 添加了这个目录
+
+# 构建可执行文件
+add_executable(hello main.cpp)
+#该可执行文件要链接到上面的库文件
+target_link_libraries(hello PUBLIC mylib)
+</code></pre><ul>
+<li>当有多个源文件时</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/01/15/49nihWrvb5xcPK7.png" alt="20220115162513"><br>示例：<br><img src="https://s2.loli.net/2022/01/15/YFyZ8Db9pMX1RKc.png" alt="20220115162655"></p>
+<p>可行方式1:逐个添加<br><img src="https://s2.loli.net/2022/01/15/9X3CqvcWOyQo42x.png" alt="20220115162919"><br>可行方式2:扫描文件夹，添加多个<br><img src="https://s2.loli.net/2022/01/15/7WutcyDzUJH6ToB.png" alt="20220115163500"></p>
+<ul>
+<li>调用外部的库（已经通过命令行安装好了）</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/01/15/ZDObTwsPU1AgMoB.png" alt="20220115161346"><br>示例：<br><img src="https://s2.loli.net/2022/01/15/a6UFI4zZhNMyOdi.png" alt="20220115161742"></p>
+<ul>
+<li>调用外部的库（手动安装）<br><img src="https://s2.loli.net/2022/01/15/YhArsz9G7EZR62b.png" alt="20220115162026"> </li>
+</ul>
+<p>示例：<br><img src="https://s2.loli.net/2022/01/15/U2xbnlVEfKkmrX8.png" alt="20220115162325"></p>
+<h2 id="C和C-的混编"><a href="#C和C-的混编" class="headerlink" title="C和C++的混编"></a>C和C++的混编</h2><p><a href="https://www.youtube.com/watch?v=m5Y3Ghv2PUE&t=411s" target="_blank" rel="noopener">extern “C” In C++</a></p>
+<h3 id="C-中调用C"><a href="#C-中调用C" class="headerlink" title="C++中调用C"></a>C++中调用C</h3><ul>
+<li>方式1: 简单方式 - 在.cpp中用<code>extern &quot;C&quot; {}</code> 包裹.c对应的.h头文件<br><img src="https://s2.loli.net/2022/01/15/932IratSyEcs4ZT.png" alt="20220115230642"><br>在C++中调用C函数,需要在.cpp中include用 <code>extern &quot;C&quot; {}</code>把.c对应的头文件包一下，告诉编译器，那部分用C的规则去调用C函数<br><img src="https://s2.loli.net/2022/01/15/hBng1FRNplkmSPW.png" alt="20220115211825"><br><img src="https://s2.loli.net/2022/01/15/3Z1rejkGh5OJfcg.png" alt="20220115211839"></li>
+</ul>
+<p>如果直接混编，则会报错：undefiend reference to …<br><img src="https://s2.loli.net/2022/01/15/7jBpNRtfbuI3TAP.png" alt="20220115215150"><br><img src="https://s2.loli.net/2022/01/15/3s2oC6zlcFw5xiA.png" alt="20220115214931"><br>所以需要把c的头文件包一下，才会正确：<br> <img src="https://s2.loli.net/2022/01/15/SOXz6knwBgVflqi.png" alt="20220115214631"></p>
+<ul>
+<li><p>方式2:通用方式 - 直接在.c对应的.h头文件中进行包裹。也是告诉编译器以C语言的命名方式去加载这些符号。<br>这样的话，不管是外面的.c还是.cpp调用这个当前.c中的函数，都OK<br><img src="https://s2.loli.net/2022/01/15/DOAsxUJYkXHRuzF.png" alt="20220115230835"></p>
+<h3 id="C中调用C"><a href="#C中调用C" class="headerlink" title="C中调用C++"></a>C中调用C++</h3></li>
+<li><p>需要把.cpp对应的.h头文件包用宏包裹一下，告诉编译器这部分C++代码用C的规则编译<br><img src="https://s2.loli.net/2022/01/15/foeZRGrXhS68Ttj.png" alt="20220115234912"><br><img src="https://s2.loli.net/2022/01/15/AeJ1Lfi4uDImq8p.png" alt="20220115234956"></p>
+</li>
+</ul>
+<h3 id="统一规则"><a href="#统一规则" class="headerlink" title="统一规则"></a>统一规则</h3><p>不管是C中调用C++，还是C++中调用C，为了实现通用性，可以把.c和.cpp对应的.h头文件用下面的宏包裹起来：</p>
+<p><code>example.h</code>头文件</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">ifndef</span> CPP_PIZZA_H</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> CPP_PIZZA_H</span>
+
+<span class="token macro property">#<span class="token directive keyword">ifdef</span> __cplusplus</span>
+<span class="token keyword">extern</span> <span class="token string">"C"</span>
+<span class="token punctuation">{</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+<span class="token keyword">void</span> <span class="token function">Func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// </span>
+
+<span class="token macro property">#<span class="token directive keyword">ifdef</span> __cplusplus</span>
+<span class="token punctuation">}</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span class="token macro property">#<span class="token directive keyword">endif</span> </span><span class="token comment" spellcheck="true">//CPP_PIZZA_H</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>完整示例：main.cpp中调用demo1.cpp和demo2.c源文件中的函数，其中demo2.c中调用demo1.cpp中的函数<br><img src="https://s2.loli.net/2022/01/15/UswltiZV9uW5gPA.png" alt="20220115235949"></p>
+<pre><code>I am in C++ file
+======
+I am in C file
+I am in C++ file
+, here, I am called by .c file
+</code></pre><p><img src="https://s2.loli.net/2022/01/16/aXwoM9H5NOIEKVZ.png" alt="20220116000014"><br><img src="https://s2.loli.net/2022/01/16/IAuJ8M3CFv9or4B.png" alt="20220116000030"><br><img src="https://s2.loli.net/2022/01/16/dEQRcZaeOb3NxwM.png" alt="20220116000054"><br><img src="https://s2.loli.net/2022/01/16/i4IbA35YEMOkP8l.png" alt="20220116000148"><br><img src="https://s2.loli.net/2022/01/16/ZmeUlYkPvo8TQEA.png" alt="20220116000243"><br><img src="https://s2.loli.net/2022/01/16/pTA6LrQUKfRV2GF.png" alt="20220116000400"></p>
 
             </div>
             <hr />
@@ -995,7 +1096,7 @@ title: DFS算法秒杀五道岛屿问题top: falsecover: falsetoc: truemathjax: 
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">202k</span>
+            <span class="white-color">203.9k</span>
             
 
             <br>

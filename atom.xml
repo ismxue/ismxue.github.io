@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2021-12-26T14:02:47.264Z</updated>
+  <updated>2022-01-16T06:55:53.285Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C和CPP内存分配</title>
+    <link href="https://ismxue.github.io/2022/01/15/c/c-he-cpp-nei-cun-fen-pei/"/>
+    <id>https://ismxue.github.io/2022/01/15/c/c-he-cpp-nei-cun-fen-pei/</id>
+    <published>2022-01-15T09:01:56.000Z</published>
+    <updated>2022-01-16T06:55:53.285Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;C语言内存分配及释放&quot;&gt;&lt;a href=&quot;#C语言内存分配及释放&quot; class=&quot;headerlink&quot; title=&quot;C语言内存分配及释放&quot;&gt;&lt;/a&gt;C语言内存分配及释放&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;释放内存后，要把指针置为NULL，&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
+    
+    
+      <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>TOF</title>
@@ -47,7 +74,7 @@
     <link href="https://ismxue.github.io/2021/12/26/c/cpp-dai-ma-jie-gou/"/>
     <id>https://ismxue.github.io/2021/12/26/c/cpp-dai-ma-jie-gou/</id>
     <published>2021-12-26T13:05:57.000Z</published>
-    <updated>2021-12-30T15:39:24.332Z</updated>
+    <updated>2022-01-16T06:55:55.707Z</updated>
     
     <summary type="html">
     
@@ -505,32 +532,6 @@
         
           &lt;p&gt;这类问题主要用到lambda排序&lt;/p&gt;
 &lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用栈实现队列</title>
-    <link href="https://ismxue.github.io/2021/09/04/leetcode/yong-zhan-shi-xian-dui-lie/"/>
-    <id>https://ismxue.github.io/2021/09/04/leetcode/yong-zhan-shi-xian-dui-lie/</id>
-    <published>2021-09-04T08:50:31.000Z</published>
-    <updated>2021-09-04T09:57:37.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;面试题09-用两个栈实现队列&quot;&gt;&lt;a href=&quot;#面试题09-用两个栈实现队列&quot; class=&quot;headerlink&quot; title=&quot;面试题09. 用两个栈实现队列&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
