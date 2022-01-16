@@ -479,14 +479,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    13.2k
+                    13.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    57 分
+                    59 分
                 </div>
                 
                 
@@ -2197,11 +2197,58 @@ T <span class="token keyword">const</span> <span class="token operator">&amp;</s
 <p><img src="https://i.loli.net/2021/10/26/ZjgAulBa6iLwVJD.png" alt="20211026202428"><br><img src="https://i.loli.net/2021/10/26/Z6ykbHtAXnR3K9x.png" alt="20211026203256"></p>
 <p><img src="https://i.loli.net/2021/10/26/6bUTLvcxwZ5GJnF.png" alt="20211026203324"></p>
 <ul>
-<li><a href="https://blog.csdn.net/jackystudio/article/details/11523353" target="_blank" rel="noopener">函数中局部变量的返回</a><ul>
+<li><p><a href="https://blog.csdn.net/jackystudio/article/details/11523353" target="_blank" rel="noopener">函数中局部变量的返回</a></p>
+<ul>
 <li>函数不能返回<strong>指向栈</strong>内存的指针，因为返回的都是值拷贝</li>
 </ul>
 </li>
+<li><p><a href="https://google-styleguide.readthedocs.io/zh_CN/latest/google-cpp-styleguide/others.html" target="_blank" rel="noopener">https://google-styleguide.readthedocs.io/zh_CN/latest/google-cpp-styleguide/others.html列表初始化</a></p>
+</li>
 </ul>
+<p>早在 C++03 里，聚合类型（aggregate types）就已经可以被列表初始化了，比如数组和不自带构造函数的结构体：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    string name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>Person<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Person p<span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"Amy"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>p<span class="token punctuation">.</span>age<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>p<span class="token punctuation">.</span>name<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>C++11 中，该特性得到进一步的推广，任何对象类型都可以被列表初始化。示范如下：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// Vector 接收了一个初始化列表。</span>
+vector<span class="token operator">&lt;</span>string<span class="token operator">></span> v<span class="token punctuation">{</span><span class="token string">"foo"</span><span class="token punctuation">,</span> <span class="token string">"bar"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 不考虑细节上的微妙差别，大致上相同。</span>
+<span class="token comment" spellcheck="true">// 您可以任选其一。</span>
+vector<span class="token operator">&lt;</span>string<span class="token operator">></span> v <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"foo"</span><span class="token punctuation">,</span> <span class="token string">"bar"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 可以配合 new 一起用。</span>
+<span class="token keyword">auto</span> p <span class="token operator">=</span> <span class="token keyword">new</span> vector<span class="token operator">&lt;</span>string<span class="token operator">></span><span class="token punctuation">{</span><span class="token string">"foo"</span><span class="token punctuation">,</span> <span class="token string">"bar"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// map 接收了一些 pair, 列表初始化大显神威。</span>
+map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span> m <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"one"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"2"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 初始化列表也可以用在返回类型上的隐式转换。</span>
+vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">test_function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 初始化列表可迭代。</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 在函数调用里用列表初始化。</span>
+<span class="token keyword">void</span> <span class="token function">TestFunction2</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> v<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token function">TestFunction2</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>列表初始化也适用于常规数据类型的构造，哪怕没有接收 std::initializer_list<t> 的构造函数：</t></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">MyOtherType</span> <span class="token punctuation">{</span>
+ <span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">explicit</span> <span class="token function">MyOtherType</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">MyOtherType</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+MyOtherType m <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 不过如果构造函数是显式的（explict），您就不能用 `= {}` 了。</span>
+MyOtherType m<span class="token punctuation">{</span><span class="token string">"b"</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -2673,7 +2720,7 @@ Ceres 库面向通
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">203.9k</span>
+            <span class="white-color">204.3k</span>
             
 
             <br>
