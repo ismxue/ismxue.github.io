@@ -324,7 +324,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -2320,6 +2320,38 @@ Stu stu1<span class="token punctuation">{</span>stu1<span class="token punctuati
 <ul>
 <li>C++中<code>string、char *、char[]、const char*</code>的<a href="https://blog.csdn.net/hebbely/article/details/79577880" target="_blank" rel="noopener">转换</a></li>
 </ul>
+<ul>
+<li><a href="https://stackoverflow.com/questions/675039/how-can-i-create-directory-tree-in-c-linux" target="_blank" rel="noopener">如果文件夹不存在，则创建该文件夹</a></li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">mkpath</span><span class="token punctuation">(</span> std<span class="token operator">::</span>string path <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">bool</span> bSuccess <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> nRC <span class="token operator">=</span> <span class="token operator">::</span><span class="token function">mkdir</span><span class="token punctuation">(</span> path<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0775</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> nRC <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span><span class="token punctuation">(</span> errno <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> ENOENT<span class="token operator">:</span>
+                <span class="token comment" spellcheck="true">//parent didn't exist, try to create it</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">mkpath</span><span class="token punctuation">(</span> path<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> path<span class="token punctuation">.</span><span class="token function">find_last_of</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span>
+                    <span class="token comment" spellcheck="true">//Now, try to create again.</span>
+                    bSuccess <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">==</span> <span class="token operator">::</span><span class="token function">mkdir</span><span class="token punctuation">(</span> path<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0775</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">else</span>
+                    bSuccess <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> EEXIST<span class="token operator">:</span>
+                <span class="token comment" spellcheck="true">//Done!</span>
+                bSuccess <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                bSuccess <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+        bSuccess <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> bSuccess<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -2528,7 +2560,7 @@ Stu stu1<span class="token punctuation">{</span>stu1<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="读“自卑与超越”">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="读“自卑与超越”">
                         
                         <span class="card-title">读“自卑与超越”</span>
                     </div>
@@ -2578,7 +2610,7 @@ Stu stu1<span class="token punctuation">{</span>stu1<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="视觉SLAM14讲">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="视觉SLAM14讲">
                         
                         <span class="card-title">视觉SLAM14讲</span>
                     </div>
