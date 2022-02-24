@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
+    
+    <lastmod>2022-02-16T16:15:26.360Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
+    
+    <lastmod>2022-02-13T15:50:29.182Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
+    
+    <lastmod>2022-02-13T15:50:28.214Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ismxue.github.io/2021/06/14/c/cpp-jiao-cheng-bi-ji/</loc>
     
     <lastmod>2022-02-10T15:27:49.590Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>https://ismxue.github.io/2021/05/15/study/linux-shi-yong-ji-lu/</loc>
     
     <lastmod>2022-02-06T15:45:17.882Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
-    
-    <lastmod>2022-02-06T15:45:14.994Z</lastmod>
     
   </url>
   
@@ -698,20 +712,6 @@
     <loc>https://ismxue.github.io/2021/02/27/labuladong/di-ling-zhang-yi-ge-fang-fa-jie-jue-san-dao-qu-jian-wen-ti/</loc>
     
     <lastmod>2021-02-27T11:42:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao/</loc>
-    
-    <lastmod>2021-01-09T02:39:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
-    
-    <lastmod>2020-12-03T14:38:50.000Z</lastmod>
     
   </url>
   
