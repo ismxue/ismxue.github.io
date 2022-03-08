@@ -325,7 +325,7 @@ Ses">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -480,14 +480,14 @@ Ses">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
                 
@@ -633,6 +633,74 @@ obj<span class="token operator">=</span>Solution<span class="token punctuation">
 
 obj <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># 输出 __init__</span>
 obj<span class="token punctuation">(</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true"># 输出 __call__</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Other-Notes"><a href="#Other-Notes" class="headerlink" title="Other Notes"></a>Other Notes</h1><ul>
+<li>@property 属性</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/02/19/Obz5hKokEePv7li.png" alt="20220219231441"><br><img src="https://s2.loli.net/2022/02/19/8GQNa1c42XKzr6f.png" alt="20220219231827"></p>
+<ul>
+<li><p><a href="https://blog.csdn.net/zha6476003/article/details/82912403" target="_blank" rel="noopener">Python继承、方法重写</a></p>
+</li>
+<li><p><a href="https://google.github.io/styleguide/pyguide.html" target="_blank" rel="noopener">Google Python Style Guide</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc" target="_blank" rel="noopener">Python OOP Tutorial</a></p>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/02/20/M3oYNPndvXp892t.png" alt="20220220150121"></p>
+<p><img src="https://s2.loli.net/2022/02/20/dXgPhbpVnQWRoSt.png" alt="20220220204217"></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=xvpNA7bC8cs" target="_blank" rel="noopener">How do I select multiple rows and columns from a pandas DataFrame?</a></li>
+</ul>
+<p><img src="https://s2.loli.net/2022/02/20/bfr7mOUstAKq1Se.png" alt="20220220204851"><br><img src="https://s2.loli.net/2022/02/20/jkTFC6zhY3IADdi.png" alt="20220220205123"></p>
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=FsAPt_9Bf3U" target="_blank" rel="noopener">装饰器</a></p>
+<p><img src="https://s2.loli.net/2022/02/20/6RskpxBTKbIXltP.png" alt="20220220223437"><br><img src="https://s2.loli.net/2022/02/20/v6padW9BmLU4Crf.png" alt="20220220223523"></p>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/02/20/ZhRHiTdntXIeDay.png" alt="20220220223801"></p>
+<ul>
+<li>python深度图转点云<ul>
+<li><a href="https://blog.csdn.net/tycoer/article/details/106761886" target="_blank" rel="noopener"><del>只用相机模型和深度图</del></a></li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> cv2
+<span class="token keyword">def</span> <span class="token function">depth2xyz</span><span class="token punctuation">(</span>depth_map<span class="token punctuation">,</span>depth_cam_matrix<span class="token punctuation">,</span>flatten<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>depth_scale<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    fx<span class="token punctuation">,</span>fy <span class="token operator">=</span> depth_cam_matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>depth_cam_matrix<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+    cx<span class="token punctuation">,</span>cy <span class="token operator">=</span> depth_cam_matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>depth_cam_matrix<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+    h<span class="token punctuation">,</span>w<span class="token operator">=</span>np<span class="token punctuation">.</span>mgrid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span>depth_map<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">:</span>depth_map<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+    z<span class="token operator">=</span>depth_map<span class="token operator">/</span>depth_scale
+    x<span class="token operator">=</span><span class="token punctuation">(</span>w<span class="token operator">-</span>cx<span class="token punctuation">)</span><span class="token operator">*</span>z<span class="token operator">/</span>fx
+    y<span class="token operator">=</span><span class="token punctuation">(</span>h<span class="token operator">-</span>cy<span class="token punctuation">)</span><span class="token operator">*</span>z<span class="token operator">/</span>fy
+    xyz<span class="token operator">=</span>np<span class="token punctuation">.</span>dstack<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> flatten<span class="token operator">==</span><span class="token boolean">False</span> <span class="token keyword">else</span> np<span class="token punctuation">.</span>dstack<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+    fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>dpi<span class="token operator">=</span><span class="token number">120</span><span class="token punctuation">)</span>
+    ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">111</span><span class="token punctuation">,</span> projection<span class="token operator">=</span><span class="token string">'3d'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'point cloud'</span><span class="token punctuation">)</span>
+    ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> marker<span class="token operator">=</span><span class="token string">'.'</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> linewidth<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> cmap<span class="token operator">=</span><span class="token string">'spectral'</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+    <span class="token comment" spellcheck="true"># xyz=cv2.rgbd.depthTo3d(depth_map,depth_cam_matrix)</span>
+
+    <span class="token keyword">return</span> xyz
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 随便生成一个 分辨率为(1280, 720)的深度图, 注意深度图shape为(1280, 720)即深度图为单通道, 维度为2</span>
+    <span class="token comment" spellcheck="true">#而不是类似于shape为(1280, 720, 3)维度为3的这种</span>
+    depth_map <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">10000</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">1280</span><span class="token punctuation">,</span> <span class="token number">720</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>matshow<span class="token punctuation">(</span>depth_map<span class="token punctuation">,</span>cmap<span class="token operator">=</span>plt<span class="token punctuation">.</span>cm<span class="token punctuation">.</span>Blues<span class="token punctuation">)</span>
+
+    depth_cam_matrix <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">220</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">320</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                                 <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>   <span class="token number">220</span><span class="token punctuation">,</span><span class="token number">320</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                                 <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span>   <span class="token number">0</span><span class="token punctuation">,</span>    <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    depth2xyz<span class="token punctuation">(</span>depth_map<span class="token punctuation">,</span> depth_cam_matrix<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><a href="https://github.com/niconielsen32/ComputerVision/tree/master/pointClouds" target="_blank" rel="noopener">rgb+深度图转点云，用到open3d</a> ，<a href="https://www.youtube.com/watch?v=vGr8Bg2Fda8" target="_blank" rel="noopener">配套YT视频</a></li>
+<li><a href="https://github.com/xinliy/python_depth_to_point_cloud/blob/master/python_depth_to_point_cloud.py" target="_blank" rel="noopener">rgb+深度图转点云，用focal_length和scaling factor生成并保存点云</a></li>
+<li><a href="https://github.com/vitalemonate/depth2Cloud/blob/main/depth2Cloud.py" target="_blank" rel="noopener">rgb+深度图转点云，用scaling factor和视角（可选）</a></li>
+</ul>
 
             </div>
             <hr />
@@ -841,7 +909,7 @@ obj<span class="token punctuation">(</span><span class="token punctuation">)</sp
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="199. 二叉树的右视图">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="199. 二叉树的右视图">
                         
                         <span class="card-title">199. 二叉树的右视图</span>
                     </div>
@@ -893,7 +961,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="计算机操作系统">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="计算机操作系统">
                         
                         <span class="card-title">计算机操作系统</span>
                     </div>
@@ -1099,7 +1167,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">206.6k</span>
+            <span class="white-color">206.9k</span>
             
 
             <br>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
+    
+    <lastmod>2022-03-08T15:05:24.322Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
     
     <lastmod>2022-02-16T16:15:26.360Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
     
     <lastmod>2022-02-13T15:50:29.182Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
-    
-    <lastmod>2022-02-13T15:50:28.214Z</lastmod>
     
   </url>
   
