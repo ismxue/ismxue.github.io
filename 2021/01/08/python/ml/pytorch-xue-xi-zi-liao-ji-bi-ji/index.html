@@ -323,7 +323,7 @@ Neural Network Programming - Deep Learning with PyTorch
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -478,14 +478,14 @@ Neural Network Programming - Deep Learning with PyTorch
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    546
+                    760
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
                 
@@ -529,6 +529,14 @@ Neural Network Programming - Deep Learning with PyTorch
 <blockquote>
 <p> 比较详细的Pytorch中文教程，从官方的60分钟入门简介到神经网络再到应用均进行了介绍</p>
 </blockquote>
+<hr>
+<p><a href="https://www.youtube.com/watch?v=CqOfi41LfDw&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1" target="_blank" rel="noopener">StatQuest with Josh Starmer</a></p>
+<blockquote>
+<p>神经网络内部推导</p>
+</blockquote>
+<hr>
+<p><a href="https://www.youtube.com/watch?v=MswxJw-8PvE&list=PLaiC38QTRBdzy23k5xtZXDrw0rO5GY-vT&index=8" target="_blank" rel="noopener">PyTorch Autograd Explained - In-depth Tutorial</a></p>
+<p><a href="https://www.youtube.com/watch?v=syLFCVYua6Q&list=PLaiC38QTRBdzy23k5xtZXDrw0rO5GY-vT&index=4" target="_blank" rel="noopener">PyTorch Hooks Explained - In-depth Tutorial</a></p>
 <hr>
 <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="conda管理环境"><a href="#conda管理环境" class="headerlink" title="conda管理环境"></a>conda管理环境</h2><p>conda可以创建不同python版本的<a href="https://zhuanlan.zhihu.com/p/60647332" target="_blank" rel="noopener">虚拟环境</a></p>
 <ul>
@@ -610,6 +618,27 @@ T2 <span class="token operator">=</span> torch<span class="token punctuation">.<
 <span class="token comment" spellcheck="true">#          [ 8, 80],</span>
 <span class="token comment" spellcheck="true">#          [ 9, 90]]])</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="hook"><a href="#hook" class="headerlink" title="hook"></a>hook</h2><ul>
+<li><a href="https://www.youtube.com/watch?v=syLFCVYua6Q&list=PLaiC38QTRBdzy23k5xtZXDrw0rO5GY-vT&index=4" target="_blank" rel="noopener">PyTorch Hooks Explained - In-depth Tutorial</a></li>
+<li><a href="https://likewind.top/2019/07/26/pytorch-hook/" target="_blank" rel="noopener">PyTorch Hook 简单教程</a></li>
+<li><a href="https://github.com/cosmic-cortex/pytorch-hooks-tutorial/blob/master/hooks.ipynb" target="_blank" rel="noopener">model中的hook例子</a></li>
+</ul>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><ul>
+<li><a href="https://cxybb.com/article/ChaoFeiLi/108950522" target="_blank" rel="noopener">以书为类比，解释Batch Normalization (BN)</a></li>
+<li><a href="https://towardsdatascience.com/what-and-why-behind-fit-transform-vs-transform-in-scikit-learn-78f915cf96fe" target="_blank" rel="noopener">scikit-learn 中 fit_transform() 和 transform() 的原因</a><ul>
+<li>训练数据用fit_transform</li>
+<li>测试数据用transform，Using the transform method we can use the same mean and variance as it is calculated from our training data to transform our test data. Thus, the parameters learned by our model using the training data will help us to transform our test data.</li>
+</ul>
+</li>
+<li><a href="https://zhuanlan.zhihu.com/p/87786297" target="_blank" rel="noopener"><code>__init__()</code>与<code>__getitem__()</code>及<code>__len__()</code></a><ul>
+<li>Dataset类中的<strong>getitem</strong>和 <strong>len</strong>方法<ul>
+<li>torch.utils.data.Dataset是PyTorch中用来表示数据集的抽象类，Dataset是一个包装类，用来将数据包装为Dataset类，然后传入DataLoader中从而使DataLoader类更加快捷的对数据进行操作。当处理自定义的数据集的时候<strong>必须继承Dataset,然后重写 <strong>len</strong>（）和<strong>getitem</strong>（）函数</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/13/XrPE4fNYJWR2mk8.png" alt="20220313235028"><br><img src="https://s2.loli.net/2022/03/13/tbWeJLgdlESyAKT.png" alt="20220313235204"><br><img src="https://s2.loli.net/2022/03/13/r85Hi3lnaGqLTBC.png" alt="20220313235602"></p>
 
             </div>
             <hr />
@@ -818,7 +847,7 @@ T2 <span class="token operator">=</span> torch<span class="token punctuation">.<
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="读“被讨厌的勇气”">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="读“被讨厌的勇气”">
                         
                         <span class="card-title">读“被讨厌的勇气”</span>
                     </div>
@@ -874,7 +903,7 @@ T2 <span class="token operator">=</span> torch<span class="token punctuation">.<
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="读“非暴力沟通”">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="读“非暴力沟通”">
                         
                         <span class="card-title">读“非暴力沟通”</span>
                     </div>
@@ -1091,7 +1120,7 @@ T2 <span class="token operator">=</span> torch<span class="token punctuation">.<
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">206.9k</span>
+            <span class="white-color">207.3k</span>
             
 
             <br>
