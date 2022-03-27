@@ -325,7 +325,7 @@ Ses">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -480,14 +480,14 @@ Ses">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
                 
@@ -533,6 +533,7 @@ Ses">
 </ul>
 </li>
 </ul>
+<p><a href="https://zhuanlan.zhihu.com/p/36173202" target="_blank" rel="noopener">表格总结：</a><br><img src="https://s2.loli.net/2022/03/17/LQ5VlUhIiJgt8mz.png" alt="20220317140909"></p>
 <h2 id="Python的垃圾回收机制"><a href="#Python的垃圾回收机制" class="headerlink" title="Python的垃圾回收机制"></a><a href="https://zhuanlan.zhihu.com/p/83251959" target="_blank" rel="noopener">Python的垃圾回收机制</a></h2><p>Python中的垃圾回收是以<strong>引用计数</strong>为主，<strong>标记-清除</strong>和<strong>分代收集</strong>为辅</p>
 <ul>
 <li>引用计数：Python在内存中存储每个对象的引用计数，如果计数变成0，该对象就会消失，分配给该对象的内存就会释放出来。</li>
@@ -704,7 +705,7 @@ obj<span class="token punctuation">(</span><span class="token punctuation">)</sp
 <ul>
 <li><p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-argparse-to-write-command-line-programs-in-python" target="_blank" rel="noopener">How To Use argparse to Write Command-Line Programs in Python</a></p>
 </li>
-<li><p>pandas中[data[[0]]](<a href="https://stackoverflow.com/questions/45379597/python-0-meaning" target="_blank" rel="noopener">https://stackoverflow.com/questions/45379597/python-0-meaning</a>) 里面的括号产生一个列表，外卖呢的括号用列表中的元素提取内容</p>
+<li><p>pandas中[data[[0]]](<a href="https://stackoverflow.com/questions/45379597/python-0-meaning" target="_blank" rel="noopener">https://stackoverflow.com/questions/45379597/python-0-meaning</a>) 里面的括号产生一个列表，外面的括号用列表中的元素提取内容</p>
 </li>
 <li><p>numpy中，data[:,0]与data[:,[0]]的区别：维度不同。示例</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -727,7 +728,60 @@ data<span class="token operator">=</span>np<span class="token punctuation">.</sp
 <span class="token comment" spellcheck="true">#  [3]]</span>
 <span class="token comment" spellcheck="true"># (2, 1)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li></li>
+<li><p><a href="https://medium.com/python-features/magic-methods-demystified-3c9e93144bf7" target="_blank" rel="noopener">Python Magic Methods Explained 魔法方法</a></p>
+</li>
+<li><p>导入package和module</p>
+<ul>
+<li>更详细的:<a href="https://realpython.com/python-modules-packages/#importing-from-a-package" target="_blank" rel="noopener">参考链接1</a>，<a href="https://realpython.com/python-import/#modules" target="_blank" rel="noopener">参考链接2</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/710551/use-import-module-or-from-module-import" target="_blank" rel="noopener">I personally always use</a><br><code>from package.subpackage.subsubpackage import module</code> (注：这时package中的<strong>init</strong>.py 函数可以为空))<br>and then access everything as<br><code>module.function</code><br><code>module.modulevar</code><br>etc. The reason is that at the same time you have short invocation, and you clearly define the module namespace of each routine, something that is very useful if you have to search for usage of a given module in your source.</p>
+</blockquote>
+<blockquote>
+<p><img src="https://s2.loli.net/2022/03/18/vHV7XMBxnstSYQ1.png" alt="20220318000045"></p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/03/17/QDAB9HZmvheWUp6.png" alt="20220317233347"></p>
+<p><img src="https://s2.loli.net/2022/03/17/CboeE4IsNzKmfpT.png" alt="20220317233443"><br><img src="https://s2.loli.net/2022/03/17/lI2R7QPdWG5OFkg.png" alt="20220317233503"><br><img src="https://s2.loli.net/2022/03/17/eWE2AFRKMTvBHnQ.png" alt="20220317233529"></p>
+<p>对应的main.py :</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 方式1：因为有resource中的__init__.py，所以可以直接导入package resource</span>
+<span class="token keyword">import</span> resource
+one<span class="token operator">=</span>resource<span class="token punctuation">.</span>module1<span class="token punctuation">.</span>One<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 方式2：从package中导入module</span>
+<span class="token keyword">from</span> resource <span class="token keyword">import</span> module2
+two<span class="token operator">=</span>module2<span class="token punctuation">.</span>Two<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 或者直接导入类，但是google标准不建议这样写</span>
+<span class="token comment" spellcheck="true"># from resource.module2 import Two</span>
+<span class="token comment" spellcheck="true"># two=Two()</span>
+
+
+<span class="token comment" spellcheck="true"># 输出：</span>
+<span class="token comment" spellcheck="true"># Initialize...</span>
+<span class="token comment" spellcheck="true"># module one</span>
+<span class="token comment" spellcheck="true"># module two</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><a href="https://www.freesion.com/article/149484742/" target="_blank" rel="noopener">在pycharm和命令行中导入的路径是不同的</a><ul>
+<li>pycharm自动将整个工程的绝对路径加入sys.path，而命令行中需要手动导入。搞清楚搜索路径才能避免很多import问题。不清楚时可以用print(sys.path)检查一下</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sys
+<span class="token keyword">import</span> os
+CUR_DIR<span class="token operator">=</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 当前可执行文件所在的directory</span>
+BASE_DIR<span class="token operator">=</span>sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>CUR_DIR<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 对应的父文件夹</span>
+<span class="token comment" spellcheck="true"># 可以用 os.path.dirname 一直往上写，写到项目的根目录,并添加该目录。如：</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#可以添加当前文件夹的父文件夹</span>
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">".."</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><a href="https://blog.51cto.com/u_15080021/4201546" target="_blank" rel="noopener">用pycharm同步本地与服务器的代码</a></li>
+<li>相机标定<ul>
+<li><a href="https://github.com/1368069096/Calibration_ZhangZhengyou_Method" target="_blank" rel="noopener">Calibration_ZhangZhengyou_Method</a></li>
+<li><a href="https://github.com/niconielsen32/ComputerVision/blob/master/cameraCalibration.py" target="_blank" rel="noopener">cameraCalibration.py</a></li>
+</ul>
+</li>
 </ul>
 
             </div>
@@ -937,7 +991,7 @@ data<span class="token operator">=</span>np<span class="token punctuation">.</sp
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="199. 二叉树的右视图">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="199. 二叉树的右视图">
                         
                         <span class="card-title">199. 二叉树的右视图</span>
                     </div>
@@ -989,7 +1043,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="计算机操作系统">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="计算机操作系统">
                         
                         <span class="card-title">计算机操作系统</span>
                     </div>
@@ -1195,7 +1249,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">207.3k</span>
+            <span class="white-color">208.8k</span>
             
 
             <br>
