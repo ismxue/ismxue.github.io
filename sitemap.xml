@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ismxue.github.io/2021/06/14/c/cpp-jiao-cheng-bi-ji/</loc>
+    
+    <lastmod>2022-03-27T15:57:51.988Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
     
     <lastmod>2022-03-27T15:57:50.399Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
     
     <lastmod>2022-03-27T15:57:48.642Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ismxue.github.io/2021/06/14/c/cpp-jiao-cheng-bi-ji/</loc>
-    
-    <lastmod>2022-03-19T15:26:05.936Z</lastmod>
     
   </url>
   
@@ -849,14 +849,14 @@
   </url>
   
   <url>
-    <loc>https://ismxue.github.io/categories/index.html</loc>
+    <loc>https://ismxue.github.io/archives/index.html</loc>
     
     <lastmod>2020-01-18T03:11:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://ismxue.github.io/archives/index.html</loc>
+    <loc>https://ismxue.github.io/categories/index.html</loc>
     
     <lastmod>2020-01-18T03:11:27.000Z</lastmod>
     
