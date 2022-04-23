@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>3D数据分析与处理</title>
+      <link href="/2022/04/23/3d-shu-ju-fen-xi-yu-chu-li/"/>
+      <url>/2022/04/23/3d-shu-ju-fen-xi-yu-chu-li/</url>
+      
+        <content type="html"><![CDATA[<h1 id="open3D"><a href="#open3D" class="headerlink" title="open3D"></a>open3D</h1><ul><li><a href="https://www.youtube.com/watch?v=Rsh4poEpahI" target="_blank" rel="noopener">YT Introduction：Open3D: A Modern Open-Source Library for 3D Data Processing</a></li><li><a href="https://github.com/isl-org/Open3D" target="_blank" rel="noopener">Open3D: A Modern Library for 3D Data Processing</a></li><li><a href="https://github.com/isl-org/Open3D-ML" target="_blank" rel="noopener">Open3D-ML</a></li><li><a href="https://www.youtube.com/watch?v=zF3MreN1w6c&list=PLkmvobsnE0GEZugH1Di2Cr_f32qYkv7aN" target="_blank" rel="noopener">Open3D Python Tutorial，YT</a><ul><li><a href="https://github.com/niconielsen32/ComputerVision" target="_blank" rel="noopener">相关代码</a></li></ul></li><li><a href="https://blog.csdn.net/weixin_46098577/article/details/120167360" target="_blank" rel="noopener">Open3D 点云数据处理基础（Python版）</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> CV </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CV </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C和CPP内存分配</title>
       <link href="/2022/01/15/c/c-he-cpp-nei-cun-fen-pei/"/>
       <url>/2022/01/15/c/c-he-cpp-nei-cun-fen-pei/</url>
@@ -1246,7 +1271,7 @@
       <link href="/2021/05/16/growth/kindle-shi-yong-bi-ji/"/>
       <url>/2021/05/16/growth/kindle-shi-yong-bi-ji/</url>
       
-        <content type="html"><![CDATA[<h1 id="Kindle-电子书资源"><a href="#Kindle-电子书资源" class="headerlink" title="Kindle 电子书资源"></a>Kindle 电子书资源</h1><ul><li>电子书搜索<ul><li>英文书 <ul><li>中英文皆有（一天5本）：<a href="https://z-lib.org/" target="_blank" rel="noopener">zlib</a>， <a href="https://1lib.net/" target="_blank" rel="noopener">zlib</a> </li><li><a href="http://libgen.rs/" target="_blank" rel="noopener">Library Genesis</a>     </li><li><a href="https://www.gutenberg.org/" target="_blank" rel="noopener">Gutenberg</a></li></ul></li><li>中文书<ul><li><a href="https://chenjin5.com/books/" target="_blank" rel="noopener">沉金书屋</a></li><li><a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">鸠摩搜书</a></li><li><a href="http://www.dushudaren.com/" target="_blank" rel="noopener">奥丁读书小站</a></li><li><a href="https://www.shudan.vip/" target="_blank" rel="noopener">书单网</a></li><li><a href="https://www.kindle8.cc/" target="_blank" rel="noopener">kindle8</a></li><li><a href="https://www.qqszz.com/" target="_blank" rel="noopener">千秋书庄</a> </li></ul></li></ul></li></ul><pre><code>- 文件格式转换  - [convertio在线转换](https://convertio.co/zh/)    - [calibre软件](https://sspai.com/post/43843)  - 其他（仅作补充参考）  - [Kindle电子书的资源网站](https://zhuanlan.zhihu.com/p/81036992)  - [电子书资源汇总](https://zhuanlan.zhihu.com/p/73399765)    - [免费ppt](https://www.goldppt.com/)</code></pre><h1 id="导入电子书到Kindle"><a href="#导入电子书到Kindle" class="headerlink" title="导入电子书到Kindle"></a><a href="https://zhuanlan.zhihu.com/p/83882901" target="_blank" rel="noopener">导入电子书到Kindle</a></h1><ul><li>用绑定的邮箱传送</li><li>usb线</li></ul><h1 id="导出笔记"><a href="#导出笔记" class="headerlink" title="导出笔记"></a><a href="https://www.zhihu.com/question/22356174/answers/updated" target="_blank" rel="noopener">导出笔记</a></h1><ul><li><a href="https://wilsonsliu-4ecec0-1252395194.ap-shanghai.app.tcloudbase.com/dist/#/home" target="_blank" rel="noopener">Kmark | kindle标记伴侣</a></li><li><a href="http://jdkindle.com/skill/5027/" target="_blank" rel="noopener">Kindle Mate，适用于windows</a></li></ul><h1 id="根据网页制作电子书"><a href="#根据网页制作电子书" class="headerlink" title="根据网页制作电子书"></a>根据网页制作电子书</h1><ul><li>用<a href="https://chrome.google.com/webstore/detail/open-selected-links/cbmiafnaglmnkhnohfdkdgaohdhndkjp" target="_blank" rel="noopener">Open Selected Links</a>插件批量打开网页链接<ul><li>如果需要打开多个大网页的小网页，倒序执行大网页即可。比如<a href="https://transcripts.foreverdreaming.org/viewforum.php?f=177&start=200" target="_blank" rel="noopener">How I Met Your Mother网站</a>,先执行第9页，再执行第8页…</li></ul></li><li>用<a href="https://chrome.google.com/webstore/detail/epubpress-read-the-web-of/pnhdnpnnffpijjbnhnipkehhibchdeok" target="_blank" rel="noopener">EpubPress - Read the web offline</a>插件生成mobi或epub格式</li><li></li></ul><blockquote><ul><li>其实阅读信息或者读书都需要『主动』学习才能有效转化外部信息为自己的知识</li><li>你需要提取核心概念和内容，多次回顾复习并建立思维模型，建立联系（理论联系实际，新知识联系旧知识），然后整合到你已有的知识体系中</li></ul></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="Kindle-电子书资源"><a href="#Kindle-电子书资源" class="headerlink" title="Kindle 电子书资源"></a>Kindle 电子书资源</h1><ul><li>电子书搜索<ul><li>英文书 <ul><li>中英文皆有（一天5本）：<a href="https://z-lib.org/" target="_blank" rel="noopener">zlib</a>， <a href="https://1lib.net/" target="_blank" rel="noopener">zlib</a> </li><li><a href="http://libgen.rs/" target="_blank" rel="noopener">Library Genesis</a>     </li><li><a href="https://www.gutenberg.org/" target="_blank" rel="noopener">Gutenberg</a></li></ul></li><li>中文书<ul><li><a href="https://chenjin5.com/books/" target="_blank" rel="noopener">沉金书屋</a></li><li><a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">鸠摩搜书</a></li><li><a href="http://www.dushudaren.com/" target="_blank" rel="noopener">奥丁读书小站</a></li><li><a href="https://www.xiaolipan.com/index.html" target="_blank" rel="noopener">小力盘搜索</a></li><li><a href="https://www.tianlangbooks.com/" target="_blank" rel="noopener">天浪书屋</a></li><li><a href="https://www.shudan.vip/" target="_blank" rel="noopener">书单网</a></li><li><a href="https://www.kindle8.cc/" target="_blank" rel="noopener">kindle8</a></li><li><a href="https://www.qqszz.com/" target="_blank" rel="noopener">千秋书庄</a> </li></ul></li></ul></li></ul><pre><code>- 文件格式转换  - [convertio在线转换](https://convertio.co/zh/)    - [calibre软件](https://sspai.com/post/43843)  - 其他（仅作补充参考）  - [Kindle电子书的资源网站](https://zhuanlan.zhihu.com/p/81036992)  - [电子书资源汇总](https://zhuanlan.zhihu.com/p/73399765)    - [免费ppt](https://www.goldppt.com/)</code></pre><h1 id="导入电子书到Kindle"><a href="#导入电子书到Kindle" class="headerlink" title="导入电子书到Kindle"></a><a href="https://zhuanlan.zhihu.com/p/83882901" target="_blank" rel="noopener">导入电子书到Kindle</a></h1><ul><li>用绑定的邮箱传送</li><li>usb线</li></ul><h1 id="导出笔记"><a href="#导出笔记" class="headerlink" title="导出笔记"></a><a href="https://www.zhihu.com/question/22356174/answers/updated" target="_blank" rel="noopener">导出笔记</a></h1><ul><li><a href="https://wilsonsliu-4ecec0-1252395194.ap-shanghai.app.tcloudbase.com/dist/#/home" target="_blank" rel="noopener">Kmark | kindle标记伴侣</a></li><li><a href="http://jdkindle.com/skill/5027/" target="_blank" rel="noopener">Kindle Mate，适用于windows</a></li></ul><h1 id="根据网页制作电子书"><a href="#根据网页制作电子书" class="headerlink" title="根据网页制作电子书"></a>根据网页制作电子书</h1><ul><li>用<a href="https://chrome.google.com/webstore/detail/open-selected-links/cbmiafnaglmnkhnohfdkdgaohdhndkjp" target="_blank" rel="noopener">Open Selected Links</a>插件批量打开网页链接<ul><li>如果需要打开多个大网页的小网页，倒序执行大网页即可。比如<a href="https://transcripts.foreverdreaming.org/viewforum.php?f=177&start=200" target="_blank" rel="noopener">How I Met Your Mother网站</a>,先执行第9页，再执行第8页…</li></ul></li><li>用<a href="https://chrome.google.com/webstore/detail/epubpress-read-the-web-of/pnhdnpnnffpijjbnhnipkehhibchdeok" target="_blank" rel="noopener">EpubPress - Read the web offline</a>插件生成mobi或epub格式</li><li></li></ul><blockquote><ul><li>其实阅读信息或者读书都需要『主动』学习才能有效转化外部信息为自己的知识</li><li>你需要提取核心概念和内容，多次回顾复习并建立思维模型，建立联系（理论联系实际，新知识联系旧知识），然后整合到你已有的知识体系中</li></ul></blockquote>]]></content>
       
       
       <categories>
