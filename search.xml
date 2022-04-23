@@ -5,8 +5,8 @@
     
     <entry>
       <title>3D数据分析与处理</title>
-      <link href="/2022/04/23/3d-shu-ju-fen-xi-yu-chu-li/"/>
-      <url>/2022/04/23/3d-shu-ju-fen-xi-yu-chu-li/</url>
+      <link href="/2022/04/23/ji-suan-ji-ji-chu/3d-shu-ju-fen-xi-yu-chu-li/"/>
+      <url>/2022/04/23/ji-suan-ji-ji-chu/3d-shu-ju-fen-xi-yu-chu-li/</url>
       
         <content type="html"><![CDATA[<h1 id="open3D"><a href="#open3D" class="headerlink" title="open3D"></a>open3D</h1><ul><li><a href="https://www.youtube.com/watch?v=Rsh4poEpahI" target="_blank" rel="noopener">YT Introduction：Open3D: A Modern Open-Source Library for 3D Data Processing</a></li><li><a href="https://github.com/isl-org/Open3D" target="_blank" rel="noopener">Open3D: A Modern Library for 3D Data Processing</a></li><li><a href="https://github.com/isl-org/Open3D-ML" target="_blank" rel="noopener">Open3D-ML</a></li><li><a href="https://www.youtube.com/watch?v=zF3MreN1w6c&list=PLkmvobsnE0GEZugH1Di2Cr_f32qYkv7aN" target="_blank" rel="noopener">Open3D Python Tutorial，YT</a><ul><li><a href="https://github.com/niconielsen32/ComputerVision" target="_blank" rel="noopener">相关代码</a></li></ul></li><li><a href="https://blog.csdn.net/weixin_46098577/article/details/120167360" target="_blank" rel="noopener">Open3D 点云数据处理基础（Python版）</a></li></ul>]]></content>
       
