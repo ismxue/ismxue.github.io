@@ -325,7 +325,7 @@ Ses">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -480,14 +480,14 @@ Ses">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    13 分
                 </div>
                 
                 
@@ -765,7 +765,7 @@ two<span class="token operator">=</span>module2<span class="token punctuation">.
 <span class="token comment" spellcheck="true"># module two</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><a href="https://www.freesion.com/article/149484742/" target="_blank" rel="noopener">在pycharm和命令行中导入的路径是不同的</a><ul>
-<li>pycharm自动将整个工程的绝对路径加入sys.path，而命令行中需要手动导入。搞清楚搜索路径才能避免很多import问题。不清楚时可以用print(sys.path)检查一下</li>
+<li>pycharm自动将整个工程的绝对路径加入sys.path，而命令行中需要手动导入。搞清楚搜索路径才能避免很多import问题。不清楚时可以用<code>print(sys.path)</code>检查一下</li>
 </ul>
 </li>
 </ul>
@@ -793,6 +793,120 @@ sys<span class="token punctuation">.</span>path<span class="token punctuation">.
 </ul>
 </li>
 <li><p><a href="https://www.datatechnotes.com/2021/11/b-spline-fitting-example-in-python.html" target="_blank" rel="noopener">B-spline Curve Fitting Example in Python</a></p>
+</li>
+<li><p><a href="https://www.cxybb.com/article/weixin_41010198/115975315" target="_blank" rel="noopener">cv2.Rodrigues进行旋转矩阵和旋转向量之间的相互转化</a></p>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> cv2
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+extrinsic <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.05812254</span><span class="token punctuation">,</span> <span class="token number">0.9969995</span><span class="token punctuation">,</span> <span class="token number">0.05112498</span><span class="token punctuation">,</span> <span class="token number">0.043909</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.02821786</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.04955038</span><span class="token punctuation">,</span> <span class="token number">0.99837293</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.026862</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token number">0.99791058</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.05947061</span><span class="token punctuation">,</span> <span class="token number">0.02525319</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.006717</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+rot_mat <span class="token operator">=</span> extrinsic<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"rot_mat:\n {rot_mat}"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 把旋转矩阵转化为旋转向量</span>
+rvec<span class="token punctuation">,</span> _ <span class="token operator">=</span> cv2<span class="token punctuation">.</span>Rodrigues<span class="token punctuation">(</span>rot_mat<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"rvec:\n {rvec}"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 把旋转向量转换为旋转矩阵</span>
+rot_mat<span class="token punctuation">,</span> _ <span class="token operator">=</span> cv2<span class="token punctuation">.</span>Rodrigues<span class="token punctuation">(</span>rvec<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"rot_mat:\n {rot_mat}"</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://s2.loli.net/2022/03/28/jqmSAuQeFlGwWbR.png" alt="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html"></p>
+<ul>
+<li>批量修改文件或文件夹</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sys
+<span class="token keyword">import</span> os
+
+CUR_DIR<span class="token operator">=</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span>
+BASE_DIR<span class="token operator">=</span>sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span>CUR_DIR<span class="token punctuation">)</span>
+
+CUR_DIR<span class="token operator">=</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>CUR_DIR<span class="token punctuation">,</span><span class="token string">"subfolder"</span><span class="token punctuation">)</span>
+files<span class="token operator">=</span>os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>CUR_DIR<span class="token punctuation">)</span>
+num<span class="token operator">=</span><span class="token string">"100"</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> files<span class="token punctuation">:</span>
+    old_name<span class="token operator">=</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>CUR_DIR<span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+    new_name<span class="token operator">=</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>CUR_DIR<span class="token punctuation">,</span><span class="token string">"%06d"</span><span class="token operator">%</span>int<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"suffix.txt"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 补齐6位，不足6位前面加0</span>
+    os<span class="token punctuation">.</span>rename<span class="token punctuation">(</span>old_name<span class="token punctuation">,</span>new_name<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 可以修改文件名称或者文件夹名称</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>把数据转成多(单)通道的图片<ul>
+<li>彩色图：jpg中，超过255的数据会被置为255.彩色图每个通道最大为255，所以用jpg/png都可以。</li>
+<li>深度图：png中，可以保存大于255的数，深度图可能有比较大的值，所以用png</li>
+</ul>
+<ul>
+<li>单通道示例  <ul>
+<li>read_img=cv2.imread(‘depth1.png’,-1) ：-1 表示按照原来格式，若不写-1，则会自动将单通道转化为3通道</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> cv2
+<span class="token comment" spellcheck="true"># import sys</span>
+<span class="token comment" spellcheck="true"># print(sys.path)</span>
+
+img<span class="token operator">=</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span><span class="token string">'uint16'</span><span class="token punctuation">)</span>
+cv2<span class="token punctuation">.</span>imwrite<span class="token punctuation">(</span><span class="token string">'depth1.png'</span><span class="token punctuation">,</span>img<span class="token punctuation">)</span>
+read_img<span class="token operator">=</span>cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'depth1.png'</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>read_img<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># (3, 3)</span>
+
+
+plt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>read_img<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<ul>
+<li><p>彩色图</p>
+<ul>
+<li>如果是3通道的彩色图(每个通道的范围是0-255)，则保存为jpg或png格式</li>
+<li>jpg: 若通道中的值超过255，则截断到255</li>
+<li>png：若通道中的值超过255，则报错：<code>Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).</code></li>
+</ul>
+</li>
+<li><p>单通道深度图</p>
+<ul>
+<li>把数据保存成png的格式。即便超过255的范围也OK</li>
+<li>若保存为jpg，则超过255的数据会被置为255</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> cv2
+<span class="token comment" spellcheck="true"># import sys</span>
+<span class="token comment" spellcheck="true"># print(sys.path)</span>
+
+
+<span class="token comment" spellcheck="true"># 如果是3通道的，则保存为 jpg/png 格式</span>
+img<span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">300</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>uint16<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#(100, 300, 3)</span>
+cv2<span class="token punctuation">.</span>imwrite<span class="token punctuation">(</span><span class="token string">'depth1.png'</span><span class="token punctuation">,</span>img<span class="token punctuation">)</span>
+read_img<span class="token operator">=</span>cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'depth1.png'</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>read_img<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#(100, 300, 3)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>max<span class="token punctuation">(</span>read_img<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 254</span>
+plt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>read_img<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 如果是单通道的，则保存为png格式</span>
+img<span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>uint16<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>img<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># (100, 300)</span>
+cv2<span class="token punctuation">.</span>imwrite<span class="token punctuation">(</span><span class="token string">'depth1.png'</span><span class="token punctuation">,</span>img<span class="token punctuation">)</span>
+read_img<span class="token operator">=</span>cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'depth1.png'</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>read_img<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># (100, 300)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>max<span class="token punctuation">(</span>read_img<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 999</span>
+plt<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>read_img<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<ul>
+<li>远程连接服务器，<a href="https://juejin.cn/post/7035805507151462413" target="_blank" rel="noopener">并将图像显示在本地</a><ul>
+<li><a href="https://blog.csdn.net/Rong_Toa/article/details/80365932" target="_blank" rel="noopener">解决远程链接的 cannot open display</a></li>
+</ul>
 </li>
 </ul>
 
@@ -1003,7 +1117,7 @@ sys<span class="token punctuation">.</span>path<span class="token punctuation">.
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="199. 二叉树的右视图">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="199. 二叉树的右视图">
                         
                         <span class="card-title">199. 二叉树的右视图</span>
                     </div>
@@ -1055,7 +1169,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="计算机操作系统">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="计算机操作系统">
                         
                         <span class="card-title">计算机操作系统</span>
                     </div>
@@ -1261,7 +1375,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">208.9k</span>
+            <span class="white-color">209.6k</span>
             
 
             <br>

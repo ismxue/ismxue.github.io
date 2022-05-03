@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ismxue.github.io/2022/05/03/ji-suan-ji-ji-chu/docker-shi-yong/</loc>
+    
+    <lastmod>2022-05-03T09:11:55.366Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
+    
+    <lastmod>2022-05-03T05:41:44.579Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ismxue.github.io/2022/04/23/ji-suan-ji-ji-chu/3d-shu-ju-fen-xi-yu-chu-li/</loc>
     
-    <lastmod>2022-04-23T13:33:40.299Z</lastmod>
+    <lastmod>2022-05-03T05:41:44.578Z</lastmod>
     
   </url>
   
@@ -26,13 +40,6 @@
     <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
     
     <lastmod>2022-03-27T15:57:50.399Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
-    
-    <lastmod>2022-03-27T15:57:48.642Z</lastmod>
     
   </url>
   
