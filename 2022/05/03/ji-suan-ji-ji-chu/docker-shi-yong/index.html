@@ -9,8 +9,9 @@
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="安装Support ：Mac with Intel chip， Mac with Apple chip， Windows， Linux
-使用示例一功能：程序返回任意一部电影。按y持续返回，按n退出。
-python程序和Dockerfile文">
+
+教程简明教程Docker Cheat Sheet
+使用示例功能：程序返回任意一部电影。按y持续返回，按">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -318,7 +319,7 @@ python程序和Dockerfile文">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -473,14 +474,14 @@ python程序和Dockerfile文">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    359
+                    654
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
                 
@@ -497,7 +498,9 @@ python程序和Dockerfile文">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">安装</a></h1><p>Support ：Mac with Intel chip， Mac with Apple chip， Windows， Linux</p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a><a href="https://www.youtube.com/watch?v=bi0cKgmRuiA" target="_blank" rel="noopener">示例一</a></h2><p>功能：程序返回任意一部电影。按y持续返回，按n退出。</p>
+<p><img src="https://s2.loli.net/2022/05/03/HSoTUxcFJP69eyW.png" alt="20220503205841"></p>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p><a href="https://docker-curriculum.com/#multi-container-environments" target="_blank" rel="noopener">简明教程</a><br><a href="https://github.com/wsargent/docker-cheat-sheet" target="_blank" rel="noopener">Docker Cheat Sheet</a></p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a><a href="https://www.youtube.com/watch?v=bi0cKgmRuiA" target="_blank" rel="noopener">示例</a></h2><p>功能：程序返回任意一部电影。按y持续返回，按n退出。</p>
 <p>python程序和Dockerfile文件内容分别如下：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> random
 <span class="token keyword">import</span> requests
@@ -552,9 +555,45 @@ CMD [ "python", "./main.py" ]
 <p>使用docker可以和本地环境进行很好的隔离。当前环境中可能没有相关的packages，但是用docker可以确保程序在container中执行，而不会改变当前的环境。</p>
 <p>如果使用本地环境，则由于包安装不完全，可能出现<br><img src="https://s2.loli.net/2022/05/03/EULObZtFaih4Dq3.png" alt="20220503172208"></p>
 <p>而如果使用docker，则只需要使用Dockerfile构建image，其中Dockerfile中有包的安装命令，并让程序在container中执行即可。</p>
-<pre><code>docker build -t python-imdb .
-docker run -it python-imdb  </code></pre><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
-<li><a href="https://github.com/docker/for-mac/issues/770" target="_blank" rel="noopener">Docker for Mac doesn’t listen on 2375 解决方式</a></li>
+<pre><code># 给image打标签，所以用-t
+docker build -t python-imdb .
+
+# 因为需要通过输入y或n来与终端交互，所以用-it
+docker run -it python-imdb  
+</code></pre><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul>
+<li><a href="https://github.com/docker/for-mac/issues/770" target="_blank" rel="noopener">Docker for Mac doesn’t listen on 2375 解决方式</a><ul>
+<li>可以使变量<a href="https://blog.csdn.net/u011630575/article/details/49839893" target="_blank" rel="noopener">永久生效</a></li>
+<li><a href="https://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank" rel="noopener">Linux中使变量生效</a></li>
+</ul>
+</li>
+<li><a href="https://blog.csdn.net/qq_43557600/article/details/108661926" target="_blank" rel="noopener">pip导出当前项目的依赖包</a></li>
+</ul>
+<pre><code>pip install pipreqs
+pipreqs . --encoding=utf8 --force
+# “.” 指的是将导出依赖包的文件放在当前目录下
+# “--encoding=utf8” 指的是存放文件的编码为utf-8,否则会报错
+# “--force”  --force 强制执行，当生成目录下的requirements.txt存在时强覆盖</code></pre><ul>
+<li><p><a href="https://blog.csdn.net/Thanours/article/details/109265315" target="_blank" rel="noopener">pycharm如何连接远程服务器的docker容器进行运行和调试代码</a></p>
+</li>
+<li><p>停止、删除所有的docker容器和镜像</p>
+</li>
+</ul>
+<p>列出所有的容器 ID</p>
+<pre><code>docker ps -aq
+</code></pre><p>停止所有的容器</p>
+<pre><code>docker stop $(docker ps -aq)
+</code></pre><p>删除所有的容器</p>
+<pre><code>docker rm $(docker ps -aq)
+</code></pre><p>删除所有的镜像</p>
+<pre><code>docker rmi $(docker images -q)</code></pre><h2 id="不通过hub，直接分享images-要求相同系统"><a href="#不通过hub，直接分享images-要求相同系统" class="headerlink" title="不通过hub，直接分享images (要求相同系统)"></a><a href="https://stackoverflow.com/a/62176367" target="_blank" rel="noopener">不通过hub，直接分享images (要求相同系统)</a></h2><p><del>如果跨系统，<a href="https://stackoverflow.com/questions/69054921/docker-on-mac-m1-gives-the-requested-images-platform-linux-amd64-does-not-m" target="_blank" rel="noopener">则build image 时进行说明</a></del></p>
+<p>用docker images 查看当前images</p>
+<p>然后：</p>
+<pre><code>docker save app:1.0 | gzip | DOCKER_HOST=ssh://user@remotehost docker load
+</code></pre><p>或者分开写：</p>
+<ul>
+<li>docker save [image] -o file.tar</li>
+<li>用scp 或者 sftp把 tar文件传给其他服务器</li>
+<li>docker load -i file.tar</li>
 </ul>
 
             </div>
@@ -765,7 +804,7 @@ docker run -it python-imdb  </code></pre><h1 id="其他"><a href="#其他" class
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Docker使用">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Docker使用">
                         
                         <span class="card-title">Docker使用</span>
                     </div>
@@ -774,8 +813,9 @@ docker run -it python-imdb  </code></pre><h1 id="其他"><a href="#其他" class
                     <div class="summary block-with-text">
                         
                             安装Support ：Mac with Intel chip， Mac with Apple chip， Windows， Linux
-使用示例一功能：程序返回任意一部电影。按y持续返回，按n退出。
-python程序和Dockerfile文
+
+教程简明教程Docker Cheat Sheet
+使用示例功能：程序返回任意一部电影。按y持续返回，按
                         
                     </div>
                     <div class="publish-info">
@@ -817,7 +857,7 @@ python程序和Dockerfile文
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="3D数据分析与处理">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="3D数据分析与处理">
                         
                         <span class="card-title">3D数据分析与处理</span>
                     </div>
@@ -1024,7 +1064,7 @@ Open3D: A Modern Library for 3D Data
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">209.9k</span>
+            <span class="white-color">210.7k</span>
             
 
             <br>

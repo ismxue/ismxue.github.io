@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ismxue.github.io/2021/12/26/c/tof/</loc>
+    <lastmod>2022-05-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
+    <lastmod>2022-05-10</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
+    <lastmod>2022-05-10</lastmod>
+  </url>  <url>
     <loc>https://ismxue.github.io/2022/05/03/ji-suan-ji-ji-chu/docker-shi-yong/</loc>
-    <lastmod>2022-05-03</lastmod>
+    <lastmod>2022-05-04</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
     <lastmod>2022-05-03</lastmod>
@@ -16,14 +25,8 @@
     <loc>https://ismxue.github.io/2021/06/14/c/cpp-jiao-cheng-bi-ji/</loc>
     <lastmod>2022-03-27</lastmod>
   </url>  <url>
-    <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
-    <lastmod>2022-03-27</lastmod>
-  </url>  <url>
     <loc>https://ismxue.github.io/2021/05/15/study/linux-shi-yong-ji-lu/</loc>
     <lastmod>2022-03-19</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
-    <lastmod>2022-03-17</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/10/16/growth/quotes-i-have-enjoyed/</loc>
     <lastmod>2022-02-06</lastmod>
@@ -38,9 +41,6 @@
     <lastmod>2022-01-16</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/07/22/labuladong/di-san-zhang-yong-ge-chong-bian-li-kuang-jia-xu-lie-hua-he-fan-xu-lie-hua-er-cha-shu/</loc>
-    <lastmod>2021-12-26</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2021/12/26/c/tof/</loc>
     <lastmod>2021-12-26</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/07/14/c/effective-cpp/</loc>
