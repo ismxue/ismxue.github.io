@@ -334,7 +334,7 @@ ROS官网教程
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -489,14 +489,14 @@ ROS官网教程
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    13.9k
+                    14.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    61 分
+                    62 分
                 </div>
                 
                 
@@ -972,6 +972,39 @@ ROS官网教程
 <span class="token comment" spellcheck="true">//output:</span>
 <span class="token comment" spellcheck="true">//Amy</span>
 <span class="token comment" spellcheck="true">//10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="向量中存放结构体"><a href="#向量中存放结构体" class="headerlink" title="向量中存放结构体"></a>向量中存放结构体</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> data_config <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> m_freq<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> m_dis_near<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> m_dis_far<span class="token punctuation">;</span>
+    string m_path<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> my_data1<span class="token punctuation">,</span> my_data2<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    my_data1<span class="token punctuation">.</span>m_freq <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    my_data1<span class="token punctuation">.</span>m_dis_near <span class="token operator">=</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    my_data1<span class="token punctuation">.</span>m_dis_far <span class="token operator">=</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    my_data1<span class="token punctuation">.</span>m_path <span class="token operator">=</span> <span class="token string">"this is my 20 path"</span><span class="token punctuation">;</span>
+
+    my_data2<span class="token punctuation">.</span>m_freq <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+    my_data2<span class="token punctuation">.</span>m_dis_near <span class="token operator">=</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    my_data2<span class="token punctuation">.</span>m_dis_far <span class="token operator">=</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">{</span><span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    my_data2<span class="token punctuation">.</span>m_path <span class="token operator">=</span> <span class="token string">"this is my 50 path"</span><span class="token punctuation">;</span>
+
+    vector<span class="token operator">&lt;</span>data_config<span class="token operator">></span> all_data_config<span class="token operator">=</span><span class="token punctuation">{</span>my_data1<span class="token punctuation">,</span> my_data2<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+    <span class="token keyword">int</span> tmp <span class="token operator">=</span> all_data_config<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>i<span class="token operator">:</span> all_data_config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> i<span class="token punctuation">.</span>m_freq <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> i<span class="token punctuation">.</span>m_path <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"==="</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="类-amp-对象"><a href="#类-amp-对象" class="headerlink" title="类&amp;对象"></a>类&amp;对象</h2><h3 id="头文件、源文件、主文件书写"><a href="#头文件、源文件、主文件书写" class="headerlink" title="头文件、源文件、主文件书写"></a>头文件、源文件、主文件书写</h3><ul>
 <li>头文件定义类和函数申明</li>
 </ul>
@@ -2380,7 +2413,18 @@ Stu stu1<span class="token punctuation">{</span>stu1<span class="token punctuati
 </li>
 </ul>
 <ul>
-<li><a href="https://www.journaldev.com/38985/extern-keyword-in-c" target="_blank" rel="noopener">Understanding the extern Keyword in C</a></li>
+<li><p><a href="https://www.journaldev.com/38985/extern-keyword-in-c" target="_blank" rel="noopener">Understanding the extern Keyword in C</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=aw9wHbFTnAQ" target="_blank" rel="noopener">Using make and writing Makefile ( in C++ or C )</a></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=aw9wHbFTnAQ" target="_blank" rel="noopener">C/C++ 开发环境(终端)</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/111110992" target="_blank" rel="noopener">5分钟理解make/makefile/cmake/nmake</a>, <a href="https://www.bysimon.top/?p=61" target="_blank" rel="noopener">gcc、make、cmake的关系</a></li>
+</ul>
+</li>
+<li><p><a href="https://blog.csdn.net/qq_24172609/article/details/103560336?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-103560336-blog-6798611.pc_relevant_default&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-1-103560336-blog-6798611.pc_relevant_default&utm_relevant_index=2" target="_blank" rel="noopener">VS同一个解决方案中不同项目相互引用问题</a></p>
+</li>
+<li><p><a href="https://stackoverflow.com/questions/4066405/when-to-use-the-visual-studio-additional-dependencies" target="_blank" rel="noopener">When to use the Visual Studio Additional dependencies?</a><br><img src="https://s2.loli.net/2022/06/26/pzGFoKVE3ZUe5H8.png" alt="20220626000347"></p>
+</li>
 </ul>
 
             </div>
@@ -2590,7 +2634,7 @@ Stu stu1<span class="token punctuation">{</span>stu1<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="读“自卑与超越”">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="读“自卑与超越”">
                         
                         <span class="card-title">读“自卑与超越”</span>
                     </div>
@@ -2640,7 +2684,7 @@ Stu stu1<span class="token punctuation">{</span>stu1<span class="token punctuati
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="视觉SLAM14讲">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="视觉SLAM14讲">
                         
                         <span class="card-title">视觉SLAM14讲</span>
                     </div>
@@ -2853,7 +2897,7 @@ Ceres 库面向通
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">210.9k</span>
+            <span class="white-color">211.1k</span>
             
 
             <br>
