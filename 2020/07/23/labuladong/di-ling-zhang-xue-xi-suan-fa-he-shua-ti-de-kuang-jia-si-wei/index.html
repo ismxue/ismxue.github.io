@@ -319,7 +319,7 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,14 +474,14 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    15 分
                 </div>
                 
                 
@@ -543,6 +543,31 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
         self<span class="token punctuation">.</span>maxVal<span class="token operator">=</span>float<span class="token punctuation">(</span><span class="token string">"-inf"</span><span class="token punctuation">)</span>
         dfs<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
         <span class="token keyword">return</span> self<span class="token punctuation">.</span>maxVal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>ans <span class="token operator">=</span> float<span class="token punctuation">(</span><span class="token string">"-inf"</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">help</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">0</span>
+        l<span class="token operator">=</span>max<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>self<span class="token punctuation">.</span>help<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        r<span class="token operator">=</span>max<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>self<span class="token punctuation">.</span>help<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>ans<span class="token operator">=</span>max<span class="token punctuation">(</span>self<span class="token punctuation">.</span>ans<span class="token punctuation">,</span> root<span class="token punctuation">.</span>val <span class="token operator">+</span> l <span class="token operator">+</span> r<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> root<span class="token punctuation">.</span>val<span class="token operator">+</span>max<span class="token punctuation">(</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">maxPathSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :rtype: int
+        """</span>
+        <span class="token comment" spellcheck="true"># self.ans=float("-inf")</span>
+        self<span class="token punctuation">.</span>help<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>ans
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -639,6 +664,9 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="105-从前序与中序遍历序列构造二叉树-前序遍历"><a href="#105-从前序与中序遍历序列构造二叉树-前序遍历" class="headerlink" title="105. 从前序与中序遍历序列构造二叉树_前序遍历"></a><a href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solution/dong-hua-yan-shi-105-cong-qian-xu-yu-zhong-xu-bian/" target="_blank" rel="noopener">105. 从前序与中序遍历序列构造二叉树_前序遍历</a></h1><p><img src="https://i.loli.net/2021/06/17/A3KxBIqHoziC57g.png" alt><br><a href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solution/dong-hua-yan-shi-105-cong-qian-xu-yu-zhong-xu-bian/" target="_blank" rel="noopener">图片来源</a></p>
+<blockquote>
+<p>树的<strong>前序遍历</strong>：先构造根节点，基于根节点的信息找到左右子树的preorder和inorder范围，然后分别处理左右子树</p>
+</blockquote>
 <ul>
 <li>前序遍历的第一个元素是根节点</li>
 <li>在中序遍历中找到根节点的位置，其左边的元素就是左子树，右边的元素就是右子树</li>
@@ -661,11 +689,11 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
         :rtype: TreeNode
         """</span>
         <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token punctuation">(</span>preorder <span class="token operator">and</span> inorder<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">return</span> None
-        root<span class="token operator">=</span>TreeNode<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 根节点</span>
+        root<span class="token operator">=</span>TreeNode<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 前序遍历：根   构造根节点</span>
         midIdx<span class="token operator">=</span>inorder<span class="token punctuation">.</span>index<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
         <span class="token comment" spellcheck="true"># 递归处理左右子树</span>
-        root<span class="token punctuation">.</span>left<span class="token operator">=</span>self<span class="token punctuation">.</span>buildTree<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>inorder<span class="token punctuation">[</span><span class="token punctuation">:</span>midIdx<span class="token punctuation">]</span><span class="token punctuation">)</span>
-        root<span class="token punctuation">.</span>right<span class="token operator">=</span>self<span class="token punctuation">.</span>buildTree<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>inorder<span class="token punctuation">[</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        root<span class="token punctuation">.</span>left<span class="token operator">=</span>self<span class="token punctuation">.</span>buildTree<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>inorder<span class="token punctuation">[</span><span class="token punctuation">:</span>midIdx<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 前序遍历：左</span>
+        root<span class="token punctuation">.</span>right<span class="token operator">=</span>self<span class="token punctuation">.</span>buildTree<span class="token punctuation">(</span>preorder<span class="token punctuation">[</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>inorder<span class="token punctuation">[</span>midIdx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 前序遍历：右</span>
         <span class="token keyword">return</span> root
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
@@ -698,6 +726,7 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
 </ul>
 <h2 id="方法1：递归"><a href="#方法1：递归" class="headerlink" title="方法1：递归"></a><a href="https://leetcode-cn.com/problems/recover-binary-search-tree/solution/zhong-xu-bian-li-by-powcai/" target="_blank" rel="noopener">方法1：递归</a></h2><ul>
 <li>不要跳进递归，定义递归函数的意义并相信它能实现自己的功能 （注意加上递归结束的条件）<ul>
+<li>递归函数的功能：记录异常点出现的位置,并且更新pre，使得pre始终在root前面</li>
 <li>中序遍历左；</li>
 <li>中序遍历中：找到两个变化的点，第一个点赋值pre，第二个点赋值root。及时记录并更新pre（这样，在后面的中序遍历右时，pre的值为根节点的值，可以进行新一轮的递归和比较）</li>
 <li>中序遍历右</li>
@@ -714,8 +743,14 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
         self.pre=None
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>在dfs函数中，一定要判断<code>if self.pre!=None:</code>，否则在执行<code>if self.fir == None and self.pre.val &gt;= root.val:</code>时，编译器都不确定<code>self.pre</code>成不成立，更别说<code>self.pre.val</code>了</li>
-<li><a href="https://www.cnblogs.com/qq952693358/p/9280717.html" target="_blank" rel="noopener">在c++中同理</a></li>
+<li><p>在dfs函数中，一定要判断<code>if self.pre!=None:</code>，</p>
+</li>
+<li><p>（原因）为了能够递归起来，需要确保self.pre!=None（因为初始化 self.pre=None）</p>
+</li>
+<li><p>否则在执行<code>if self.fir == None and self.pre.val &gt;= root.val:</code>时，编译器都不确定<code>self.pre</code>成不成立，更别说<code>self.pre.val</code>了；</p>
+</li>
+<li><p><a href="https://www.cnblogs.com/qq952693358/p/9280717.html" target="_blank" rel="noopener">在c++中同理</a></p>
+</li>
 </ul>
 </blockquote>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
@@ -806,7 +841,7 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
 <ul>
 <li>在测试用例不严格的情况下，可以对pre赋一个最小的值，然后在dfs中对其更新，这样就不用判断pre是否合法了<ul>
 <li>在python中可以通过</li>
-<li>在c++中，由于有个测试用例中包括了<code>INT_MIN</code>,所以会报错</li>
+<li>在c++中，由于有个测试用例中包括了<code>INT_MIN</code>,所以会报错，可以把pre 置为空指针</li>
 </ul>
 </li>
 </ul>
@@ -928,6 +963,44 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
         <span class="token comment" spellcheck="true"># 交换x与y的值</span>
         <span class="token keyword">if</span> x <span class="token operator">and</span> y<span class="token punctuation">:</span>
             x<span class="token punctuation">.</span>val<span class="token punctuation">,</span>y<span class="token punctuation">.</span>val<span class="token operator">=</span>y<span class="token punctuation">.</span>val<span class="token punctuation">,</span>x<span class="token punctuation">.</span>val
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>或者</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">recoverTree</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :rtype: None Do not return anything, modify root in-place instead.
+        """</span>
+        node <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># 中序遍历把节点保存在列表中</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span>
+            dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            node<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+            dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+
+        dfs<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        pre <span class="token operator">=</span> node<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        n <span class="token operator">=</span> len<span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+        x <span class="token operator">=</span> None
+        y <span class="token operator">=</span> None
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 第一次左大右小，保存左</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">not</span> x<span class="token punctuation">)</span> <span class="token operator">and</span> pre<span class="token punctuation">.</span>val <span class="token operator">></span> node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>val<span class="token punctuation">:</span>
+                x <span class="token operator">=</span> pre
+            <span class="token comment" spellcheck="true"># 第二次左大右小，保存右</span>
+            <span class="token keyword">if</span> x <span class="token operator">and</span> pre<span class="token punctuation">.</span>val <span class="token operator">></span> node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>val<span class="token punctuation">:</span>
+                y <span class="token operator">=</span> node<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            pre <span class="token operator">=</span> node<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># 交换值</span>
+        <span class="token keyword">if</span> x <span class="token operator">and</span> y<span class="token punctuation">:</span>
+            x<span class="token punctuation">.</span>val<span class="token punctuation">,</span> y<span class="token punctuation">.</span>val <span class="token operator">=</span> y<span class="token punctuation">.</span>val<span class="token punctuation">,</span> x<span class="token punctuation">.</span>val
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>注意！！！！！！</p>
@@ -1216,7 +1289,7 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="第零章：动态规划解题套路框架">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="第零章：动态规划解题套路框架">
                         
                         <span class="card-title">第零章：动态规划解题套路框架</span>
                     </div>
@@ -1270,7 +1343,7 @@ maxVal 记录的是全局最大路径和（可以不返回，因">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python经典排序算法">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Python经典排序算法">
                         
                         <span class="card-title">Python经典排序算法</span>
                     </div>
@@ -1480,7 +1553,7 @@ Complete Beginner’s Guide to Big O Notation
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">211.1k</span>
+            <span class="white-color">213.3k</span>
             
 
             <br>

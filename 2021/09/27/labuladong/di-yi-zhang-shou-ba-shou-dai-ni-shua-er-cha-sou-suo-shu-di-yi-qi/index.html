@@ -321,7 +321,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    9 分
                 </div>
                 
                 
@@ -561,6 +561,15 @@
 </ul>
 </li>
 </ul>
+<blockquote>
+<p><a href="https://leetcode.cn/problems/kth-smallest-element-in-a-bst/solution/fu-xue-ming-zhu-er-cha-shu-san-chong-bia-yn34/" target="_blank" rel="noopener">需要两个变量</a>：</p>
+<ul>
+<li>用一个全局变量保存最终的结果；</li>
+<li>用一个全局变量保存当前访问到第几个节点。</li>
+</ul>
+<p>如果不使用全局变量，而是使用函数传参，需要注意「值传递」和「引用传递」的区别：值传递：每个递归的内部都需要对同一个变量修改，如果用普通函数的传参，对于 int 型的参数，使用的是值传递，即拷贝了一份传到了函数里面。那么函数里面对 int 型的修改不会影响外边的变量。</p>
+<p>使用全局变量，可以保证递归函数的每次修改都是反映到全局的，从而保证遍历到第 k 个的时候，所有的递归立刻停止。</p>
+</blockquote>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -592,13 +601,40 @@
         <span class="token keyword">return</span> res<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 返回结果</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>rank <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>res<span class="token operator">=</span><span class="token number">0</span>
+    <span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>root<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span>
+        self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>rank <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>rank <span class="token operator">==</span> k<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>res <span class="token operator">=</span>root<span class="token punctuation">.</span>val
+            <span class="token keyword">return</span>
+        self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">kthSmallest</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :type k: int
+        :rtype: int
+        """</span>
+        self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>root<span class="token punctuation">,</span>k<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="写法2：利用二叉搜索树的框架进行递归"><a href="#写法2：利用二叉搜索树的框架进行递归" class="headerlink" title="写法2：利用二叉搜索树的框架进行递归"></a>写法2：利用二叉搜索树的框架进行递归</h2><pre><code>if (root.val == target)
     // 找到目标，做点什么
 if (root.val &lt; target) 
     BST(root.right, target);
 if (root.val &gt; target)
     BST(root.left, target);</code></pre><ul>
-<li>统计root树对应的节点数</li>
+<li>统计root树对应的节点数：<strong>每个节点需要记录，以自己为根的这棵二叉树有多少个节点</strong></li>
 <li>如果<code>count+1==k</code>，则此时就是要找的结果</li>
 <li>如果<code>count+1&lt;k</code>,说明目标值在右子树中</li>
 <li>否则在左子树中</li>
@@ -686,6 +722,50 @@ else 或者剩余情况直接return</code></pre><p><strong>不要少了最后的
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">root_count</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token number">0</span>
+        l<span class="token operator">=</span>self<span class="token punctuation">.</span>root_count<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+        r<span class="token operator">=</span>self<span class="token punctuation">.</span>root_count<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> l<span class="token operator">+</span>r<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token keyword">def</span> <span class="token function">kthSmallest</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :type k: int
+        :rtype: int
+        """</span>
+        count<span class="token operator">=</span>self<span class="token punctuation">.</span>root_count<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+        current<span class="token operator">=</span>count<span class="token operator">+</span><span class="token number">1</span>
+        <span class="token keyword">if</span> current<span class="token operator">==</span>k<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> root<span class="token punctuation">.</span>val
+        <span class="token keyword">elif</span> current<span class="token operator">&lt;</span>k<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>kthSmallest<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span>k<span class="token operator">-</span>current<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>kthSmallest<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span>k<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>其他递归写法</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>ans <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+        self<span class="token punctuation">.</span>cnt <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">def</span> <span class="token function">kthSmallest</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>TreeNode<span class="token punctuation">]</span><span class="token punctuation">,</span> k<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>ans
+        self<span class="token punctuation">.</span>kthSmallest<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>cnt <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>cnt <span class="token operator">==</span> k<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>ans <span class="token operator">=</span> root<span class="token punctuation">.</span>val
+        self<span class="token punctuation">.</span>kthSmallest<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="538-把二叉搜索树转换为累加树"><a href="#538-把二叉搜索树转换为累加树" class="headerlink" title="538. 把二叉搜索树转换为累加树"></a><a href="https://leetcode-cn.com/problems/convert-bst-to-greater-tree/" target="_blank" rel="noopener">538. 把二叉搜索树转换为累加树</a></h1><ul>
 <li>一般地，二叉搜索树进行中序遍历后，可以把数据变为升序排列。本题要算累加树，而且是<strong>从最大元素开始遍历</strong>，类似于<strong>降序排列后的“前缀和”</strong></li>
 <li>递归函数<code>traverse()</code>的含义：以逆的中序遍历的方式更新全局的累加和sum，并改变当前节点的值</li>
@@ -930,7 +1010,7 @@ else 或者剩余情况直接return</code></pre><p><strong>不要少了最后的
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第一章：手把手带你刷二叉搜索树-第二期">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第一章：手把手带你刷二叉搜索树-第二期">
                         
                         <span class="card-title">第一章：手把手带你刷二叉搜索树-第二期</span>
                     </div>
@@ -982,7 +1062,7 @@ root 需要做的不只是
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="上岸记">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="上岸记">
                         
                         <span class="card-title">上岸记</span>
                     </div>
@@ -1189,7 +1269,7 @@ root 需要做的不只是
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">211.1k</span>
+            <span class="white-color">213.3k</span>
             
 
             <br>

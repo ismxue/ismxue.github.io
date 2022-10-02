@@ -10,7 +10,7 @@
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="labuladong单链表的六大解题套路，你都见过么？
 21. 合并两个有序链表方法1：迭代
-逐个比较节点，不但向后移动，最后把未比较过的节点拼接到尾巴上
+逐个比较节点，不断向后移动，最后把未比较过的节点拼接到尾巴上
 添加一个dummy节点便于操作
 
 /**
@@ -322,7 +322,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -477,14 +477,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    8 分
                 </div>
                 
                 
@@ -502,7 +502,7 @@
             <div id="articleContent">
                 <p>labuladong<a href="https://labuladong.gitbook.io/algo/mu-lu-ye/lian-biao-ji-qiao" target="_blank" rel="noopener">单链表的六大解题套路，你都见过么？</a></p>
 <h1 id="21-合并两个有序链表"><a href="#21-合并两个有序链表" class="headerlink" title="21. 合并两个有序链表"></a><a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/" target="_blank" rel="noopener">21. 合并两个有序链表</a></h1><h2 id="方法1：迭代"><a href="#方法1：迭代" class="headerlink" title="方法1：迭代"></a>方法1：迭代</h2><ul>
-<li>逐个比较节点，不但向后移动，最后把未比较过的节点拼接到尾巴上</li>
+<li>逐个比较节点，不断向后移动，最后把未比较过的节点拼接到尾巴上</li>
 <li>添加一个dummy节点便于操作</li>
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
@@ -536,6 +536,32 @@
         <span class="token keyword">return</span> dummy<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
+<span class="token comment" spellcheck="true"># class ListNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, next=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.next = next</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> list1<span class="token punctuation">,</span> list2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type list1: Optional[ListNode]
+        :type list2: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """</span>
+        dummy<span class="token operator">=</span>ListNode<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        head<span class="token operator">=</span>dummy
+        <span class="token keyword">while</span> list1 <span class="token operator">and</span> list2<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> list1<span class="token punctuation">.</span>val<span class="token operator">&lt;=</span>list2<span class="token punctuation">.</span>val<span class="token punctuation">:</span>
+                head<span class="token punctuation">.</span>next<span class="token operator">=</span>list1
+                head<span class="token operator">=</span>head<span class="token punctuation">.</span>next
+                list1<span class="token operator">=</span>list1<span class="token punctuation">.</span>next
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                head<span class="token punctuation">.</span>next<span class="token operator">=</span>list2
+                head<span class="token operator">=</span>head<span class="token punctuation">.</span>next
+                list2<span class="token operator">=</span>list2<span class="token punctuation">.</span>next
+        head<span class="token punctuation">.</span>next<span class="token operator">=</span>list1 <span class="token keyword">if</span> list1 <span class="token keyword">else</span> list2
+        <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="方法2：递归"><a href="#方法2：递归" class="headerlink" title="方法2：递归"></a>方法2：递归</h2><ul>
 <li>递归结束的条件：有一个链表为空</li>
 <li>如果当前节点较小，就从当前节点的后面与另一条链表merge，然后返回当前节点对应的链表</li>
@@ -568,6 +594,27 @@
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
+<span class="token comment" spellcheck="true"># class ListNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, next=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.next = next</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> list1<span class="token punctuation">,</span> list2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type list1: Optional[ListNode]
+        :type list2: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> list1<span class="token punctuation">:</span><span class="token keyword">return</span> list2
+        <span class="token keyword">if</span> <span class="token operator">not</span> list2<span class="token punctuation">:</span><span class="token keyword">return</span> list1
+        <span class="token keyword">if</span> list1<span class="token punctuation">.</span>val<span class="token operator">&lt;</span>list2<span class="token punctuation">.</span>val<span class="token punctuation">:</span>
+            list1<span class="token punctuation">.</span>next<span class="token operator">=</span>self<span class="token punctuation">.</span>mergeTwoLists<span class="token punctuation">(</span>list1<span class="token punctuation">.</span>next<span class="token punctuation">,</span> list2<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> list1
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            list2<span class="token punctuation">.</span>next<span class="token operator">=</span>self<span class="token punctuation">.</span>mergeTwoLists<span class="token punctuation">(</span>list1<span class="token punctuation">,</span>list2<span class="token punctuation">.</span>next<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> list2
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="23-合并K个升序链表"><a href="#23-合并K个升序链表" class="headerlink" title="23. 合并K个升序链表"></a><a href="https://leetcode-cn.com/problems/merge-k-sorted-lists/solution/cpython3java-1bian-li-zhu-ge-he-bing-2gu-hn80/" target="_blank" rel="noopener">23. 合并K个升序链表</a></h1><h2 id="方法1：迭代地使用两两合并的算法"><a href="#方法1：迭代地使用两两合并的算法" class="headerlink" title="方法1：迭代地使用两两合并的算法"></a>方法1：迭代地使用两两合并的算法</h2><ul>
 <li>在上一题合并2个升序链表的基础上，逐一合并所有的链表</li>
 <li>先构建一个空的x链表，不断把当前链表合并到x上，使x不断加长，最后返回x</li>
@@ -637,6 +684,33 @@
         <span class="token keyword">return</span> dummy<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/" target="_blank" rel="noopener">Heap queue (or heapq) in Python</a></p>
+<pre class="line-numbers language-python"><code class="language-python">
+<span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
+<span class="token comment" spellcheck="true"># class ListNode:</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.next = None</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">mergeKLists</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> lists<span class="token punctuation">:</span> List<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> ListNode<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> lists <span class="token operator">or</span> len<span class="token punctuation">(</span>lists<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None
+        <span class="token keyword">import</span> heapq
+        heap <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># 首先 for 嵌套 while 就是将所有元素都取出放入堆中</span>
+        <span class="token keyword">for</span> node <span class="token keyword">in</span> lists<span class="token punctuation">:</span>
+            <span class="token keyword">while</span> node<span class="token punctuation">:</span>
+                heapq<span class="token punctuation">.</span>heappush<span class="token punctuation">(</span>heap<span class="token punctuation">,</span> node<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+                node <span class="token operator">=</span> node<span class="token punctuation">.</span>next
+        dummy <span class="token operator">=</span> ListNode<span class="token punctuation">(</span>None<span class="token punctuation">)</span>
+        cur <span class="token operator">=</span> dummy
+        <span class="token comment" spellcheck="true"># 依次将堆中的元素取出(因为是小顶堆，所以每次出来的都是目前堆中值最小的元素），然后重新构建一个列表返回</span>
+        <span class="token keyword">while</span> heap<span class="token punctuation">:</span>
+            cur<span class="token punctuation">.</span>next<span class="token operator">=</span>ListNode<span class="token punctuation">(</span>heappop<span class="token punctuation">(</span>heap<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            cur<span class="token operator">=</span>cur<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <ul>
 <li>也可以用python把所有元素逐个取出并排序，然后添加到dummy的后面</li>
@@ -974,7 +1048,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第零章：一个方法团灭LEETCODE股票买卖问题">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="第零章：一个方法团灭LEETCODE股票买卖问题">
                         
                         <span class="card-title">第零章：一个方法团灭LEETCODE股票买卖问题</span>
                     </div>
@@ -1024,7 +1098,7 @@ labuladong一个方法团灭LEETCODE股票买卖问题用的状态机，也就�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="根据字符出现频率排序">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="根据字符出现频率排序">
                         
                         <span class="card-title">根据字符出现频率排序</span>
                     </div>
@@ -1233,7 +1307,7 @@ map&lt;char, int> m
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">211.1k</span>
+            <span class="white-color">213.3k</span>
             
 
             <br>

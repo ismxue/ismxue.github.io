@@ -317,7 +317,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -472,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    658
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    6 分
                 </div>
                 
                 
@@ -514,7 +514,7 @@
 <li><code>int next()</code> 队列中，函数得到当前元素，并弹出当前元素 （向量中，得到当前元素后，索引向后移动）</li>
 <li><code>bool hasNext()</code>： 队列中，通过NestedInteger的<code>size()</code>判断是否<code>hasNext()</code>，如果size&gt;=1,则说明hasNext （向量中，索引值小于<code>size()</code>，则说明<code>hasNext()</code>）</li>
 </ul>
-<h2 id="第一种：队列实现"><a href="#第一种：队列实现" class="headerlink" title="第一种：队列实现"></a>第一种：队列实现</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+<h2 id="方法1-递归"><a href="#方法1-递归" class="headerlink" title="方法1:递归"></a>方法1:递归</h2><h3 id="第一种：队列实现"><a href="#第一种：队列实现" class="headerlink" title="第一种：队列实现"></a>第一种：队列实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * // This is the interface that allows for creating nested lists.
  * // You should not implement it, or speculate about its implementation
  * class NestedInteger {
@@ -568,7 +568,67 @@
  * while (i.hasNext()) cout &lt;&lt; i.next();
  */</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="第二种：向量实现"><a href="#第二种：向量实现" class="headerlink" title="第二种：向量实现"></a>第二种：向量实现</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">NestedIterator</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># </span><span class="token triple-quoted-string string">"""
+# This is the interface that allows for creating nested lists.
+# You should not implement it, or speculate about its implementation
+# """</span>
+<span class="token comment" spellcheck="true"># class NestedInteger(object):</span>
+<span class="token comment" spellcheck="true">#    def isInteger(self):</span>
+<span class="token comment" spellcheck="true">#        </span><span class="token triple-quoted-string string">"""
+#        @return True if this NestedInteger holds a single integer, rather than a nested list.
+#        :rtype bool
+#        """</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#    def getInteger(self):</span>
+<span class="token comment" spellcheck="true">#        </span><span class="token triple-quoted-string string">"""
+#        @return the single integer that this NestedInteger holds, if it holds a single integer
+#        Return None if this NestedInteger holds a nested list
+#        :rtype int
+#        """</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#    def getList(self):</span>
+<span class="token comment" spellcheck="true">#        </span><span class="token triple-quoted-string string">"""
+#        @return the nested list that this NestedInteger holds, if it holds a nested list
+#        Return None if this NestedInteger holds a single integer
+#        :rtype List[NestedInteger]
+#        """</span>
+
+<span class="token keyword">class</span> <span class="token class-name">NestedIterator</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>nestedList<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> nestedList<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> i<span class="token punctuation">.</span>isInteger<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>dq<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">.</span>getInteger<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>i<span class="token punctuation">.</span>getList<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nestedList<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Initialize your data structure here.
+        :type nestedList: List[NestedInteger]
+        """</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> deque
+        self<span class="token punctuation">.</span>dq<span class="token operator">=</span>deque<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>nestedList<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">next</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :rtype: int
+        """</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>dq<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">hasNext</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :rtype: bool
+        """</span>
+        <span class="token keyword">return</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>dq<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Your NestedIterator object will be instantiated and called as such:</span>
+<span class="token comment" spellcheck="true"># i, v = NestedIterator(nestedList), []</span>
+<span class="token comment" spellcheck="true"># while i.hasNext(): v.append(i.next())</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="第二种：向量实现"><a href="#第二种：向量实现" class="headerlink" title="第二种：向量实现"></a>第二种：向量实现</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">NestedIterator</span> <span class="token punctuation">{</span>
 <span class="token keyword">private</span><span class="token operator">:</span>
     vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> v<span class="token punctuation">;</span>
     <span class="token keyword">int</span> idx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 加一个索引记录当前位置</span>
@@ -602,6 +662,103 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="方法2-迭代"><a href="#方法2-迭代" class="headerlink" title="方法2:迭代"></a>方法2:迭代</h2><blockquote>
+<p><a href="https://leetcode.cn/problems/flatten-nested-list-iterator/solution/fu-xue-ming-zhu-xiang-jie-ti-yi-shu-li-d-n4qa/" target="_blank" rel="noopener">由于「栈」的先进后出的特性，我们需要逆序在栈里放入各个元素</a></p>
+<p>处理流程分为两步：</p>
+<p>在构造函数中应该初始化，把当前列表的各个元素（不用摊平）逆序放入栈中。<br>在 hasNext() 方法中，访问（不弹出）栈顶元素，判断是否为 int：<br>如果是 int 那么说明有下一个元素，返回 true；然后 next() 就会被调用，把栈顶的 int 弹出；<br>如果是 list 需要把当前列表的各个元素（不用摊平）逆序放入栈中。<br>如果栈为空，那么说明原始的嵌套列表已经访问结束了，返回 false。<br>算法整体的流程，通过举例说明。假如输入 [1, [2,3]] 。</p>
+<ol>
+<li>在构造函数中：栈里面放的应该是 stack = [[2, 3], 1]</li>
+<li>在调用 hasNext() 方法时，访问栈顶元素是 1，为 int，那么直接返回 true;</li>
+<li>然后调用 next() 方法，弹出栈顶元素 1；</li>
+<li>再调用 hasNext() 方法时，访问栈顶元素是 [2,3]，为 list，那么需要摊平，继续放到栈中。<pre><code> 当前的栈是 stack = [3, 2]</code></pre></li>
+<li>然后调用 next() 方法，弹出栈顶元素 2；</li>
+<li>然后调用 next() 方法，弹出栈顶元素 3；<blockquote>
+<p>注意：<code>while i.hasNext(): v.append(i.next())</code>中，是<code>while</code>，所以当stack中是[3,2]时，会持续调用<code>next（）</code>函数</p>
+</blockquote>
+</li>
+<li>再调用 hasNext() 方法时，栈为空，因此返回 false，迭代器运行结束。</li>
+</ol>
+</blockquote>
+<p><a href="https://leetcode.com/problems/flatten-nested-list-iterator/discuss/80142/8-line-Python-Solution" target="_blank" rel="noopener">使用stack实现：</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">NestedIterator</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nestedList<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Initialize your data structure here.
+        :type nestedList: List[NestedInteger]
+        """</span>
+        self<span class="token punctuation">.</span>stack <span class="token operator">=</span> nestedList<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true"># 逆序放入stack中</span>
+
+    <span class="token keyword">def</span> <span class="token function">next</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :rtype: int
+        """</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getInteger<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">hasNext</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :rtype: bool
+        """</span>
+        <span class="token keyword">while</span> self<span class="token punctuation">.</span>stack<span class="token punctuation">:</span>
+            top <span class="token operator">=</span> self<span class="token punctuation">.</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">if</span> top<span class="token punctuation">.</span>isInteger<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true"># 如果是整数，则返回True</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            self<span class="token punctuation">.</span>stack <span class="token operator">=</span> self<span class="token punctuation">.</span>stack<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> top<span class="token punctuation">.</span>getList<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 如果是nestList，则把stack顶的元素逆序，再反向拼接</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+
+
+
+<span class="token comment" spellcheck="true">#####其他写法</span>
+
+<span class="token keyword">class</span> <span class="token class-name">NestedIterator</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nestedList<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nestedList<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nestedList<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+
+    <span class="token keyword">def</span> <span class="token function">next</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> cur<span class="token punctuation">.</span>getInteger<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">hasNext</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> self<span class="token punctuation">.</span>stack<span class="token punctuation">:</span>
+            cur <span class="token operator">=</span> self<span class="token punctuation">.</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">if</span> cur<span class="token punctuation">.</span>isInteger<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            self<span class="token punctuation">.</span>stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>cur<span class="token punctuation">.</span>getList<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur<span class="token punctuation">.</span>getList<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://leetcode.com/problems/flatten-nested-list-iterator/discuss/80142/8-line-Python-Solution/350109" target="_blank" rel="noopener">也可以用deque写</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">NestedIterator</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nestedList<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Initialize your data structure here.
+        :type nestedList: List[NestedInteger]
+        """</span>
+
+        self<span class="token punctuation">.</span>queue <span class="token operator">=</span> collections<span class="token punctuation">.</span>deque<span class="token punctuation">(</span>nestedList<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">next</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :rtype: int
+        """</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>queue<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getInteger<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">hasNext</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :rtype: bool
+        """</span>
+        <span class="token keyword">while</span> self<span class="token punctuation">.</span>queue<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>queue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isInteger<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            first <span class="token operator">=</span> self<span class="token punctuation">.</span>queue<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>queue<span class="token punctuation">.</span>extendleft<span class="token punctuation">(</span>first<span class="token punctuation">.</span>getList<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -810,7 +967,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="第三章：如何高效进行模幂运算">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第三章：如何高效进行模幂运算">
                         
                         <span class="card-title">第三章：如何高效进行模幂运算</span>
                     </div>
@@ -865,7 +1022,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第四章：烧饼排序算法">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第四章：烧饼排序算法">
                         
                         <span class="card-title">第四章：烧饼排序算法</span>
                     </div>
@@ -1074,7 +1231,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">211.1k</span>
+            <span class="white-color">213.3k</span>
             
 
             <br>
