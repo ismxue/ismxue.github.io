@@ -17,7 +17,8 @@
 
 反序列化
 
-（1）根据&amp;#39;,&amp;#39;把数据分开；（2）pop">
+（1）根据&amp;#39;,&amp;#39;把数据分开；
+（2）po">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -325,7 +326,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -480,14 +481,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    995
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
                 
@@ -512,7 +513,9 @@
 </li>
 <li><p>反序列化</p>
 <ul>
-<li>（1）根据<code>&#39;,&#39;</code>把数据分开；（2）pop出第0个数据，并建立根节点；（3）递归剩下的数据 <code>根据树的递归性质，第0个元素就是一棵树的根节点，所以只要将列表的这个元素取出作为根节点，剩下的交给递归去解决即可</code></li>
+<li>（1）根据<code>&#39;,&#39;</code>把数据分开；</li>
+<li>（2）pop出第0个数据，并建立根节点；</li>
+<li>（3）递归剩下的数据 <code>根据树的递归性质，第0个元素就是一棵树的根节点，所以只要将列表的这个元素取出作为根节点，剩下的交给递归去解决即可</code></li>
 </ul>
 </li>
 </ul>
@@ -575,6 +578,39 @@
 <span class="token comment" spellcheck="true"># ser = Codec()</span>
 <span class="token comment" spellcheck="true"># deser = Codec()</span>
 <span class="token comment" spellcheck="true"># ans = deser.deserialize(ser.serialize(root))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><a href="https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/solution/297-er-cha-shu-de-xu-lie-hua-yu-fan-xu-l-647c/" target="_blank" rel="noopener">DFS</a><br>序列化<br>递归的第一步都是特例的处理，因为这是递归的中止条件：如果根节点为空，返回”null“<br>序列化的结果为：根节点值 + “,” + 左子节点值(进入递归) + “,” + 右子节点值(进入递归)<br>递归就是不断将“根节点”值加到结果中的过程<br>反序列化<br>先将字符串转换成队列（python转换成列表即可）<br>接下来就进入了递归<br>i. 弹出左侧元素，即队列出队<br>ii. 如果元素为“null”，返回null（python返回None）<br>iii. 否则，新建一个值为弹出元素的新节点<br>iv. 其左子节点为队列的下一个元素，进入递归；右子节点为队列的下下个元素，也进入递归<br>v. 递归就是不断将子树的根节点连接到父节点的过程</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Codec</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">serialize</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Encodes a tree to a single string.
+
+        :type root: TreeNode
+        :rtype: str
+        """</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token string">'None'</span>
+        <span class="token keyword">return</span> str<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">','</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>self<span class="token punctuation">.</span>serialize<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">','</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>self<span class="token punctuation">.</span>serialize<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">deserialize</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Decodes your encoded data to tree.
+
+        :type data: str
+        :rtype: TreeNode
+        """</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>dataList<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            val <span class="token operator">=</span> dataList<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> val <span class="token operator">==</span> <span class="token string">'None'</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> None
+            root <span class="token operator">=</span> TreeNode<span class="token punctuation">(</span>int<span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            root<span class="token punctuation">.</span>left <span class="token operator">=</span> dfs<span class="token punctuation">(</span>dataList<span class="token punctuation">)</span>
+            root<span class="token punctuation">.</span>right <span class="token operator">=</span> dfs<span class="token punctuation">(</span>dataList<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> root
+
+        dataList <span class="token operator">=</span> data<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dfs<span class="token punctuation">(</span>dataList<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <p><a href="https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/solution/ji-chong-bu-tong-bian-li-fang-shi-xia-de-0eap/" target="_blank" rel="noopener">序列化与反序列化 C++</a></p>
 <ul>
@@ -863,7 +899,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第三章：Git原理之最近公共祖先">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第三章：Git原理之最近公共祖先">
                         
                         <span class="card-title">第三章：Git原理之最近公共祖先</span>
                     </div>
@@ -921,7 +957,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="读“自学是门手艺”">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="读“自学是门手艺”">
                         
                         <span class="card-title">读“自学是门手艺”</span>
                     </div>
@@ -1132,7 +1168,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

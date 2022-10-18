@@ -9,11 +9,11 @@
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="labuladong高楼扔鸡蛋
-李永乐老师的讲解
+李永乐老师的讲解花花酱 LeetCode 887
 887. 鸡蛋掉落
+方法1:dp数组未优化的暴力解法（会超时）分成两个子楼重新按照1层计数
 
-dp数组的含义：dp[i][j] 表示用j个鸡蛋扔i次可以测出的最大层数（求k个鸡蛋在m步内可以测出多少最大（n）层）
-Q:为什么dp[i][j]数组不定义为用i个鸡蛋">
+dp数组的含义：dp[i][j]表示i个蛋，要确定j层楼，最小的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -321,7 +321,7 @@ Q:为什么dp[i][j]数组不定义为用i个鸡蛋">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,14 +476,14 @@ Q:为什么dp[i][j]数组不定义为用i个鸡蛋">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    533
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
                 
@@ -500,10 +500,66 @@ Q:为什么dp[i][j]数组不定义为用i个鸡蛋">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><a href="https://labuladong.gitbook.io/algo/mu-lu-ye-2/mu-lu-ye-4/gao-lou-reng-ji-dan-jin-jie" target="_blank" rel="noopener">labuladong高楼扔鸡蛋</a></p>
-<p><a href="https://www.youtube.com/watch?v=mLV_vOet0ss" target="_blank" rel="noopener">李永乐老师的讲解</a></p>
+<p><a href="https://www.youtube.com/watch?v=mLV_vOet0ss" target="_blank" rel="noopener">李永乐老师的讲解</a><br><a href="https://www.youtube.com/watch?v=aPY6sps_Q44" target="_blank" rel="noopener">花花酱 LeetCode 887</a></p>
 <p><a href="https://leetcode-cn.com/problems/super-egg-drop/solution/6xing-dai-ma-python3-okn-by-jackwu/" target="_blank" rel="noopener">887. 鸡蛋掉落</a></p>
+<h1 id="方法1-dp数组未优化的暴力解法（会超时）"><a href="#方法1-dp数组未优化的暴力解法（会超时）" class="headerlink" title="方法1:dp数组未优化的暴力解法（会超时）"></a>方法1:<a href="https://leetcode.com/problems/super-egg-drop/discuss/159079/Python-DP-from-kn2-to-knlogn-to-kn" target="_blank" rel="noopener">dp数组未优化的暴力解法（会超时）</a></h1><p>分成两个子楼重新按照1层计数</p>
 <ul>
-<li>dp数组的含义：dp[i][j] 表示用j个鸡蛋扔i次可以测出的最大层数（求k个鸡蛋在m步内可以测出多少最大（n）层）<blockquote>
+<li>dp数组的含义：dp[i][j]表示i个蛋，要确定j层楼，最小的扔鸡蛋次数</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">superEggDrop</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> k<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type k: int
+        :type n: int
+        :rtype: int
+        """</span>
+        dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>float<span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span> 
+            dp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">for</span> t <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> min<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>t<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span>t<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># if __name__ == '__main__':</span>
+<span class="token comment" spellcheck="true">#     k1=2</span>
+<span class="token comment" spellcheck="true">#     n1=6</span>
+<span class="token comment" spellcheck="true">#     so=Solution()</span>
+<span class="token comment" spellcheck="true">#     print(so.superEggDrop(k1,n1))</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="方法2-用一个k状态优化方法1的第三层for循环-（todo）"><a href="#方法2-用一个k状态优化方法1的第三层for循环-（todo）" class="headerlink" title="方法2: 用一个k状态优化方法1的第三层for循环 （todo）"></a><a href="https://leetcode.com/problems/super-egg-drop/discuss/159079/Python-DP-from-kn2-to-knlogn-to-kn" target="_blank" rel="noopener">方法2: 用一个k状态优化方法1的第三层for循环 （todo）</a></h1><blockquote>
+<p>choosing k_1…k_N for each dp[i][1…N]<br>To go one step further, till now, we are still finding the optimal floor k from 1 to j for each dp[i][j]. But is this really the smallest range we can narrow? In fact, we can see that the optimal floor k for each dp[i][j] increases as j increases. This means that once we get the optimal k for dp[i][j], we can save current k value and start the next round of for-loop directly, instead of initiating k from 0 again. In this way, in the third for-loop, k will go from 1 to N only once as j in the second for-loop goes from 1 to N. The total time complexity will be O(kn). The code is shown below:</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">superEggDrop</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> K<span class="token punctuation">,</span> N<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type K: int
+        :type N: int
+        :rtype: int
+        """</span>
+        dp<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span>float<span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">*</span><span class="token punctuation">(</span>N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>K<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> K<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+            dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> j
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> K<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            k <span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> N<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">while</span> k <span class="token operator">&lt;</span> j<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">and</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span>k<span class="token punctuation">]</span> <span class="token operator">></span> dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    k <span class="token operator">+=</span> <span class="token number">1</span>
+                dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> dp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token number">-1</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> dp<span class="token punctuation">[</span>K<span class="token punctuation">]</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="方法3-换个角度定义dp数组的含义"><a href="#方法3-换个角度定义dp数组的含义" class="headerlink" title="方法3:换个角度定义dp数组的含义"></a><a href="https://leetcode.com/problems/super-egg-drop/discuss/158974/C++JavaPython-2D-and-1D-DP-O(KlogN)/245317" target="_blank" rel="noopener">方法3:换个角度定义dp数组的含义</a></h1><p>I think we should keep in mind what the dp[m][k] means, it means the <strong>highest levels we can confirm</strong>. Then, we take 1 move to a floor and the egg will break or not. If the egg breaks, it means we should find the answer under this level, and it also means this level can not be higher than dp[m-1][k-1] + 1, otherwise we will unable to get the answer. If the egg doesn’t break, we will use the k eggs and m-1 moves to go higher. So the highest level we can touch is dp[m-1][k-1] + 1 + dp[m-1][k]. We can find the answer use k eggs and m moves in any level which not higher than it.</p>
+<p>始终把楼当成整体</p>
+<ul>
+<li>dp数组的含义：dp[i][j] 表示用j个鸡蛋扔i次可以测出的最大层数（题目求k个鸡蛋，扔多少次，可以测出（超过或等于）n层）<blockquote>
 <p>Q:为什么dp[i][j]数组不定义为用i个鸡蛋扔j次可以测出的最大楼层？（其实也可以，但需要竖着遍历table，有点别扭）<br>A: 假设1个蛋扔5次可以测出n层，5个蛋扔2次也可以测出n层。由于问题是求扔的最少次数，所以我们取的是5个蛋扔2次。因此，每一行表示扔的次数，每一列表示鸡蛋数。在横向遍历dp table时，取到2次5蛋时，return 即可。</p>
 <ul>
 <li>如果不想纠结i和j哪个是蛋数，哪个是扔的次数，把for循环改为<code>while(dp[i][j]&lt;n)</code>循环即可<br><img src="https://i.loli.net/2021/07/17/lbcx5LF4rzC1jtT.png" alt="20210717164515"></li>
@@ -512,8 +568,8 @@ Q:为什么dp[i][j]数组不定义为用i个鸡蛋">
 </li>
 </ul>
 <ul>
-<li>鸡蛋没碎，鸡蛋数量不变，可用次数减一，dp[i - 1][j]（上层）</li>
-<li>鸡蛋碎了，鸡蛋数量减一，可用次数减一，dp[i - 1][j - 1]（下层）</li>
+<li>鸡蛋没碎，鸡蛋数量不变，可用次数减一，dp[i - 1][j]（能测到的最大上层）</li>
+<li>鸡蛋碎了，鸡蛋数量减一，可用次数减一，dp[i - 1][j - 1]（能测到的最大下层）</li>
 <li>1（当前层）</li>
 <li>最大层数 = 上层 + 下层 + 当前层<ul>
 <li>当能测到大于等于n层时，返回i（也就是扔的次数）</li>
@@ -774,7 +830,7 @@ Q:为什么dp[i][j]数组不定义为用i个鸡蛋">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="读“自学是门手艺”">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="读“自学是门手艺”">
                         
                         <span class="card-title">读“自学是门手艺”</span>
                     </div>
@@ -829,7 +885,7 @@ Q:为什么dp[i][j]数组不定义为用i个鸡蛋">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第二章：以最小插入次数构造回文串">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="第二章：以最小插入次数构造回文串">
                         
                         <span class="card-title">第二章：以最小插入次数构造回文串</span>
                     </div>
@@ -1037,7 +1093,7 @@ base case：左下角三角形为0，对角线处为0（因为自己本身就是
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

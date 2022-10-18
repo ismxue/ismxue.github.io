@@ -324,7 +324,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -479,14 +479,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    3.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    17 分
                 </div>
                 
                 
@@ -541,7 +541,13 @@
 </ul>
 </li>
 <li>利用<code>visited.append(num)</code> 和 <code>visited.pop()</code> 可更新路径（添加/回退选择）</li>
-<li><code>res.append(visited[:])</code>   利用<strong>visited[:]</strong> 才可完整复制添加单个排列结果</li>
+<li><code>res.append(visited[:])</code>   利用<strong>visited[:]</strong> 才可完整复制添加单个排列结果(深拷贝)<ul>
+<li><a href="https://blog.csdn.net/T_T233333333/article/details/105011648" target="_blank" rel="noopener">a[:]是深复制，a是浅复制，相当于赋值a的话是赋值了指针，赋值a[:]相当于复制了a对应的那段空间</a><ul>
+<li>如果使用<code>for x in a</code>，则在for循环中会改变a的内容；如果使用<code>for x in a[:]</code>， 则会建立一个a的副本（新对象），这个副本和a中的内容完全相同，所以我们可以在a已经修改的情况下进行remove操作</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">permute</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -563,7 +569,34 @@
                     backtrack<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>visited<span class="token punctuation">)</span>
                     visited<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
         backtrack<span class="token punctuation">(</span>nums<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> res
+
+
+<span class="token comment" spellcheck="true"># 或者分开写</span>
+<span class="token comment" spellcheck="true"># class Solution(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self):</span>
+<span class="token comment" spellcheck="true">#         self.res = []</span>
+
+<span class="token comment" spellcheck="true">#     def backtrance(self, nums, visited):</span>
+<span class="token comment" spellcheck="true">#         if len(nums) == len(visited):</span>
+<span class="token comment" spellcheck="true">#             self.res.append(visited[:])</span>
+<span class="token comment" spellcheck="true">#             return</span>
+<span class="token comment" spellcheck="true">#         for i in range(len(nums)):</span>
+<span class="token comment" spellcheck="true">#             if nums[i] in visited:</span>
+<span class="token comment" spellcheck="true">#                 continue</span>
+<span class="token comment" spellcheck="true">#             else:</span>
+<span class="token comment" spellcheck="true">#                 visited.append(nums[i])</span>
+<span class="token comment" spellcheck="true">#                 self.backtrance(nums, visited)</span>
+<span class="token comment" spellcheck="true">#                 visited.pop()</span>
+
+<span class="token comment" spellcheck="true">#     def permute(self, nums):</span>
+<span class="token comment" spellcheck="true">#         </span><span class="token triple-quoted-string string">"""
+#         :type nums: List[int]
+#         :rtype: List[List[int]]
+#         """</span>
+<span class="token comment" spellcheck="true">#         self.backtrance(nums, [])</span>
+<span class="token comment" spellcheck="true">#         return self.res</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//#include &lt;vector></span>
 <span class="token comment" spellcheck="true">//#include &lt;iostream></span>
 <span class="token comment" spellcheck="true">//#include &lt;algorithm></span>
@@ -682,7 +715,7 @@
 </li>
 <li><p><a href="https://leetcode-cn.com/problems/subsets/solution/shou-hua-tu-jie-zi-ji-hui-su-fa-xiang-jie-wei-yun-/" target="_blank" rel="noopener">详细解释：</a></p>
 <ul>
-<li>每次传入子递归的 index 是：当前你选的数的索引+1当前你选的数的索引+1</li>
+<li>每次传入子递归的 index 是：当前你选的数的索引+1</li>
 <li>每次递归枚举的选项变少，一直递归到没有可选的数字，进入不了for循环，落入不了递归，整个DFS结束</li>
 <li>可见我们没有显式地设置递归的出口，而是通过控制循环的起点，使得最后递归自然结束</li>
 </ul>
@@ -767,6 +800,29 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="77-组合"><a href="#77-组合" class="headerlink" title="77. 组合"></a><a href="https://leetcode-cn.com/problems/combinations/" target="_blank" rel="noopener">77. 组合</a></h1><p>与上一题类似，也是用一个位置参数记录当前节点，然后调用子问题的backtrack时，选择列表从位置参数后面开始</p>
 <p>78题子集问题：选择列表为空时跳出，每经过一个节点，记录当前visited路径<br>本题：visited的路径为给定的k时，结果中记录当前的visited，然后跳出</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">combine</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type n: int
+        :type k: int
+        :rtype: List[List[int]]
+        """</span>
+        nums<span class="token operator">=</span><span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        visited<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">backtrance</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>visited<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>visited<span class="token punctuation">)</span><span class="token operator">==</span>k<span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>visited<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                visited<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                backtrance<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>visited<span class="token punctuation">)</span>
+                visited<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        backtrance<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>visited<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+<span class="token comment" spellcheck="true"># so=Solution()</span>
+<span class="token comment" spellcheck="true"># print(so.combine(4,2))</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
 <span class="token comment" spellcheck="true">//    用start记录选择列表开始的地方，小于该节点的选择一律不选</span>
@@ -799,10 +855,60 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="17-电话号码的字母组合"><a href="#17-电话号码的字母组合" class="headerlink" title="17. 电话号码的字母组合"></a><a href="https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/" target="_blank" rel="noopener">17. 电话号码的字母组合</a></h2><h3 id="方法1：回溯"><a href="#方法1：回溯" class="headerlink" title="方法1：回溯"></a>方法1：回溯</h3><ul>
-<li>用一个table记录按键对应的字母</li>
+<li>用一个dic记录按键对应的字母</li>
 <li>维护选择列表<code>choice</code>和已选择的路径<code>visited</code></li>
-<li>用idx记录digits当前索引的位置,不同的idx对应不同的选择</li>
+<li>用idx记录digits当前索引的位置,不同的idx对应不同的选择<ul>
+<li><strong>在函数参数列表中用idx记录索引这种操作很常见，相当于用idx更新选择列表</strong></li>
 </ul>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">letterCombinations</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> digits<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type digits: str
+        :rtype: List[str]
+        """</span>
+        <span class="token comment" spellcheck="true"># dic = {"2": ['a', 'b', 'c'],</span>
+        <span class="token comment" spellcheck="true">#        "3": ['d', 'e', 'f'],</span>
+        <span class="token comment" spellcheck="true">#        "4": ['g', 'h', 'i'],</span>
+        <span class="token comment" spellcheck="true">#        "5": ['j', 'k', 'l'],</span>
+        <span class="token comment" spellcheck="true">#        "6": ['m', 'n', 'o'],</span>
+        <span class="token comment" spellcheck="true">#        "7": ['p', 'q', 'r', 's'],</span>
+        <span class="token comment" spellcheck="true">#        "8": ['t', 'u', 'v'],</span>
+        <span class="token comment" spellcheck="true">#        "9": ['w', 'x', 'y', 'z']}</span>
+        dic <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'2'</span><span class="token punctuation">:</span> <span class="token string">'abc'</span><span class="token punctuation">,</span>
+            <span class="token string">'3'</span><span class="token punctuation">:</span> <span class="token string">'def'</span><span class="token punctuation">,</span>
+            <span class="token string">'4'</span><span class="token punctuation">:</span> <span class="token string">'ghi'</span><span class="token punctuation">,</span>
+            <span class="token string">'5'</span><span class="token punctuation">:</span> <span class="token string">'jkl'</span><span class="token punctuation">,</span>
+            <span class="token string">'6'</span><span class="token punctuation">:</span> <span class="token string">'mno'</span><span class="token punctuation">,</span>
+            <span class="token string">'7'</span><span class="token punctuation">:</span> <span class="token string">'pqrs'</span><span class="token punctuation">,</span>
+            <span class="token string">'8'</span><span class="token punctuation">:</span> <span class="token string">'tuv'</span><span class="token punctuation">,</span>
+            <span class="token string">'9'</span><span class="token punctuation">:</span> <span class="token string">'wxyz'</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">def</span> <span class="token function">backtrace</span><span class="token punctuation">(</span>digits<span class="token punctuation">,</span>visited<span class="token punctuation">,</span> idx<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>visited<span class="token punctuation">)</span> <span class="token operator">==</span> len<span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 回溯结束的条件</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>visited<span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+
+            <span class="token comment" spellcheck="true"># 维护路径和选择列表</span>
+            choose <span class="token operator">=</span> dic<span class="token punctuation">[</span>digits<span class="token punctuation">[</span>idx<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true"># 按照索引 选择 选择列表</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>choose<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                visited<span class="token operator">+=</span>choose<span class="token punctuation">[</span>i<span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># 选择</span>
+                backtrace<span class="token punctuation">(</span>digits<span class="token punctuation">,</span>visited<span class="token punctuation">,</span> idx <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                visited<span class="token operator">=</span>visited<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 撤销选择</span>
+
+
+        <span class="token keyword">if</span> digits<span class="token operator">==</span><span class="token string">""</span><span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        visited<span class="token operator">=</span><span class="token string">""</span>
+        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        backtrace<span class="token punctuation">(</span>digits<span class="token punctuation">,</span> visited<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+
+
+<span class="token comment" spellcheck="true"># so = Solution()</span>
+<span class="token comment" spellcheck="true"># print(so.letterCombinations("23"))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// #include &lt;string></span>
 <span class="token comment" spellcheck="true">// #include &lt;vector></span>
 <span class="token comment" spellcheck="true">// #include &lt;map></span>
@@ -855,7 +961,126 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
 <span class="token comment" spellcheck="true">//         cout &lt;&lt; i &lt;&lt; '\t';</span>
 <span class="token comment" spellcheck="true">//     }</span>
 <span class="token comment" spellcheck="true">// }</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="方法2：纯递归"><a href="#方法2：纯递归" class="headerlink" title="方法2：纯递归"></a>方法2：纯递归</h3><p>用递归得到前面的结果，然后把前面的结果与当前的字符串进行拼接</p>
+<h3 id="方法2：纯递归（也是一种回溯）"><a href="#方法2：纯递归（也是一种回溯）" class="headerlink" title="方法2：纯递归（也是一种回溯）"></a>方法2：<a href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/solution/hui-su-dui-lie-tu-jie-by-ml-zimingmeng/" target="_blank" rel="noopener">纯递归（也是一种回溯）</a></h3><ul>
+<li>明确递归函数的含义（不要跳进递归中）：返回digits对应的题目要求的结果<ul>
+<li>选择第一个按键作为当前列表，然后把当前列表和子结果进行拼接，得到最终结果</li>
+<li>注意递归结束的条件：digits长度为0，则… digits长度为1，则…   (有时候不确定递归结束的条件，则可以多写些base case)</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">letterCombinations</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> digits<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> digits<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        dict <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'2'</span><span class="token punctuation">:</span> <span class="token string">'abc'</span><span class="token punctuation">,</span>
+            <span class="token string">'3'</span><span class="token punctuation">:</span> <span class="token string">'def'</span><span class="token punctuation">,</span>
+            <span class="token string">'4'</span><span class="token punctuation">:</span> <span class="token string">'ghi'</span><span class="token punctuation">,</span>
+            <span class="token string">'5'</span><span class="token punctuation">:</span> <span class="token string">'jkl'</span><span class="token punctuation">,</span>
+            <span class="token string">'6'</span><span class="token punctuation">:</span> <span class="token string">'mno'</span><span class="token punctuation">,</span>
+            <span class="token string">'7'</span><span class="token punctuation">:</span> <span class="token string">'pqrs'</span><span class="token punctuation">,</span>
+            <span class="token string">'8'</span><span class="token punctuation">:</span> <span class="token string">'tuv'</span><span class="token punctuation">,</span>
+            <span class="token string">'9'</span><span class="token punctuation">:</span> <span class="token string">'wxyz'</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true"># res = [] # 注意：res一定不要写在这里，否则递归过程中，res不断增加，导致出错</span>
+        <span class="token keyword">def</span> <span class="token function">recursive</span><span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 递归结束的条件</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> list<span class="token punctuation">(</span>dict<span class="token punctuation">[</span>digits<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 注意，这也是递归结束的条件</span>
+
+            children <span class="token operator">=</span> dict<span class="token punctuation">[</span>digits<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 选择当前按键对应的列表</span>
+            digits<span class="token operator">=</span>digits<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+            res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment" spellcheck="true"># res写在这里，递归过程中，不断填充并更新res</span>
+            <span class="token keyword">for</span> child <span class="token keyword">in</span> children<span class="token punctuation">:</span>
+                subRes<span class="token operator">=</span>recursive<span class="token punctuation">(</span>digits<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 子结果</span>
+                <span class="token keyword">for</span> i <span class="token keyword">in</span> subRes<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 拼接结果并记录</span>
+                    tmp<span class="token operator">=</span>child<span class="token operator">+</span>i
+                    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> res
+        <span class="token keyword">return</span> recursive<span class="token punctuation">(</span>digits<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># so=Solution()</span>
+<span class="token comment" spellcheck="true"># print(so.letterCombinations("234"))</span>
+
+
+<span class="token comment" spellcheck="true">## 或者</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">letterCombinations</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> digits<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> digits<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        dict <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'2'</span><span class="token punctuation">:</span> <span class="token string">'abc'</span><span class="token punctuation">,</span>
+            <span class="token string">'3'</span><span class="token punctuation">:</span> <span class="token string">'def'</span><span class="token punctuation">,</span>
+            <span class="token string">'4'</span><span class="token punctuation">:</span> <span class="token string">'ghi'</span><span class="token punctuation">,</span>
+            <span class="token string">'5'</span><span class="token punctuation">:</span> <span class="token string">'jkl'</span><span class="token punctuation">,</span>
+            <span class="token string">'6'</span><span class="token punctuation">:</span> <span class="token string">'mno'</span><span class="token punctuation">,</span>
+            <span class="token string">'7'</span><span class="token punctuation">:</span> <span class="token string">'pqrs'</span><span class="token punctuation">,</span>
+            <span class="token string">'8'</span><span class="token punctuation">:</span> <span class="token string">'tuv'</span><span class="token punctuation">,</span>
+            <span class="token string">'9'</span><span class="token punctuation">:</span> <span class="token string">'wxyz'</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">def</span> <span class="token function">recursive</span><span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> list<span class="token punctuation">(</span>dict<span class="token punctuation">[</span>digits<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            children <span class="token operator">=</span> dict<span class="token punctuation">[</span>digits<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+            digits<span class="token operator">=</span>digits<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+            res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+            subRes<span class="token operator">=</span>recursive<span class="token punctuation">(</span>digits<span class="token punctuation">)</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> subRes<span class="token punctuation">:</span>
+                <span class="token keyword">for</span> child <span class="token keyword">in</span> children<span class="token punctuation">:</span>
+                    tmp<span class="token operator">=</span>i<span class="token operator">+</span>child
+                    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> res
+        <span class="token keyword">return</span> recursive<span class="token punctuation">(</span>digits<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># so=Solution()</span>
+<span class="token comment" spellcheck="true"># print(so.letterCombinations("234"))</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其他写法：</p>
+<ul>
+<li>明确递归函数的含义recursive(digits, visited)：给定digits以及已经选择的路径，返回题目要求的结果。注意：不要跳进递归中</li>
+<li>递归结束的条件：digits的长度为0</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">letterCombinations</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> digits<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+
+
+        dict <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'2'</span><span class="token punctuation">:</span> <span class="token string">'abc'</span><span class="token punctuation">,</span>
+            <span class="token string">'3'</span><span class="token punctuation">:</span> <span class="token string">'def'</span><span class="token punctuation">,</span>
+            <span class="token string">'4'</span><span class="token punctuation">:</span> <span class="token string">'ghi'</span><span class="token punctuation">,</span>
+            <span class="token string">'5'</span><span class="token punctuation">:</span> <span class="token string">'jkl'</span><span class="token punctuation">,</span>
+            <span class="token string">'6'</span><span class="token punctuation">:</span> <span class="token string">'mno'</span><span class="token punctuation">,</span>
+            <span class="token string">'7'</span><span class="token punctuation">:</span> <span class="token string">'pqrs'</span><span class="token punctuation">,</span>
+            <span class="token string">'8'</span><span class="token punctuation">:</span> <span class="token string">'tuv'</span><span class="token punctuation">,</span>
+            <span class="token string">'9'</span><span class="token punctuation">:</span> <span class="token string">'wxyz'</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token keyword">if</span> <span class="token operator">not</span> digits<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">recursive</span><span class="token punctuation">(</span>digits<span class="token punctuation">,</span> visited<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 递归结束的条件</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>digits<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>visited<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> 
+            children <span class="token operator">=</span> dict<span class="token punctuation">[</span>digits<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 选择当前数字对应的字母按键串</span>
+            <span class="token keyword">for</span> child <span class="token keyword">in</span> children<span class="token punctuation">:</span>
+                recursive<span class="token punctuation">(</span>digits<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span> visited<span class="token operator">+</span>child<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 根据字母按键串中的字符更新visted</span>
+            <span class="token keyword">return</span> res
+        <span class="token keyword">return</span> recursive<span class="token punctuation">(</span>digits<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># so=Solution()</span>
+<span class="token comment" spellcheck="true"># print(so.letterCombinations("23"))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>C++的其他写法：</p>
+<p>用递归得到前面的结果，然后把前面的结果与当前的字符串进行拼接</p>
 <ul>
 <li>递归结束的条件是<code>digits.size() == 0</code>则返回<code>{&quot;&quot;}</code>。这样在递归树的最低层是从<code>&quot;&quot;</code>开始的，而不是从a（或b或c）开始，所以结果中记录的是全部的按键过程，最后要用长度过滤结果</li>
 </ul>
@@ -1191,7 +1416,7 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="第零章：BFS 算法解题套路框架（暂）">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="第零章：BFS 算法解题套路框架（暂）">
                         
                         <span class="card-title">第零章：BFS 算法解题套路框架（暂）</span>
                     </div>
@@ -1246,7 +1471,7 @@ BFS算法的框架
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第零章：动态规划解题套路框架">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第零章：动态规划解题套路框架">
                         
                         <span class="card-title">第零章：动态规划解题套路框架</span>
                     </div>
@@ -1456,7 +1681,7 @@ BFS算法的框架
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

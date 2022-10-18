@@ -322,7 +322,7 @@ base case:
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -515,11 +515,11 @@ base case:
 <pre class="line-numbers language-python"><code class="language-python">        <span class="token keyword">if</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
             dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">2</span>
             <span class="token comment" spellcheck="true"># 相当于</span>
-            <span class="token comment" spellcheck="true"># dp[0][total-nums[0]]=2</span>
+            <span class="token comment" spellcheck="true"># dp[0][total-nums[0]]=2   # 如何凑出target 和如何把target见=减到0 是一样的</span>
             <span class="token comment" spellcheck="true"># dp[0][total+nums[0]]=2</span>
             <span class="token comment" spellcheck="true"># 只是此时nums[0]=0，因此写成 dp[0][total]=2</span>
         <span class="token keyword">else</span><span class="token punctuation">:</span>
-            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">-</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>
+            dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">-</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span>  
             dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">+</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（或者直接用下面的代码来包含nums[0]为0 和非0的情况）</p>
 <pre class="line-numbers language-python"><code class="language-python">        dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>total<span class="token operator">-</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token operator">+</span><span class="token number">1</span>
@@ -795,7 +795,7 @@ base case:
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第一章：动态规划设计：最长递增子序列">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第一章：动态规划设计：最长递增子序列">
                         
                         <span class="card-title">第一章：动态规划设计：最长递增子序列</span>
                     </div>
@@ -847,7 +847,7 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="第零章：经典动态规划：完全背包问题">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第零章：经典动态规划：完全背包问题">
                         
                         <span class="card-title">第零章：经典动态规划：完全背包问题</span>
                     </div>
@@ -1064,7 +1064,7 @@ dp数组的含义：以nums[i] 结尾的当前最长上升子序列的长度记�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

@@ -323,7 +323,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -478,14 +478,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    691
+                    961
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
                 
@@ -505,19 +505,45 @@
 <ol>
 <li><p>排序。按照区间起点升序排序，或者先按照起点升序排序，若起点相同，则按照终点降序排序</p>
 </li>
-<li><p>观察规律并画图。找到区间相对位置的不同情况，并进行分析</p>
+<li><p>观察规律并画图。<strong>找到区间相对位置的不同情况，并进行分析</strong></p>
 </li>
 </ol>
 <h1 id="1288-删除被覆盖区间"><a href="#1288-删除被覆盖区间" class="headerlink" title="1288. 删除被覆盖区间"></a><a href="https://leetcode-cn.com/problems/remove-covered-intervals/" target="_blank" rel="noopener">1288. 删除被覆盖区间</a></h1><ul>
 <li>先按照起点升序排序。若起点相同，则按照终点降序排序，这样能保证下面的区间被上面的区间覆盖掉。<code>intervals=sorted(intervals,key=lambda x: (x[0], -x[1]))</code></li>
-<li>分3种情况讨论<ul>
-<li>完全覆盖，则计数-1</li>
+<li>分2种情况讨论<ul>
+<li>完全覆盖，则计数-1 ，区间不变</li>
+<li>不能覆盖，则计数不变，把区间更新到当前线段中</li>
+</ul>
+</li>
+<li>也可以分3种情况讨论<ul>
+<li>完全覆盖，则计数-1 ，区间不变</li>
 <li>部分区间相交，则扩大右区间</li>
 <li>完全不相交，则把区间更新到当前线段中</li>
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 两种情况的代码</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">removeCoveredIntervals</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type intervals: List[List[int]]
+        :rtype: int
+        """</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token keyword">return</span> len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span>
+        intervals<span class="token operator">=</span>sorted<span class="token punctuation">(</span>intervals<span class="token punctuation">,</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token punctuation">[</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token operator">-</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        record<span class="token operator">=</span><span class="token punctuation">[</span>intervals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>intervals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        res<span class="token operator">=</span>len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>record<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 能完全覆盖，record继续保持</span>
+                res<span class="token operator">-=</span><span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>  
+                record <span class="token operator">=</span> <span class="token punctuation">[</span>intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 不能覆盖，把record更新到当前的线段中</span>
+        <span class="token keyword">return</span> res
+
+
+
+<span class="token comment" spellcheck="true"># 三种情况的代码</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">removeCoveredIntervals</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token comment" spellcheck="true"># 按起点升序、终点降序的方式排列。排列后，必然是前面的区间覆盖后面的区间</span>
         intervals<span class="token operator">=</span>sorted<span class="token punctuation">(</span>intervals<span class="token punctuation">,</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">-</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -531,7 +557,7 @@
             <span class="token keyword">if</span> right <span class="token operator">&lt;</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 情况3：完全不相交，把区间跳转到当前线段中</span>
                 left <span class="token operator">=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
                 right <span class="token operator">=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="56-合并区间"><a href="#56-合并区间" class="headerlink" title="56. 合并区间"></a><a href="https://leetcode-cn.com/problems/merge-intervals/" target="_blank" rel="noopener">56. 合并区间</a></h1><ul>
 <li><p>按照区间的start，排序 <code>intervals = sorted(intervals, key=lambda x: x[0])</code></p>
 </li>
@@ -541,6 +567,34 @@
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 输入: [[1,3],[2,6],[8,10],[15,18]]</span>
 <span class="token comment" spellcheck="true"># 输出: [[1,6],[8,10],[15,18]]</span>
 <span class="token comment" spellcheck="true"># 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type intervals: List[List[int]]
+        :rtype: int
+        """</span>
+        <span class="token comment" spellcheck="true"># if len(intervals)&lt;=1: return len(intervals)</span>
+        intervals<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token operator">-</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        record<span class="token operator">=</span><span class="token punctuation">[</span>intervals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>intervals<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>record<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token keyword">continue</span>
+            <span class="token keyword">elif</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">></span>record<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>record<span class="token punctuation">)</span>
+                record <span class="token operator">=</span> <span class="token punctuation">[</span>intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+            <span class="token keyword">elif</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>record<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">and</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">></span>record<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                record <span class="token operator">=</span> <span class="token punctuation">[</span>record<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>record<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ans
+<span class="token comment" spellcheck="true"># so=Solution()</span>
+<span class="token comment" spellcheck="true"># intervals=[[1,3],[2,6],[8,10],[15,18]]</span>
+<span class="token comment" spellcheck="true"># print(so.merge(intervals))</span>
+
+
+
+
+<span class="token comment" spellcheck="true"># 或者可以合并写为：</span>
 <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
   <span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">)</span><span class="token punctuation">:</span>
       <span class="token triple-quoted-string string">"""
@@ -558,7 +612,7 @@
           <span class="token keyword">else</span><span class="token punctuation">:</span>
               <span class="token comment" spellcheck="true"># 添加到结果，并重新更新</span>
               res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-      <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="986-区间列表的交集"><a href="#986-区间列表的交集" class="headerlink" title="986. 区间列表的交集"></a><a href="https://leetcode-cn.com/problems/interval-list-intersections/" target="_blank" rel="noopener">986. 区间列表的交集</a></h1><ul>
 <li>找到有交集的条件，然后取公共部分</li>
 <li>可能存在多个区间，注意更新指针的条件</li>
@@ -789,7 +843,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="第零章：手把手带你刷二叉树(第一期)">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第零章：手把手带你刷二叉树(第一期)">
                         
                         <span class="card-title">第零章：手把手带你刷二叉树(第一期)</span>
                     </div>
@@ -840,7 +894,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="读“被讨厌的勇气”">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="读“被讨厌的勇气”">
                         
                         <span class="card-title">读“被讨厌的勇气”</span>
                     </div>
@@ -1052,7 +1106,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

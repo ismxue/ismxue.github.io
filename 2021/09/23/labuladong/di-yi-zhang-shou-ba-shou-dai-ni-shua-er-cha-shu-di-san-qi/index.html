@@ -11,9 +11,11 @@
     <meta name="description" content="labuladong手把手带你刷二叉树（第三期）
 
 Q：怎么知道以自己为根节点的二叉树长什么样？
+
 A：可以通过后序遍历（根的左子树+根的右子树+根）得到自己的样子。如果某个子节点处为空，则用#进行填空
+
 Q：怎么知道和别人长得是否一样？
-A:">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -321,7 +323,7 @@ A:">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,14 +478,14 @@ A:">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    354
+                    525
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -501,10 +503,16 @@ A:">
             <div id="articleContent">
                 <p>labuladong<a href="https://mp.weixin.qq.com/s/LJbpo49qppIeRs-FbgjsSQ" target="_blank" rel="noopener">手把手带你刷二叉树（第三期）</a></p>
 <ul>
-<li>Q：怎么知道以自己为根节点的二叉树长什么样？</li>
-<li>A：可以通过后序遍历（根的左子树+根的右子树+根）得到自己的样子。如果某个子节点处为空，则用<code>#</code>进行填空</li>
-<li>Q：怎么知道和别人长得是否一样？</li>
-<li>A: 构建一个字典，保存当前节点对应的样子及其出现的次数。再构建一个向量，若字典中键对应的值出现2次，说明有重复，将这个节点加入res中（多次重复也只添加一次到res中）</li>
+<li><p>Q：怎么知道以自己为根节点的二叉树长什么样？</p>
+</li>
+<li><p>A：可以通过后序遍历（根的左子树+根的右子树+根）得到自己的样子。如果某个子节点处为空，则用<code>#</code>进行填空</p>
+</li>
+<li><p>Q：怎么知道和别人长得是否一样？</p>
+</li>
+<li><p>A: 构建一个字典，保存当前节点对应的样子及其出现的次数。再构建一个向量，若字典中键对应的值出现2次，说明有重复，将这个节点加入res中（多次重复也只添加一次到res中）</p>
+</li>
+<li><p>注意！！！：本题用前序遍历和后序遍历都可以，但用中序遍历时，会有些特殊的case报错。这是因为用 中序遍历 序列化二叉树时，可能出现<a href="https://leetcode.com/problems/find-duplicate-subtrees/discuss/106011/Java-Concise-Postorder-Traversal-Solution/108467" target="_blank" rel="noopener">symmetric structures of this special case</a> </p>
+</li>
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for a binary tree node.
@@ -542,6 +550,34 @@ A:">
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">findDuplicateSubtrees</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :rtype: List[TreeNode]
+        """</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
+        dic <span class="token operator">=</span> defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token string">"#"</span>
+            l <span class="token operator">=</span> dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+            r <span class="token operator">=</span> dfs<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># current = l + "," + str(root.val) + "," + r # 错误，除非用特殊的flag标记</span>
+            <span class="token comment" spellcheck="true"># current =l + "," +r + "," +  str(root.val) # 正确</span>
+            current <span class="token operator">=</span> str<span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> l <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> r <span class="token comment" spellcheck="true"># 正确</span>
+            dic<span class="token punctuation">[</span>current<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">if</span> dic<span class="token punctuation">[</span>current<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span> res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> current
+        dfs<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -750,7 +786,7 @@ A:">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="上岸记">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="上岸记">
                         
                         <span class="card-title">上岸记</span>
                     </div>
@@ -801,7 +837,7 @@ A:">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="第零章：一个方法团灭LEETCODE股票买卖问题">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="第零章：一个方法团灭LEETCODE股票买卖问题">
                         
                         <span class="card-title">第零章：一个方法团灭LEETCODE股票买卖问题</span>
                     </div>
@@ -1007,7 +1043,7 @@ labuladong一个方法团灭LEETCODE股票买卖问题用的状态机，也就�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

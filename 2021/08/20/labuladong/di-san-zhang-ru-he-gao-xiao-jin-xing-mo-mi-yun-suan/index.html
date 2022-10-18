@@ -322,7 +322,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -477,14 +477,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    934
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
                 
@@ -509,7 +509,7 @@
 <li>通过n//2向下取整，n变为原来的一半；</li>
 <li>当 n 为奇数时，将多出的一项 x 乘入 res </li>
 </ul>
-<p><img src="https://i.loli.net/2021/08/20/QswtzWypF9arIhb.png" alt="20210820202930"></p>
+<p><img src="https://i.loli.net/2021/08/20/QswtzWypF9arIhb.png" alt="20210820202930"><br><img src="https://s2.loli.net/2022/10/03/ijy8F3T6RzQAbwk.png" alt="image.png"></p>
 <blockquote>
 <p>注意：在C++中，int32 变量 n∈[−2147483648,2147483647] ，因此当 n = -2147483648时执行 n = -n会因越界而赋值出错。<a href="https://leetcode-cn.com/problems/powx-n/solution/50-powx-n-kuai-su-mi-qing-xi-tu-jie-by-jyd/" target="_blank" rel="noopener">解决方法是先将 n存入 long 变量 b ，后面用 b 操作即可。</a></p>
 </blockquote>
@@ -537,6 +537,27 @@
         <span class="token keyword">return</span> res<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">myPow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type x: float
+        :type n: int
+        :rtype: float
+        """</span>
+        <span class="token comment" spellcheck="true"># 递归结束的条件</span>
+        <span class="token keyword">if</span> n<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token number">1</span>
+        <span class="token comment" spellcheck="true"># 处理n是负数的情况</span>
+        <span class="token keyword">if</span> n<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+            x<span class="token operator">=</span><span class="token number">1</span><span class="token operator">/</span>x
+            n<span class="token operator">=</span><span class="token operator">-</span>n
+        res<span class="token operator">=</span><span class="token number">1</span>
+        <span class="token keyword">while</span> n<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> n<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+                res<span class="token operator">*=</span>x
+            x<span class="token operator">*=</span>x
+            n<span class="token operator">=</span>n<span class="token operator">>></span><span class="token number">1</span>
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="写法2：用递归（更容易理解）"><a href="#写法2：用递归（更容易理解）" class="headerlink" title="写法2：用递归（更容易理解）"></a>写法2：用递归（更容易理解）</h3><ul>
 <li>根据上面的公式，若n为奇数，则在递归时另外乘以一个x，若n为偶数，则直接递归即可</li>
 <li>为防止溢出，把int型的_n 转成long型</li>
@@ -560,6 +581,26 @@
         <span class="token keyword">return</span> res<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">myPow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type x: float
+        :type n: int
+        :rtype: float
+        """</span>
+        <span class="token comment" spellcheck="true"># 递归结束的条件</span>
+        <span class="token keyword">if</span> n<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token number">1</span>
+        <span class="token comment" spellcheck="true"># 处理n是负数的情况</span>
+        <span class="token keyword">if</span> n<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+            x<span class="token operator">=</span><span class="token number">1</span><span class="token operator">/</span>x
+            n<span class="token operator">=</span><span class="token operator">-</span>n
+        res<span class="token operator">=</span><span class="token number">1</span>
+        <span class="token keyword">if</span> n<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+            res<span class="token operator">=</span>self<span class="token punctuation">.</span>myPow<span class="token punctuation">(</span>x<span class="token operator">*</span>x<span class="token punctuation">,</span>n<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span>x
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            res<span class="token operator">=</span>self<span class="token punctuation">.</span>myPow<span class="token punctuation">(</span>x<span class="token operator">*</span>x<span class="token punctuation">,</span>n<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="子问题2：如何处理数组指数？"><a href="#子问题2：如何处理数组指数？" class="headerlink" title="子问题2：如何处理数组指数？"></a>子问题2：如何处理数组指数？</h2><p><img src="https://i.loli.net/2021/08/20/FbV2YhS7WTrNLH5.png" alt="图片来自labuladong"><br>根据上述规律，可以发现，通过递归，可以缩小该问题规模</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token function">superPow</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token operator">=</span><span class="token operator">></span>  <span class="token function">superPow</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -628,6 +669,64 @@
 <span class="token comment" spellcheck="true">//    int ans = s.superPow(a, b);</span>
 <span class="token comment" spellcheck="true">//    cout &lt;&lt; ans &lt;&lt; endl;</span>
 <span class="token comment" spellcheck="true">//}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>res<span class="token operator">=</span><span class="token number">0</span>
+        self<span class="token punctuation">.</span>base<span class="token operator">=</span><span class="token number">1337</span>
+    <span class="token keyword">def</span> <span class="token function">myPow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 快速幂，base case</span>
+        <span class="token keyword">if</span> n<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token number">1</span>
+        <span class="token comment" spellcheck="true"># 处理n是负数的情况</span>
+        <span class="token keyword">if</span> n<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+            x<span class="token operator">=</span><span class="token number">1</span><span class="token operator">/</span>x
+            n<span class="token operator">=</span><span class="token operator">-</span>n
+        x<span class="token operator">=</span>x<span class="token operator">%</span>self<span class="token punctuation">.</span>base
+        res<span class="token operator">=</span><span class="token number">1</span>
+        <span class="token keyword">while</span> n<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> n<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+                res<span class="token operator">*=</span>x
+            x<span class="token operator">*=</span>x
+            n<span class="token operator">=</span>n<span class="token operator">>></span><span class="token number">1</span>
+        <span class="token keyword">return</span> res
+
+
+
+    <span class="token keyword">def</span> <span class="token function">superPow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> b<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">1</span>
+        last<span class="token operator">=</span>b<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        part1<span class="token operator">=</span>self<span class="token punctuation">.</span>myPow<span class="token punctuation">(</span>a<span class="token punctuation">,</span>last<span class="token punctuation">)</span>
+        part2<span class="token operator">=</span>self<span class="token punctuation">.</span>myPow<span class="token punctuation">(</span>self<span class="token punctuation">.</span>superPow<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> part1<span class="token operator">*</span>part2<span class="token operator">%</span>self<span class="token punctuation">.</span>base
+
+
+<span class="token comment" spellcheck="true"># a=2</span>
+<span class="token comment" spellcheck="true"># b=[3]</span>
+<span class="token comment" spellcheck="true"># so=Solution()</span>
+<span class="token comment" spellcheck="true"># print(so.superPow(a,b))</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>遗留问题：如果是递归计算快速幂myPow，则LeetCode可以通过，本地编译报错。WHY？</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>res<span class="token operator">=</span><span class="token number">0</span>
+        self<span class="token punctuation">.</span>base<span class="token operator">=</span><span class="token number">1337</span>
+    <span class="token keyword">def</span> <span class="token function">myPow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<pre><code>    # 递归结束的条件
+    if n==0:return 1
+    # 处理n是负数的情况
+    if n&lt;0:
+        x=1/x
+        n=-n
+    x=x%self.base
+    return self.myPow(x*x,n/2) if n%2==0 else self.myPow(x*x,n/2)*x%self.base
+
+def superPow(self, a, b):
+    if not b: return 1
+    last=b.pop()
+    part1=self.myPow(a,last)
+    part2=self.myPow(self.superPow(a,b),10)
+    return part1*part2%self.base</code></pre><h1 id="a-2"><a href="#a-2" class="headerlink" title="a=2"></a>a=2</h1><h1 id="b-1-0"><a href="#b-1-0" class="headerlink" title="b=[1,0]"></a>b=[1,0]</h1><h1 id="so-Solution"><a href="#so-Solution" class="headerlink" title="so=Solution()"></a>so=Solution()</h1><h1 id="print-so-superPow-a-b"><a href="#print-so-superPow-a-b" class="headerlink" title="print(so.superPow(a,b))"></a>print(so.superPow(a,b))</h1><p>```</p>
 
             </div>
             <hr />
@@ -836,7 +935,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="24-两两交换链表中的节点">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="24-两两交换链表中的节点">
                         
                         <span class="card-title">24-两两交换链表中的节点</span>
                     </div>
@@ -892,7 +991,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="第一章：题目不让我干什么，我偏要干什么">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第一章：题目不让我干什么，我偏要干什么">
                         
                         <span class="card-title">第一章：题目不让我干什么，我偏要干什么</span>
                     </div>
@@ -1098,7 +1197,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

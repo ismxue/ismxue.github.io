@@ -319,7 +319,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
                 
@@ -645,6 +645,39 @@
 <span class="token comment" spellcheck="true">//        cout &lt;&lt; i &lt;&lt; "\t";</span>
 <span class="token comment" spellcheck="true">//    }</span>
 <span class="token comment" spellcheck="true">//}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://leetcode.cn/problems/sliding-window-maximum/solution/acm-xuan-shou-tu-jie-leetcode-hua-dong-c-i3wj/" target="_blank" rel="noopener">其他写法：</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxSlidingWindow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> k<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
+
+        <span class="token comment" spellcheck="true"># 如果数组为空或 k = 0，直接返回空</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> nums <span class="token operator">or</span> <span class="token operator">not</span> k<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># 如果数组只有1个元素，直接返回该元素</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+        <span class="token comment" spellcheck="true"># 初始化队列和结果，队列存储数组的下标</span>
+        queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 如果当前队列最左侧存储的下标等于 i-k 的值，代表目前队列已满。</span>
+            <span class="token comment" spellcheck="true"># 但是新元素需要进来，所以列表最左侧的下标出队列</span>
+            <span class="token keyword">if</span> queue <span class="token operator">and</span> queue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> i <span class="token operator">-</span> k<span class="token punctuation">:</span>
+                queue<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+            <span class="token comment" spellcheck="true"># 对于新进入的元素，如果队列前面的数比它小，那么前面的都出队列</span>
+            <span class="token keyword">while</span> queue <span class="token operator">and</span> nums<span class="token punctuation">[</span>queue<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                queue<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># 新元素入队列</span>
+            queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+            <span class="token comment" spellcheck="true"># 当前的大值加入到结果数组中</span>
+            <span class="token keyword">if</span> i <span class="token operator">>=</span> k<span class="token number">-1</span><span class="token punctuation">:</span>
+                res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>queue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -853,7 +886,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第二章：递归反转链表的一部分">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第二章：递归反转链表的一部分">
                         
                         <span class="card-title">第二章：递归反转链表的一部分</span>
                     </div>
@@ -907,7 +940,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调栈">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调栈">
                         
                         <span class="card-title">第二章：特殊数据结构：单调栈</span>
                     </div>
@@ -917,7 +950,7 @@
                         
                             labuladong 特殊数据结构：单调栈
 
-文章例题：给你一个数组 [2,1,2,4,3]，你返回数组 [4,2,4,-1,-1]。解释：第一个 2 后面比 2 大的数是 4; 1 后面比 1 大的数是 2；第二个 2 后面比 2 大的数
+栈（stack）是很简单的一种数据结构，先进后出的逻辑顺序，符合某些问题的特点，比如说函数调用栈。单调栈实际上就是栈，只是利用了一些巧妙的逻辑，使得每次新元素入栈后，栈内的元素都保持有序（单调递
                         
                     </div>
                     <div class="publish-info">
@@ -1114,7 +1147,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

@@ -319,7 +319,7 @@ canFinish() 函数：当前速度下，能吃完的小时数（注意要向上�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,14 +474,14 @@ canFinish() 函数：当前速度下，能吃完的小时数（注意要向上�
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    763
+                    846
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
                 
@@ -500,7 +500,7 @@ canFinish() 函数：当前速度下，能吃完的小时数（注意要向上�
                 <p>labuladong <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/koko-tou-xiang-jiao" target="_blank" rel="noopener">如何运用二分查找算法</a></p>
 <h1 id="875-爱吃香蕉的珂珂"><a href="#875-爱吃香蕉的珂珂" class="headerlink" title="875. 爱吃香蕉的珂珂"></a><a href="https://leetcode-cn.com/problems/koko-eating-bananas/" target="_blank" rel="noopener">875. 爱吃香蕉的珂珂</a></h1><ul>
 <li><code>canFinish()</code> 函数：当前速度下，能吃完的小时数（注意要<strong>向上整除</strong>）    </li>
-<li>最小速度为1，最大速度为数组中最大值。因此利用二分查找框架求h（<strong>h相当于二分查找中的目标值</strong>），注意相等时，也是更新右边界。最后<strong>返回左边界</strong> </li>
+<li>最小速度为1，最大速度为数组中最大值。因此利用二分查找框架求h（<strong>h相当于二分查找中的目标值</strong>），注意当计算的时间与要求的时间相等时，也是更新右边界。最后<strong>返回左边界</strong> </li>
 <li>关于向上整除（<code>pile</code>和<code>speed</code>都是int型）<ul>
 <li>python<ul>
 <li>python3：<code>pile/speed</code> 是传统除法，除不完时有小数。因此向上整除可以写为<code>math.ceil(pile / speed)</code></li>
@@ -542,7 +542,33 @@ canFinish() 函数：当前速度下，能吃完的小时数（注意要向上�
             <span class="token keyword">elif</span> canFinish<span class="token punctuation">(</span>piles<span class="token punctuation">,</span>speed<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> H<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 速度太快</span>
                 <span class="token comment" spellcheck="true"># 因为是找左边界，所以若相等，更新右边界</span>
                 r <span class="token operator">=</span> speed <span class="token operator">-</span> <span class="token number">1</span>
-        <span class="token keyword">return</span> l<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> l
+
+<span class="token comment" spellcheck="true">###################################</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">minEatingSpeed</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> piles<span class="token punctuation">,</span> h<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type piles: List[int]
+        :type h: int
+        :rtype: int
+        """</span>
+        <span class="token keyword">import</span> math
+        <span class="token keyword">def</span> <span class="token function">can_finish</span><span class="token punctuation">(</span>piles<span class="token punctuation">,</span>speed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            time<span class="token operator">=</span><span class="token number">0</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> piles<span class="token punctuation">:</span>
+                time<span class="token operator">+=</span>math<span class="token punctuation">.</span>ceil<span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token operator">/</span>speed<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token keyword">if</span>  time<span class="token operator">&lt;=</span>h <span class="token keyword">else</span> <span class="token boolean">False</span>
+
+        l<span class="token operator">=</span><span class="token number">1</span>
+        r<span class="token operator">=</span>max<span class="token punctuation">(</span>piles<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> l<span class="token operator">&lt;=</span>r<span class="token punctuation">:</span>
+            mid<span class="token operator">=</span>l<span class="token operator">+</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
+            <span class="token keyword">if</span> can_finish<span class="token punctuation">(</span>piles<span class="token punctuation">,</span>mid<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                r <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                l <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> l<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     <span class="token keyword">int</span> <span class="token function">canFinish</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>piles<span class="token punctuation">,</span> <span class="token keyword">int</span> speed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -810,7 +836,7 @@ canFinish() 函数：当前速度下，能吃完的小时数（注意要向上�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="第四章：如何高效解决接雨水问题">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第四章：如何高效解决接雨水问题">
                         
                         <span class="card-title">第四章：如何高效解决接雨水问题</span>
                     </div>
@@ -862,7 +888,7 @@ l_max[i] 表示位置 i 左边最高的柱子高度（包括本身在内，正�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="第四章：如何高效寻找素数">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第四章：如何高效寻找素数">
                         
                         <span class="card-title">第四章：如何高效寻找素数</span>
                     </div>
@@ -1072,7 +1098,7 @@ l_max[i] 表示位置 i 左边最高的柱子高度（包括本身在内，正�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

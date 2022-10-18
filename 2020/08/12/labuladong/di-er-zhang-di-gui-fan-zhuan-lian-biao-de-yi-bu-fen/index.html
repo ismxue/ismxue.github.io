@@ -321,7 +321,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -552,37 +552,34 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 <ul>
-<li><p>先用递归实现：反转以head开头的前n个节点</p>
-</li>
-<li><p>首先，如果 m == 1（因为头结点是从1开始计数的），就相当于反转链表开头的 n 个元素，也就是函数<code>reverseN(head, n)</code>   (也是<code>reverseBetween</code>结束递归的条件)</p>
-</li>
-<li><p>如果 m != 1 怎么办？如果我们把 head 的索引视为 1，那么我们是想从第 m 个元素开始反转；如果把 head.next 的索引视为 1 呢？那么相对于 head.next，反转的区间应该是从第 m - 1 个元素开始的；那么对于 head.next.next 呢……因此有：</p>
-<pre class="line-numbers language-python"><code class="language-python">      <span class="token comment" spellcheck="true"># 如果不是第一个，那么以下一个为头结点开始递归，直到触发m==1递归终止条件</span>
+<li>先用递归实现：反转以head开头的前n个节点</li>
+<li>首先，如果 m == 1（因为头结点是从1开始计数的），就相当于反转链表开头的 n 个元素，也就是函数<code>reverseN(head, n)</code>   (也是<code>reverseBetween</code>结束递归的条件)</li>
+<li>如果 m != 1 怎么办？如果我们把 head 的索引视为 1，那么我们是想从第 m 个元素开始反转；如果把 head.next 的索引视为 1 呢？那么相对于 head.next，反转的区间应该是从第 m - 1 个元素开始的；那么对于 head.next.next 呢……因此有：<pre class="line-numbers language-python"><code class="language-python">      <span class="token comment" spellcheck="true"># 如果不是第一个，那么以下一个为头结点开始递归，直到触发m==1递归终止条件</span>
       head<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>reverseBetween<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>综上，反转m到n直接的节点的整体代码为：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> ListNode<span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> ListNode<span class="token punctuation">:</span>
-      <span class="token comment" spellcheck="true"># 先用递归实现：反转以head开头的前n个节点</span>
-      <span class="token keyword">def</span> <span class="token function">reverseN</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-          <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
-              successor <span class="token operator">=</span> head<span class="token punctuation">.</span>next <span class="token comment" spellcheck="true"># 拿到后继节点</span>
-              <span class="token keyword">return</span> head<span class="token punctuation">,</span> successor
-          <span class="token comment" spellcheck="true"># 以 head.next 为起点，需要反转前 n - 1 个节点</span>
-          last<span class="token punctuation">,</span> successor <span class="token operator">=</span> reverseN<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span>
-
-          head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">=</span> head
-          head<span class="token punctuation">.</span>next <span class="token operator">=</span> successor
-          <span class="token keyword">return</span> last<span class="token punctuation">,</span> successor
-
-      <span class="token keyword">if</span> m <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 递归终止条件</span>
-          <span class="token comment" spellcheck="true"># 这里应该是反转以m为开头的n-m+1个节点，</span>
-          <span class="token comment" spellcheck="true"># 所以应该写成res, _ = reverseN(head, n-m+1)，只是m等于1，所以写成res, _ = reverseN(head, n)也可以</span>
-          res<span class="token punctuation">,</span> _ <span class="token operator">=</span> reverseN<span class="token punctuation">(</span>head<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
-          <span class="token keyword">return</span> res
-      <span class="token comment" spellcheck="true"># 如果不是第一个，那么以下一个为头结点开始递归，直到触发条件</span>
-      head<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>reverseBetween<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span>
-      <span class="token keyword">return</span> head<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
+<p>综上，反转m到n之间的节点的整体代码为：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> ListNode<span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> ListNode<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 先用递归实现：反转以head开头的前n个节点</span>
+        <span class="token keyword">def</span> <span class="token function">reverseN</span><span class="token punctuation">(</span>head<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                successor <span class="token operator">=</span> head<span class="token punctuation">.</span>next <span class="token comment" spellcheck="true"># 拿到后继节点</span>
+                <span class="token keyword">return</span> head<span class="token punctuation">,</span> successor
+            <span class="token comment" spellcheck="true"># 以 head.next 为起点，需要反转前 n - 1 个节点</span>
+            last<span class="token punctuation">,</span> successor <span class="token operator">=</span> reverseN<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span>
+
+            head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">=</span> head
+            head<span class="token punctuation">.</span>next <span class="token operator">=</span> successor
+            <span class="token keyword">return</span> last<span class="token punctuation">,</span> successor
+
+        <span class="token keyword">if</span> m <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 递归终止条件</span>
+            <span class="token comment" spellcheck="true"># 这里应该是反转以m为开头的n-m+1个节点，</span>
+            <span class="token comment" spellcheck="true"># 所以应该写成res, _ = reverseN(head, n-m+1)，只是m等于1，所以写成res, _ = reverseN(head, n)也可以</span>
+            res<span class="token punctuation">,</span> _ <span class="token operator">=</span> reverseN<span class="token punctuation">(</span>head<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> res
+        <span class="token comment" spellcheck="true"># 如果不是第一个，那么以下一个为头结点开始递归，直到触发条件</span>
+        head<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>reverseBetween<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">,</span> m<span class="token number">-1</span><span class="token punctuation">,</span> n<span class="token number">-1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> head<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for singly-linked list
  * struct ListNode {
@@ -635,7 +632,7 @@
         cur<span class="token operator">=</span>head
         <span class="token keyword">while</span> cur<span class="token punctuation">:</span>
             cur<span class="token punctuation">.</span>next<span class="token punctuation">,</span>pre<span class="token punctuation">,</span>cur<span class="token operator">=</span>pre<span class="token punctuation">,</span>cur<span class="token punctuation">,</span>cur<span class="token punctuation">.</span>next
-        <span class="token keyword">return</span> pre<span class="token operator">></span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> pre<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>不合并的写法：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
      <span class="token keyword">def</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -937,7 +934,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第三章：回溯算法最佳实践：括号生成">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第三章：回溯算法最佳实践：括号生成">
                         
                         <span class="card-title">第三章：回溯算法最佳实践：括号生成</span>
                     </div>
@@ -989,7 +986,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="第二章：特殊数据结构：单调队列">
                         
                         <span class="card-title">第二章：特殊数据结构：单调队列</span>
                     </div>
@@ -1197,7 +1194,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

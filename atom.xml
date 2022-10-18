@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2022-10-05T06:59:39.961Z</updated>
+  <updated>2022-10-15T14:37:02.706Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>如何解决括号相关的题</title>
+    <title>系统设计类题目</title>
+    <link href="https://ismxue.github.io/2022/10/07/leetcode/xi-tong-she-ji-lei-ti-mu/"/>
+    <id>https://ismxue.github.io/2022/10/07/leetcode/xi-tong-she-ji-lei-ti-mu/</id>
+    <published>2022-10-07T09:28:58.000Z</published>
+    <updated>2022-10-15T14:37:02.706Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://leetcode.cn/problems/design-underground-system/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1396.
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三章：如何解决括号相关的题</title>
     <link href="https://ismxue.github.io/2022/10/04/labuladong/di-san-zhang-ru-he-jie-jue-gua-hao-xiang-guan-de-ti/"/>
     <id>https://ismxue.github.io/2022/10/04/labuladong/di-san-zhang-ru-he-jie-jue-gua-hao-xiang-guan-de-ti/</id>
     <published>2022-10-04T11:28:27.000Z</published>
-    <updated>2022-10-05T06:59:39.961Z</updated>
+    <updated>2022-10-07T09:33:45.587Z</updated>
     
     <summary type="html">
     
@@ -470,7 +496,7 @@
     <link href="https://ismxue.github.io/2021/09/27/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-sou-suo-shu-di-yi-qi/"/>
     <id>https://ismxue.github.io/2021/09/27/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-sou-suo-shu-di-yi-qi/</id>
     <published>2021-09-27T02:44:13.000Z</published>
-    <updated>2022-09-27T16:05:57.468Z</updated>
+    <updated>2022-10-07T14:04:05.965Z</updated>
     
     <summary type="html">
     
@@ -516,32 +542,6 @@
     
     
       <category term="Growth" scheme="https://ismxue.github.io/tags/Growth/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一章：手把手带你刷二叉树-第三期</title>
-    <link href="https://ismxue.github.io/2021/09/23/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-shu-di-san-qi/"/>
-    <id>https://ismxue.github.io/2021/09/23/labuladong/di-yi-zhang-shou-ba-shou-dai-ni-shua-er-cha-shu-di-san-qi/</id>
-    <published>2021-09-23T11:42:06.000Z</published>
-    <updated>2021-09-23T12:55:24.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;labuladong&lt;a href=&quot;https://mp.weixin.qq.com/s/LJbpo49qppIeRs-FbgjsSQ&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
     
   </entry>
   

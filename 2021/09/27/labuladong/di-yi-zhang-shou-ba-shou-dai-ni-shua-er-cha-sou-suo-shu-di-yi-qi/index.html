@@ -321,7 +321,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.1k
                 </div>
                 
 
@@ -802,6 +802,29 @@ else 或者剩余情况直接return</code></pre><p><strong>不要少了最后的
         <span class="token keyword">return</span> root<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode(object):</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="token comment" spellcheck="true">#         self.val = val</span>
+<span class="token comment" spellcheck="true">#         self.left = left</span>
+<span class="token comment" spellcheck="true">#         self.right = right</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">helper</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span>
+        self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>sum<span class="token operator">+=</span>root<span class="token punctuation">.</span>val
+        root<span class="token punctuation">.</span>val<span class="token operator">=</span>self<span class="token punctuation">.</span>sum
+        self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">convertBST</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type root: TreeNode
+        :rtype: TreeNode
+        """</span>
+        self<span class="token punctuation">.</span>sum<span class="token operator">=</span><span class="token number">0</span>
+        self<span class="token punctuation">.</span>helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> root
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1010,7 +1033,7 @@ else 或者剩余情况直接return</code></pre><p><strong>不要少了最后的
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="第一章：手把手带你刷二叉搜索树-第二期">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第一章：手把手带你刷二叉搜索树-第二期">
                         
                         <span class="card-title">第一章：手把手带你刷二叉搜索树-第二期</span>
                     </div>
@@ -1062,7 +1085,7 @@ root 需要做的不只是
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="上岸记">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="上岸记">
                         
                         <span class="card-title">上岸记</span>
                     </div>
@@ -1269,7 +1292,7 @@ root 需要做的不只是
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

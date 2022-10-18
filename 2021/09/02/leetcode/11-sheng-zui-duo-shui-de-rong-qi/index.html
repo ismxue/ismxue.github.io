@@ -320,7 +320,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,7 +475,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    224
+                    285
                 </div>
                 
 
@@ -505,6 +505,25 @@
 <li>如果低柱子不动，让高柱子的那一侧往里跳，<code>(r-l)</code>会变更小，<code>min(height[l],height[r])</code>也不会变大，导致面积只会更小。因此不可以这样</li>
 <li>如果高柱子不动，让低柱子的那一侧往里跳，虽然<code>(r-l)</code>会变更小，但<code>min(height[l],height[r])</code>可能变大，导致面积可能变大。因此高柱子对应的指针不动，低柱子对应的指针向里测跳</li>
 </ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type height: List[int]
+        :rtype: int
+        """</span>
+        area<span class="token operator">=</span><span class="token number">0</span>
+        l<span class="token operator">=</span><span class="token number">0</span>
+        r<span class="token operator">=</span>len<span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+        <span class="token keyword">while</span> l<span class="token operator">&lt;</span>r<span class="token punctuation">:</span>
+            area<span class="token operator">=</span>max<span class="token punctuation">(</span>area<span class="token punctuation">,</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token operator">*</span>min<span class="token punctuation">(</span>height<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">,</span>height<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> height<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">></span>height<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                r<span class="token operator">-=</span><span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                l<span class="token operator">+=</span><span class="token number">1</span>
+        <span class="token keyword">return</span> area
+<span class="token comment" spellcheck="true"># so=Solution()</span>
+<span class="token comment" spellcheck="true"># print(so.maxArea([1,8,6,2,5,4,8,3,7]))</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     <span class="token keyword">int</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -726,7 +745,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="697-数组的度">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="697-数组的度">
                         
                         <span class="card-title">697-数组的度</span>
                     </div>
@@ -784,7 +803,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="6-Z字形变换">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="6-Z字形变换">
                         
                         <span class="card-title">6-Z字形变换</span>
                     </div>
@@ -793,12 +812,14 @@ public:
                     <div class="summary block-with-text">
                         
                             6. Z 字形变换
+模拟遍历过程
 用一个flag记录当前是不是需要从上到下（从下到上）转换方向
 初始flag设为-1。记录好当前行后，判断是否需要更新flag
 如果行数为0或1，则直接返回
 
-class Solution(object):
-    def
+
+
+class Solution(object)
                         
                     </div>
                     <div class="publish-info">
@@ -995,7 +1016,7 @@ class Solution(object):
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

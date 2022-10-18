@@ -320,7 +320,7 @@ dp数组表示第i个位置处能取">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -588,16 +588,17 @@ dp数组表示第i个位置处能取">
 <span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">rob</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">def</span> <span class="token function">dp</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 不偷/偷的收益</span>
-            l<span class="token operator">=</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 左节点不偷/偷带来的收益</span>
-            r<span class="token operator">=</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 右节点不偷/偷带来的收益</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> root<span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 不偷/偷的收益. 递归结束的条件</span>
+            l<span class="token operator">=</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 左节点不偷/偷带来的收益  # 后序遍历：左</span>
+            r<span class="token operator">=</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 右节点不偷/偷带来的收益  # 后序遍历：右</span>
+            <span class="token comment" spellcheck="true"># 后序遍历：中</span>
             <span class="token comment" spellcheck="true"># 若偷当前节点，则收益=当前节点+左节点不偷+右节点不偷</span>
             <span class="token comment" spellcheck="true"># 若不偷当前节点，则收益=左节点偷或不偷的最大值+右节点偷或不偷的最大值</span>
             withRoot<span class="token operator">=</span>root<span class="token punctuation">.</span>val<span class="token operator">+</span>l<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span>r<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 若偷当前节点</span>
             withoutRoot<span class="token operator">=</span>max<span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token operator">+</span>max<span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 若不偷当前节点</span>
             <span class="token keyword">return</span> <span class="token punctuation">[</span>withoutRoot<span class="token punctuation">,</span>withRoot<span class="token punctuation">]</span>
 
-        <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 返回 不偷/偷当前节点 的收益最大值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 返回 不偷/偷当前节点 的收益最大值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">helper</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -824,7 +825,7 @@ dp数组表示第i个位置处能取">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第一章：经典动态规划：0-1 背包问题">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第一章：经典动态规划：0-1 背包问题">
                         
                         <span class="card-title">第一章：经典动态规划：0-1 背包问题</span>
                     </div>
@@ -880,7 +881,7 @@ dp数组表示第i个位置处能取">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="第零章：我写了首诗，把滑动窗口算法变成了默写题">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第零章：我写了首诗，把滑动窗口算法变成了默写题">
                         
                         <span class="card-title">第零章：我写了首诗，把滑动窗口算法变成了默写题</span>
                     </div>
@@ -1093,7 +1094,7 @@ dp数组表示第i个位置处能取">
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>

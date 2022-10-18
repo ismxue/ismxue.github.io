@@ -324,7 +324,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -479,14 +479,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    14 分
                 </div>
                 
                 
@@ -518,7 +518,7 @@
 </blockquote>
 <h1 id="76-最小覆盖子串"><a href="#76-最小覆盖子串" class="headerlink" title="76.最小覆盖子串"></a><a href="https://leetcode-cn.com/problems/minimum-window-substring/solution/hua-dong-chuang-kou-suan-fa-tong-yong-si-xiang-by-/" target="_blank" rel="noopener">76.最小覆盖子串</a></h1><ol>
 <li>遍历t，得到need字典</li>
-<li>窗口<strong>左闭右开</strong>。先增大右窗口，更新window 和valid （只有need的存在的键，window才会存放）</li>
+<li>窗口<strong>左闭右开</strong>。先增大右窗口，更新window 和valid （只有need中存在的键，window才会存放）</li>
 <li>找全以后，开始缩小左窗口，相应地，也要更新window和valid。</li>
 <li>在<strong>更新左窗口前</strong>，<strong>先用<code>ans</code>记录并更新左右指针位置</strong>来不断缩小子串（非常必要），然后再更新window和valid。这样的话，当窗口的字符串因左窗口的缩小而不再符合要求时（退出while循环），ans中保存的是仍然正好符合要求的左右指针</li>
 <li>如果左指针从未更新过（仍为-1），说明没有在s中找到符合要求的字符串，返回””,否则返回左右指针对应的字符串</li>
@@ -529,9 +529,6 @@
 <li>在更新窗口过程中<br>在增大右窗口时，先<code>window[c]+=1</code>, 然后<code>if  window[c]==need[c]</code> 判断；在减小左窗口时，先<code>if window[c]==need[c]</code> 判断，然后<code>window[c]+=1</code>。这是因为 <code>window[c]</code>中的内容要严格与<code>need[c]</code>进行比较，在增大右窗口时，加进window中才能通过if更新valid；在减小左窗口时，通过if更新完valid后才能把当前的windows[c]的计数减1。即：<strong>window[c]的更新不能破坏 <code>if  ... valid</code>的条件</strong></li>
 </ul>
 </blockquote>
-<ul>
-<li>判断键值是否存在于need中时，可以用：<code>if (need.count(c))</code>  或者<code>if(need.find(c)!=need.end())</code></li>
-</ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">minWindow</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">,</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
@@ -553,7 +550,7 @@
 
             <span class="token comment" spellcheck="true"># 找到可行解后要缩小窗口：相应的要改变window和valid</span>
             <span class="token keyword">while</span> valid<span class="token operator">==</span>len<span class="token punctuation">(</span>need<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># 这里先记录当前的子串，非常必要</span>
+                <span class="token comment" spellcheck="true"># 这里先记录当前的子串，非常必要, 确保ans中保存的始终是最短的记录</span>
                 <span class="token keyword">if</span> r<span class="token operator">-</span>l<span class="token operator">&lt;</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
                     ans<span class="token operator">=</span><span class="token punctuation">[</span>l<span class="token punctuation">,</span>r<span class="token punctuation">]</span>
                 c<span class="token operator">=</span>s<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
@@ -563,6 +560,9 @@
                         valid<span class="token operator">-=</span><span class="token number">1</span>
                     window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
         <span class="token keyword">return</span> <span class="token string">""</span> <span class="token keyword">if</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">else</span> s<span class="token punctuation">[</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>判断键值是否存在于need中时，可以用：<code>if (need.count(c))</code>  或者<code>if(need.find(c)!=need.end())</code></li>
+</ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//#include &lt;string></span>
 <span class="token comment" spellcheck="true">//#include &lt;vector></span>
 <span class="token comment" spellcheck="true">//#include &lt;iostream></span>
@@ -624,6 +624,104 @@
 <span class="token comment" spellcheck="true">//}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="567-字符串的排列"><a href="#567-字符串的排列" class="headerlink" title="567. 字符串的排列"></a><a href="https://leetcode-cn.com/problems/permutation-in-string/" target="_blank" rel="noopener">567. 字符串的排列</a></h1><p>更新方式1：和上一题类似，找到合法的窗口后，若窗口大小和s1的大小相同，则返回<code>true</code>，否则返回<code>false</code></p>
+<ul>
+<li>python写法，注意： 需要有<code>if len(s1) &gt; len(s2): return False</code>,防止corner case的产生</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">checkInclusion</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """</span>
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token operator">></span> len<span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        l<span class="token punctuation">,</span>r<span class="token punctuation">,</span>valid<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+        ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
+        need<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        window<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> s1<span class="token punctuation">:</span>
+            need<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+        <span class="token keyword">while</span> r<span class="token operator">!=</span>len<span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            c<span class="token operator">=</span>s2<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            r<span class="token operator">+=</span><span class="token number">1</span>
+            <span class="token comment" spellcheck="true"># 更新右窗口相关的信息</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    valid<span class="token operator">+=</span><span class="token number">1</span>
+
+            <span class="token comment" spellcheck="true"># 更新左窗口相关的信息</span>
+            <span class="token keyword">while</span> valid<span class="token operator">==</span>len<span class="token punctuation">(</span>need<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    ans<span class="token operator">=</span><span class="token punctuation">[</span>l<span class="token punctuation">,</span>r<span class="token punctuation">]</span>
+                d<span class="token operator">=</span>s2<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+                l<span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> d <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> window<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                        valid<span class="token operator">-=</span><span class="token number">1</span>
+                    window<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token comment" spellcheck="true"># print(s2[ans[0]:ans[1]])</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span>len<span class="token punctuation">(</span>s1<span class="token punctuation">)</span>  <span class="token keyword">else</span> <span class="token boolean">False</span> 
+
+<span class="token comment" spellcheck="true"># so=Solution()</span>
+<span class="token comment" spellcheck="true"># s1="ab"</span>
+<span class="token comment" spellcheck="true"># s2 = "a"</span>
+<span class="token comment" spellcheck="true"># print(so.checkInclusion(s1,s2))</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>其他写法</p>
+<ul>
+<li>注意，在python中，return时，要确保ans[0]!=-1。<ul>
+<li>否则有一些corner case会正好满足<code>(ans[1]-ans[0])==len(s1)</code>，导致返回错误的结果（如s1=”ab”, s2=”a”, 此时，ans保存的索引为[-1,1]。 1-（-1）正好为s1的长度，导致错误）</li>
+<li>或者把 <code>ans=[-1,len(s2)]</code> 改为<code>ans=[-1,len(s2)+100]</code>，避免这种corner case</li>
+</ul>
+</li>
+<li>整型的最大值可以写为<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> sys 
+MAX_INT<span class="token operator">=</span>sys<span class="token punctuation">.</span>maxsize<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+所以ans初始化时，可写为ans=[-1,MAX_INT]</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">checkInclusion</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """</span>
+        l<span class="token punctuation">,</span>r<span class="token punctuation">,</span>valid<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+        ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
+        need<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        window<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> s1<span class="token punctuation">:</span>
+            need<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+        <span class="token keyword">while</span> r<span class="token operator">!=</span>len<span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            c<span class="token operator">=</span>s2<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            r<span class="token operator">+=</span><span class="token number">1</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    valid<span class="token operator">+=</span><span class="token number">1</span>
+
+            <span class="token keyword">while</span> valid<span class="token operator">==</span>len<span class="token punctuation">(</span>need<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    ans<span class="token operator">=</span><span class="token punctuation">[</span>l<span class="token punctuation">,</span>r<span class="token punctuation">]</span>
+                d<span class="token operator">=</span>s2<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+                l<span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> d <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> window<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                        valid<span class="token operator">-=</span><span class="token number">1</span>
+                    window<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token comment" spellcheck="true"># print(s2[ans[0]:ans[1]])</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span>len<span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token operator">and</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">else</span> <span class="token boolean">False</span> 
+
+<span class="token comment" spellcheck="true"># so=Solution()</span>
+<span class="token comment" spellcheck="true"># s1="ab"</span>
+<span class="token comment" spellcheck="true"># s2 = "a"</span>
+<span class="token comment" spellcheck="true"># print(so.checkInclusion(s1,s2))</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
     <span class="token keyword">bool</span> <span class="token function">checkInclusion</span><span class="token punctuation">(</span>string s1<span class="token punctuation">,</span> string s2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -762,6 +860,46 @@
 <span class="token comment" spellcheck="true">//    string p = "abc";</span>
 <span class="token comment" spellcheck="true">//    so.findAnagrams(s, p);</span>
 <span class="token comment" spellcheck="true">//}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">findAnagrams</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """</span>
+        l<span class="token punctuation">,</span>r<span class="token punctuation">,</span>valid<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span>
+        ans<span class="token operator">=</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">100</span><span class="token punctuation">]</span>
+        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
+        need<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        window<span class="token operator">=</span>defaultdict<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> p<span class="token punctuation">:</span>
+            need<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+        <span class="token keyword">while</span> r<span class="token operator">!=</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            c<span class="token operator">=</span>s<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            r<span class="token operator">+=</span><span class="token number">1</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> window<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>c<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    valid<span class="token operator">+=</span><span class="token number">1</span>
+
+            <span class="token keyword">while</span> valid<span class="token operator">==</span>len<span class="token punctuation">(</span>need<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    ans<span class="token operator">=</span><span class="token punctuation">[</span>l<span class="token punctuation">,</span>r<span class="token punctuation">]</span>
+
+                <span class="token comment" spellcheck="true"># 添加如下代码，如果长度相等，则保存左指针</span>
+                <span class="token keyword">if</span> r<span class="token operator">-</span>l<span class="token operator">==</span>len<span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>l<span class="token punctuation">)</span>
+
+                d<span class="token operator">=</span>s<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+                l<span class="token operator">+=</span><span class="token number">1</span>
+                <span class="token keyword">if</span> d <span class="token keyword">in</span> need<span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> window<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">==</span>need<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                        valid<span class="token operator">-=</span><span class="token number">1</span>
+                    window<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token comment" spellcheck="true"># print(s2[ans[0]:ans[1]])</span>
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>更新方式2：相当于在上题_更新方式2_的基础上，返回所有满足条件的排列的初始索引值。 用res保存结果（用<code>res.append(l)</code> 添加左指针的索引）</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 输入:</span>
 <span class="token comment" spellcheck="true"># s: "cbaebabacd" p: "abc"</span>
@@ -851,10 +989,10 @@
             res_max<span class="token operator">=</span>max<span class="token punctuation">(</span>res_max<span class="token punctuation">,</span>r<span class="token operator">-</span>l<span class="token punctuation">)</span>
         <span class="token keyword">return</span> res_max<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<p>此题也可用动态规划解：</p>
+<p>此题也可用动态规划解(不过耗时较长)：</p>
 <ul>
 <li>dp数组含义：<strong>包含</strong>第i个元素的所有无重复字符串的长度（即<code>len(visited)</code>）</li>
-<li><code>visited</code> 用于保存无重复字符串元素。<code>visited=[s[i]]</code>一定包含当前元素，然后从i-1 开始，逆序遍历之前的元素，若不在visited里，则添加到visited，否则break跳出。</li>
+<li><code>visited</code> 用于保存无重复字符串元素。<code>visited=[s[i]]</code>一定包含当前元素，然后从 i-1 开始，逆序遍历之前的元素，若不在visited里，则添加到visited，否则break跳出。</li>
 <li>最后返回dp数组的最大值</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1084,7 +1222,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="第零章：团灭 LeetCode 打家劫舍问题">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第零章：团灭 LeetCode 打家劫舍问题">
                         
                         <span class="card-title">第零章：团灭 LeetCode 打家劫舍问题</span>
                     </div>
@@ -1137,7 +1275,7 @@ dp数组表示第i个位置处能取
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第零章：我写了首诗，让你闭着眼睛也能写对二分搜索">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第零章：我写了首诗，让你闭着眼睛也能写对二分搜索">
                         
                         <span class="card-title">第零章：我写了首诗，让你闭着眼睛也能写对二分搜索</span>
                     </div>
@@ -1349,7 +1487,7 @@ mid=left + (right - left) // 2 可防止
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">214.1k</span>
+            <span class="white-color">219.2k</span>
             
 
             <br>
