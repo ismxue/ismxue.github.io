@@ -556,7 +556,7 @@
         :rtype: List[List[int]]
         """</span>
         res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-        visited<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># visited=[]  # 不用加这一行</span>
         <span class="token keyword">def</span> <span class="token function">backtrack</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>visited<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true"># 选择列表和路径</span>
             <span class="token keyword">if</span> len<span class="token punctuation">(</span>visited<span class="token punctuation">)</span><span class="token operator">==</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
                 res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>visited<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
@@ -764,7 +764,7 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
         <span class="token comment" spellcheck="true"># 递归结束的条件</span>
         <span class="token keyword">if</span> <span class="token operator">not</span> nums<span class="token punctuation">:</span><span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
         <span class="token comment" spellcheck="true"># 取出nums的最后一个元素</span>
-        n<span class="token operator">=</span>nums<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+        n<span class="token operator">=</span>nums<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
         nums<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
         <span class="token comment" spellcheck="true"># 先计算子集结果</span>
@@ -964,7 +964,7 @@ s<span class="token operator">=</span>Solution<span class="token punctuation">(<
 <h3 id="方法2：纯递归（也是一种回溯）"><a href="#方法2：纯递归（也是一种回溯）" class="headerlink" title="方法2：纯递归（也是一种回溯）"></a>方法2：<a href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/solution/hui-su-dui-lie-tu-jie-by-ml-zimingmeng/" target="_blank" rel="noopener">纯递归（也是一种回溯）</a></h3><ul>
 <li>明确递归函数的含义（不要跳进递归中）：返回digits对应的题目要求的结果<ul>
 <li>选择第一个按键作为当前列表，然后把当前列表和子结果进行拼接，得到最终结果</li>
-<li>注意递归结束的条件：digits长度为0，则… digits长度为1，则…   (有时候不确定递归结束的条件，则可以多写些base case)</li>
+<li>注意递归结束的条件：digits长度为0，则…; digits长度为1，则…   (有时候不确定递归结束的条件，则可以多写些base case)</li>
 </ul>
 </li>
 </ul>
@@ -1681,7 +1681,7 @@ BFS算法的框架
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">219.2k</span>
+            <span class="white-color">219.3k</span>
             
 
             <br>
