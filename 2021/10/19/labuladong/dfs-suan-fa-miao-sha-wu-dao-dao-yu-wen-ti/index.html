@@ -317,7 +317,7 @@ title: DFS算法秒杀五道岛屿问题top: falsecover: falsetoc: truemathjax: 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -498,7 +498,7 @@ title: DFS算法秒杀五道岛屿问题top: falsecover: falsetoc: truemathjax: 
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">numIslands</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> grid<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true"># gird[i][j] 点若是岛屿，则把该点置0，避免后续重复搜索到。然后从该点的上下左右继续搜</span>
+            <span class="token comment" spellcheck="true"># grid[i][j] 点若是岛屿，则把该点置0，避免后续重复搜索到。然后从该点的上下左右继续搜</span>
             <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>grid<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> j <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">and</span>  grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">:</span>
                 grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'0'</span>
                 <span class="token comment" spellcheck="true"># 淹没周围陆地</span>
@@ -616,7 +616,7 @@ title: DFS算法秒杀五道岛屿问题top: falsecover: falsetoc: truemathjax: 
         <span class="token keyword">return</span> count<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="1020-飞地的数量"><a href="#1020-飞地的数量" class="headerlink" title="1020. 飞地的数量"></a><a href="https://leetcode-cn.com/problems/number-of-enclaves/" target="_blank" rel="noopener">1020. 飞地的数量</a></h1><p>遇上一题类似的是，本题同样需要淹没四周的岛屿。本题统计封闭岛屿的面积<br>与上一题不同的是，本题</p>
+<h1 id="1020-飞地的数量"><a href="#1020-飞地的数量" class="headerlink" title="1020. 飞地的数量"></a><a href="https://leetcode-cn.com/problems/number-of-enclaves/" target="_blank" rel="noopener">1020. 飞地的数量</a></h1><p>与上一题类似的是，本题同样需要淹没四周的岛屿。本题统计封闭岛屿的面积<br>与上一题不同的是，本题</p>
 <ul>
 <li>0为水域，1为陆地</li>
 <li>淹没四周的岛屿后，本题不再淹没里面的岛屿，而是统计它的面积</li>
@@ -636,7 +636,7 @@ title: DFS算法秒杀五道岛屿问题top: falsecover: falsetoc: truemathjax: 
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//        遍历整个陆地</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token comment" spellcheck="true">//                如果当前的这小块是陆地，则执行淹没操作，并把count+1</span>
+<span class="token comment" spellcheck="true">//                如果当前的这小块是陆地，则统计面积，即把count+1</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             count<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 不再淹没陆地，而是统计陆地的面积</span>
         <span class="token punctuation">}</span>
@@ -1094,7 +1094,7 @@ title: DFS算法秒杀五道岛屿问题top: falsecover: falsetoc: truemathjax: 
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="CPP代码结构">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="CPP代码结构">
                         
                         <span class="card-title">CPP代码结构</span>
                     </div>
@@ -1144,7 +1144,7 @@ title: DFS算法秒杀五道岛屿问题top: falsecover: falsetoc: truemathjax: 
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Quotes I Have Enjoyed">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Quotes I Have Enjoyed">
                         
                         <span class="card-title">Quotes I Have Enjoyed</span>
                     </div>
