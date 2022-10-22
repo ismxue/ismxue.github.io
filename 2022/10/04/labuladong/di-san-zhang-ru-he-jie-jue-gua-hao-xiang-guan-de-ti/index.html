@@ -319,7 +319,7 @@ class Solution(object):
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -474,14 +474,14 @@ class Solution(object):
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    759
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
                 
@@ -591,6 +591,52 @@ class Solution(object):
             s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">""</span>
         <span class="token keyword">return</span> <span class="token string">""</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 列表转字符串，并消除空字符</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="856-括号的分数"><a href="#856-括号的分数" class="headerlink" title="856. 括号的分数"></a><a href="https://leetcode.cn/problems/score-of-parentheses/solution/zhua-wa-mou-si-by-muse-77-hy72/" target="_blank" rel="noopener">856. 括号的分数</a></h1><ul>
+<li>当前为左括号，入栈</li>
+<li>当前为右括号，栈顶为左括号，可抵消。左括号出栈，记1分</li>
+<li>当前为右括号，栈顶为数字，则不断累积和，直到遇到之前的左括号，左括号出栈。把累积和乘以2，入栈</li>
+<li>最后结果中保存的只有数字，把数字加起来，就是结果</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">scoreOfParentheses</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type s: str
+        :rtype: int
+        """</span>
+        stack<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">"("</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 左括号，入栈</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">")"</span> <span class="token operator">and</span> stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">"("</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 当前是右括号，并且能和栈顶的左括号抵消</span>
+                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 弹出栈顶左括号</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 记1分</span>
+            <span class="token keyword">elif</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">")"</span> <span class="token operator">and</span> str<span class="token punctuation">(</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 当前是右括号，栈顶是数字</span>
+                tmp<span class="token operator">=</span><span class="token number">0</span>
+                <span class="token keyword">while</span> str<span class="token punctuation">(</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>isdigit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 把数字加起来</span>
+                    tmp<span class="token operator">+=</span>stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 弹出左括号</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>tmp<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> sum<span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 栈中此时保存的是类似于[2,3]的信息，累积和即为结果</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>其他写法：</li>
+</ul>
+<blockquote>
+<p>用栈记录字符串 s 对应的分数。初始栈顶部的分数为0。<br>遍历字符串：<br>若 s[i] == ‘(‘，先将分数0压入栈顶占位<br>若 s[i] == ‘)’，此时有两种情况：<br>s[i - 1] == ‘(‘，这是一个 ‘()’， 此时栈顶值 v 为0，该分数为1<br>s[i - 1] != ‘(‘，这是一个外层括号，该分数为栈顶值 v × 2</p>
+</blockquote>
+<p><a href="https://leetcode.com/problems/score-of-parentheses/discuss/141975/c%2B%2B-solution-using-stack-(5ms)-detail-explained" target="_blank" rel="noopener">题目思路</a></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">scoreOfParentheses</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> S<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 保存并不断更新结果</span>
+        <span class="token keyword">for</span> par <span class="token keyword">in</span> S<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> par <span class="token operator">==</span> <span class="token string">"("</span><span class="token punctuation">:</span> stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                last <span class="token operator">=</span> stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> last <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> score <span class="token operator">=</span> <span class="token number">1</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span> score <span class="token operator">=</span> last <span class="token operator">*</span> <span class="token number">2</span>
+                stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+=</span> score
+        <span class="token keyword">return</span> stack<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -799,7 +845,7 @@ class Solution(object):
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="系统设计类题目">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="系统设计类题目">
                         
                         <span class="card-title">系统设计类题目</span>
                     </div>
@@ -807,11 +853,12 @@ class Solution(object):
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1396. 设计地铁系统
+                            点击下载文件
+1396. 设计地铁系统
 这类题目看似复杂，其实读懂后，根据题意要求一步一步分解并统计出需要的信息即可。
 
 求平均时间，则需要知道startStation到endStation这段路中累计通过的人数和时间
-checkOut中可以统计累计通过
+checkOut中可
                         
                     </div>
                     <div class="publish-info">
@@ -852,7 +899,7 @@ checkOut中可以统计累计通过
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Docker使用">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Docker使用">
                         
                         <span class="card-title">Docker使用</span>
                     </div>
@@ -1060,7 +1107,7 @@ checkOut中可以统计累计通过
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">219.3k</span>
+            <span class="white-color">219.7k</span>
             
 
             <br>
