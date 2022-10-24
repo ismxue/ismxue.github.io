@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2022-10-22T13:55:43.401Z</updated>
+  <updated>2022-10-24T13:55:47.693Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>系统设计类题目</title>
-    <link href="https://ismxue.github.io/2022/10/07/leetcode/xi-tong-she-ji-lei-ti-mu/"/>
-    <id>https://ismxue.github.io/2022/10/07/leetcode/xi-tong-she-ji-lei-ti-mu/</id>
-    <published>2022-10-07T09:28:58.000Z</published>
-    <updated>2022-10-22T13:55:43.401Z</updated>
+    <title>活体检测方法概述</title>
+    <link href="https://ismxue.github.io/2022/10/23/study/huo-ti-jian-ce-fang-fa-gai-shu/"/>
+    <id>https://ismxue.github.io/2022/10/23/study/huo-ti-jian-ce-fang-fa-gai-shu/</id>
+    <published>2022-10-23T14:33:00.000Z</published>
+    <updated>2022-10-24T13:55:47.693Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,36 @@
       
         
         
-          &lt;p&gt;&lt;a href=&quot;/download/test.pdf&quot;&gt;点击下载文件&lt;/a&gt;&lt;/p&gt;
+          &lt;!-- [点击下载思维导图](/download/活体检测.emmx) --&gt;
+
+&lt;h1 id=&quot;活体检测综述&quot;&gt;&lt;a href=&quot;#活体检测综述&quot; class=&quot;headerlink&quot; title=&quot;活体检测综述&quot;&gt;&lt;/a&gt;活体检测综述&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Study" scheme="https://ismxue.github.io/categories/Study/"/>
+    
+    
+      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>系统设计类题目</title>
+    <link href="https://ismxue.github.io/2022/10/07/leetcode/xi-tong-she-ji-lei-ti-mu/"/>
+    <id>https://ismxue.github.io/2022/10/07/leetcode/xi-tong-she-ji-lei-ti-mu/</id>
+    <published>2022-10-07T09:28:58.000Z</published>
+    <updated>2022-10-23T06:59:13.356Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;/download/raw.tar.gz&quot;&gt;点击下载文件&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://leetcode.cn/problems/design-underground-system/&quot; target=&quot;_blank&quot;
         
       
@@ -515,34 +544,6 @@
     
     
       <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>上岸记</title>
-    <link href="https://ismxue.github.io/2021/09/25/growth/shang-an-ji/"/>
-    <id>https://ismxue.github.io/2021/09/25/growth/shang-an-ji/</id>
-    <published>2021-09-25T08:27:42.000Z</published>
-    <updated>2021-10-13T02:44:21.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;2021年2月15号,我在重庆的酒店里隔离.一天,接到公司的电话,问有没有意向投递他们部门,我说行呀.然后进行了半小时的电话面试.&lt;/li&gt;
-&lt;li&gt;2021年3月初,我居家隔离,并做了测评.测评前一天,HR小姐姐特意打电话过来叮嘱我注意事项,并告诉我最好在安静
-        
-      
-    
-    </summary>
-    
-      <category term="Growth" scheme="https://ismxue.github.io/categories/Growth/"/>
-    
-    
-      <category term="Growth" scheme="https://ismxue.github.io/tags/Growth/"/>
     
   </entry>
   
