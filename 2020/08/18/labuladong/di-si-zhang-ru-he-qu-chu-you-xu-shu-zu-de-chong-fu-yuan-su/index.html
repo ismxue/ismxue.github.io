@@ -477,7 +477,7 @@ slow,fast=head,head.next">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    628
+                    629
                 </div>
                 
 
@@ -554,7 +554,7 @@ slow<span class="token punctuation">,</span>fast<span class="token operator">=</
 <h1 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27. 移除元素"></a><a href="https://leetcode-cn.com/problems/remove-element/" target="_blank" rel="noopener">27. 移除元素</a></h1><p>同样利用快慢指针，若遇到目标值，快指针直接跳过，不进行任何操作。否则将快指针的值赋给慢指针，然后慢指针前进</p>
 <ul>
 <li>根据对题目的不同要求，与上两题的相比，本题是先给慢指针赋值，慢指针再前进。（先赋值再跳）<ul>
-<li>如[0,1,0,6],去除0。slow指向0，fast指向0。fast跳到1，此时fast指向目标值。然后slow处的0被覆盖为1（<code>nums[slow]=nums[fast]</code>），然后slow再向右跳（<code>slow+=1</code>）</li>
+<li>如[0,1,0,6],去除0。slow指向0，fast指向0。fast跳到1，此时fast不指向目标值。然后slow处的0被覆盖为1（<code>nums[slow]=nums[fast]</code>），然后slow再向右跳（<code>slow+=1</code>）</li>
 </ul>
 </li>
 </ul>
@@ -1075,7 +1075,7 @@ l_max[i] 表示位置 i 左边最高的柱子高度（包括本身在内，正�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">219.9k</span>
+            <span class="white-color">220.6k</span>
             
 
             <br>

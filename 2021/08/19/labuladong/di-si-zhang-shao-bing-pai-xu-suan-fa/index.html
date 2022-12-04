@@ -475,7 +475,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    381
+                    418
                 </div>
                 
 
@@ -548,16 +548,15 @@
                 <span class="token keyword">return</span>
 
             max_idx<span class="token operator">=</span>arr<span class="token punctuation">.</span>index<span class="token punctuation">(</span>max<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            arr<span class="token operator">=</span>arr<span class="token punctuation">[</span><span class="token punctuation">:</span>max_idx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>arr<span class="token punctuation">[</span>max_idx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
-            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>max_idx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
-            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>len<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            arr<span class="token operator">=</span>arr<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-            dfs<span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            arr<span class="token operator">=</span>arr<span class="token punctuation">[</span><span class="token punctuation">:</span>max_idx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>arr<span class="token punctuation">[</span>max_idx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 翻转开头到最大索引的部分</span>
+            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>max_idx<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 记录位置</span>
+            arr<span class="token operator">=</span>arr<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># 翻转整个列表</span>
+            res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>len<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 记录位置</span>
+            dfs<span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 缩小规模，翻转n-1个烧饼</span>
         dfs<span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
         <span class="token keyword">return</span> res
 <span class="token comment" spellcheck="true"># so=Solution()</span>
-<span class="token comment" spellcheck="true"># print(so.pancakeSort([3,2,4,1]))</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># print(so.pancakeSort([3,2,4,1]))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1024,7 +1023,7 @@ BFS是一种“齐头并进”遍历树的方式
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">219.9k</span>
+            <span class="white-color">220.6k</span>
             
 
             <br>
