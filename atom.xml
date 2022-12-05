@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2022-12-04T14:22:15.884Z</updated>
+  <updated>2022-12-05T14:31:55.464Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -17,16 +17,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>6255- 两个城市间路径的最小分数</title>
+    <title>6255-两个城市间路径的最小分数</title>
     <link href="https://ismxue.github.io/2022/12/04/leetcode/6255-liang-ge-cheng-shi-jian-lu-jing-de-zui-xiao-fen-shu/"/>
     <id>https://ismxue.github.io/2022/12/04/leetcode/6255-liang-ge-cheng-shi-jian-lu-jing-de-zui-xiao-fen-shu/</id>
     <published>2022-12-04T14:22:15.000Z</published>
-    <updated>2022-12-04T14:22:15.884Z</updated>
+    <updated>2022-12-05T14:31:55.464Z</updated>
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://leetcode.cn/problems/minimum-score-of-a-path-between-two-cities/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;6255.
+        
+      
+    
     </summary>
     
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -86,7 +98,7 @@
     <link href="https://ismxue.github.io/2022/10/07/leetcode/xi-tong-she-ji-lei-ti-mu/"/>
     <id>https://ismxue.github.io/2022/10/07/leetcode/xi-tong-she-ji-lei-ti-mu/</id>
     <published>2022-10-07T09:28:58.000Z</published>
-    <updated>2022-10-23T06:59:13.356Z</updated>
+    <updated>2022-12-05T14:31:46.727Z</updated>
     
     <summary type="html">
     
@@ -94,8 +106,7 @@
       
         
         
-          &lt;p&gt;&lt;a href=&quot;/download/raw.tar.gz&quot;&gt;点击下载文件&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.cn/problems/design-underground-system/&quot; target=&quot;_blank&quot;
+          &lt;p&gt;&lt;a href=&quot;https://leetcode.cn/problems/design-underground-system/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1396.
         
       
     
