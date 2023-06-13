@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ismxue.github.io/2021/12/26/c/fu-dian-he-ding-dian-shuo-ming/</loc>
+    <lastmod>2023-06-13</lastmod>
+  </url>  <url>
     <loc>https://ismxue.github.io/2021/10/19/labuladong/dfs-suan-fa-miao-sha-wu-dao-dao-yu-wen-ti/</loc>
     <lastmod>2023-06-13</lastmod>
   </url>  <url>
@@ -153,9 +156,6 @@
   </url>  <url>
     <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
     <lastmod>2022-06-18</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2021/12/26/c/tof/</loc>
-    <lastmod>2022-05-17</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
     <lastmod>2022-05-10</lastmod>
