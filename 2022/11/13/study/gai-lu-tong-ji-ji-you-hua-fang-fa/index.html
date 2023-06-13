@@ -320,7 +320,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -475,14 +475,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    148
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
                 
@@ -513,6 +513,42 @@
 </ul>
 </li>
 </ul>
+<h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><ul>
+<li>泛函</li>
+</ul>
+<p>泛函可以简单地理解为将一个函数映射到一个实数或复数的函数。这个实数或复数可以看作是对于这个函数的某种度量或评价。泛函可以用来描述函数的性质和行为，例如函数的极值、最小化问题、微分方程等</p>
+<p>举个例子，我们可以定义一个泛函，它将一个函数f(x)映射到它在区间[a,b]上的积分。这个积分可以看作是对函数f(x)在这个区间上的面积或体积的度量，因此这个泛函可以用来描述函数在这个区间上的特征。</p>
+<p>另外一个例子，我们可以定义一个泛函，它将一个函数f(x)映射到它在区间[a,b]上的平均值。这个平均值可以看作是对函数f(x)在这个区间上的整体特征的度量，因此这个泛函可以用来描述函数在这个区间上的平均行为。<br>泛函是一个将一个函数作为输入，然后输出一个实数或复数的函数。这个输出值可以是函数在某个点的取值，也可以是对函数的积分或者其他形式的变换后得到的结果。换句话说，泛函是对函数进行操作并得到一个实数或复数的函数</p>
+<blockquote>
+<p>一个简单的例子是函数的积分泛函。假设我们有一个定义在区间[a, b]上的函数f(x)，那么它的积分可以表示为：</p>
+<p>∫[a,b] f(x)dx</p>
+<p>这里，积分操作是一个将函数映射到实数的泛函，它将函数f(x)映射为它在区间[a, b]上的积分值，也就是一个实数。我们可以将积分泛函看作一个函数I(f)，其中f是定义在[a, b]上的函数，I(f)是f在[a, b]上的积分值。在数学中，积分泛函是非常常见的一种泛函，它在微积分、函数分析、偏微分方程等领域都有着重要的应用。</p>
+<p>另一个例子是能量泛函，它在物理学和工程学中经常被用到。假设我们有一个定义在区间[a, b]上的函数f(x)，表示某个系统在不同位置上的能量密度分布。那么能量泛函可以表示为：</p>
+<p>E(f) = ∫[a,b] L(f(x),f’(x))dx</p>
+<p>其中L是一个函数，称为拉格朗日密度，f’(x)表示f(x)在x处的导数。能量泛函将函数f(x)映射到一个实数E(f)，表示系统在区间[a, b]上的总能量。在物理学和工程学中，能量泛函被用于求解系统的运动方程和稳定状态，从而实现系统的控制和优化。</p>
+</blockquote>
+<ul>
+<li>微分约束是指一个动力学系统中的运动轨迹所必须满足的约束条件，这些约束条件通常可以用微分方程的形式表示。在这种情况下，这些约束被称为微分约束。</li>
+<li>n阶积分链</li>
+</ul>
+<p>n阶积分链是指由n个积分器组成的控制系统，也称为n次积分器。在这种控制系统中，输入信号经过一系列的积分器后，最终输出为系统状态的n阶导数。</p>
+<p>一个具体的例子是用二阶积分链控制机器人的位置和姿态。在这个例子中，机器人的位置和姿态是系统的状态变量，控制器的任务是根据给定的位置和姿态目标，控制机器人运动到目标位置和姿态。</p>
+<p>控制系统的输入为位置和姿态误差，输出为机器人的加速度和角加速度。为了实现这个控制任务，可以使用一个二阶积分链来设计控制器。</p>
+<p>具体地，输入信号首先经过一个位置误差积分器，然后经过一个速度误差积分器，最终输出为机器人的加速度。类似地，输入信号还经过一个姿态误差积分器和一个角速度误差积分器，最终输出为机器人的角加速度。</p>
+<ul>
+<li><p>时间正则项可以通过调整权重系数α来控制控制器响应速度和平滑性之间的平衡。当α较大时，时间正则项的影响会变得更加显著，控制器的响应速度会变慢，但控制器的平滑性会更好。当α较小时，时间正则项的影响较小，控制器的响应速度会变快，但可能会导致控制器的震荡或不稳定。在控制器设计中，时间正则项通常与其它代价泛函项一起使用，以平衡控制器的性能和稳定性。</p>
+</li>
+<li><p>闭式解指的是一个方程式或者系统的解可以通过一个公式来表示的解法。</p>
+</li>
+<li><p>Mayer形式是一种求解最优控制问题的方法，用于确定系统在给定初始状态和末端状态的情况下，如何选择控制变量使得性能指标最小化。</p>
+</li>
+</ul>
+<p>在Mayer形式中，我们的目标是最小化一个性能指标J，它是末端状态的一个函数。Mayer形式可以表示为：</p>
+<p>minimize J(y(T))</p>
+<p>其中y(T)是末端状态，T是控制的终止时间。</p>
+<p>与Lagrangian形式不同的是，Mayer形式并不使用Lagrangian函数，而是直接针对性能指标进行优化。因此，Mayer形式通常用于确定最优末端状态，而不是系统的完整运动路径。</p>
+<p>Mayer形式常常被用于空间探索中的问题，例如火箭在最小化燃料消耗的前提下，将卫星送入指定轨道的问题。此外，它还被广泛用于机器人运动控制、自动驾驶车辆和航空等领域。</p>
+<p>总之，Mayer形式提供了一种有效的方法，可以在给定末端状态的条件下，确定如何最小化系统的性能指标。</p>
 
             </div>
             <hr />
@@ -721,7 +757,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="6255-两个城市间路径的最小分数">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="6255-两个城市间路径的最小分数">
                         
                         <span class="card-title">6255-两个城市间路径的最小分数</span>
                     </div>
@@ -772,42 +808,35 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/10/23/study/huo-ti-jian-ce-fang-fa-gai-shu/">
+                <a href="/2022/10/07/leetcode/xi-tong-she-ji-lei-ti-mu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="活体检测方法概述">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="系统设计类题目">
                         
-                        <span class="card-title">活体检测方法概述</span>
+                        <span class="card-title">系统设计类题目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            1396. 设计地铁系统
+这类题目看似复杂，其实读懂后，根据题意要求一步一步分解并统计出需要的信息即可。
 
-活体检测综述
-活体检测Face Anti-spoofing综述
-2022TPAMI综述
-Survey of Deep Face Anti-spoofing 
-包含多种活体检测类型的论文链接
-
-
-2D 3D检测方法分类
-
-深度学习网络构建
+求平均时间，则需要知道startStation到endStation这段路中累计通过的人数和时间
+checkOut中可以统计累计通过
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-10-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-10-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Study/" class="post-category" target="_blank">
-                                    Study
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
@@ -817,8 +846,8 @@ Survey of Deep Face Anti-spoofing
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Study/" target="_blank">
-                        <span class="chip bg-color">Study</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -992,7 +1021,7 @@ Survey of Deep Face Anti-spoofing
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">221.2k</span>
+            <span class="white-color">222.9k</span>
             
 
             <br>

@@ -324,7 +324,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -479,14 +479,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    15 分
                 </div>
                 
                 
@@ -671,7 +671,7 @@
 <span class="token comment" spellcheck="true"># print(so.checkInclusion(s1,s2))</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>其他写法</p>
+<p>其他写法（与上面写法一致，只是更新细节）</p>
 <ul>
 <li>注意，在python中，return时，要确保ans[0]!=-1。<ul>
 <li>否则有一些corner case会正好满足<code>(ans[1]-ans[0])==len(s1)</code>，导致返回错误的结果（如s1=”ab”, s2=”a”, 此时，ans保存的索引为[-1,1]。 1-（-1）正好为s1的长度，导致错误）</li>
@@ -1014,6 +1014,35 @@ MAX_INT<span class="token operator">=</span>sys<span class="token punctuation">.
                     <span class="token keyword">break</span>
             dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>len<span class="token punctuation">(</span>visited<span class="token punctuation">)</span>
         <span class="token keyword">return</span> max<span class="token punctuation">(</span>dp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://leetcode.cn/problems/max-consecutive-ones-iii/" target="_blank" rel="noopener">1004. 最大连续1的个数 III</a></p>
+<ul>
+<li>窗口左闭右开，先一步一步右移右窗口，不满足条件时，再右移左窗口。然后更新可行解</li>
+</ul>
+<blockquote>
+<p>《挑战程序设计竞赛》这本书中把<a href="https://leetcode.cn/problems/max-consecutive-ones-iii/solution/fen-xiang-hua-dong-chuang-kou-mo-ban-mia-f76z/" target="_blank" rel="noopener">滑动窗口叫做「虫取法」</a>，我觉得非常生动形象。因为滑动窗口的两个指针移动的过程和虫子爬动的过程非常像：前脚不动，把后脚移动过来；后脚不动，把前脚向前移动</p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">longestOnes</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """</span>
+        res<span class="token operator">=</span><span class="token number">0</span>
+        count<span class="token operator">=</span><span class="token number">0</span>
+        l<span class="token operator">=</span><span class="token number">0</span>
+        r<span class="token operator">=</span><span class="token number">0</span>
+        <span class="token keyword">while</span> r<span class="token operator">&lt;</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 右移右窗口指针</span>
+                count<span class="token operator">+=</span><span class="token number">1</span>
+            r<span class="token operator">+=</span><span class="token number">1</span>
+            <span class="token keyword">while</span> count<span class="token operator">></span>k<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 不满足条件时，右移左窗口</span>
+                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+                    count<span class="token operator">-=</span><span class="token number">1</span>
+                l<span class="token operator">+=</span><span class="token number">1</span>
+            res <span class="token operator">=</span> max<span class="token punctuation">(</span>res<span class="token punctuation">,</span> r <span class="token operator">-</span> l <span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 记录窗口大小；更新左窗口后，窗口内0的个数满足条件，是一个可行解，因此更新结果</span>
+        <span class="token keyword">return</span> res
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1222,7 +1251,7 @@ MAX_INT<span class="token operator">=</span>sys<span class="token punctuation">.
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="第零章：团灭 LeetCode 打家劫舍问题">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="第零章：团灭 LeetCode 打家劫舍问题">
                         
                         <span class="card-title">第零章：团灭 LeetCode 打家劫舍问题</span>
                     </div>
@@ -1275,7 +1304,7 @@ dp数组表示第i个位置处能取
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="第零章：我写了首诗，让你闭着眼睛也能写对二分搜索">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第零章：我写了首诗，让你闭着眼睛也能写对二分搜索">
                         
                         <span class="card-title">第零章：我写了首诗，让你闭着眼睛也能写对二分搜索</span>
                     </div>
@@ -1487,7 +1516,7 @@ mid=left + (right - left) // 2 可防止
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">221.2k</span>
+            <span class="white-color">222.9k</span>
             
 
             <br>

@@ -8,17 +8,14 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="
+    <meta name="description" content="装饰器examplePython Decorators in 15 Minutes
+
 什么是装饰器？
 python装饰器用于装饰函数。可以在保留原函数功能的条件下，赋予该函数更丰富的功能（而无需改动原函数）
 
 
 为什么要用装饰器？
-可以更便于开发，实现代码复用
-
-
-装饰器可以解决哪些问题？
-不破坏原函数的条件下，扩展函数功">
+可以更便">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -326,7 +323,7 @@ python装饰器用于装饰函数。可以在保留原函数功能的条件下�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -481,14 +478,14 @@ python装饰器用于装饰函数。可以在保留原函数功能的条件下�
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    495
+                    629
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -504,7 +501,8 @@ python装饰器用于装饰函数。可以在保留原函数功能的条件下�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
+                <p><a href="https://www.geeksforgeeks.org/chain-multiple-decorators-in-python/" target="_blank" rel="noopener">装饰器example</a><br><a href="https://www.youtube.com/watch?v=r7Dtus7N4pI" target="_blank" rel="noopener">Python Decorators in 15 Minutes</a></p>
+<ul>
 <li>什么是装饰器？<ul>
 <li>python装饰器用于装饰函数。可以在保留原函数功能的条件下，赋予该函数更丰富的功能（而无需改动原函数）</li>
 </ul>
@@ -574,6 +572,45 @@ watchTV<span class="token punctuation">(</span><span class="token punctuation">)
 <p>运行结果为：</p>
 <pre><code>age小于等于18时，函数输出：小明在看天线宝宝
 age大于18时，函数输出：小明的爸爸，你都成年啦，别看天线宝宝啦</code></pre><p><a href="https://www.youtube.com/watch?v=QqRvteWBSWg" target="_blank" rel="noopener">参考1</a>,<a href="https://www.zhihu.com/question/26930016/answer/360300235" target="_blank" rel="noopener">参考2</a></p>
+<h1 id="chain-decorator"><a href="#chain-decorator" class="headerlink" title="chain decorator"></a>chain decorator</h1><p>有多个装饰器时，先包裹里面的</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">set_fun1</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"set_fun1"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 打印用于验证在多个装饰器的情况下，多个装饰器之间的执行顺序</span>
+
+    <span class="token keyword">def</span> <span class="token function">call_fun1</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"call_fun1"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 当被装饰函数执行时，会打印</span>
+        func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> call_fun1
+
+
+<span class="token keyword">def</span> <span class="token function">set_fun2</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"set_fun2"</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">call_fun2</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"call_fun2"</span><span class="token punctuation">)</span>
+        func<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> call_fun2
+
+
+<span class="token comment" spellcheck="true"># 装饰函数</span>
+@set_fun1
+@set_fun2
+<span class="token keyword">def</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span>
+
+
+test<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># set_fun2   # set时相反</span>
+<span class="token comment" spellcheck="true"># set_fun1   # set时相反</span>
+<span class="token comment" spellcheck="true"># call_fun1  # 再被1包裹</span>
+<span class="token comment" spellcheck="true"># call_fun2  # 先被2包裹</span>
+<span class="token comment" spellcheck="true"># hello world</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/chain-multiple-decorators-in-python/" target="_blank" rel="noopener">chain decorator的其他示例</a></li>
+</ul>
 
             </div>
             <hr />
@@ -782,7 +819,7 @@ age大于18时，函数输出：小明的爸爸，你都成年啦，别看天线
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="第三章：信封嵌套问题">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第三章：信封嵌套问题">
                         
                         <span class="card-title">第三章：信封嵌套问题</span>
                     </div>
@@ -834,7 +871,7 @@ age大于18时，函数输出：小明的爸爸，你都成年啦，别看天线
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="第三章：前缀和技巧">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第三章：前缀和技巧">
                         
                         <span class="card-title">第三章：前缀和技巧</span>
                     </div>
@@ -1042,7 +1079,7 @@ class Solution:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">221.2k</span>
+            <span class="white-color">222.9k</span>
             
 
             <br>

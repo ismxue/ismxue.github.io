@@ -325,7 +325,7 @@ Ses">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -480,14 +480,14 @@ Ses">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    14 分
                 </div>
                 
                 
@@ -912,6 +912,43 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <li><p><a href="https://www.youtube.com/watch?v=bD05uGo_sVI" target="_blank" rel="noopener">yield使用</a></p>
 </li>
 </ul>
+<ul>
+<li>Python中使用subprocess，并实现多任务并行<blockquote>
+<p><a href="https://www.cnblogs.com/shenh/p/9673581.html" target="_blank" rel="noopener">python subprocess模块详解</a></p>
+<ul>
+<li>程序运行subprocess.Popen()类，父进程创建子进程后，不会等待子进程执行完成。如果需要等待子进程，需要加入wait()方法阻塞父进程</li>
+</ul>
+<p>示例1<br>child = subprocess.Popen(‘ping <a href="http://www.baidu.com&#39;" target="_blank" rel="noopener">www.baidu.com&#39;</a>)<br>print(‘End’)</p>
+<p>示例2<br>child = subprocess.Popen(‘ping <a href="http://www.baidu.com&#39;" target="_blank" rel="noopener">www.baidu.com&#39;</a>)<br>child.wait()<br>print(‘End’)</p>
+<p>以上示例1没有等child 执行完就print，示例2父进程先阻塞，等待child执行完再print。</p>
+</blockquote>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 耗时最久，没有任何并行</span>
+<span class="token keyword">import</span> subprocess
+<span class="token keyword">import</span> time
+start_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        child<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>Popen<span class="token punctuation">(</span><span class="token string">'sleep 4'</span><span class="token punctuation">,</span> shell<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+        child<span class="token punctuation">.</span>wait<span class="token punctuation">(</span><span class="token punctuation">)</span>
+end_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"耗时: {:.2f}秒"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>end_time <span class="token operator">-</span> start_time<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#耗时: 24.24秒</span>
+
+
+<span class="token comment" spellcheck="true"># 里面的for循环并行</span>
+<span class="token keyword">import</span> subprocess
+<span class="token keyword">import</span> time
+start_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        child<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>Popen<span class="token punctuation">(</span><span class="token string">'sleep 4'</span><span class="token punctuation">,</span> shell<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    child<span class="token punctuation">.</span>wait<span class="token punctuation">(</span><span class="token punctuation">)</span>
+end_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"耗时: {:.2f}秒"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>end_time <span class="token operator">-</span> start_time<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#耗时: 耗时: 8.08秒</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -1120,7 +1157,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="199. 二叉树的右视图">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="199. 二叉树的右视图">
                         
                         <span class="card-title">199. 二叉树的右视图</span>
                     </div>
@@ -1172,7 +1209,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="计算机操作系统">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="计算机操作系统">
                         
                         <span class="card-title">计算机操作系统</span>
                     </div>
@@ -1378,7 +1415,7 @@ if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加�
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">221.2k</span>
+            <span class="white-color">222.9k</span>
             
 
             <br>
