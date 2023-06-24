@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>AI模型</title>
+      <link href="/2023/06/18/study/ai-mo-xing/"/>
+      <url>/2023/06/18/study/ai-mo-xing/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h1><ul><li>Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹</li></ul><blockquote><p>当配置 Samba 服务器以供 macOS 访问共享文件夹时，以下是详细的步骤：</p><ol><li><p>安装 Samba 服务器：<br>在 Linux 服务器上使用适当的软件包管理器安装 Samba 服务器。具体命令可能因 Linux 发行版而异。例如，在 Ubuntu 上，可以使用以下命令安装 Samba：</p><pre><code>sudo apt-get install samba</code></pre></li><li><p>打开 Samba 配置文件：<br>使用你喜欢的文本编辑器（如vi、nano等）打开 Samba 的配置文件 <code>smb.conf</code>：</p><pre><code>sudo vi /etc/samba/smb.conf</code></pre></li><li><p>定义共享文件夹：<br>在 <code>smb.conf</code> 文件中，你需要添加共享文件夹的配置。找到 <code>[global]</code> 段，并在其下面添加以下内容：</p><pre><code>[shared]comment = Shared Folderpath = /path/to/shared/folderwritable = yesguest ok = no</code></pre><p>将 <code>/path/to/shared/folder</code> 替换为实际的共享文件夹路径。<code>[shared]</code> 是共享文件夹的名称，你可以自定义。<code>comment</code> 是对该共享文件夹的描述，<code>writable</code> 指定是否允许写入访问，<code>guest ok</code> 指定是否允许匿名访问。</p></li><li><p>配置访问权限：<br>可以通过添加适当的权限选项来控制共享文件夹的访问权限。例如，如果只想允许特定用户访问，可以添加以下行：</p><pre><code>valid users = username</code></pre><p>将 <code>username</code> 替换为允许访问共享文件夹的用户名。</p></li><li><p>保存并关闭文件：<br>在编辑完 <code>smb.conf</code> 文件后，保存并关闭该文件。</p></li><li><p>设置 Samba 用户密码：<br>使用以下命令为 Samba 用户设置密码。这些用户可以访问共享文件夹：</p><pre><code>sudo smbpasswd -a username</code></pre><p>将 <code>username</code> 替换为要设置密码的用户名。按照提示输入密码并确认。</p></li><li><p>启动 Samba 服务：<br>使用以下命令启动 Samba 服务：</p><pre><code>sudo service smbd start</code></pre></li><li><p>配置防火墙（如果需要）：<br>如果你的 Linux 服务器上启用了防火墙，你需要确保 Samba 服务的端口（默认是 TCP 端口 139 和 445）是开放的。具体的防火墙配置方法可能因不同的防火墙软件而异。</p></li><li><p>在 macOS 上访问共享文件夹：<br>在 macOS 上打开 Finder 应用程序，并在菜单栏中选择「前往」-&gt;「连接服务器」，或使用快捷键 Command + K。在弹出的对话框中，输入以下地址：</p><pre><code>smb://linux_server_ip/shared</code></pre><p>将 <code>linux_server_ip</code> 替换为 Linux 服务器的 IP 地址</p></li></ol></blockquote><ul><li><a href="https://www.youtube.com/watch?v=x58W9A2lnQc&list=PLvOO0btloRns6xpEAR04U7W0zUuNsQePS&index=6" target="_blank" rel="noopener">Make Python code 1000x Faster with Numba</a><ul><li>Numba的性能优势在于处理数值密集型的计算任务，而对于其他类型的任务可能效果不明显。因此，在使用Numba时，建议将重点放在需要大量数值计算的部分代码上，以获得最佳的加速效果</li></ul></li></ul><h1 id="AI-Preliminary"><a href="#AI-Preliminary" class="headerlink" title="AI Preliminary"></a>AI Preliminary</h1><ul><li><a href="https://animatedai.github.io/" target="_blank" rel="noopener">可视化</a>基本概念</li></ul><p><img src="https://s2.loli.net/2023/06/18/AGYqLmc63kPFtZK.png" alt="image.png"></p><ul><li><p><a href="https://medium.com/swlh/cheat-sheets-for-machine-learning-interview-topics-51c2bc2bab4f" target="_blank" rel="noopener">Cheat Sheets for Machine Learning Interview Topics</a></p></li><li><p>Basic Network</p><ul><li>基本网络比较<ul><li><a href="https://medium.com/analytics-vidhya/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5" target="_blank" rel="noopener">CNN Architectures: LeNet, AlexNet, VGG, GoogLeNet, ResNet and more…</a></li><li><a href="https://towardsdatascience.com/the-w3h-of-alexnet-vggnet-resnet-and-inception-7baaaecccc96" target="_blank" rel="noopener">Difference between AlexNet, VGGNet, ResNet, and Inception</a></li></ul></li><li><a href="https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8" target="_blank" rel="noopener">Understanding and visualizing ResNets</a></li></ul></li></ul><h1 id="AI应用-amp-发展"><a href="#AI应用-amp-发展" class="headerlink" title="AI应用 &amp; 发展"></a>AI应用 &amp; 发展</h1><ul><li><a href="https://liangjie.xyz/blogs/Segmentation/" target="_blank" rel="noopener">应用于语义分割问题的深度学习技术综述</a></li><li><a href="https://zhuanlan.zhihu.com/p/78994415" target="_blank" rel="noopener">智源论坛 面向快速推理的神经网络结构</a></li></ul><h1 id="MAS"><a href="#MAS" class="headerlink" title="MAS"></a>MAS</h1><ul><li><p><a href="https://www.youtube.com/@ShusenWang" target="_blank" rel="noopener">神经网络结构搜索 （Shusen Wang）</a></p></li><li><p><a href="https://www.techbeat.net/talk-info?id=428&utm_campaign=0902%E5%AE%81%E9%9B%AA%E5%A6%83&utm_medium=B%E7%AB%99-%E7%B2%BE%E5%8D%8E&utm_source=B%E7%AB%99&gio_link_id=LPd53m5o" target="_blank" rel="noopener">高效神经网络学习系统研究</a></p><ul><li>机器学习,低比特,NN训练硬件加速器,神经网络架构搜索</li></ul></li><li><p>论文</p><ul><li><a href="https://arxiv.org/pdf/1808.05377.pdf" target="_blank" rel="noopener">Neural Architecture Search: A Survey</a></li><li><a href="https://openreview.net/pdf?id=S1eYHoC5FX" target="_blank" rel="noopener">DARTS: DIFFERENTIABLE ARCHITECTURE SEARCH</a>，对应的<a href="https://towardsdatascience.com/intuitive-explanation-of-differentiable-architecture-search-darts-692bdadcc69c" target="_blank" rel="noopener">论文解释</a>和<a href="https://github.com/quark0/darts" target="_blank" rel="noopener">github</a></li><li><a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_FBNet_Hardware-Aware_Efficient_ConvNet_Design_via_Differentiable_Neural_Architecture_Search_CVPR_2019_paper.pdf" target="_blank" rel="noopener">FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable Neural Architecture Search</a></li></ul></li></ul><ul><li>MIT Song Han Lab<ul><li><a href="https://efficientml.ai/schedule/" target="_blank" rel="noopener">AI Lecture</a>，其中 Lecture 7，8，9 包含了 Neural Architecture Search (Part I II III) | MIT 6.S965 的课件及Youtube Video<ul><li>Slide：Neural Architecture Search <a href="https://hanlab.mit.edu/files/course/slides/MIT-TinyML-Lec07-NAS-I.pdf" target="_blank" rel="noopener">(Part I)</a>，<a href="https://hanlab.mit.edu/files/course/slides/MIT-TinyML-Lec08-NAS-II.pdf" target="_blank" rel="noopener">(Part II)</a>，<a href="https://hanlab.mit.edu/files/course/slides/MIT-TinyML-Lec09-NAS-III.pdf" target="_blank" rel="noopener">(Part III)</a></li></ul></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Study </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>6255-两个城市间路径的最小分数</title>
       <link href="/2022/12/04/leetcode/6255-liang-ge-cheng-shi-jian-lu-jing-de-zui-xiao-fen-shu/"/>
       <url>/2022/12/04/leetcode/6255-liang-ge-cheng-shi-jian-lu-jing-de-zui-xiao-fen-shu/</url>
