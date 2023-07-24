@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ismxue.github.io/2023/06/18/study/ai-mo-xing/</loc>
+    <loc>https://ismxue.github.io/2023/06/18/study/ai-model/</loc>
+    <lastmod>2023-07-24</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
     <lastmod>2023-07-02</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/12/26/c/fu-dian-he-ding-dian-shuo-ming/</loc>
@@ -14,9 +17,6 @@
     <lastmod>2023-06-13</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/09/25/growth/shang-an-ji/</loc>
-    <lastmod>2023-06-13</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
     <lastmod>2023-06-13</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2022/11/13/study/gai-lu-tong-ji-ji-you-hua-fang-fa/</loc>
