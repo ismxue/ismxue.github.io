@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ismxue.github.io/2023/06/18/study/ai-model/</loc>
-    <lastmod>2023-07-24</lastmod>
+    <lastmod>2023-08-17</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2023/08/04/study/paper-xie-zuo-yao-dian-ji-zi-yuan/</loc>
+    <lastmod>2023-08-04</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/</loc>
+    <lastmod>2023-08-04</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2022/05/03/ji-suan-ji-ji-chu/docker-shi-yong/</loc>
+    <lastmod>2023-08-02</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
     <lastmod>2023-07-02</lastmod>
@@ -46,10 +55,10 @@
     <loc>https://ismxue.github.io/2021/07/22/labuladong/di-san-zhang-git-yuan-li-zhi-zui-jin-gong-gong-zu-xian/</loc>
     <lastmod>2023-02-12</lastmod>
   </url>  <url>
-    <loc>https://ismxue.github.io/2020/07/16/labuladong/di-ling-zhang-yi-ge-fang-fa-tuan-mie-nsum-wen-ti/</loc>
+    <loc>https://ismxue.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/</loc>
     <lastmod>2023-02-12</lastmod>
   </url>  <url>
-    <loc>https://ismxue.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-dui-lie/</loc>
+    <loc>https://ismxue.github.io/2020/07/16/labuladong/di-ling-zhang-yi-ge-fang-fa-tuan-mie-nsum-wen-ti/</loc>
     <lastmod>2023-02-12</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/05/15/study/linux-shi-yong-ji-lu/</loc>
@@ -162,9 +171,6 @@
   </url>  <url>
     <loc>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
     <lastmod>2022-05-10</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2022/05/03/ji-suan-ji-ji-chu/docker-shi-yong/</loc>
-    <lastmod>2022-05-04</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2022/04/23/ji-suan-ji-ji-chu/3d-shu-ju-fen-xi-yu-chu-li/</loc>
     <lastmod>2022-05-03</lastmod>
@@ -306,9 +312,6 @@
   </url>  <url>
     <loc>https://ismxue.github.io/2020/08/16/labuladong/di-san-zhang-xin-feng-qian-tao-wen-ti/</loc>
     <lastmod>2021-07-06</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/</loc>
-    <lastmod>2021-07-03</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/05/17/growth/du-xing-fu-de-hun-yin/</loc>
     <lastmod>2021-06-30</lastmod>

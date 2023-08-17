@@ -9,12 +9,12 @@
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="Tools
-Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹
+Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹，附：如何在 Mac 上映射网络驱动器
 
 
 当配置 Samba 服务器以供 macOS 访问共享文件夹时，以下是详细的步骤：
 
-安装 Samba 服务器：在 Linux 服务器上使用适当的软件包管">
+安装 Samba 服务器：在 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -322,7 +322,7 @@ Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -477,14 +477,14 @@ Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    975
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
                 
@@ -501,7 +501,7 @@ Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><ul>
-<li>Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹</li>
+<li>Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹，附：<a href="https://blog.csdn.net/llhf688/article/details/125113780?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-125113780-blog-6870147.235%5Ev38%5Epc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-125113780-blog-6870147.235%5Ev38%5Epc_relevant_sort_base1&utm_relevant_index=11" target="_blank" rel="noopener">如何在 Mac 上映射网络驱动器</a></li>
 </ul>
 <blockquote>
 <p>当配置 Samba 服务器以供 macOS 访问共享文件夹时，以下是详细的步骤：</p>
@@ -535,10 +535,76 @@ guest ok = no</code></pre><p>将 <code>/path/to/shared/folder</code> 替换为�
 </ol>
 </blockquote>
 <ul>
+<li>conda 虚拟环境以及 <a href="https://www.youtube.com/watch?v=YJC6ldI3hWk" target="_blank" rel="noopener">Python Tutorial: Anaconda - Installation and Using Conda</a></li>
+</ul>
+<blockquote>
+<p>当使用 Conda 管理虚拟环境时，以下是一些常用的相关指令：</p>
+<ol>
+<li><p><strong>创建虚拟环境</strong>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda create --name myenv   <span class="token comment" spellcheck="true"># 创建名为 myenv 的虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>激活虚拟环境</strong>：<br>在 Windows 上：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda activate myenv   <span class="token comment" spellcheck="true"># 激活名为 myenv 的虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在 macOS 和 Linux 上：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> activate myenv   <span class="token comment" spellcheck="true"># 激活名为 myenv 的虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>退出虚拟环境</strong>：<br>在 Windows 上：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda deactivate   <span class="token comment" spellcheck="true"># 退出当前虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在 macOS 和 Linux 上：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">source</span> deactivate   <span class="token comment" spellcheck="true"># 退出当前虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>查看已有虚拟环境</strong>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda info --envs   <span class="token comment" spellcheck="true"># 查看所有已存在的虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>删除虚拟环境</strong>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda <span class="token function">env</span> remove --name myenv   <span class="token comment" spellcheck="true"># 删除名为 myenv 的虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>安装包到虚拟环境</strong>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda <span class="token function">install</span> package_name   <span class="token comment" spellcheck="true"># 安装名为 package_name 的包到激活的虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>查看当前虚拟环境中已安装的包</strong>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda list   <span class="token comment" spellcheck="true"># 查看当前虚拟环境中已安装的包</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>导出虚拟环境配置</strong>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda <span class="token function">env</span> <span class="token function">export</span> <span class="token operator">></span> environment.yml   <span class="token comment" spellcheck="true"># 将虚拟环境配置导出到 environment.yml 文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>从配置文件创建虚拟环境</strong>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda <span class="token function">env</span> create -f environment.yml   <span class="token comment" spellcheck="true"># 从 environment.yml 文件创建虚拟环境</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>更新虚拟环境中的包</strong>：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">conda update package_name   <span class="token comment" spellcheck="true"># 更新虚拟环境中名为 package_name 的包</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+<p>这些指令可以帮助你在 Conda 中创建、管理和操作虚拟环境以及安装和管理软件包。请注意，某些指令可能会因 Conda 版本而略有不同，因此在使用时请查阅相关文档或使用 <code>conda --help</code> 获取更多帮助信息。</p>
+</blockquote>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=zDYL22QNiWk&t=459s" target="_blank" rel="noopener">Python Tutorial: Pipenv - Easily Manage Packages and Virtual Environments</a> </li>
+<li><a href="https://www.youtube.com/watch?v=GxCXiSkm6no" target="_blank" rel="noopener">Importing Your Own Python Modules Properly</a> 以及<a href="https://www.youtube.com/watch?v=cONc0NcKE7s" target="_blank" rel="noopener">How to Use the __init__.py File</a><blockquote>
+<p>在Python中，包（Package）和模块（Module）是组织代码的两种不同方式，它们有着一些区别和特点。</p>
+<p><strong>模块（Module）</strong>：</p>
+<ol>
+<li><strong>定义</strong>：模块是一个单一的文件，其中包含一组相关的代码。它可以包含变量、函数、类等。</li>
+<li><strong>组织性</strong>：模块用于将相关的代码组织在一起，以便于管理和重用。</li>
+<li><strong>导入</strong>：您可以使用 <code>import</code> 语句将模块中的内容导入到其他文件中，以便在其他地方使用。</li>
+<li><strong>命名空间</strong>：模块具有自己的命名空间，模块中定义的变量、函数和类在该命名空间中。</li>
+</ol>
+<p><strong>包（Package）</strong>：</p>
+<ol>
+<li><strong>定义</strong>：包是一个由一组相关模块组成的目录，其中包含一个特殊的 <code>__init__.py</code> 文件。这个文件用于指示Python解释器该目录是一个包。</li>
+<li><strong>组织性</strong>：包用于更高级别的代码组织，可以将不同模块按主题或功能组织在不同的包中。</li>
+<li><strong>导入</strong>：您可以使用点号（<code>.</code>）语法来导入包中的模块，例如 <code>import package.module</code>。</li>
+<li><strong>子包</strong>：包内部可以包含子包，从而形成一个层次化的组织结构。</li>
+</ol>
+<p>总结来说，模块是一个文件，用于组织相关的代码片段，而包是一个包含模块的目录，用于更高级别的组织和管理。通常，如果您只有少量的相关代码，可以使用模块来组织；如果您有多个相关模块，可以将它们放在一个包中。包的层次结构可以帮助更好地组织大型项目，并提供更好的命名空间隔离。</p>
+</blockquote>
+</li>
 <li><a href="https://www.youtube.com/watch?v=x58W9A2lnQc&list=PLvOO0btloRns6xpEAR04U7W0zUuNsQePS&index=6" target="_blank" rel="noopener">Make Python code 1000x Faster with Numba</a><ul>
 <li>Numba的性能优势在于处理数值密集型的计算任务，而对于其他类型的任务可能效果不明显。因此，在使用Numba时，建议将重点放在需要大量数值计算的部分代码上，以获得最佳的加速效果</li>
 </ul>
 </li>
+</ul>
+<h1 id="Hardware"><a href="#Hardware" class="headerlink" title="Hardware"></a>Hardware</h1><ul>
+<li><a href="https://www.youtube.com/watch?v=d86ws7mQYIg" target="_blank" rel="noopener">How does Computer Hardware Work?</a><img src="https://s2.loli.net/2023/07/29/yfcdSxIaGV4bpeK.png" alt></li>
 </ul>
 <h1 id="AI-Preliminary"><a href="#AI-Preliminary" class="headerlink" title="AI Preliminary"></a>AI Preliminary</h1><ul>
 <li><a href="https://animatedai.github.io/" target="_blank" rel="noopener">可视化</a>基本概念</li>
@@ -551,28 +617,41 @@ guest ok = no</code></pre><p>将 <code>/path/to/shared/folder</code> 替换为�
 <ul>
 <li><p><a href="https://medium.com/swlh/cheat-sheets-for-machine-learning-interview-topics-51c2bc2bab4f" target="_blank" rel="noopener">Cheat Sheets for Machine Learning Interview Topics</a></p>
 </li>
+<li><p><a href="https://www.bilibili.com/video/BV1oX4y1d7X6/?spm_id_from=333.999.0.0&vd_source=7d1421767c0eb00dad50372c017345f0" target="_blank" rel="noopener">大模型时代下做科研的四个思路【论文精读·52】</a></p>
+<ul>
+<li>四个方向<ul>
+<li>1.efficient (PEFT)：做效率提升的(哪里慢提升哪里的速度，哪里heavy使其轻量级)</li>
+<li>2.existing stuff(pretained model)：直接基于别人的大预训练模型， new directions: 做新方向，避免撞车，竞争，刷榜</li>
+<li>3.plug and play: 做即插即用的模块(模型，loss，数据增广的方法等等)，可以在不同领域应用</li>
+<li>4.dataset，evaluation，and survey： 构建数据集，做评测，综述等文章</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>Basic Network</p>
 <ul>
 <li>基本网络比较<ul>
 <li><a href="https://medium.com/analytics-vidhya/cnns-architectures-lenet-alexnet-vgg-googlenet-resnet-and-more-666091488df5" target="_blank" rel="noopener">CNN Architectures: LeNet, AlexNet, VGG, GoogLeNet, ResNet and more…</a></li>
 <li><a href="https://towardsdatascience.com/the-w3h-of-alexnet-vggnet-resnet-and-inception-7baaaecccc96" target="_blank" rel="noopener">Difference between AlexNet, VGGNet, ResNet, and Inception</a></li>
+<li><a href="https://cinnamonaitaiwan.medium.com/cnn%E6%A8%A1%E5%9E%8B-resnet-mobilenet-densenet-shufflenet-efficientnet-5eba5c8df7e4" target="_blank" rel="noopener">CNN模型-ResNet、MobileNet、DenseNet、ShuffleNet、EfficientNet</a></li>
 </ul>
 </li>
-<li><a href="https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8" target="_blank" rel="noopener">Understanding and visualizing ResNets</a><ul>
-<li>This difference on the skip connections are the so called in the paper as Identity Shortcut and Projection Shortcut. The <strong>identity shortcut</strong> is the one we have already discussed, simply bypassing the input volume to the addition operator. <strong>The projection shortcut</strong> performs a convolution operation to ensure the volumes at this addition operation are the same size.<img src="https://s2.loli.net/2023/07/24/WkABYzKN4FnIGeU.png" alt="image.png"></li>
+<li><a href="https://towardsdatascience.com/understanding-and-visualizing-resnets-442284831be8" target="_blank" rel="noopener">Understanding and visualizing ResNets</a> （以及作者的<a href="https://towardsdatascience.com/deep-convolutional-neural-networks-ccf96f830178" target="_blank" rel="noopener">其他网络说明</a>）<ul>
+<li>This difference on the skip connections are the so called in the paper as Identity Shortcut and Projection Shortcut. The <strong>identity shortcut</strong> is the one we have already discussed, simply bypassing the input volume to the addition operator. <strong>The projection shortcut</strong> performs a convolution operation to ensure the volumes at this addition operation are the same size.<img src="https://s2.loli.net/2023/07/24/WkABYzKN4FnIGeU.png" alt></li>
 </ul>
 </li>
-<li><a href="https://medium.com/@zurister/depth-wise-convolution-and-depth-wise-separable-convolution-37346565d4ec" target="_blank" rel="noopener">Depth-wise Convolution and Depth-wise Separable Convolution</a></li>
+<li><a href="https://medium.com/@zurister/depth-wise-convolution-and-depth-wise-separable-convolution-37346565d4ec" target="_blank" rel="noopener">Depth-wise Convolution and Depth-wise Separable Convolution</a> <img src="https://s2.loli.net/2023/07/24/zbJuNd3Ka2PAGVi.png" alt><img src="https://s2.loli.net/2023/08/02/kXxi6o95WlIJhvO.png" alt="image.png"></li>
+<li><a href="https://www.youtube.com/watch?v=TQQlZhbC5ps&t=378s" target="_blank" rel="noopener">Transformer Neural Networks - EXPLAINED</a></li>
+<li><a href="https://www.youtube.com/watch?v=BbzOZ9THriY&list=PLvOO0btloRntpSWSxFbwPIjIum3Ub4GSC&index=4" target="_blank" rel="noopener">Vision Transformer (ViT) 用于图片分类</a></li>
 </ul>
 </li>
 </ul>
-<p><img src="https://s2.loli.net/2023/07/24/zbJuNd3Ka2PAGVi.png" alt="image.png"></p>
 <h1 id="AI应用-amp-发展"><a href="#AI应用-amp-发展" class="headerlink" title="AI应用 &amp; 发展"></a>AI应用 &amp; 发展</h1><ul>
 <li><a href="https://liangjie.xyz/blogs/Segmentation/" target="_blank" rel="noopener">应用于语义分割问题的深度学习技术综述</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/78994415" target="_blank" rel="noopener">智源论坛 面向快速推理的神经网络结构</a></li>
 </ul>
 <h1 id="NAS"><a href="#NAS" class="headerlink" title="NAS"></a>NAS</h1><ul>
-<li><p><a href="https://www.youtube.com/watch?v=voWgnMpFaW8&list=PLvOO0btloRns3_5ONDa-EnTZgIO41_hXf" target="_blank" rel="noopener">神经网络结构搜索 （Shusen Wang）</a></p>
+<li><p><a href="https://www.youtube.com/watch?v=voWgnMpFaW8&list=PLvOO0btloRns3_5ONDa-EnTZgIO41_hXf" target="_blank" rel="noopener">神经网络结构搜索 （Shusen Wang）</a> , 以及作者的 <a href="https://github.com/wangshusen/DeepLearning" target="_blank" rel="noopener">DeepLearning 系列</a></p>
 </li>
 <li><p><a href="https://www.techbeat.net/talk-info?id=428&utm_campaign=0902%E5%AE%81%E9%9B%AA%E5%A6%83&utm_medium=B%E7%AB%99-%E7%B2%BE%E5%8D%8E&utm_source=B%E7%AB%99&gio_link_id=LPd53m5o" target="_blank" rel="noopener">高效神经网络学习系统研究</a></p>
 <ul>
@@ -581,6 +660,7 @@ guest ok = no</code></pre><p>将 <code>/path/to/shared/folder</code> 替换为�
 </li>
 <li><p>论文</p>
 <ul>
+<li><a href="https://www.ccf.org.cn/upload/resources/file/2022/12/08/c77eea69c68b12d49e82af4dc021c67a.pdf" target="_blank" rel="noopener">深度卷积神经网络架构设计及优化问题研究-Li Xiang</a></li>
 <li><a href="https://arxiv.org/pdf/1808.05377.pdf" target="_blank" rel="noopener">Neural Architecture Search: A Survey</a></li>
 <li><a href="https://openreview.net/pdf?id=S1eYHoC5FX" target="_blank" rel="noopener">DARTS: DIFFERENTIABLE ARCHITECTURE SEARCH</a>，对应的<a href="https://towardsdatascience.com/intuitive-explanation-of-differentiable-architecture-search-darts-692bdadcc69c" target="_blank" rel="noopener">论文解释</a>和<a href="https://github.com/quark0/darts" target="_blank" rel="noopener">github</a></li>
 <li><a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_FBNet_Hardware-Aware_Efficient_ConvNet_Design_via_Differentiable_Neural_Architecture_Search_CVPR_2019_paper.pdf" target="_blank" rel="noopener">FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable Neural Architecture Search</a></li>
@@ -798,56 +878,37 @@ guest ok = no</code></pre><p>将 <code>/path/to/shared/folder</code> 替换为�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/06/18/study/ai-model/">
+                <a href="/2023/08/04/study/paper-xie-zuo-yao-dian-ji-zi-yuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="AI Model">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Paper写作要点及资源">
                         
-                        <span class="card-title">AI Model</span>
+                        <span class="card-title">Paper写作要点及资源</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Tools
-Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹
+                            写作时注意的事项
+Everything You Always Wanted to Know about Paper but were Afraid to Ask
 
-
-当配置 Samba 服务器以供 macOS 访问共享文件夹时，以下是详细的步骤：
-
-安装 Samba 服务器：在 Linux 服务器上使用适当的软件包管
+资料
+CCF Rec. Conference Deadlines：计算机会议
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-06-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-08-04
+                        </span>
                         <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Study/" class="post-category" target="_blank">
-                                    Study
-                                </a>
-                            
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Study/" target="_blank">
-                        <span class="chip bg-color">Study</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -863,7 +924,7 @@ Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="6255-两个城市间路径的最小分数">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="6255-两个城市间路径的最小分数">
                         
                         <span class="card-title">6255-两个城市间路径的最小分数</span>
                     </div>
@@ -1074,7 +1135,7 @@ Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">223.4k</span>
+            <span class="white-color">224.5k</span>
             
 
             <br>
