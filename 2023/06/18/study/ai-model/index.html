@@ -477,14 +477,14 @@ Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹，附：如何
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    9 分
                 </div>
                 
                 
@@ -578,7 +578,7 @@ guest ok = no</code></pre><p>将 <code>/path/to/shared/folder</code> 替换为�
 <p>这些指令可以帮助你在 Conda 中创建、管理和操作虚拟环境以及安装和管理软件包。请注意，某些指令可能会因 Conda 版本而略有不同，因此在使用时请查阅相关文档或使用 <code>conda --help</code> 获取更多帮助信息。</p>
 </blockquote>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=zDYL22QNiWk&t=459s" target="_blank" rel="noopener">Python Tutorial: Pipenv - Easily Manage Packages and Virtual Environments</a> </li>
+<li><a href="https://www.youtube.com/watch?v=zDYL22QNiWk&t=459s" target="_blank" rel="noopener">使用 Pipenv 管理虚拟环境：Easily Manage Packages and Virtual Environments</a> </li>
 <li><a href="https://www.youtube.com/watch?v=GxCXiSkm6no" target="_blank" rel="noopener">Importing Your Own Python Modules Properly</a> 以及<a href="https://www.youtube.com/watch?v=cONc0NcKE7s" target="_blank" rel="noopener">How to Use the __init__.py File</a><blockquote>
 <p>在Python中，包（Package）和模块（Module）是组织代码的两种不同方式，它们有着一些区别和特点。</p>
 <p><strong>模块（Module）</strong>：</p>
@@ -598,6 +598,62 @@ guest ok = no</code></pre><p>将 <code>/path/to/shared/folder</code> 替换为�
 <p>总结来说，模块是一个文件，用于组织相关的代码片段，而包是一个包含模块的目录，用于更高级别的组织和管理。通常，如果您只有少量的相关代码，可以使用模块来组织；如果您有多个相关模块，可以将它们放在一个包中。包的层次结构可以帮助更好地组织大型项目，并提供更好的命名空间隔离。</p>
 </blockquote>
 </li>
+</ul>
+<blockquote>
+<p><strong>示例</strong>：当创建一个简单的 Python 包时，以如下示例演示</p>
+<p>假设我们要创建一个名为 “mathutils” 的包，其中包含一些数学实用函数。</p>
+<ol>
+<li><p><strong>创建包目录结构</strong>：<br>在您的工作目录中，创建一个新的文件夹，作为您的包的主目录。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> mathutils
+<span class="token function">cd</span> mathutils<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>创建 <code>__init__.py</code> 文件</strong>：<br>在包目录中创建一个名为 <code>__init__.py</code> 的文件，用于指示 Python 解释器该文件夹是一个包。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">touch</span> __init__.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>创建模块文件</strong>：<br>在包目录中，创建一个名为 <code>operations.py</code> 的模块文件，其中包含一些数学操作函数。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">touch</span> operations.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>编辑 <code>operations.py</code> 文件</strong>：<br>在 <code>operations.py</code> 文件中，编写一些数学操作函数。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b
+
+<span class="token keyword">def</span> <span class="token function">subtract</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> a <span class="token operator">-</span> b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>编辑 <code>__init__.py</code> 文件</strong>：<br>在 <code>__init__.py</code> 文件中，将模块中的函数导入到包级别。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> <span class="token punctuation">.</span>operations <span class="token keyword">import</span> <span class="token operator">*</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>测试</strong>：<br>创建一个名为 <code>test_mathutils.py</code> 的测试文件，并编写测试用例来测试您的数学操作函数。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> mathutils<span class="token punctuation">.</span>operations <span class="token keyword">import</span> add<span class="token punctuation">,</span> subtract
+
+<span class="token keyword">def</span> <span class="token function">test_add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">assert</span> add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">5</span>
+
+<span class="token keyword">def</span> <span class="token function">test_subtract</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">assert</span> subtract<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>创建 <code>setup.py</code> 文件</strong>（可选）：<br>创建一个名为 <code>setup.py</code> 的文件来提供包的元数据。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> setuptools <span class="token keyword">import</span> setup<span class="token punctuation">,</span> find_packages
+
+setup<span class="token punctuation">(</span>
+    name<span class="token operator">=</span><span class="token string">'mathutils'</span><span class="token punctuation">,</span>
+    version<span class="token operator">=</span><span class="token string">'0.1'</span><span class="token punctuation">,</span>
+    packages<span class="token operator">=</span>find_packages<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>测试和安装</strong>：<br>使用以下命令在虚拟环境中测试和安装您的包：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">pip <span class="token function">install</span> <span class="token keyword">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><strong>使用包</strong>：<br>在其他项目中，您可以使用以下方式导入和使用您的包：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> mathutils<span class="token punctuation">.</span>operations <span class="token keyword">import</span> add<span class="token punctuation">,</span> subtract
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>add<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true"># Output: 8</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>subtract<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Output: 6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<p>这是一个简单的示例，说明了如何创建一个 Python 包并在其他项目中使用它。对于更复杂的包，您可能需要添加更多功能、文档和测试，以确保其正确性和可维护性。</p>
+</blockquote>
+<ul>
 <li><a href="https://www.youtube.com/watch?v=x58W9A2lnQc&list=PLvOO0btloRns6xpEAR04U7W0zUuNsQePS&index=6" target="_blank" rel="noopener">Make Python code 1000x Faster with Numba</a><ul>
 <li>Numba的性能优势在于处理数值密集型的计算任务，而对于其他类型的任务可能效果不明显。因此，在使用Numba时，建议将重点放在需要大量数值计算的部分代码上，以获得最佳的加速效果</li>
 </ul>
@@ -1135,7 +1191,7 @@ CCF Rec. Conference Deadlines：计算机会议
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">224.5k</span>
+            <span class="white-color">224.9k</span>
             
 
             <br>
