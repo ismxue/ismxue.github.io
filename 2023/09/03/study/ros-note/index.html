@@ -551,21 +551,23 @@ source ~/catkin_ws/devel/setup.bash
 </code></pre></li>
 </ul>
 <p>roslaunch feature_tracker feature_tracker.launch<br>roslaunch plvins_estimator euroc_fix_extrinsic.launch</p>
-<pre><code>
-# FAQ
-- [ubuntu20.04出现Unable to find either executable ‘empy’ or Python module ‘em’… try](https://blog.csdn.net/weixin_44857882/article/details/124296306)
-  - 解决：catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
-- [Build OpenCV with CUDA Support for Jetson](https://www.youtube.com/watch?v=art0-99fFa8)，指定opencv版本，然后运行脚本即可，然后 opencv with cuda 就会显示YES
-
-
-- 将ROS节点的功能拆分成两个节点
-以下是一个简单的示例，演示如何将一个ROS节点的功能拆分成两个节点。假设原始节点是一个发布者节点，发布一个整数计数器，我们将其分割为两个节点：一个发布者节点和一个订阅者节点，让它们之间通过ROS主题进行通信。
-
-1. **创建ROS节点包**：首先，创建一个新的ROS节点包，其中包含两个节点，一个发布者节点和一个订阅者节点。
-
-```bash
-# 创建一个名为my_split_node的ROS包
-catkin_create_pkg my_split_node rospy</code></pre><ol start="2">
+<p>```</p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><ul>
+<li><a href="https://blog.csdn.net/weixin_44857882/article/details/124296306" target="_blank" rel="noopener">ubuntu20.04出现Unable to find either executable ‘empy’ or Python module ‘em’… try</a><ul>
+<li>解决：catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=art0-99fFa8" target="_blank" rel="noopener">Build OpenCV with CUDA Support for Jetson</a>，指定opencv版本，然后运行脚本即可，然后 opencv with cuda 就会显示YES</li>
+</ul>
+<ul>
+<li>将ROS节点的功能拆分成两个节点<blockquote>
+<p>以下是一个简单的示例，演示如何将一个ROS节点的功能拆分成两个节点。假设原始节点是一个发布者节点，发布一个整数计数器，我们将其分割为两个节点：一个发布者节点和一个订阅者节点，让它们之间通过ROS主题进行通信。</p>
+<ol>
+<li><strong>创建ROS节点包</strong>：首先，创建一个新的ROS节点包，其中包含两个节点，一个发布者节点和一个订阅者节点。</li>
+</ol>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 创建一个名为my_split_node的ROS包</span>
+catkin_create_pkg my_split_node rospy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol start="2">
 <li><strong>创建发布者节点</strong>：在my_split_node包中创建一个发布者节点，将计数器的值发布到名为<code>counter</code>的ROS主题。</li>
 </ol>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 在my_split_node/scripts目录下创建一个名为publisher_node.py的Python脚本</span>
@@ -685,6 +687,9 @@ rospy<span class="token punctuation">.</span>spin<span class="token punctuation"
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>node</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>subscriber_node<span class="token punctuation">"</span></span> <span class="token attr-name">pkg</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>my_split_node<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>subscriber_node.py<span class="token punctuation">"</span></span> <span class="token attr-name">output</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>screen<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>launch</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通过这些修改，你的发布者节点和订阅者节点现在能够正确地处理自定义消息类型，而不仅仅是整数或字符串。这允许你在消息中传递更复杂的数据结构。确保在修改节点代码和消息定义时保持一致，以便发布者和订阅者之间正确传递数据。</p>
+</blockquote>
+</li>
+</ul>
 
             </div>
             <hr />
@@ -1158,7 +1163,7 @@ CCF
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">228.1k</span>
+            <span class="white-color">228k</span>
             
 
             <br>
