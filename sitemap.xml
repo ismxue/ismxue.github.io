@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ismxue.github.io/lifelog/index.html</loc>
+    
+    <lastmod>2023-09-08T14:44:58.979Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ismxue.github.io/2023/09/03/study/ros-note/</loc>
     
     <lastmod>2023-09-08T13:21:31.677Z</lastmod>
@@ -376,13 +383,6 @@
     <loc>https://ismxue.github.io/2021/08/19/labuladong/di-yi-zhang-ti-mu-bu-rang-wo-gan-shi-me-wo-pian-yao-gan-shi-me/</loc>
     
     <lastmod>2022-10-02T08:00:39.848Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ismxue.github.io/lifelog/index.html</loc>
-    
-    <lastmod>2022-09-23T15:53:03.818Z</lastmod>
     
   </url>
   
