@@ -322,7 +322,7 @@ Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹，附：如何
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -477,14 +477,14 @@ Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹，附：如何
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    11 分
                 </div>
                 
                 
@@ -579,7 +579,8 @@ guest ok = no</code></pre><p>将 <code>/path/to/shared/folder</code> 替换为�
 </blockquote>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=zDYL22QNiWk&t=459s" target="_blank" rel="noopener">使用 Pipenv 管理虚拟环境：Easily Manage Packages and Virtual Environments</a> </li>
-<li><a href="https://www.youtube.com/watch?v=GxCXiSkm6no" target="_blank" rel="noopener">Importing Your Own Python Modules Properly</a> 以及<a href="https://www.youtube.com/watch?v=cONc0NcKE7s" target="_blank" rel="noopener">How to Use the __init__.py File</a><blockquote>
+<li><a href="https://www.youtube.com/watch?v=GxCXiSkm6no" target="_blank" rel="noopener">Importing Your Own Python Modules Properly</a> 以及<a href="https://www.youtube.com/watch?v=cONc0NcKE7s" target="_blank" rel="noopener">How to Use the __init__.py File</a><ul>
+<li><a href="https://www.youtube.com/watch?v=vM3ScLNTGoQ" target="_blank" rel="noopener">What is <strong>init</strong>.py file in Python Packages? Explained with Example</a><blockquote>
 <p>在Python中，包（Package）和模块（Module）是组织代码的两种不同方式，它们有着一些区别和特点。</p>
 <p><strong>模块（Module）</strong>：</p>
 <ol>
@@ -597,6 +598,8 @@ guest ok = no</code></pre><p>将 <code>/path/to/shared/folder</code> 替换为�
 </ol>
 <p>总结来说，模块是一个文件，用于组织相关的代码片段，而包是一个包含模块的目录，用于更高级别的组织和管理。通常，如果您只有少量的相关代码，可以使用模块来组织；如果您有多个相关模块，可以将它们放在一个包中。包的层次结构可以帮助更好地组织大型项目，并提供更好的命名空间隔离。</p>
 </blockquote>
+</li>
+</ul>
 </li>
 </ul>
 <blockquote>
@@ -654,11 +657,45 @@ setup<span class="token punctuation">(</span>
 <p>这是一个简单的示例，说明了如何创建一个 Python 包并在其他项目中使用它。对于更复杂的包，您可能需要添加更多功能、文档和测试，以确保其正确性和可维护性。</p>
 </blockquote>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=x58W9A2lnQc&list=PLvOO0btloRns6xpEAR04U7W0zUuNsQePS&index=6" target="_blank" rel="noopener">Make Python code 1000x Faster with Numba</a><ul>
+<li><p><a href="https://www.youtube.com/watch?v=x58W9A2lnQc&list=PLvOO0btloRns6xpEAR04U7W0zUuNsQePS&index=6" target="_blank" rel="noopener">Make Python code 1000x Faster with Numba</a></p>
+<ul>
 <li>Numba的性能优势在于处理数值密集型的计算任务，而对于其他类型的任务可能效果不明显。因此，在使用Numba时，建议将重点放在需要大量数值计算的部分代码上，以获得最佳的加速效果</li>
 </ul>
 </li>
+<li><p>命令行含义</p>
+</li>
 </ul>
+<blockquote>
+<p>在命令行说明中，不同括号的含义通常如下所示，并附有一些示例：</p>
+<ol>
+<li><p><strong>尖括号（&lt;&gt;）</strong> - 表示必需参数：<br>尖括号用于表示必须提供的参数，这些参数是命令执行所必需的。您需要将尖括号中的内容替换为实际的值。</p>
+<p>示例：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> commit -m <span class="token string">"&lt;commit_message>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在这里，<code>&lt;commit_message&gt;</code> 是您需要替换为实际提交信息的参数。</p>
+</li>
+<li><p><strong>中括号（[]）</strong> - 表示可选参数：<br>中括号用于表示可选的参数，这些参数可以选择性地提供给命令。您可以根据需要决定是否使用这些参数。</p>
+<p>示例：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> <span class="token punctuation">[</span>-p<span class="token punctuation">]</span> <span class="token operator">&lt;</span>directory_name<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这里，<code>-p</code> 是一个可选的标志，用于创建父目录。<code>&lt;directory_name&gt;</code> 是必需的目录名称。</p>
+</li>
+<li><p><strong>大括号（{}）</strong> - 表示选择一个选项：<br>大括号用于表示一组选项中的一个选择，您需要从这些选项中选择一个来使用。</p>
+<p>示例：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">scp</span> <span class="token operator">&lt;</span>file<span class="token operator">></span> <span class="token punctuation">{</span>user1@host1:directory <span class="token operator">|</span> user2@host2:directory<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在这里，您需要选择要传输到的远程主机和目录。</p>
+</li>
+<li><p><strong>竖线（|）</strong> - 表示选择一个选项：<br>竖线用于表示在多个选项中选择一个。</p>
+<p>示例：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">display <span class="token punctuation">{</span>line <span class="token operator">|</span> bar <span class="token operator">|</span> pie<span class="token punctuation">}</span> <span class="token operator">&lt;</span>data<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这里，您可以选择要使用的图表类型。</p>
+</li>
+<li><p><strong>圆括号（()）</strong> - 表示组合多个参数：<br>圆括号用于将多个参数组合在一起，通常用于说明参数的顺序。</p>
+<p>示例：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">chmod</span> <span class="token punctuation">(</span>u+r <span class="token operator">|</span> g+w <span class="token operator">|</span> o-x<span class="token punctuation">)</span> <span class="token operator">&lt;</span>file<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在这里，您可以选择要对文件进行的权限更改操作。</p>
+</li>
+</ol>
+<p>这些示例说明了不同括号在命令行说明中的使用。括号的含义和用法可能会因命令而异，因此在使用命令时，始终要查看具体的命令行帮助或文档，以确保正确理解和使用参数和选项。</p>
+</blockquote>
 <h1 id="Hardware"><a href="#Hardware" class="headerlink" title="Hardware"></a>Hardware</h1><ul>
 <li><a href="https://www.youtube.com/watch?v=d86ws7mQYIg" target="_blank" rel="noopener">How does Computer Hardware Work?</a><img src="https://s2.loli.net/2023/07/29/yfcdSxIaGV4bpeK.png" alt></li>
 </ul>
@@ -678,7 +715,7 @@ setup<span class="token punctuation">(</span>
 <li>四个方向<ul>
 <li>1.efficient (PEFT)：做效率提升的(哪里慢提升哪里的速度，哪里heavy使其轻量级)</li>
 <li>2.existing stuff(pretained model)：直接基于别人的大预训练模型， new directions: 做新方向，避免撞车，竞争，刷榜</li>
-<li>3.plug and play: 做即插即用的模块(模型，loss，数据增广的方法等等)，可以在不同领域应用</li>
+<li>3.plugin and play: 做即插即用的模块(模型，loss，数据增广的方法等等)，可以在不同领域应用</li>
 <li>4.dataset，evaluation，and survey： 构建数据集，做评测，综述等文章</li>
 </ul>
 </li>
@@ -699,6 +736,7 @@ setup<span class="token punctuation">(</span>
 <li><a href="https://medium.com/@zurister/depth-wise-convolution-and-depth-wise-separable-convolution-37346565d4ec" target="_blank" rel="noopener">Depth-wise Convolution and Depth-wise Separable Convolution</a> <img src="https://s2.loli.net/2023/07/24/zbJuNd3Ka2PAGVi.png" alt><img src="https://s2.loli.net/2023/08/02/kXxi6o95WlIJhvO.png" alt="image.png"></li>
 <li><a href="https://www.youtube.com/watch?v=TQQlZhbC5ps&t=378s" target="_blank" rel="noopener">Transformer Neural Networks - EXPLAINED</a></li>
 <li><a href="https://www.youtube.com/watch?v=BbzOZ9THriY&list=PLvOO0btloRntpSWSxFbwPIjIum3Ub4GSC&index=4" target="_blank" rel="noopener">Vision Transformer (ViT) 用于图片分类</a></li>
+<li><a href="https://mp.weixin.qq.com/s/XxEooQ_okhdhe_5rasxXLg" target="_blank" rel="noopener">动态卷积神经网络_Slides_Video_Huang Gao</a></li>
 </ul>
 </li>
 </ul>
@@ -734,6 +772,8 @@ setup<span class="token punctuation">(</span>
 </ul>
 </li>
 </ul>
+<p>$ awnas search ./nb301/node_cl-2468_lr-4_mlp-200x3_wit.yaml –seed 50 –save-every 50 –train-dir results/nb301_closenet_train/</p>
+<p>awnas search examples/basic/enas.yaml –save-every 50 –train-dir results/nb301_closenet_train_case/</p>
 
             </div>
             <hr />
@@ -942,7 +982,7 @@ setup<span class="token punctuation">(</span>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Paper写作要点及资源">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Paper写作要点及资源">
                         
                         <span class="card-title">Paper写作要点及资源</span>
                     </div>
@@ -954,7 +994,9 @@ setup<span class="token punctuation">(</span>
 Everything You Always Wanted to Know about Paper but were Afraid to Ask
 
 资料
-CCF Rec. Conference Deadlines：计算机会议
+会议ddl信息
+AI Conference Deadlines
+CCF
                         
                     </div>
                     <div class="publish-info">
@@ -963,8 +1005,23 @@ CCF Rec. Conference Deadlines：计算机会议
                         </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Study/" class="post-category" target="_blank">
+                                    Study
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Study/" target="_blank">
+                        <span class="chip bg-color">Study</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -980,7 +1037,7 @@ CCF Rec. Conference Deadlines：计算机会议
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="6255-两个城市间路径的最小分数">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="6255-两个城市间路径的最小分数">
                         
                         <span class="card-title">6255-两个城市间路径的最小分数</span>
                     </div>
@@ -1191,7 +1248,7 @@ CCF Rec. Conference Deadlines：计算机会议
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">224.9k</span>
+            <span class="white-color">227.5k</span>
             
 
             <br>
