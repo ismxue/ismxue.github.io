@@ -4,13 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="解析递归和回溯的关系, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="第四章：如何判定括号合法性, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="解析递归和回溯的关系递归递归就是把大问题对应的小问题解决后（注意：大小问题结构一致），再根据小问题的结果完善大问题。遇到递归问题，要想明白：
-
-递归函数的含义：这个函数要实现什么功能？返回什么结果？（一定不要跳进递归，相信这个函数能返回你需">
+    <meta name="description" content="labuladong 如何判定括号合法性
+解题思路：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。
+20. 有效的括号Krahets的极简思路及实现
+栈 stack 为空： 此时 stack.pop() 操作">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>解析递归和回溯的关系 | M&#39;s Blog</title>
+    <title>第四章：如何判定括号合法性 | M&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -318,13 +319,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        解析递归和回溯的关系
+                        第四章：如何判定括号合法性
                     </div>
                 </div>
             </div>
@@ -435,8 +436,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/LeetCode/" target="_blank">
-                            <span class="chip bg-color">LeetCode</span>
+                        <a href="/tags/labuladong/" target="_blank">
+                            <span class="chip bg-color">labuladong</span>
                         </a>
                         
                     </div>
@@ -459,7 +460,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-16
+                    2020-07-13
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -473,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    511
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    2 分
                 </div>
                 
                 
@@ -496,102 +497,84 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="解析递归和回溯的关系"><a href="#解析递归和回溯的关系" class="headerlink" title="解析递归和回溯的关系"></a>解析递归和回溯的关系</h1><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>递归就是把大问题对应的小问题解决后（注意：大小问题结构一致），再根据小问题的结果完善大问题。遇到递归问题，要想明白：</p>
+                <p>labuladong <a href="https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/he-fa-kuo-hao-pan-ding" target="_blank" rel="noopener">如何判定括号合法性</a></p>
+<p><strong>解题思路</strong>：遇到左括号就入栈，遇到右括号就去栈中寻找最近的左括号（栈顶元素），看是否匹配。</p>
+<h1 id="20-有效的括号"><a href="#20-有效的括号" class="headerlink" title="20. 有效的括号"></a><a href="https://leetcode-cn.com/problems/valid-parentheses/" target="_blank" rel="noopener">20. 有效的括号</a></h1><p>Krahets的<a href="https://leetcode-cn.com/problems/valid-parentheses/solution/valid-parentheses-fu-zhu-zhan-fa-by-jin407891080/" target="_blank" rel="noopener">极简思路及实现</a></p>
+<p><strong>栈 stack 为空： 此时 stack.pop() 操作会报错</strong>；因此，我们采用一个取巧方法，给 stack 赋初值 <code>?</code> ，并在哈希表 dic 中建立 <code>key: &#39;?&#39;，value:&#39;?</code> 的对应关系予以配合。</p>
 <ul>
-<li>递归函数的<strong>含义</strong>：这个函数要实现什么功能？返回什么结果？（一定不要跳进递归，相信这个函数能返回你需要的东西）</li>
-<li>这个函数的<strong>变量</strong>：什么变量会导致结果变化？比如如果是二叉树的递归，就要想清楚这个二叉树的的节点的变量是什么</li>
-<li>得到递归结果后，<strong>要干什么</strong>：如何把递归结果变成题目要求的结果？</li>
-<li>递归结束的条件：递归出口</li>
+<li>建立哈希表 dic 构建左右括号对应关系：key 左括号，value 右括号</li>
+<li>如果 <code>c</code> 是左括号，则入栈 push</li>
+<li>否则通过哈希表判断括号对应关系，若 stack 栈顶出栈括号 stack.pop() 与当前遍历括号 <code>c</code>不对应，则提前返回 False</li>
 </ul>
-<p>以<a href="https://ismxue.github.io/2020/08/17/labuladong/di-san-zhang-di-gui-xiang-jie/">盖房子</a>这道题为例：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        :type s: str
+        :rtype: bool
+        """</span>
+        dic<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'('</span><span class="token punctuation">:</span><span class="token string">')'</span><span class="token punctuation">,</span><span class="token string">'{'</span><span class="token punctuation">:</span><span class="token string">'}'</span><span class="token punctuation">,</span><span class="token string">'['</span><span class="token punctuation">:</span><span class="token string">']'</span><span class="token punctuation">,</span><span class="token string">'?'</span><span class="token punctuation">:</span><span class="token string">'?'</span><span class="token punctuation">}</span>
+        stack<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'?'</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> dic<span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> c<span class="token operator">==</span>dic<span class="token punctuation">[</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">False</span> <span class="token comment" spellcheck="true"># 和栈顶的左括号不匹配</span>
+        <span class="token keyword">return</span> len<span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">isValid</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        map<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">></span> m<span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token string">'('</span><span class="token punctuation">,</span> <span class="token string">')'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                          <span class="token punctuation">{</span><span class="token string">'{'</span><span class="token punctuation">,</span> <span class="token string">'}'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                          <span class="token punctuation">{</span><span class="token string">'['</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                          <span class="token punctuation">{</span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        stack<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span> stk<span class="token punctuation">;</span>
+        stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>c <span class="token operator">:</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span> stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 若是左括号，则入栈</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> m<span class="token punctuation">[</span>stk<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> stk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 若当前字符能和栈顶元素配对，则栈顶出栈</span>
+            <span class="token keyword">else</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 既不是左括号，也不能互相抵消</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> stk<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 判断是否能全部抵消完，只剩下'?'</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>含义：给定一个节点，返回n次后的房子排列</li>
-<li>变量：在这个二叉树中，各个子树的节点颜色是变化的，子树的盖房子次数是变化的，所以递归函数的签名写为<code>def helper(n,color)</code></li>
-<li>干什么：以父节点为例，它的左子节点颜色为G，右节点颜色为R（并且相信左右子树能返回我要的结果）。因此根据题意进行中序遍历：左子树的结果+自己+右子树的结果</li>
-<li>结束条件：盖一次自己（已到达叶子节点）</li>
+<li>如果不想用额外的<code>?</code>,则在弹出栈顶时添加栈不为空（<code>!stk.empty()</code>）的判断即可。最后判断栈是否为空：</li>
 </ul>
-<p>以<a href="https://ismxue.github.io/2020/07/24/labuladong/di-ling-zhang-hui-su-suan-fa-jie-ti-tao-lu-kuang-jia/#toc-heading-2">78. 子集</a>的递归写法为例：</p>
-<ul>
-<li>含义：返回的子集结果</li>
-<li>变量：nums。父nums和子nums相差一个元素</li>
-<li>干什么：在得到子结果后，追加新的结果</li>
-<li>结束条件：nums为空 </li>
-</ul>
-<h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><h3 id="回溯算法的框架"><a href="#回溯算法的框架" class="headerlink" title="回溯算法的框架"></a>回溯算法的框架</h3><pre class="line-numbers language-python"><code class="language-python">result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token keyword">def</span> <span class="token function">backtrack</span><span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 递归的出口</span>
-    <span class="token keyword">if</span> 满足结束条件<span class="token punctuation">:</span>
-        result<span class="token punctuation">.</span>add<span class="token punctuation">(</span>路径<span class="token punctuation">)</span>
-        <span class="token keyword">return</span>
-
-    <span class="token keyword">for</span> 选择 <span class="token keyword">in</span> 选择列表<span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 做选择, 类似前序遍历</span>
-        将该选择从选择列表移除
-        路径<span class="token punctuation">.</span>add<span class="token punctuation">(</span>选择<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 相信它能返回我这次选择后需要的结果</span>
-        backtrack<span class="token punctuation">(</span>路径<span class="token punctuation">,</span> 选择列表<span class="token punctuation">)</span> 
-        <span class="token comment" spellcheck="true"># 撤销选择</span>
-        路径<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>选择<span class="token punctuation">)</span>
-        将该选择再加入选择列表<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>回溯算法其实也是一种递归。<strong>在父递归函数中有一个for循环，for循环里面调用子递归函数</strong>。以全排列的这段代码为例：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">backtrack</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>visited<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true"># 选择列表和路径</span>
-    <span class="token keyword">if</span> len<span class="token punctuation">(</span>visited<span class="token punctuation">)</span><span class="token operator">==</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>visited<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span>
-    <span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
-        <span class="token keyword">if</span> num <span class="token keyword">in</span> visited<span class="token punctuation">:</span>
-            <span class="token keyword">continue</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            visited<span class="token punctuation">.</span>append<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
-            backtrack<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>visited<span class="token punctuation">)</span>
-            visited<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>含义：返回某个节点对应的全排列</li>
-<li>变量：在每个节点处，当前的选择列表和已经走过的路径</li>
-<li>得到结果后，返回即可</li>
-<li>递归结束的条件：已经到达了叶子节点</li>
-</ul>
-<p>在全排列中，以最左侧的节点1为例，在根节点选择了1后，for循环里的<code>backtrack(nums,visited)</code>可以返回以1为基础的全排列。然后通过<code>visited.pop()</code>，现在重新回到根节点，进行第二次for循环，选2。以此类推<br><img src="https://i.loli.net/2021/08/16/IhL8nDMWeQbxBy6.png" alt="20210816133039"></p>
-<h3 id="更新选择列表的方式"><a href="#更新选择列表的方式" class="headerlink" title="更新选择列表的方式"></a>更新选择列表的方式</h3><p>在回溯算法的for循环中，常常用两种方式更新选择列表</p>
-<ul>
-<li>第一种：若选择已经在走过的路径中了，则跳过该选择</li>
-</ul>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> num <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
-    <span class="token keyword">if</span> num <span class="token keyword">in</span> visited<span class="token punctuation">:</span>
-        <span class="token keyword">continue</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span>nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token comment" spellcheck="true">//            检查当前num是否在路径中，count返回0（不在）或1（在）</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">count</span><span class="token punctuation">(</span>visited<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> visited<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token keyword">continue</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>第二种：通过一个start标志位来剪枝不可行的子树（小于当前选择的选择全部剪掉）</li>
-</ul>
-<p><img src="https://i.loli.net/2021/08/16/JXaAsjDoq5h9FSm.png" alt="20210816135736"></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 做选择</span>
-    visited<span class="token punctuation">.</span>append<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span>visited<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true"># 回溯，用nums[i+1:]更新选择列表</span>
-    backtrack<span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span>visited<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> start<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    visited<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>visited<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//后面的dfs过程，只能选择nums[i+1:]范围的元素</span>
-    <span class="token function">dfs</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>visited<span class="token punctuation">,</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    visited<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>在<a href="https://ismxue.github.io/2020/07/24/labuladong/di-ling-zhang-hui-su-suan-fa-jie-ti-tao-lu-kuang-jia/#toc-heading-2">这些题目中</a>：</p>
-<ul>
-<li>46题全排列就是用的第一种，已经走过的路径就不选了</li>
-<li>78题子集和77题组合就是用的第二种，小于当前选择的选择就不选了。</li>
-<li>78题和77题的不同之处在于：<ul>
-<li>78题结果中记录的是每个节点对应的路径，在没有选择时（<code>if not nums</code>）跳出</li>
-<li>77题结果中记录的是路径长度等于k时的路径，因此在<code>if (visited.size()==k)</code>时，记录当前路径并跳出</li>
-</ul>
-</li>
-</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        dic<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'('</span><span class="token punctuation">:</span><span class="token string">')'</span><span class="token punctuation">,</span><span class="token string">'{'</span><span class="token punctuation">:</span><span class="token string">'}'</span><span class="token punctuation">,</span><span class="token string">'['</span><span class="token punctuation">:</span><span class="token string">']'</span><span class="token punctuation">}</span>
+        stack<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> dic<span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> stack <span class="token operator">and</span> c<span class="token operator">==</span>dic<span class="token punctuation">[</span>stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> len<span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">isValid</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        map<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">></span> m<span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token string">'('</span><span class="token punctuation">,</span> <span class="token string">')'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                          <span class="token punctuation">{</span><span class="token string">'{'</span><span class="token punctuation">,</span> <span class="token string">'}'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                          <span class="token punctuation">{</span><span class="token string">'['</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                          <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        stack<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span> stk<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>c <span class="token operator">:</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span> stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 若是左括号，则入栈</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>stk<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> c <span class="token operator">==</span> m<span class="token punctuation">[</span>stk<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> stk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 若当前字符能和栈顶元素配对，则栈顶出栈</span>
+            <span class="token keyword">else</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">// 既不是左括号，也不能互相抵消</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> stk<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 判断是否能全部抵消完，只剩下'?'</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -750,9 +733,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《解析递归和回溯的关系》
+                    《第四章：如何判定括号合法性》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/08/16/leetcode/jie-xi-di-gui-he-hui-su-de-guan-xi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/13/labuladong/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/" property="cc:attributionName"
                rel="cc:attributionURL">
                 M
             </a> 采用
@@ -796,28 +779,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/16/leetcode/leetcode-shua-ti-chang-yong-cao-zuo/">
+                <a href="/2020/07/13/labuladong/di-si-zhang-ru-he-xun-zhao-que-shi-de-yuan-su/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="LeetCode刷题常用操作">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第四章：如何寻找缺失的元素">
                         
-                        <span class="card-title">LeetCode刷题常用操作</span>
+                        <span class="card-title">第四章：如何寻找缺失的元素</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            输入输出将向量以特定的分隔符输出到屏幕中#include &lt;vector>
-#include &lt;stack>
-#include &lt;iostream>
-#include &lt;sstream>
-using namespac
+                            labuladong如何寻找缺失的元素
+448. 找到所有数组中消失的数字
+
+先遍历列表，并加到set中。利用 HashSet 去重
+若元素不在列表中，则表示该元素缺失
+
+class Solution(object):
+    def fi
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
                         </span>
                         <span class="publish-author">
                             
@@ -834,8 +820,8 @@ using namespac
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/labuladong/" target="_blank">
+                        <span class="chip bg-color">labuladong</span>
                     </a>
                     
                 </div>
@@ -849,27 +835,27 @@ using namespac
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/14/leetcode/lian-biao-de-gou-jian-ji-ji-chu-cao-zuo/">
+                <a href="/2020/07/13/labuladong/di-si-zhang-ru-he-xun-zhao-zui-chang-hui-wen-zi-chuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="链表的构建及基础操作">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第四章：如何寻找最长回文子串">
                         
-                        <span class="card-title">链表的构建及基础操作</span>
+                        <span class="card-title">第四章：如何寻找最长回文子串</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-How to create a Linked List in Python
-
-A linked list is a data structure made of a chain of node objects. Each node con
+                            labuladong 如何寻找最长回文子串
+5. 最长回文子串
+回文串的长度可能是奇数也可能是偶数，如果是 abba这种情况，没有一个中心字符。所以可以：
+找到以 s[i] 为中心的回文串（对奇数回文串），找到以 s[i] 和 s[i+1]
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
                             </span>
                         <span class="publish-author">
                             
@@ -886,8 +872,8 @@ A linked list is a data structure made of a chain of node objects. Each node con
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/labuladong/" target="_blank">
+                        <span class="chip bg-color">labuladong</span>
                     </a>
                     
                 </div>
