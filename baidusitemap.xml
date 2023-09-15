@@ -1,13 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ismxue.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2022/05/03/ji-suan-ji-ji-chu/docker-shi-yong/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
     <loc>https://ismxue.github.io/2020/04/23/ji-suan-ji-ji-chu/3d-shu-ju-fen-xi-yu-chu-li/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/11/13/study/gai-lu-tong-ji-ji-you-hua-fang-fa/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/09/03/study/ros-note/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2023/08/04/study/paper-xie-zuo-yao-dian-ji-zi-yuan/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/05/15/study/linux-shi-yong-ji-lu/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/06/18/study/ai-model/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
+    <loc>https://ismxue.github.io/2020/08/13/python/python-zhuang-shi-qi/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
     <loc>https://ismxue.github.io/2020/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2021/05/16/growth/kindle-shi-yong-bi-ji/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2021/10/06/c/she-ji-mo-shi/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2021/06/12/c/shi-jue-slam14-jiang/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/10/16/c/xu-han-shu-xu-biao-xu-biao-zhi-zhen/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/12/26/c/fu-dian-he-ding-dian-shuo-ming/</loc>
@@ -22,28 +73,16 @@
     <loc>https://ismxue.github.io/2020/07/14/c/effective-cpp/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
-    <loc>https://ismxue.github.io/2020/06/14/c/cpp-jiao-cheng-bi-ji/</loc>
-    <lastmod>2023-09-15</lastmod>
-  </url>  <url>
     <loc>https://ismxue.github.io/2020/01/15/c/c-he-cpp-nei-cun-fen-pei/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/10/16/c/cpp-xin-shi-zhuan-xing/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
+    <loc>https://ismxue.github.io/2020/06/14/c/cpp-jiao-cheng-bi-ji/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
     <loc>https://ismxue.github.io/2020/12/26/c/cpp-dai-ma-jie-gou/</loc>
-    <lastmod>2023-09-15</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/10/16/c/xu-han-shu-xu-biao-xu-biao-zhi-zhen/</loc>
-    <lastmod>2023-09-15</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/11/13/study/gai-lu-tong-ji-ji-you-hua-fang-fa/</loc>
-    <lastmod>2023-09-15</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/08/29/ji-suan-ji-ji-chu/ji-suan-ji-cao-zuo-xi-tong/</loc>
-    <lastmod>2023-09-15</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/05/15/study/linux-shi-yong-ji-lu/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/09/25/growth/saj/</loc>
@@ -52,23 +91,8 @@
     <loc>https://ismxue.github.io/2021/10/16/growth/quotes-i-have-enjoyed/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
-    <loc>https://ismxue.github.io/2020/09/03/study/ros-note/</loc>
-    <lastmod>2023-09-15</lastmod>
-  </url>  <url>
     <loc>https://ismxue.github.io/2020/07/13/labuladong/di-si-zhang-ru-he-pan-ding-gua-hao-he-fa-xing/</loc>
     <lastmod>2023-09-08</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/11/21/study/yong-latex-he-word-xie-lun-wen/</loc>
-    <lastmod>2023-08-20</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2023/08/04/study/paper-xie-zuo-yao-dian-ji-zi-yuan/</loc>
-    <lastmod>2023-08-17</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2022/05/03/ji-suan-ji-ji-chu/docker-shi-yong/</loc>
-    <lastmod>2023-08-02</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/08/30/python/python-ji-chu-zhi-shi-hui-zong/</loc>
-    <lastmod>2023-07-02</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/10/19/labuladong/dfs-suan-fa-miao-sha-wu-dao-dao-yu-wen-ti/</loc>
     <lastmod>2023-06-13</lastmod>
@@ -80,9 +104,6 @@
     <lastmod>2023-02-12</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/07/25/labuladong/di-ling-zhang-wo-xie-liao-shou-shi-ba-hua-dong-chuang-kou-suan-fa-bian-cheng-liao-mo-xie-ti/</loc>
-    <lastmod>2023-02-12</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/08/13/python/python-zhuang-shi-qi/</loc>
     <lastmod>2023-02-12</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/08/12/labuladong/di-san-zhang-qian-zhui-he-ji-qiao/</loc>
@@ -107,9 +128,6 @@
     <lastmod>2023-02-12</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/08/05/labuladong/di-er-zhang-te-shu-shu-ju-jie-gou-dan-diao-zhan/</loc>
-    <lastmod>2023-02-12</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2021/06/12/c/shi-jue-slam14-jiang/</loc>
     <lastmod>2023-02-12</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/02/27/labuladong/di-ling-zhang-yi-ge-fang-fa-jie-jue-san-dao-qu-jian-wen-ti/</loc>
@@ -202,18 +220,6 @@
     <loc>https://ismxue.github.io/2020/07/23/labuladong/di-ling-zhang-xue-xi-suan-fa-he-shua-ti-de-kuang-jia-si-wei/</loc>
     <lastmod>2022-08-28</lastmod>
   </url>  <url>
-    <loc>https://ismxue.github.io/2020/11/01/python/ml/deep-learning-with-pytorch-note/</loc>
-    <lastmod>2022-05-10</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2021/05/16/growth/kindle-shi-yong-bi-ji/</loc>
-    <lastmod>2022-04-23</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</loc>
-    <lastmod>2021-10-24</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2021/10/06/c/she-ji-mo-shi/</loc>
-    <lastmod>2021-10-18</lastmod>
-  </url>  <url>
     <loc>https://ismxue.github.io/2021/10/03/leetcode/71-jian-hua-lu-jing/</loc>
     <lastmod>2021-10-03</lastmod>
   </url>  <url>
@@ -248,9 +254,6 @@
     <lastmod>2021-09-22</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/09/03/leetcode/697-shu-zu-de-du/</loc>
-    <lastmod>2021-09-16</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/kuang-shen-shuo-mysql/</loc>
     <lastmod>2021-09-16</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/08/12/labuladong/di-san-zhang-shuang-zhi-zhen-ji-qiao-zong-jie/</loc>
@@ -345,9 +348,6 @@
   </url>  <url>
     <loc>https://ismxue.github.io/2021/02/26/growth/du-bei-tao-yan-de-yong-qi/</loc>
     <lastmod>2021-03-04</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/</loc>
-    <lastmod>2020-11-11</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/08/31/leetcode/199-er-cha-shu-de-you-shi-tu/</loc>
     <lastmod>2020-09-02</lastmod>
