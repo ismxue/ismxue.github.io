@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ismxue.github.io/2020/01/15/c/c-he-cpp-nei-cun-fen-pei/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/10/16/c/cpp-xin-shi-zhuan-xing/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/12/26/c/cpp-dai-ma-jie-gou/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
     <loc>https://ismxue.github.io/2020/10/16/c/xu-han-shu-xu-biao-xu-biao-zhi-zhen/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
@@ -178,9 +187,6 @@
     <loc>https://ismxue.github.io/2020/07/23/labuladong/di-ling-zhang-xue-xi-suan-fa-he-shua-ti-de-kuang-jia-si-wei/</loc>
     <lastmod>2022-08-28</lastmod>
   </url>  <url>
-    <loc>https://ismxue.github.io/2021/12/26/c/cpp-dai-ma-jie-gou/</loc>
-    <lastmod>2022-07-20</lastmod>
-  </url>  <url>
     <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
     <lastmod>2022-06-18</lastmod>
   </url>  <url>
@@ -193,14 +199,8 @@
     <loc>https://ismxue.github.io/2021/05/16/growth/kindle-shi-yong-bi-ji/</loc>
     <lastmod>2022-04-23</lastmod>
   </url>  <url>
-    <loc>https://ismxue.github.io/2022/01/15/c/c-he-cpp-nei-cun-fen-pei/</loc>
-    <lastmod>2022-01-16</lastmod>
-  </url>  <url>
     <loc>https://ismxue.github.io/2021/07/14/c/effective-cpp/</loc>
     <lastmod>2021-10-26</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2021/10/16/c/cpp-xin-shi-zhuan-xing/</loc>
-    <lastmod>2021-10-24</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/</loc>
     <lastmod>2021-10-24</lastmod>

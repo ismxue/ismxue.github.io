@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ismxue.github.io/2020/01/15/c/c-he-cpp-nei-cun-fen-pei/</loc>
+    
+    <lastmod>2023-09-15T12:24:22.262Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ismxue.github.io/2020/10/16/c/cpp-xin-shi-zhuan-xing/</loc>
+    
+    <lastmod>2023-09-15T12:24:20.845Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://ismxue.github.io/2020/12/26/c/cpp-dai-ma-jie-gou/</loc>
+    
+    <lastmod>2023-09-15T12:23:54.419Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://ismxue.github.io/2020/10/16/c/xu-han-shu-xu-biao-xu-biao-zhi-zhen/</loc>
     
     <lastmod>2023-09-15T09:15:42.874Z</lastmod>
@@ -422,13 +443,6 @@
   </url>
   
   <url>
-    <loc>https://ismxue.github.io/2021/12/26/c/cpp-dai-ma-jie-gou/</loc>
-    
-    <lastmod>2022-07-20T15:51:49.224Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ismxue.github.io/2021/01/08/python/ml/pytorch-xue-xi-zi-liao-ji-bi-ji/</loc>
     
     <lastmod>2022-06-18T11:04:40.557Z</lastmod>
@@ -457,23 +471,9 @@
   </url>
   
   <url>
-    <loc>https://ismxue.github.io/2022/01/15/c/c-he-cpp-nei-cun-fen-pei/</loc>
-    
-    <lastmod>2022-01-16T14:24:45.982Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://ismxue.github.io/2021/07/14/c/effective-cpp/</loc>
     
     <lastmod>2021-10-26T11:19:18.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://ismxue.github.io/2021/10/16/c/cpp-xin-shi-zhuan-xing/</loc>
-    
-    <lastmod>2021-10-24T10:01:15.000Z</lastmod>
     
   </url>
   
