@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ismxue.github.io/2020/10/16/c/xu-han-shu-xu-biao-xu-biao-zhi-zhen/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
+    <loc>https://ismxue.github.io/2020/11/13/study/gai-lu-tong-ji-ji-you-hua-fang-fa/</loc>
+    <lastmod>2023-09-15</lastmod>
+  </url>  <url>
     <loc>https://ismxue.github.io/2022/06/18/study/ai-model/</loc>
     <lastmod>2023-09-15</lastmod>
   </url>  <url>
@@ -41,9 +47,6 @@
     <lastmod>2023-06-13</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2022/10/04/labuladong/di-san-zhang-ru-he-jie-jue-gua-hao-xiang-guan-de-ti/</loc>
-    <lastmod>2023-06-13</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2022/11/13/study/gai-lu-tong-ji-ji-you-hua-fang-fa/</loc>
     <lastmod>2023-06-13</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/06/14/c/cpp-jiao-cheng-bi-ji/</loc>
@@ -203,9 +206,6 @@
     <lastmod>2021-10-24</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/10/06/c/she-ji-mo-shi/</loc>
-    <lastmod>2021-10-18</lastmod>
-  </url>  <url>
-    <loc>https://ismxue.github.io/2021/10/16/c/xu-han-shu-xu-biao-xu-biao-zhi-zhen/</loc>
     <lastmod>2021-10-18</lastmod>
   </url>  <url>
     <loc>https://ismxue.github.io/2021/10/12/c/zai-ubuntu-zhong-shi-yong-gtest/</loc>
