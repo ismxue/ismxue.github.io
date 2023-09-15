@@ -44,33 +44,6 @@
   </entry>
   
   <entry>
-    <title>AI Model</title>
-    <link href="https://ismxue.github.io/2023/06/18/study/ai-model/"/>
-    <id>https://ismxue.github.io/2023/06/18/study/ai-model/</id>
-    <published>2023-06-18T14:17:06.000Z</published>
-    <updated>2023-08-28T09:55:37.104Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Tools&quot;&gt;&lt;a href=&quot;#Tools&quot; class=&quot;headerlink&quot; title=&quot;Tools&quot;&gt;&lt;/a&gt;Tools&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹，附：&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Study" scheme="https://ismxue.github.io/categories/Study/"/>
-    
-    
-      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
-    
-  </entry>
-  
-  <entry>
     <title>6255-两个城市间路径的最小分数</title>
     <link href="https://ismxue.github.io/2022/12/04/leetcode/6255-liang-ge-cheng-shi-jian-lu-jing-de-zui-xiao-fen-shu/"/>
     <id>https://ismxue.github.io/2022/12/04/leetcode/6255-liang-ge-cheng-shi-jian-lu-jing-de-zui-xiao-fen-shu/</id>
@@ -172,6 +145,33 @@
     
     
       <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AI Model</title>
+    <link href="https://ismxue.github.io/2022/06/18/study/ai-model/"/>
+    <id>https://ismxue.github.io/2022/06/18/study/ai-model/</id>
+    <published>2022-06-18T14:17:06.000Z</published>
+    <updated>2023-09-15T09:13:22.591Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Tools&quot;&gt;&lt;a href=&quot;#Tools&quot; class=&quot;headerlink&quot; title=&quot;Tools&quot;&gt;&lt;/a&gt;Tools&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹，附：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Study" scheme="https://ismxue.github.io/categories/Study/"/>
+    
+    
+      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
     
   </entry>
   
