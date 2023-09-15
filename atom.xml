@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ismxue.github.io/"/>
-  <updated>2023-09-08T13:21:31.677Z</updated>
+  <updated>2023-08-17T13:29:22.914Z</updated>
   <id>https://ismxue.github.io/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>ROS Note</title>
-    <link href="https://ismxue.github.io/2023/09/03/study/ros-note/"/>
-    <id>https://ismxue.github.io/2023/09/03/study/ros-note/</id>
-    <published>2023-09-03T11:42:18.000Z</published>
-    <updated>2023-09-08T13:21:31.677Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Install&quot;&gt;&lt;a href=&quot;#Install&quot; class=&quot;headerlink&quot; title=&quot;Install&quot;&gt;&lt;/a&gt;Install&lt;/h1&gt;&lt;h1 id=&quot;教程&quot;&gt;&lt;a href=&quot;#教程&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Study" scheme="https://ismxue.github.io/categories/Study/"/>
-    
-    
-      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
-    
-  </entry>
   
   <entry>
     <title>Paper写作要点及资源</title>
@@ -361,7 +335,7 @@
     <link href="https://ismxue.github.io/2021/10/16/growth/quotes-i-have-enjoyed/"/>
     <id>https://ismxue.github.io/2021/10/16/growth/quotes-i-have-enjoyed/</id>
     <published>2021-10-16T07:54:09.000Z</published>
-    <updated>2022-02-06T15:41:46.185Z</updated>
+    <updated>2023-09-15T08:56:15.012Z</updated>
     
     <summary type="html">
     
@@ -532,6 +506,32 @@
         
         
           &lt;h1 id=&quot;589-N-叉树的前序遍历&quot;&gt;&lt;a href=&quot;#589-N-叉树的前序遍历&quot; class=&quot;headerlink&quot; title=&quot;589. N 叉树的前序遍历&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉树的遍历</title>
+    <link href="https://ismxue.github.io/2021/09/28/leetcode/er-cha-shu-de-bian-li/"/>
+    <id>https://ismxue.github.io/2021/09/28/leetcode/er-cha-shu-de-bian-li/</id>
+    <published>2021-09-28T02:00:00.000Z</published>
+    <updated>2021-10-03T14:31:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/binary-tree-postorder-traversal/solution/liang-chong-die-dai-by-powcai/&quot; target=&quot;_blank&quot;
         
       
     

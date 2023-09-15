@@ -4,27 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux使用记录, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="keywords" content="ROS Note, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="
-
-Linux就该这么学 （大而全）
-对应命令手册
-
-
-Linux工具快速教程 （小而精）
-Linux达人养成计划1 （视频讲解）
-作者的其他Linux课程  
-
-
-labuladong的Linux  （简述）
-
-
-准备工作
-系统安装
-用g">
+    <meta name="description" content="Install教程ROS tutorial- Justin Huang
+Programming for Robotics (ROS) Course 1Autolabor- ROS机器人入门
+视频以及对应文档
+source ~/工作空间/de">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +19,7 @@ labuladong的Linux  （简述）
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Linux使用记录 | M&#39;s Blog</title>
+    <title>ROS Note | M&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -332,13 +319,13 @@ labuladong的Linux  （简述）
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Linux使用记录
+                        ROS Note
                     </div>
                 </div>
             </div>
@@ -473,7 +460,7 @@ labuladong的Linux  （简述）
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-15
+                    2020-09-03
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -487,14 +474,14 @@ labuladong的Linux  （简述）
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    770
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    3 分
                 </div>
                 
                 
@@ -510,269 +497,67 @@ labuladong的Linux  （简述）
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<ul>
-<li><a href="https://www.linuxprobe.com/basic-learning-02.html" target="_blank" rel="noopener">Linux就该这么学</a> （大而全）<ul>
-<li><a href="https://www.linuxcool.com/" target="_blank" rel="noopener">对应命令手册</a></li>
-</ul>
-</li>
-<li><a href="https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">Linux工具快速教程</a> （小而精）</li>
-<li><a href="https://www.imooc.com/learn/175" target="_blank" rel="noopener">Linux达人养成计划1</a> （视频讲解）<ul>
-<li><a href="https://www.imooc.com/u/279399/courses?sort=publish&skill_id=0" target="_blank" rel="noopener">作者的其他Linux课程</a>  </li>
-</ul>
-</li>
-<li><a href="https://labuladong.gitbook.io/algo/mu-lu-ye-5/linux-wen-jian-xi-tong" target="_blank" rel="noopener">labuladong的Linux</a>  （简述）</li>
-</ul>
-</blockquote>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li><a href="https://mofanpy.com/tutorials/others/linux-basic/install/" target="_blank" rel="noopener">系统安装</a></li>
-<li>用gnome-tweak-tool配置<ul>
-<li><a href="https://blog.csdn.net/baidu_41560343/article/details/87796946" target="_blank" rel="noopener">字体大小调整</a></li>
-<li>让笔记本合上后仍不休眠：调整power相关设置</li>
-</ul>
-</li>
-<li><a href="https://www.mlzhilu.com/archives/ubuntu2004%E5%AE%89%E8%A3%85%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95" target="_blank" rel="noopener">安装搜狗输入法</a></li>
-<li><a href="https://blog.csdn.net/weixin_43436925/article/details/104558680" target="_blank" rel="noopener">阿里云服务器ECS安装Ubuntu18.04桌面图形环境</a> （<del>最便宜的套餐速度很慢，还不如用实验室的服务器</del>）  <!-- - 实例：root Xm6725485
-  - VNC密码：Xm1234， VNC server密码（用于连接远程桌面）：12345678 -->
-
-
-
-</li>
-</ul>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ul>
-<li><a href="https://blog.csdn.net/qq_15766181/article/details/80755786" target="_blank" rel="noopener">Linux软件安装到哪里合适，目录详解</a><ul>
-<li>/usr：系统级的目录，可以理解为C:/Windows/，/usr/lib理解为C:/Windows/System32</li>
-<li>/usr/local：用户级的程序目录，可以理解为C:/Progrem Files/。用户自己编译的软件默认会安装到这个目录下（这里主要存放那些手动安装的软件，即不是通过“新立得”或apt-get安装的软件。它和/usr目录具有相类似的目录结构。）</li>
-<li>/opt：用户级的程序目录，可以理解为D:/Software，opt有可选的意思，这里可以用于放置第三方大型软件（或游戏），当你不需要时，直接rm -rf掉即可。在硬盘容量不够时，也可将/opt单独挂载到其他磁盘上使用</li>
+                <h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="ROS-tutorial-Justin-Huang"><a href="#ROS-tutorial-Justin-Huang" class="headerlink" title="ROS tutorial- Justin Huang"></a><a href="https://www.youtube.com/watch?v=9U6GDonGFHw&list=PLJNGprAk4DF5PY0kB866fEZfz6zMLJTF8&index=2" target="_blank" rel="noopener">ROS tutorial- Justin Huang</a></h2><p><img src="https://s2.loli.net/2023/09/03/7zLpCucJ3MG9tNr.png" alt="image.png"><br><img src="https://s2.loli.net/2023/09/03/8sBQNMK9paO3Hfr.png" alt="image.png"><br><img src="https://s2.loli.net/2023/09/03/Eed5OcVw67FUWGL.png" alt="image.png"><br><img src="https://s2.loli.net/2023/09/03/DTARfMG3xc6iC9P.png" alt="image.png"></p>
+<h2 id="Programming-for-Robotics-ROS-Course-1"><a href="#Programming-for-Robotics-ROS-Course-1" class="headerlink" title="Programming for Robotics (ROS) Course 1"></a><a href="https://www.youtube.com/watch?v=0BxVPCInS3M&list=PLE-BQwvVGf8HOvwXPgtDfWoxd4Cc6ghiP" target="_blank" rel="noopener">Programming for Robotics (ROS) Course 1</a></h2><h2 id="Autolabor-ROS机器人入门"><a href="#Autolabor-ROS机器人入门" class="headerlink" title="Autolabor- ROS机器人入门"></a>Autolabor- ROS机器人入门</h2><ul>
+<li><a href="https://www.bilibili.com/video/BV1Ci4y1L7ZZ/?p=1&vd_source=7d1421767c0eb00dad50372c017345f0" target="_blank" rel="noopener">视频</a>以及对应<a href="http://www.autolabor.com.cn/book/ROSTutorials/" target="_blank" rel="noopener">文档</a></li>
+<li><code>source ~/工作空间/devel/setup.bash</code>可以添加进<code>.bashrc</code>文件中，使用更方便： <code>echo &quot;source ~/catkin_ws/devel/setup.bash&quot; &gt;&gt; ~/.bashrc</code></li>
+<li><a href="安装VScode">安装vscode环境并配置</a></li>
+<li>防止不同ros版本导致的python冲突，可以配置软链接：sudo ln -s /usr/bin/python3 /usr/bin/python</li>
+<li><a href="https://blog.csdn.net/Hide_on_Stream/article/details/127363246" target="_blank" rel="noopener">如何在ROS中使用anaconda虚拟环境</a></li>
+<li>移植别的项目并编译：<ul>
+<li>以<a href="https://github.com/ov2slam/ov2slam" target="_blank" rel="noopener">ov2slam</a>为例，其中使用了<a href="http://www.autolabor.com.cn/book/ROSTutorials/5/41-rosyuan-gong-neng-bao.html" target="_blank" rel="noopener">ROS元功能包</a></li>
+<li>以<a href="https://github.com/HKUST-Aerial-Robotics/VINS-Mono" target="_blank" rel="noopener">VINS-Mono</a>为例：<a href="https://blog.csdn.net/ncepu_Chen/article/details/122337520" target="_blank" rel="noopener">VINS-Mono的编译运行</a></li>
 </ul>
 </li>
 </ul>
 <blockquote>
+<p>参考<a href="https://www.cnblogs.com/ailitao/p/11047312.html" target="_blank" rel="noopener">Ubuntu下ROS创建自己的包和使用github下载的包</a> </p>
+<pre><code>
+1. 创建工作空间并编译
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+catkin_make
+source devel/setup.bash # 如果已经通过source ~/工作空间/devel/setup.bash&quot; &gt;&gt; ~/.bashrc 写在.bashrc中了，则可以忽略
+
+1. 将别的功能包拷贝到src文件中
+cd ~/catkin_ws/src
+...
+
+1. 编译
+cd ~/catkin_ws
+catkin_make --pkg somepackage # 或者 catkin_make
+source ~/catkin_ws/devel/setup.bash
+</code></pre></blockquote>
 <ul>
-<li><a href="https://www.runoob.com/linux/linux-system-contents.html" target="_blank" rel="noopener">系统目录结构</a>：</li>
-</ul>
-<p>/boot：存放的启动Linux 时使用的内核文件，包括连接文件以及镜像文件。<br>/etc：存放所有的系统需要的配置文件和子目录列表，更改目录下的文件可能会导致系统不能启动。<br>/lib：存放基本代码库（比如c++库），其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。<br>/sys： 这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。sysfs文件系统集成了下面3种文件系统的信息：针对进程信息的proc文件系统、针对设备的devfs文件系统以及针对伪终端的devpts文件系统。该文件系统是内核设备树的一个直观反映。当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中</p>
-<p>指令集合：<br>/bin：存放着最常用的程序和指令<br>/sbin：只有系统管理员能使用的程序和指令</p>
-<p>外部文件管理：<br>/dev ：Device(设备)的缩写, 存放的是Linux的外部设备。注意：在Linux中访问设备和访问文件的方式是相同的。<br>/media：类windows的其他设备，例如U盘、光驱等等，识别后linux会把设备放到这个目录下。<br>/mnt：临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。</p>
-<p>临时文件：<br>/run：是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。<br>/lost+found：一般情况下为空的，系统非法关机后，这里就存放一些文件。<br>/tmp：这个目录是用来存放一些临时文件的。</p>
-<p>账户：<br>/root：系统管理员的用户主目录。<br>/home：用户的主目录，以用户的账号命名的。<br>/usr：用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。<br>/usr/bin：系统用户使用的应用程序与指令。<br>/usr/sbin：超级用户使用的比较高级的管理程序和系统守护程序。<br>/usr/src：内核源代码默认的放置目录。</p>
-<p>运行过程中要用：<br>/var：存放经常修改的数据，比如程序运行的日志文件（/var/log 目录下）。<br>/proc：管理内存空间！虚拟的目录，是系统内存的映射，我们可以直接访问这个目录来，获取系统信息。这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件来做修改。</p>
-<p>扩展用的：<br>/opt：默认是空的，我们安装额外软件可以放在这个里面。<br>/srv：存放服务启动后需要提取的数据（不用服务器就是空）</p>
-</blockquote>
-<ul>
-<li>Clion安装及配置<a href="https://blog.csdn.net/qq_18352419/article/details/85228159" target="_blank" rel="noopener">（Linux环境下）</a>,<a href="https://www.cnblogs.com/attentle/p/12652512.html" target="_blank" rel="noopener">（Windows环境下）</a></li>
-<li>创建桌面快捷方式（以clion为例）<ul>
-<li>方法1：<a href="https://blog.csdn.net/qq_34039018/article/details/110881035" target="_blank" rel="noopener">直接在Tools菜单里操作</a></li>
-<li>方法2：自己创建<ul>
-<li>首先在终端下输入<code>cd /usr/share/applications/</code></li>
-<li>进入applications目录下，建立一个clion.desktop文件<code>sudo touch clion.desktop</code></li>
-<li>然后在vim命令下编辑该文件<code>sudo vi clion.desktop</code>，进入vim后，按i插入开始编辑该文件，输入以下代码</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>[Desktop Entry]
-Encoding=UTF-8
-
-Name=CLion
-
-Comment=clion-2021.1.3
-
-Exec=/home/m/mSoftware/clion-2021.1.3/bin/clion.sh
-
-Icon=/home/m/mSoftware/clion-2021.1.3/bin/clion.svg
-
-Categories=Application;Development;Java;IDE
-
-Version=2021.1.3
-
-Type=Application
-
-#Terminal=1</code></pre><ul>
-<li>VSCode 配置smms图床<ul>
-<li>安装xclip <code>sudo apt-get install xclip</code></li>
-<li>在<a href="https://sm.ms/" target="_blank" rel="noopener">smms</a>网站注册账号,home-&gt; API Token,复制Secret Token</li>
-<li>在visual studio code中找到picgo插件,然后点齿轮图标配置插件(extension settings),找到Smms:Token,将Secret Token复制到里边</li>
-<li>正文中,ctrl+alt+u上传即可</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>卸载</p>
-<ul>
-<li>dpkg –list  查看软件</li>
-<li>删除软件包命令：sudo apt remove <package_name></package_name></li>
-<li>清理不再使用的依赖和库文件: sudo apt autoremove</li>
-<li>移除软件包及配置文件: sudo apt purge <package_name></package_name></li>
+<li>NodeHandle（节点句柄）</li>
 </ul>
 <blockquote>
-<ul>
-<li>查找软件包命令： sudo apt search <keyword> </keyword></li>
-<li>列出所有已安装的包：apt list –installed </li>
-<li>列出所有已安装的包的版本信息：apt list –all-versions</li>
-</ul>
-</blockquote>
+<p>NodeHandle（节点句柄）是ROS中的一种工具，它有点像你在ROS中的<strong>身份证明</strong>和<strong>通信工具</strong>。它的主要作用是帮助你的_ROS节点与ROS系统进行交流和协调工作_。</p>
+<p>想象一下你在一个大型机器人派对上，NodeHandle就像你的<strong>派对通行证</strong>。它允许你做以下事情：</p>
+<ol>
+<li><p><strong>与其他机器人聊天</strong>：NodeHandle允许你与其他机器人（节点）交流，发送和接收信息。你可以向其他机器人发送消息（发布主题）或监听他们说的话（订阅主题）。</p>
 </li>
-<li><p><a href="https://www.boost.org/doc/libs/1_76_0/more/getting_started/unix-variants.html" target="_blank" rel="noopener">下载</a>并<a href="https://blog.csdn.net/XIONGXING_xx/article/details/108436312" target="_blank" rel="noopener">安装</a>boost （要加sudo）</p>
+<li><p><strong>访问派对地图</strong>：NodeHandle可以帮助你查找派对地图（参数服务器），以获得关于机器人派对的信息。你可以在那里找到一些有用的参数，比如你的机器人的速度限制或其他设置。</p>
 </li>
-<li><p><a href="https://zhuanlan.zhihu.com/p/60880207" target="_blank" rel="noopener">自带的Terminal设置（轻量级）</a><br>-MacOS10.15以后，终端换用zsh的方法如下：</p>
+<li><p><strong>提供派对服务</strong>：你可以使用NodeHandle提供一些服务（ROS服务），这就像是在派对上提供一些特殊的服务，例如告诉其他机器人派对中有哪些好玩的活动。</p>
 </li>
-</ul>
-<pre><code>vim .zshrc
-
-export CLICOLOR=1
-export LSCOLORS=ExGxFxdaCxDaDahbadeche
-
-autoload -U colors &amp;&amp; colors
-PROMPT=&quot;%{$fg_bold[cyan]%}%n%{$reset_color%}@%{$fg_bold[cyan]%}%m %{$fg_bold[green]%}%1~ %{$reset_color%}%#&quot;
-
-:x</code></pre><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/111014448" target="_blank" rel="noopener">homebrew安装和卸载</a></li>
-</ul>
-<ul>
-<li><a href="https://juejin.cn/post/6844904178075058189" target="_blank" rel="noopener">iTerm2 + Oh My Zsh</a></li>
-</ul>
-<ul>
-<li><a href="https://blog.csdn.net/lanyan90/article/details/131411549?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-131411549-blog-125575821.235%5Ev38%5Epc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-131411549-blog-125575821.235%5Ev38%5Epc_relevant_sort_base1&utm_relevant_index=3" target="_blank" rel="noopener">Jetson AGX Orin安装Anaconda、Cuda、Cudnn</a>： 与普通Ubuntu上的安装方式不太一样，要严格按照烧录进去的cuda对应的版本来安装</li>
-</ul>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
-<li><a href="https://yulizi123.github.io/tutorials/others/linux-basic/3-01-file-permissions/" target="_blank" rel="noopener">文件权限</a><ul>
-<li><code>chmod [谁][怎么修改] [哪个文件]</code><ul>
-<li>[谁]<br>  u: 对于 User 修改<br>  g: 对于 Group 修改<br>  o: 对于 Others 修改<br>  a: (all) 对于所有人修改</li>
-<li>[怎么修改]<br>  +, -, =: 作用的形式, 加上, 减掉, 等于某些权限<br>  r, w, x 或者多个权限一起, 比如 rx</li>
-<li>[哪个文件]<br>  施加操作的文件, 可以为多个</li>
-</ul>
+<li><p><strong>保持身份分离</strong>：NodeHandle允许你在派对中保持你的身份独立。你可以在不同的房间（命名空间）内与其他机器人互动，以防止你的消息与其他机器人的消息发生混淆。</p>
 </li>
-<li>也可以用数字 rwx分别对应421, 如<code>chmod 777 file.txt</code>,全部都可读可写可执行</li>
-<li>使用脚本#!/usr/bin/python3 ,告诉电脑执行该程序时用python3<br><img src="https://i.loli.net/2021/07/26/ejphoV7Ww13RuHB.png" alt="20210726120038"></li>
-</ul>
-</li>
-</ul>
-<h2 id="远程调试"><a href="#远程调试" class="headerlink" title="远程调试"></a>远程调试</h2><ul>
-<li>Python<ul>
-<li><a href="https://blog.csdn.net/Aerry_ale/article/details/81566832" target="_blank" rel="noopener">Pycharm 2018连接服务器远程调试</a> </li>
-</ul>
-</li>
-<li>C++<ul>
-<li><a href="https://cloud.tencent.com/developer/article/1406250" target="_blank" rel="noopener">Clion远程自动同步和远程调试</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><ul>
-<li><a href="https://blog.51cto.com/u_15127662/4391765" target="_blank" rel="noopener">Linux查看GPU / CPU、内存和磁盘使用情况</a><ul>
-<li>top -s 10 : 每隔10秒刷新一次</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="使用服务器时遇到的issue"><a href="#使用服务器时遇到的issue" class="headerlink" title="使用服务器时遇到的issue"></a>使用服务器时遇到的issue</h1><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/41859976" target="_blank" rel="noopener">搜索工具fzf</a> <a href="https://www.bilibili.com/video/BV1bJ411s74r?from=search&seid=1644575496918761635" target="_blank" rel="noopener">查找</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/68111471" target="_blank" rel="noopener">VIM编辑器</a><ul>
-<li><a href="http://www.tastones.com/tutorial/vim/" target="_blank" rel="noopener">常用命令</a></li>
-<li>Vim中如何全选复制粘贴<br>全部删除：按esc键后，先按gg（到达顶部），然后dG.<br>全部复制：按esc键后，先按gg，然后ggyG.<br>全选高亮显示：按esc键后，先按gg，然后ggvG或者ggVG.<br>单行复制：按esc键后，然后yy.<br>单行删除：按esc键后，然后dd.<br>粘贴：按esc键后，然后p.</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>gg是光标定位到文件首行，V是进入可视模式，G是跳转到文件最后一行，这个时候就将文本全选了</p>
-</blockquote>
-<h2 id="依赖项"><a href="#依赖项" class="headerlink" title="依赖项"></a>依赖项</h2><ul>
-<li><p>Windows和Ubuntu服务器之间复制粘贴解决方案</p>
-<ul>
-<li><p>ctrl+alt+del 打开任务管理器，ctrl+F 查看进程中是否有rdp进程，若有，则结束该进程</p>
-</li>
-<li><p>windows+r， 输入<code>rdpclip.exe</code>, 回车重新启动该进程</p>
-</li>
-<li><p>（备选）  </p>
-<ul>
-<li>安装软件</li>
-</ul>
-<pre><code>sudo apt-get autoremove open-vm-tools
-sudo apt-get install open-vm-tools
-sudo apt-get install open-vm-tools-desktop</code></pre><ul>
-<li>重启Ubuntu</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>在Linux中clone仓库时，出现<code>GnuTLS recv error (-110): The TLS connection was non-properly terminated</code></p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/52529639/gnutls-recv-error-110-the-tls-connection-was-non-properly-terminated" target="_blank" rel="noopener">安装必要的git依赖库</a><pre><code>sudo apt-get install build-essential fakeroot dpkg-dev -y
-sudo apt-get build-dep git -y
-sudo apt-get install libcurl4-openssl-dev -y
-cd ~
-mkdir source-git
-cd source-git/
-apt-get source git
-cd git-2.*.*/
-sed -i -- &#39;s/libcurl4-gnutls-dev/libcurl4-openssl-dev/&#39; ./debian/control
-sed -i -- &#39;/TEST\s*=\s*test/d&#39; ./debian/rules
-dpkg-buildpackage -rfakeroot -b -uc -us
-sudo dpkg -i ../git_*ubuntu*.deb</code></pre></li>
-</ul>
-</li>
-<li><p><a href="https://blog.csdn.net/stickmangod/article/details/85316142" target="_blank" rel="noopener">Sub-process /usr/bin/dpkg returned an error code (1)解决办法</a></p>
-</li>
-<li><p>重复执行多次可执行文件（或者命令行）</p>
-</li>
-</ul>
-<p>先产生一个可执行文件</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">
-<span class="token number">1</span><span class="token punctuation">.</span> 命令行输入
-vim hello<span class="token punctuation">.</span>cpp
-
-<span class="token number">2</span><span class="token punctuation">.</span> 
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"hello world"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token number">3</span><span class="token punctuation">.</span> 命令行输入
-g<span class="token operator">++</span> <span class="token operator">-</span>o h1 hello<span class="token punctuation">.</span>cpp
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>再建立一个脚本： <code>vim run_loop.sh</code>，并在run_loop.sh中确定运行次数j:</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
-j<span class="token operator">=</span>6
-<span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>j<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">))</span></span>
-<span class="token keyword">do</span>
-./h1
-<span class="token comment" spellcheck="true">#可以换成其他命令，如 echo $i</span>
-<span class="token keyword">done</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>然后运行可执行文件 <code>bash run_loop.sh</code>，则输出j次 hello world </p>
-<ul>
-<li>线程<ul>
-<li><a href="https://www.geeksforgeeks.org/multithreading-in-cpp/" target="_blank" rel="noopener">Multithreading in C++</a></li>
-<li><a href="https://www.geeksforgeeks.org/implementation-of-quick-sort-using-mpi-omp-and-posix-thread/?ref=gcse" target="_blank" rel="noopener">Implementation of Quick sort using MPI, OMP and Posix thread</a></li>
-<li><a href="https://thispointer.com/c-11-multithreading-part-1-three-different-ways-to-create-threads/" target="_blank" rel="noopener">Three Different ways to Create Threads</a></li>
-<li><a href="https://developer.baidu.com/article/detail.html?id=294666" target="_blank" rel="noopener">什么是多线程？为什么要学习多线程？</a></li>
-<li><a href="https://blog.csdn.net/JMW1407/article/details/107222065#:~:text=%E5%AF%B9%E5%A4%9A%E6%A8%A1%E5%9E%8B-,2%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%9F,%E5%8C%96%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6%E3%80%82&text=%E5%90%88%E7%90%86%E7%9A%84%E5%9C%BA%E6%99%AF%2B%E5%90%88%E7%90%86%E7%9A%84,%E5%BE%97%E5%88%B0%E8%BF%90%E8%A1%8C%E6%95%88%E7%8E%87%E7%9A%84%E6%8F%90%E5%8D%87%E3%80%82" target="_blank" rel="noopener">创建多少个线程合适？</a></li>
-</ul>
-</li>
-</ul>
-<p><img src="https://s2.loli.net/2022/12/18/blUB1iEHxnM4RFK.png" alt="image.png"></p>
-<blockquote>
-<p>There are <a href="https://stackoverflow.com/a/55930683" target="_blank" rel="noopener">two kinds of thread</a>: std::thread is a software thread, while std::thread::hardware_concurrency() returns the number of hardware threads.</p>
-<p>A sofware thread doesn’t need a dedicated hardware thread, the operating system can and will schedule different software threads to share the same hardware threads. In fact, there are usually several orders of magnitude more software threads than there are hardware threads on the machine.</p>
+</ol>
+<p>翻译成ROS的术语，NodeHandle帮助你创建和管理ROS主题（topics）、ROS服务（services）、ROS参数（parameters），并确保你的节点与其他节点协同工作，以实现机器人的功能和任务。它提供了一种与ROS系统进行交流的标准方式，使得不同节点之间可以共同合作完成任务。</p>
 </blockquote>
 <ul>
-<li><p>OpenMP</p>
-<ul>
-<li><a href="https://www.geeksforgeeks.org/openmp-hello-world-program/" target="_blank" rel="noopener">OpenMP | Hello World program</a></li>
-<li><a href="https://stackoverflow.com/questions/40531078/how-to-set-up-basic-openmp-project-in-clion" target="_blank" rel="noopener">How to set up basic openMP project in CLion</a></li>
-<li><a href="https://blog.csdn.net/qq_47876165/article/details/121308963" target="_blank" rel="noopener">并行计算 Clion配置OpenMP</a></li>
-<li><a href="https://www.cnblogs.com/Chang-LeHung/p/16841109.html" target="_blank" rel="noopener">并行框架OpenMP入门（积分例子）</a></li>
-<li><a href="https://jasonblog.github.io/note/linux_system/openmp_in_linux.html" target="_blank" rel="noopener">OpenMP in linux</a></li>
+<li>只编译白名单及启动<pre><code>catkin_make -DCATKIN_WHITELIST_PACKAGES=&quot;feature_tracker&quot; // 或&quot;&quot;
+</code></pre></li>
 </ul>
-</li>
-<li><p>vim<a href="https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim" target="_blank" rel="noopener">多行注释和取消注释</a></p>
-</li>
-<li><p><a href="https://blog.csdn.net/qq_41822647/article/details/85332378" target="_blank" rel="noopener">mac下访问ubuntu 共享文件，以及samba配置</a></p>
-</li>
-</ul>
+<p>roslaunch feature_tracker feature_tracker.launch<br>roslaunch plvins_estimator euroc_fix_extrinsic.launch</p>
+<pre><code>
+# FAQ
+- [ubuntu20.04出现Unable to find either executable ‘empy’ or Python module ‘em’… try](https://blog.csdn.net/weixin_44857882/article/details/124296306)
+  - 解决：catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+- [Build OpenCV with CUDA Support for Jetson](https://www.youtube.com/watch?v=art0-99fFa8)，指定opencv版本，然后运行脚本即可，然后 opencv with cuda 就会显示YES
 
+</code></pre>
             </div>
             <hr />
 
@@ -930,9 +715,9 @@ j<span class="token operator">=</span>6
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Linux使用记录》
+                    《ROS Note》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/05/15/study/linux-shi-yong-ji-lu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/03/study/ros-note/" property="cc:attributionName"
                rel="cc:attributionURL">
                 M
             </a> 采用
@@ -976,46 +761,38 @@ j<span class="token operator">=</span>6
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/16/growth/kindle-shi-yong-bi-ji/">
+                <a href="/2020/09/12/python/ml/dong-shou-xue-shen-du-xue-xue-xi-pytorch-ban/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Kindle使用笔记">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="动手学深度学学习_pytorch版">
                         
-                        <span class="card-title">Kindle使用笔记</span>
+                        <span class="card-title">动手学深度学学习_pytorch版</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Kindle 电子书资源
-电子书搜索
-英文书 
-中英文皆有（一天5本）：zlib， zlib 
-Library Genesis     
-Gutenberg
+                            《动手学深度学习》(Pytorch版)
+
+github 中有每章节的code源文件，clone到本地运行，可观察各模型效果。
 
 
-中文书
-沉金书屋
-鸠摩搜书
-奥丁读书小站
-小力盘搜索
-天浪书屋
-书单网
-kin
+3.4.5 交叉熵损失函数交叉熵只关心对正确类别的预测概率，因为只要其值足够大，就可以确保分类结果正确
+
+交叉
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Growth/" class="post-category" target="_blank">
-                                    Growth
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
                                 </a>
                             
                             
@@ -1025,8 +802,8 @@ kin
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Growth/" target="_blank">
-                        <span class="chip bg-color">Growth</span>
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
                     </a>
                     
                 </div>
@@ -1040,27 +817,27 @@ kin
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/15/leetcode/1029-liang-di-diao-du/">
+                <a href="/2020/08/31/leetcode/199-er-cha-shu-de-you-shi-tu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="1029-两地调度">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="199. 二叉树的右视图">
                         
-                        <span class="card-title">1029-两地调度</span>
+                        <span class="card-title">199. 二叉树的右视图</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1029. 两地调度
+                            199. 二叉树的右视图
 
-按照每个人去A、B两地的路费差进行排序，排好序后，前半部分人去A地，后半部分人去B地
-以 [[10,20],[30,200],[400,50],[30,20]] 为例，两地的差分别为[-10,-170,350,10]
+if len(res)&lt;=depth 时, 说明遍历到了该层第一个元素，这时加个0用来占位置（第depth层的元素）
+先深度遍历左子树，再深度遍历右子树，这样，这一层的值会被每一层的最后一个节点最终覆盖掉。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-31
                             </span>
                         <span class="publish-author">
                             
@@ -1252,7 +1029,7 @@ kin
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">228k</span>
+            <span class="white-color">226.6k</span>
             
 
             <br>
