@@ -1,0 +1,1566 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="在Ubuntu中使用gtest, It&#39;s the job that&#39;s never started as takes longest to finish.”― J.R.R. Tolkien">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
+    <meta name="description" content="
+GoogleTest User’s Guide官方教程Unit Testing C++ with Google Test，以及配套视频。教程简洁明了，非常推荐
+
+安装在任意文件夹下打开终端,安装并编译gtest,并将产生的库拷贝到/usr">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>在Ubuntu中使用gtest | M&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">M's Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/lifelog" class="waves-effect waves-light">
+            
+            <i class="fa fa-comments"></i>
+            
+            <span>Life Log</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">M's Blog</div>
+        <div class="logo-desc">
+            
+            Growth | Study
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/lifelog" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-comments"></i>
+                
+                Life Log
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/ismxue" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/ismxue" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        在Ubuntu中使用gtest
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/c/" target="_blank">
+                            <span class="chip bg-color">c++</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/c/" class="post-category" target="_blank">
+                            c++
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-10-12
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    M
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>热度:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p><a href="https://google.github.io/googletest/" target="_blank" rel="noopener">GoogleTest User’s Guide官方教程</a><br><a href="https://blog.jetbrains.com/rscpp/2015/09/01/unit-testing-google-test/" target="_blank" rel="noopener">Unit Testing C++ with Google Test</a>，以及<a href="https://www.youtube.com/watch?v=16FI1-d2P4E&t=5s" target="_blank" rel="noopener">配套视频</a>。教程简洁明了，非常推荐</p>
+</blockquote>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在任意文件夹下打开终端,安装并编译gtest,并将产生的库拷贝到/usr/lib中</p>
+<pre><code>sudo apt-get install libgtest-dev
+sudo apt-get install cmake
+cd /usr/src/gtest
+sudo cmake CMakeLists.txt
+sudo make
+sudo cp *.a /usr/lib</code></pre><h1 id="gtest的使用示例"><a href="#gtest的使用示例" class="headerlink" title="gtest的使用示例"></a>gtest的使用示例</h1><h2 id="What-is-the-difference-between-TEST-TEST-F-and-TEST-P"><a href="#What-is-the-difference-between-TEST-TEST-F-and-TEST-P" class="headerlink" title="What is the difference between TEST, TEST_F and TEST_P?"></a><a href="https://stackoverflow.com/questions/58600728/what-is-the-difference-between-test-test-f-and-test-p" target="_blank" rel="noopener">What is the difference between TEST, TEST_F and TEST_P?</a></h2><ul>
+<li>TEST() is useful when you want to write unit tests for static or global functions or simple classes. <a href="https://github.com/google/googletest/blob/565f1b848215b77c3732bca345fe76a0431d8b34/googletest/test/googletest-port-test.cc#L54" target="_blank" rel="noopener">Example test</a></li>
+<li>TEST_F() is useful when you need access to objects and subroutines in the unit test （F is for <strong>fixture</strong>）. <a href="https://github.com/google/googletest/blob/e8a82dc7ede61c4af3b9d75aa0e953b8cecfc8bb/googletest/test/gtest_unittest.cc#L102" target="_blank" rel="noopener">Example test</a></li>
+<li>TEST_P() is useful when you want to write tests with a <strong>parameter</strong>. Instead of writing multiple tests with different values of the parameter, you can write one test using TEST_P() which uses GetParam() and can be instantiated using INSTANTIATE_TEST_SUITE_P(). <a href="https://github.com/google/googletest/blob/eafd2a91bb0c4fd626aae63ae852812fbd4999f2/googletest/test/googletest-param-test-test.cc#L679" target="_blank" rel="noopener">Example test</a></li>
+</ul>
+<p>接下来，我们根据几个示例来说明其用法。</p>
+<h2 id="测试用例：使用宏TEST-进行单元测试"><a href="#测试用例：使用宏TEST-进行单元测试" class="headerlink" title="测试用例：使用宏TEST()进行单元测试"></a><a href="https://www.srcmake.com/home/google-cpp-test-framework" target="_blank" rel="noopener">测试用例：使用宏TEST()进行单元测试</a></h2><blockquote>
+<p>函数功能：实现一个开方根函数，并对其测试</p>
+</blockquote>
+<p>在自定义的Ｃ++项目目录下测试一个开方根函数（如CLionProjects/gtest1）.在该目录下构建以下文件：</p>
+<pre><code>touch sqrt.cpp
+touch sqrt_test.cpp
+touch CMakeLists.txt</code></pre><ul>
+<li>sqrt.cpp中有一个<code>squareRoot()</code>函数，用于实现开方功能</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;math.h></span></span>
+
+<span class="token comment" spellcheck="true">// Get the Square root of a number. </span>
+<span class="token keyword">double</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">double</span> a<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+    <span class="token keyword">double</span> b <span class="token operator">=</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>b <span class="token operator">!=</span> b<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// NaN check</span>
+        <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+        <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>sqrt_test.cpp用于测试sqrt.cpp中的<code>squareRoot()</code>函数是否正确<ul>
+<li>这里需要把测试的头文件<code>#include &lt;gtest/gtest.h&gt;</code>和源文件<code>#include &quot;sqrt.cpp&quot;</code>包含进去</li>
+<li>构建两个测试：<code>TEST(SquareRootTest, PositiveNos)</code>和<code>TEST(SquareRootTest, NegativeNos)</code><ul>
+<li><code>TEST(TestSuiteName, TestName)</code>：The first argument is the name of the <strong>test suite</strong>, and the second argument is the test’s name <strong>within the test suite.</strong> .Tests from different test suites <strong>can have the same individual name</strong>.</li>
+<li><code>TEST()</code>的参数名称可以随意取，但尽量与真实含义相符。比如我们给测试取一个<code>SquareRootTest</code>名称，如果函数<code>squareRoot</code>参数是正数，则对其开方（相应地，构建<code>TEST(SquareRootTest, PositiveNos)</code>）；如果是负数，则返回－１（相应地，构建<code>TEST(SquareRootTest, NegativeNos)</code>）．；名称必须是有效的C++标识符，且不能有下划线。</li>
+</ul>
+</li>
+<li><code>ASSERT_EQ(expected, actual);</code></li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"sqrt.cpp"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;gtest/gtest.h></span></span>
+
+<span class="token function">TEST</span><span class="token punctuation">(</span>SquareRootTest<span class="token punctuation">,</span> PositiveNos<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span> 
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token number">36.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token number">18.0</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token number">324.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token number">25.4</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token number">645.16</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token function">TEST</span><span class="token punctuation">(</span>SquareRootTest<span class="token punctuation">,</span> NegativeNos<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">15.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//  测试的主函数</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+    testing<span class="token operator">::</span><span class="token function">InitGoogleTest</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">RUN_ALL_TESTS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>CMakeLists.txt中负责关联文件并构建测试的可执行文件<code>executeTests</code></li>
+</ul>
+<pre><code>cmake_minimum_required(VERSION 2.6)
+
+# Locate GTest
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+# Link runTests with what we want to test and the GTest and pthread library
+add_executable(executeTests sqrt_test.cpp)
+target_link_libraries(executeTests ${GTEST_LIBRARIES} pthread)</code></pre><ul>
+<li>运行可执行文件</li>
+</ul>
+<pre><code>cmake CMakeLists.txt
+make
+./executeTests
+
+// 或者新建一个build文件夹，在该文件夹下编译
+// mkdir build
+// cd build
+// cmake ..
+// make
+// ./executeTests</code></pre><p>最后的结果为：</p>
+<p><img src="https://i.loli.net/2021/10/10/OyErx1kMVTupaAo.png" alt="20211010121618"></p>
+<h2 id="测试用例：使用宏TEST-F-进行单元测试"><a href="#测试用例：使用宏TEST-F-进行单元测试" class="headerlink" title="测试用例：使用宏TEST_F()进行单元测试"></a><a href="http://www.yolinux.com/TUTORIALS/Cpp-GoogleTest.html" target="_blank" rel="noopener">测试用例：使用宏TEST_F()进行单元测试</a></h2><blockquote>
+<p>函数功能：用相同的数据，实现加法和乘法的同时测试</p>
+</blockquote>
+<p><code>TEST_F()</code>中的Ｆ是fixture的意思，适用于测试数据被多次使用的场景（或者不同数据执行很类似的行为，如100+5,100+10）。比如有两个数ｘ和ｙ，分别需要验证它们的加法和乘法行为，<code>TEST_F()</code>可以共用一份测试数据，避免不同的测试行为重复创建数据。</p>
+<p>在自定义的Ｃ++项目目录下创建文件（如CLionProjects/gtest２）</p>
+<h3 id="加法及加法测试"><a href="#加法及加法测试" class="headerlink" title="加法及加法测试"></a>加法及加法测试</h3><ul>
+<li>构建头文件Addition.h</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">ifndef</span> GTEST2_ADDITION_H</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GTEST2_ADDITION_H</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Addition</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">twoValues</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span> </span><span class="token comment" spellcheck="true">//GTEST2_ADDITION_H</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>构建源文件Addition.cpp</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Addition.h"</span></span>
+<span class="token keyword">int</span> Addition<span class="token operator">::</span><span class="token function">twoValues</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x<span class="token operator">+</span>y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>构建测试文件Addition_Test.cpp<ul>
+<li>AdditionTest类继承::testing::Test</li>
+<li>注意要包含<code>#include &quot;Addition.cpp&quot;</code>和<code>#include &lt;gtest/gtest.h&gt;</code></li>
+<li><code>TEST_F(TestFixtureName, TestName)</code>：第一个参数<strong>必须是测试类名</strong>，第二个参数为TestName.</li>
+<li>For each test defined with TEST_F(), googletest will create a fresh test fixture at runtime, immediately <strong>initialize it via SetUp()</strong>, run the test, <strong>clean up by calling TearDown()</strong>, and then delete the test fixture. Note that different tests in the same test suite have different test fixture objects, and googletest always <strong>deletes a test fixture before it creates the next one</strong>. googletest <strong>does not reuse</strong> the same test fixture for multiple tests. Any changes one test makes to the fixture do not affect other tests.</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Addition.cpp"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;gtest/gtest.h></span></span>
+<span class="token comment" spellcheck="true">// 继承::testing::Test</span>
+<span class="token keyword">class</span> <span class="token class-name">AdditionTest</span> <span class="token operator">:</span> <span class="token keyword">public</span> <span class="token operator">::</span>testing<span class="token operator">::</span>Test<span class="token punctuation">{</span>
+<span class="token keyword">protected</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SetUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">TearDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">TEST_F</span><span class="token punctuation">(</span>AdditionTest<span class="token punctuation">,</span>twoValues<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> x<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> y<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
+    Addition addition<span class="token punctuation">;</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span>addition<span class="token punctuation">.</span><span class="token function">twoValues</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span>addition<span class="token punctuation">.</span><span class="token function">twoValues</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="乘法及乘法测试"><a href="#乘法及乘法测试" class="headerlink" title="乘法及乘法测试"></a>乘法及乘法测试</h3><p>－　构建头文件Multiply.h</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">ifndef</span> GTEST2_MULTIPLY_H</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GTEST2_MULTIPLY_H</span>
+<span class="token keyword">class</span> <span class="token class-name">Multiply</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">twoValues</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span> </span><span class="token comment" spellcheck="true">//GTEST2_MULTIPLY_H</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>构建源文件Multiply.cpp</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Multiply.h"</span></span>
+<span class="token keyword">int</span> Multiply<span class="token operator">::</span><span class="token function">twoValues</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x<span class="token operator">*</span>y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>构建测试文件Multiply_Test.cpp<ul>
+<li>注意要包含<code>#include &quot;Multiply.cpp&quot;</code>和<code>#include &lt;gtest/gtest.h&gt;</code></li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Multiply.cpp"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;gtest/gtest.h></span></span>
+
+<span class="token keyword">class</span> <span class="token class-name">MultiplyTest</span> <span class="token operator">:</span> <span class="token keyword">public</span> <span class="token operator">::</span>testing<span class="token operator">::</span>Test<span class="token punctuation">{</span>
+<span class="token keyword">protected</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SetUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">TearDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">TEST_F</span><span class="token punctuation">(</span>MultiplyTest<span class="token punctuation">,</span> twoValues<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    Multiply multiply<span class="token punctuation">;</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> multiply<span class="token punctuation">.</span><span class="token function">twoValues</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> multiply<span class="token punctuation">.</span><span class="token function">twoValues</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="加法和乘法汇总后一起测试"><a href="#加法和乘法汇总后一起测试" class="headerlink" title="加法和乘法汇总后一起测试"></a>加法和乘法汇总后一起测试</h3><ul>
+<li>构建Main_TestAll.cpp<ul>
+<li>注意要把<code>#include &quot;Addition_Test.cpp&quot;</code>，<code>#include &quot;Multiply_Test.cpp&quot;</code>和<code>#include &lt;gtest/gtest.h&gt;</code>包含进去</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Addition_Test.cpp"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Multiply_Test.cpp"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;gtest/gtest.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    testing<span class="token operator">::</span><span class="token function">InitGoogleTest</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span>argv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">RUN_ALL_TESTS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>CMakeLists.txt文件</li>
+</ul>
+<pre><code>cmake_minimum_required(VERSION 3.10)
+project(gtest2)
+
+set(CMAKE_CXX_STANDARD 14)
+#加载相关的头文件和库文件
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+#加法和乘法都测试
+add_executable(executeTests Main_TestAll.cpp)
+target_link_libraries(executeTests ${GTEST_LIBRARIES} pthread)</code></pre><ul>
+<li>编译并运行</li>
+</ul>
+<pre><code>cmake CMakeLists.txt
+make
+./executeTests</code></pre><p>最后结果为<br><img src="https://i.loli.net/2021/10/11/JnmvdHCVI75bzca.png" alt="20211011164619"></p>
+<blockquote>
+<p>如果要单独测试，比如只测试加法，则在Addition_Test.cpp中添加测试的main函数。并修改对应的CMakeLists.txt即可</p>
+<ul>
+<li>Addition_Test.cpp</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Addition.cpp"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;gtest/gtest.h></span></span>
+
+<span class="token keyword">class</span> <span class="token class-name">AdditionTest</span> <span class="token operator">:</span> <span class="token keyword">public</span> <span class="token operator">::</span>testing<span class="token operator">::</span>Test<span class="token punctuation">{</span>
+<span class="token keyword">protected</span><span class="token operator">:</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">SetUp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">virtual</span> <span class="token keyword">void</span> <span class="token function">TearDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">TEST_F</span><span class="token punctuation">(</span>AdditionTest<span class="token punctuation">,</span>twoValues<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> x<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> y<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
+    Addition addition<span class="token punctuation">;</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span>addition<span class="token punctuation">.</span><span class="token function">twoValues</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span>addition<span class="token punctuation">.</span><span class="token function">twoValues</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   testing<span class="token operator">::</span><span class="token function">InitGoogleTest</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span>argv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> <span class="token function">RUN_ALL_TESTS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>CMakeLists.txt文件</li>
+</ul>
+<pre><code>cmake_minimum_required(VERSION 3.10)
+project(gtest2)
+
+set(CMAKE_CXX_STANDARD 14)
+#加载相关的头文件和库文件
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+##单独测试加法
+#add_executable(exec1 Addition_Test.cpp)
+#target_link_libraries(exec1 ${GTEST_LIBRARIES} pthread)</code></pre></blockquote>
+<h2 id="测试用例：使用宏TEST-P-进行单元测试"><a href="#测试用例：使用宏TEST-P-进行单元测试" class="headerlink" title="测试用例：使用宏TEST_P()进行单元测试"></a><a href="https://blog.jetbrains.com/rscpp/2015/09/01/unit-testing-google-test/" target="_blank" rel="noopener">测试用例：使用宏TEST_P()进行单元测试</a></h2><h3 id="加法测试"><a href="#加法测试" class="headerlink" title="加法测试"></a>加法测试</h3><blockquote>
+<p>函数功能：写一个加法函数，然后对其测试</p>
+</blockquote>
+<ul>
+<li>构建文件demo1_test.cpp</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;gtest/gtest.h></span></span>
+<span class="token comment" spellcheck="true">//加法函数</span>
+<span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x<span class="token operator">+</span>y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">TEST</span><span class="token punctuation">(</span>Addition<span class="token punctuation">,</span> CanAddTwoNumbers<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">EXPECT_TRUE</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 调用加法函数</span>
+
+<span class="token comment" spellcheck="true">//    如果产生错误，则输出相关的错误信息</span>
+<span class="token comment" spellcheck="true">//    如EXPECT_EQ(２, add(2,2)) &lt;&lt; "Two plus two must equal four";　因为２!=4,则输出"Two plus two must equal four"</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"Two plus two must equal four"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    testing<span class="token operator">::</span><span class="token function">InitGoogleTest</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">RUN_ALL_TESTS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>构建文件CMakeLists.txt</li>
+</ul>
+<pre><code>cmake_minimum_required(VERSION 3.10)
+project(gtest3)
+set(CMAKE_CXX_STANDARD 14)
+#加载gtest相关的头文件和库文件
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+# 简单的TEST用例
+add_executable(demo1 demo1_test.cpp)
+target_link_libraries(demo1 ${GTEST_LIBRARIES} pthread)</code></pre><p>最终结果为：<br><img src="https://i.loli.net/2021/10/12/hU7iJSALqkn8clj.png" alt="20211012102120"></p>
+<blockquote>
+<p>函数功能：模拟ATＭ机的存取款及查询余额的功能</p>
+</blockquote>
+<ul>
+<li>构建文件demo2_bank.cpp<ul>
+<li>展示了<code>TEST()，TEST_F()TEST_P()</code>的简单用法</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;gtest/gtest.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;ostream></span></span>
+
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//========================TEST()的使用=========================</span>
+
+<span class="token comment" spellcheck="true">//构建一个账户类。余额初始话为０，该账户有存取款功能</span>
+<span class="token keyword">struct</span> BankAccount <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> balance <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token function">BankAccount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">explicit</span> <span class="token function">BankAccount</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> balance<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">balance</span><span class="token punctuation">(</span>balance<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//    存款后，余额增加</span>
+    <span class="token keyword">void</span> <span class="token function">deposit</span><span class="token punctuation">(</span><span class="token keyword">int</span> amount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        balance <span class="token operator">+</span><span class="token operator">=</span> amount<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//    如果取款金额小于余额，则取款成功，返回true.否则返回false</span>
+    <span class="token keyword">bool</span> <span class="token function">withdraw</span><span class="token punctuation">(</span><span class="token keyword">int</span> amount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>amount <span class="token operator">&lt;=</span> balance<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            balance <span class="token operator">-</span><span class="token operator">=</span> amount<span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//测试账户初始余额是否为０</span>
+<span class="token function">TEST</span><span class="token punctuation">(</span>AccountTest<span class="token punctuation">,</span> BankAccountStartsEmpty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    BankAccount account<span class="token punctuation">;</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> account<span class="token punctuation">.</span>balance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//========================TEST_F()的使用=========================</span>
+
+<span class="token comment" spellcheck="true">//想重复使用BankAccount类。于是构建一个BankAccountTest，并继承testing::Test</span>
+<span class="token keyword">struct</span> BankAccountTest <span class="token operator">:</span> <span class="token keyword">public</span> testing<span class="token operator">::</span>Test <span class="token punctuation">{</span>
+    BankAccount <span class="token operator">*</span>account<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//    新建账户</span>
+    <span class="token function">BankAccountTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        account <span class="token operator">=</span> <span class="token keyword">new</span> BankAccount<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//    删除账户</span>
+    <span class="token keyword">virtual</span> <span class="token operator">~</span><span class="token function">BankAccountTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> account<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//第一个参数必须是类名。测试账户余额是否初始化为０</span>
+<span class="token function">TEST_F</span><span class="token punctuation">(</span>BankAccountTest<span class="token punctuation">,</span> BankAccountStartsEmpty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> account<span class="token operator">-</span><span class="token operator">></span>balance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//第一个参数必须是类名。测试是否存钱成功</span>
+<span class="token function">TEST_F</span><span class="token punctuation">(</span>BankAccountTest<span class="token punctuation">,</span> CanDepositMoney<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    account<span class="token operator">-</span><span class="token operator">></span><span class="token function">deposit</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> account<span class="token operator">-</span><span class="token operator">></span>balance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//========================TEST_P()的使用=========================</span>
+
+<span class="token comment" spellcheck="true">//构建一个账户状态的类（结构体）</span>
+<span class="token keyword">struct</span> account_state <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> initial_balance<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 初始金额</span>
+    <span class="token keyword">int</span> withdraw_amount<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//　取钱金额</span>
+    <span class="token keyword">int</span> final_balance<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//　　　最终金额</span>
+    <span class="token keyword">bool</span> success<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 　　是否取钱成功</span>
+
+    <span class="token keyword">friend</span> ostream <span class="token operator">&amp;</span><span class="token keyword">operator</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>ostream <span class="token operator">&amp;</span>os<span class="token punctuation">,</span> <span class="token keyword">const</span> account_state <span class="token operator">&amp;</span>state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        os <span class="token operator">&lt;&lt;</span> <span class="token string">"initial_balance: "</span> <span class="token operator">&lt;&lt;</span> state<span class="token punctuation">.</span>initial_balance
+           <span class="token operator">&lt;&lt;</span> <span class="token string">" withdraw_amount: "</span> <span class="token operator">&lt;&lt;</span> state<span class="token punctuation">.</span>withdraw_amount
+           <span class="token operator">&lt;&lt;</span> <span class="token string">" final_balance: "</span> <span class="token operator">&lt;&lt;</span> state<span class="token punctuation">.</span>final_balance
+           <span class="token operator">&lt;&lt;</span> <span class="token string">" success: "</span> <span class="token operator">&lt;&lt;</span> state<span class="token punctuation">.</span>success<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> os<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//继承BankAccountTest类，以便使用account</span>
+<span class="token comment" spellcheck="true">//继承testing::WithParamInterface&lt;参数>　，这里的参数指定为账户状态account_state</span>
+<span class="token keyword">struct</span> WithdrawAccountTest <span class="token operator">:</span> BankAccountTest<span class="token punctuation">,</span> testing<span class="token operator">::</span>WithParamInterface<span class="token operator">&lt;</span>account_state<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">WithdrawAccountTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        account<span class="token operator">-</span><span class="token operator">></span>balance <span class="token operator">=</span> <span class="token function">GetParam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>initial_balance<span class="token punctuation">;</span>　<span class="token comment" spellcheck="true">//GetParam()来调用相应的账户状态</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//第一个参数必须是类名。测试最终余额</span>
+<span class="token function">TEST_P</span><span class="token punctuation">(</span>WithdrawAccountTest<span class="token punctuation">,</span> FinalBalance<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">auto</span> as <span class="token operator">=</span> <span class="token function">GetParam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">auto</span> success <span class="token operator">=</span> account<span class="token operator">-</span><span class="token operator">></span><span class="token function">withdraw</span><span class="token punctuation">(</span>as<span class="token punctuation">.</span>withdraw_amount<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//    需要取出　as.withdraw_amount　块钱，测是是否成功</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span>as<span class="token punctuation">.</span>final_balance<span class="token punctuation">,</span> account<span class="token operator">-</span><span class="token operator">></span>balance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">EXPECT_EQ</span><span class="token punctuation">(</span>as<span class="token punctuation">.</span>success<span class="token punctuation">,</span> success<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//TEST_P不能直接运行，需要用INSTANTIATE_TEST_CASE_P给它指定相应的参数</span>
+<span class="token function">INSTANTIATE_TEST_CASE_P</span><span class="token punctuation">(</span>Default<span class="token punctuation">,</span> WithdrawAccountTest<span class="token punctuation">,</span>
+                        testing<span class="token operator">::</span><span class="token function">Values</span><span class="token punctuation">(</span>
+                                account_state<span class="token punctuation">{</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                                account_state<span class="token punctuation">{</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">}</span>
+                        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 可以从100中取出50；不可以从100中取出200.这里没有用到final_balance</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    testing<span class="token operator">::</span><span class="token function">InitGoogleTest</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">RUN_ALL_TESTS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>构建文件CMakeLists.txt</li>
+</ul>
+<pre><code>cmake_minimum_required(VERSION 3.10)
+project(gtest3)
+set(CMAKE_CXX_STANDARD 14)
+#加载gtest相关的头文件和库文件
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+# 简单的TEST，TEST_F,TEST_P用例
+add_executable(demo2 demo2_bank.cpp)
+target_link_libraries(demo2 ${GTEST_LIBRARIES} pthread)</code></pre><p>最终结果为<br><img src="https://i.loli.net/2021/10/12/qxWEGUiovL3hkpn.png" alt="20211012102206"></p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="官方文档GUIDES"><a href="#官方文档GUIDES" class="headerlink" title="官方文档GUIDES"></a>官方文档GUIDES</h2><h3 id="Googletest-Primer"><a href="#Googletest-Primer" class="headerlink" title="Googletest Primer"></a>Googletest Primer</h3><p>Googletest Primer的<a href="http://www.yeolar.com/note/2014/12/21/gtest/" target="_blank" rel="noopener">中文翻译版</a></p>
+<ul>
+<li>ASSERT_<em> versions generate fatal failures when they fail, and abort the current function. EXPECT_</em> versions generate nonfatal failures, which don’t abort the current function. Usually EXPECT_<em> are preferred, as they allow more than one failure to be reported in a test. However, you should use ASSERT_</em> if it doesn’t make sense to continue when the assertion in question fails.</li>
+</ul>
+<p><img src="https://i.loli.net/2021/10/10/1E3DApcsQU8JImi.png" alt="20211010171137"></p>
+<ul>
+<li>Test Fixtures：Using the Same Data Configuration for Multiple Tests</li>
+</ul>
+<p><img src="https://i.loli.net/2021/10/10/BIZAgyoajWCOKLd.png" alt="20211010172702"></p>
+
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">A cup of coffee？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《在Ubuntu中使用gtest》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/10/12/c/zai-ubuntu-zhong-shi-yong-gtest/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                M
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/10/16/c/xu-han-shu-xu-biao-xu-biao-zhi-zhen/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="虚函数，虚表，虚表指针">
+                        
+                        <span class="card-title">虚函数，虚表，虚表指针</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            虚函数，虚表，虚表指针 （great explanation!!!）基类指针指向基类对象
+#include&lt;iostream>
+using namespace std;
+
+class A{
+public:
+    void f1(){
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/c/" class="post-category" target="_blank">
+                                    c++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/09/26/ji-suan-ji-ji-chu/git-shi-yong-shuo-ming/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Git使用说明">
+                        
+                        <span class="card-title">Git使用说明</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Github提供基于Git的版本托管服务。Git是一款开源的分布式版本控制系统，是Github上用来管理项目的工具。
+
+简洁版
+
+Learn Git in 15 Minutes（Video）
+配套Notes
+
+
+Learn Github i
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CS/" class="post-category" target="_blank">
+                                    CS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CS/" target="_blank">
+                        <span class="chip bg-color">CS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: M's Blog<br />'
+            + '作者: M<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; M. 版权所有
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">226.6k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:amilyxhd@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 1928;
+        var uvcountOffset = 2000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 01, 18, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "O(∩_∩)O", clearTimeout(st)) : (document.title = "Hello！φ(゜▽゜*)♪", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

@@ -123,33 +123,6 @@
   </entry>
   
   <entry>
-    <title>AI Model</title>
-    <link href="https://ismxue.github.io/2022/06/18/study/ai-model/"/>
-    <id>https://ismxue.github.io/2022/06/18/study/ai-model/</id>
-    <published>2022-06-18T14:17:06.000Z</published>
-    <updated>2023-09-15T09:13:22.591Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Tools&quot;&gt;&lt;a href=&quot;#Tools&quot; class=&quot;headerlink&quot; title=&quot;Tools&quot;&gt;&lt;/a&gt;Tools&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;Linux 服务器上配置 Samba 以供 macOS 访问共享文件夹，附：&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Study" scheme="https://ismxue.github.io/categories/Study/"/>
-    
-    
-      <category term="Study" scheme="https://ismxue.github.io/tags/Study/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Docker使用</title>
     <link href="https://ismxue.github.io/2022/05/03/ji-suan-ji-ji-chu/docker-shi-yong/"/>
     <id>https://ismxue.github.io/2022/05/03/ji-suan-ji-ji-chu/docker-shi-yong/</id>
@@ -172,59 +145,6 @@
     
     
       <category term="CS" scheme="https://ismxue.github.io/tags/CS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>3D数据分析与处理</title>
-    <link href="https://ismxue.github.io/2022/04/23/ji-suan-ji-ji-chu/3d-shu-ju-fen-xi-yu-chu-li/"/>
-    <id>https://ismxue.github.io/2022/04/23/ji-suan-ji-ji-chu/3d-shu-ju-fen-xi-yu-chu-li/</id>
-    <published>2022-04-23T07:17:51.000Z</published>
-    <updated>2022-05-03T05:41:44.578Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;open3D&quot;&gt;&lt;a href=&quot;#open3D&quot; class=&quot;headerlink&quot; title=&quot;open3D&quot;&gt;&lt;/a&gt;open3D&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="CV" scheme="https://ismxue.github.io/categories/CV/"/>
-    
-    
-      <category term="CV" scheme="https://ismxue.github.io/tags/CV/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浮点和定点说明</title>
-    <link href="https://ismxue.github.io/2021/12/26/c/fu-dian-he-ding-dian-shuo-ming/"/>
-    <id>https://ismxue.github.io/2021/12/26/c/fu-dian-he-ding-dian-shuo-ming/</id>
-    <published>2021-12-26T13:53:36.000Z</published>
-    <updated>2023-06-13T16:40:26.961Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Fixed-Point&quot;&gt;&lt;a href=&quot;#Fixed-Point&quot; class=&quot;headerlink&quot; title=&quot;Fixed Point&quot;&gt;&lt;/a&gt;Fixed Point&lt;/h1&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
-    
-    
-      <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
     
   </entry>
   
@@ -277,33 +197,6 @@
     
     
       <category term="Growth" scheme="https://ismxue.github.io/tags/Growth/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在Ubuntu中使用gtest</title>
-    <link href="https://ismxue.github.io/2021/10/12/c/zai-ubuntu-zhong-shi-yong-gtest/"/>
-    <id>https://ismxue.github.io/2021/10/12/c/zai-ubuntu-zhong-shi-yong-gtest/</id>
-    <published>2021-10-12T08:26:55.000Z</published>
-    <updated>2021-10-12T08:36:19.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://google.github.io/googletest/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GoogleTest User’s Guide官方教程&lt;/a&gt;&lt;br&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="c++" scheme="https://ismxue.github.io/categories/c/"/>
-    
-    
-      <category term="c++" scheme="https://ismxue.github.io/tags/c/"/>
     
   </entry>
   
@@ -541,6 +434,112 @@
     
     
       <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第零章：一个方法团灭LEETCODE股票买卖问题</title>
+    <link href="https://ismxue.github.io/2021/09/11/labuladong/di-ling-zhang-yi-ge-fang-fa-tuan-mie-leetcode-gu-piao-mai-mai-wen-ti/"/>
+    <id>https://ismxue.github.io/2021/09/11/labuladong/di-ling-zhang-yi-ge-fang-fa-tuan-mie-leetcode-gu-piao-mai-mai-wen-ti/</id>
+    <published>2021-09-11T07:07:48.000Z</published>
+    <updated>2021-10-01T07:57:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitee.io/algo/1/9/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第零章：单链表的六大解题套路，你都见过么？</title>
+    <link href="https://ismxue.github.io/2021/09/09/labuladong/di-ling-zhang-dan-lian-biao-de-liu-da-jie-ti-tao-lu-ni-du-jian-guo-me/"/>
+    <id>https://ismxue.github.io/2021/09/09/labuladong/di-ling-zhang-dan-lian-biao-de-liu-da-jie-ti-tao-lu-ni-du-jian-guo-me/</id>
+    <published>2021-09-09T07:56:57.000Z</published>
+    <updated>2023-02-12T07:05:32.295Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;labuladong&lt;a href=&quot;https://labuladong.gitbook.io/algo/mu-lu-ye/lian-biao-ji-qiao&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="labuladong" scheme="https://ismxue.github.io/tags/labuladong/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>根据字符出现频率排序</title>
+    <link href="https://ismxue.github.io/2021/09/08/leetcode/gen-ju-zi-fu-chu-xian-pin-lu-pai-xu/"/>
+    <id>https://ismxue.github.io/2021/09/08/leetcode/gen-ju-zi-fu-chu-xian-pin-lu-pai-xu/</id>
+    <published>2021-09-08T03:39:38.000Z</published>
+    <updated>2021-09-08T06:36:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这类问题主要用到lambda排序&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用栈实现队列</title>
+    <link href="https://ismxue.github.io/2021/09/04/leetcode/yong-zhan-shi-xian-dui-lie/"/>
+    <id>https://ismxue.github.io/2021/09/04/leetcode/yong-zhan-shi-xian-dui-lie/</id>
+    <published>2021-09-04T08:50:31.000Z</published>
+    <updated>2021-09-04T09:57:37.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;面试题09-用两个栈实现队列&quot;&gt;&lt;a href=&quot;#面试题09-用两个栈实现队列&quot; class=&quot;headerlink&quot; title=&quot;面试题09. 用两个栈实现队列&quot;&gt;&lt;/a&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://ismxue.github.io/tags/LeetCode/"/>
     
   </entry>
   
